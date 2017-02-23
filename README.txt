@@ -1,0 +1,3 @@
+A photo or a status update when traveling emphasizes the destination but fails to present the emotion of the journey. The wealth of experiences on a day trip involves detailed planning and is often guided by the past experiences of one’s friends and families. In addition, several resources exist to plan such a trip, however there is no integrated solution for scheduling it from start to finish. As a result, we seek to develop a comprehensive solution through our website.
+
+Panda provides users with the platform to record and plan all of their day trips. Now, people have a website that stores all their trip data for them to revisit and review at their pleasure, as well as share with their friends.
