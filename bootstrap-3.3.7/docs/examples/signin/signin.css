@@ -46,15 +46,16 @@ body {
 
 
 #icon {
-    background-image: url(../../../../panda%20icon.jpg);
-    width: 300px;
+    background-image: url(../../../../pandaicon2.png);
+    width: 250px;
     height: 300px;
     background-size: cover;
-    background-position: center
-    border-radius: 50%;
-    overflow: hidden;
-  
-    
+    background-position: center;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    margin-bottom: 60px;
+    margin-top: 20px;  
 
 }
 
@@ -65,3 +66,27 @@ body {
   height: 150px;
 }
 
+<<<<<<< HEAD
+h2 {
+    font-family: fantasy;
+    font-size: 100px;
+    margin: auto;
+    text-align: center;
+
+    
+}
+
+
+#new account {
+    margin: auto;
+    text-align: center;
+    
+}
+
+p {
+    margin: auto;
+    text-align: center;
+    
+}
+=======
+>>>>>>> origin/3-loginPage
