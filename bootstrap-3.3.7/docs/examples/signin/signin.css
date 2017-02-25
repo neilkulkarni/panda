@@ -1,7 +1,8 @@
 body {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color:#808080;
+
+  background-color:#f4f7f8;
 }
 
 .form-signin {
@@ -12,8 +13,10 @@ body {
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;
+
     margin:auto;
     text-align: center;
+
 }
 .form-signin .checkbox {
   font-weight: normal;
@@ -41,6 +44,7 @@ body {
   border-top-right-radius: 0;
 }
 
+
 #icon {
     background-image: url(../../../../panda%20icon.jpg);
     width: 300px;
@@ -60,3 +64,4 @@ body {
   width: 150px;
   height: 150px;
 }
+
