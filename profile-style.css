@@ -1,0 +1,601 @@
+body {
+    background-color: #f4f7f8; /* For browsers that do not support gradients */
+    /*background: -webkit-linear-gradient(-45deg, red, white); /* For Safari 5.1 to 6.0 */
+    /*background: -o-linear-gradient(-45deg, red, white); /* For Opera 11.1 to 12.0 */
+    /*background: -moz-linear-gradient(-45deg, red, white); /* For Firefox 3.6 to 15 */
+    /*background: linear-gradient(-45deg, white, #ffe7df); /* Standard syntax */
+    
+    font-size: 20px;
+    width: 100%;
+}
+
+#innerWrapper {
+    width: inherit;
+    margin-top: 5%;
+    
+}
+
+#trip {
+    display: block;
+    float: left;
+    z-index: 1;
+    background-color: white;
+    width: 800px;
+    border-style: none;
+}
+
+#map {
+    width:600px;
+    height: 300px;  
+    float: left;
+}
+
+#mapThumbnail {
+    width: 100%;
+}
+
+#media {
+    background-color: black;
+    width: 25%;
+    float: right; 
+}
+
+#mediaThumbnail {
+    width: 50%;
+    float: left;
+    margin: auto;
+}
+
+#addMediaButton {
+    background-color: #d64c02;
+    float: left;
+    width: 100%;
+    height: 25px;
+    
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    
+    border-top-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    
+    border-color: #565656;
+    border-width: medium;
+}
+
+#addMediaButton a:link {
+    text-decoration: none;
+    text-decoration-line: none;
+    color: white;
+}
+
+#addMediaButton a:visited {
+    text-decoration: none;
+    text-decoration-line: none;
+    color: white;
+}
+
+#addMediaButton a:hover {
+    text-decoration: none;
+    text-decoration-line: none;
+    color: #bbbbbb;
+    
+    transition: all ease 0.3s;
+}
+
+#addMediaButton a:active {
+    color: #bbbbbb;
+}
+
+#description {
+    background-color: #565656;
+    float: left;
+    width: 100%;
+    height: 20%;
+}
+
+#descriptionText {
+    margin: 10px;
+    color: #fff;
+    vertical-align: middle;
+}
+
+
+
+
+
+@media screen and (max-width: 842px) {
+    #sectionsLarge {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 843px) {
+    #menuToggle {
+        display: none;
+    }
+}
+
+
+/*@media screen and (min-width: 843px){
+    body {
+        font-size: 24px;
+    }
+}*/
+
+.menu {
+    position: fixed;
+    width: inherit;
+    height: 68px;
+    top: 0px;
+    z-index: 1;
+    background-color: #222;
+}
+
+.menu li {
+    display: inline-block;
+    
+    margin-left: 10px;
+    margin-right: 10px;
+    
+    padding-top: 15px;
+    font-size: 125%;
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    
+    color: white;
+}
+
+.menu li a:link {
+    text-decoration: none;
+    text-decoration-line: none;
+    color: white;
+}
+
+.menu li a:visited {
+    text-decoration: none;
+    text-decoration-line: none;
+    color: white;
+}
+
+.menu li a:hover {
+    text-decoration: none;
+    text-decoration-line: none;
+    color: #e4af24;
+    
+    transition: all ease 0.3s;
+}
+
+.menu li a:active {
+    color: #e4af24;
+}
+
+#social {
+    display: inline-block;
+    position: fixed;
+    right: 1%;
+    top: 0.2%;
+    padding-right: 15px;
+}
+
+.social#emailLink {
+    background-image: url(Gmail_BW.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 32px;
+    width: 32px;
+    
+    position: fixed;
+    
+    transition: all ease 0.3s;
+    transition: ease-out 0.3s;
+}
+
+.social#facebookLink {
+    background-image: url(Facebook_BW.png);
+    background-size: 28px 28px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 32px;
+    width: 32px;
+    
+    position: fixed;
+    
+    transition: all ease 0.3s;
+    transition: ease-out 0.3s;
+}
+
+.social#youtubeLink {
+    background-image: url(YouTube_BW.png);
+    background-size: 32px 22.5px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 32px;
+    width: 32px;
+    
+    position: fixed;
+    
+    transition: all ease 0.3s;
+    transition: ease-out 0.3s;
+}
+
+.social#emailLink:hover {
+    background-image: url(Gmail_Color.png);
+}
+
+.social#emailLink:active {
+    background-image: url(Gmail_Color.png);
+}
+
+.social#facebookLink:hover {
+    background-image: url(Facebook_Color.png);
+}
+
+.social#facebookLink:active {
+    background-image: url(Facebook_Color.png);
+}
+
+.social#youtubeLink:hover {
+    background-image: url(YouTube_Color.png);
+}
+
+.social#youtubeLink:active {
+    background-image: url(YouTube_Color.png);
+}
+
+
+.menuToggle {
+    background-color: #222;
+    display: inline-block;
+    cursor: pointer;
+    padding-top: 7px;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 40px;
+    height: 5px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Rotate first bar */
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-7px, 6px) ;
+    transform: rotate(-45deg) translate(-7px, 6px) ;
+}
+
+
+/* Fade out the second bar */
+
+.change .bar2 {
+    opacity: 0;
+}
+
+
+/* Rotate last bar */
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+
+#mobileOverlay{
+    position: fixed;
+    width: 100%;
+    height: 101%;
+    
+    padding-top: 60px;
+    
+    display: none;
+    
+    overflow: auto;
+    
+    background-color: #222;
+}
+
+#mobileWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+    display: table;
+    /*box-sizing: border-box;*/
+    text-align: center;
+    
+    overflow: auto;
+}
+
+ #mobileNav {
+    font-size: 400%;
+    line-height: 250%;
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+    
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.mobileButton {
+    display: block;
+    overflow: scroll;
+}
+
+.mobileButton a:link {
+    text-decoration: none;
+    text-decoration-line: none;
+    transform-style:preserve-3d; 
+    color: white;
+}
+
+.mobileButton a:visited {
+    text-decoration: none;
+    text-decoration-line: none;
+    color: white;
+}
+
+.mobileButton a:hover {
+    text-decoration: none;
+    text-decoration-line: none;
+    color: #e4af24;
+    
+    transition: all ease 0.3s;
+    transition: ease-out 0.3s;
+}
+
+.mobileButton a:active {
+    text-decoration: none;
+    text-decoration-line: none;
+    color: #e4af24;
+}
+
+.show {
+    display: table;
+}
+
+.hide {
+    display: none;
+}
+
+
+#header {
+    height:  62px;
+}
+
+#innerWrapper {
+    width: 100%;
+
+    padding: 0% 5%;
+    
+    line-height: 1.2;
+}
+
+.text500 {
+    display: block;
+    margin: auto;
+    
+    padding-top: 75px;
+    
+    font-size: 500%;
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+    
+    text-transform: uppercase;
+}
+
+.text300 {
+    display: block;
+    margin: auto;
+    
+    padding-top: 25px;
+    
+    font-size: 300%;
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+    
+    text-transform: uppercase;
+}
+
+.text200 {
+    display: block;
+    margin: auto;
+    
+    padding-top: 25px;
+    
+    font-size: 200%;
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+    
+    text-transform: uppercase;
+}
+
+.text150 {
+    display: block;
+    margin: auto;
+    
+    padding-top: 25px;
+    
+    font-size: 150%;
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+}
+
+.text125 {
+    display: block;
+    margin: auto;
+    
+    padding-top: 25px;
+    
+    font-size: 120%;
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+}
+
+.text100 {
+    display: block;
+    margin: auto;
+    
+    padding-top: 25px;
+    
+    font-size: 100%;
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+}
+
+#home {
+    background-image: url(profile.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.indentedText {
+    text-indent: 40px;
+}
+
+#music {
+    padding-bottom: 62px;
+}
+
+.youtubeMusic {
+    display: block;
+    margin: auto;
+    
+    padding-top: 25px;
+    font-size: 150%;
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+}
+
+.youtubeEvent {
+    display: block;
+    margin: auto;
+    
+    font-size: 125%;
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+}
+
+.fancyButton {
+    display: block;
+    margin: auto;
+    
+    font-size: 100%;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    
+    color: white;
+}
+
+.youtubeVideo {
+    position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.youtubeVideo iframe {
+    position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.buttonText {   
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 40px;
+    border-color: #990000;
+    background-color: transparent;
+    
+    padding: 20px 30px;
+    
+    text-decoration-color: #990000;
+    text-decoration: none;
+    text-decoration-line: none;
+    color: #990000;
+}
+
+.buttonText:link {
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 40px;
+    border-color: #990000;
+    background-color: transparent;
+    
+    padding: 20px 30px;
+    
+    text-decoration: none;
+    text-decoration-line: none;
+    color: #990000;
+}
+
+.buttonText:visted {
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 40px;
+    border-color: #990000;
+    background-color: transparent;
+    
+    padding: 20px 30px;
+    
+    text-decoration: none;
+    text-decoration-line: none;
+    color: #990000;
+}
+
+.buttonText:hover {
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 40px;
+    border-color: #990000;
+    background-color: #990000;
+    
+    padding: 20px 30px;
+    
+    text-decoration: none;
+    text-decoration-line: none;
+    color: white;
+    
+    transition: all ease 0.3s;
+    transition: ease-out 0.3s;
+}
+
+.buttonText:active {
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 40px;
+    border-color: #990000;
+    background-color: #990000;
+    
+    padding: 20px 30px;
+    
+    text-decoration: none;
+    text-decoration-line: none;
+    color: white;
+    
+    transition: all ease 0.3s;
+    transition: ease-out 0.3s;
+}
+
+
+#alumni {
+    font-size: 100%;
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+}
+
+#alumniList {
+    column-count: 2;
+}
+img {
+    border-style: none;
+}

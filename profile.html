@@ -2,37 +2,22 @@
 <html>
     <head>
         
-         <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="css/scrolling-nav.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="css/scrolling-nav.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-        
-        
-        
-        
-        <title>Purdue Taal</title>
-        
-        <meta name="description" content="Purdue Taal is the one and only Indo-American a cappella group at Purdue University." />
-        
-        <!--
-
-        <meta property="og:image" content="http://neilkulkarni.me/profile.jpg" />
-        
-        <link rel="icon" href="nk.ico" /> 
-
-        -->
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
         
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -44,250 +29,36 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         
         
-        
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <link href="https://fonts.googleapis.com/css?family=Catamaran:300" rel="stylesheet">
-        
-        <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i" rel="stylesheet">
-        
         <script type="text/javascript" src="jquery-3.1.0.js"></script>
         <script type="text/javascript" src="script.js"></script>
+        
+         
+        
+        <link href="profile-style.css" rel="stylesheet">
+        
     </head>
     <body>
-        
-        <!-- Navigation
-        <nav class="navbar navbar-default navbar-fixed-top menu" role="navigation">
-            <div class="container">
-                <div class="navbar-header page-scroll">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand page-scroll menuButtons" href="#home">PURDUE TAAL</a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <!--<div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav">
-                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                        <!--
-                        <li>
-                            <a class="page-scroll menuButtons" href="#music">MUSIC</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll menuButtons" href="#members">MEMBERS</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll menuButtons" href="#gallery">GALLERY</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll menuButtons" href="#album">ALBUM</a>
-                        </li>
-                    </ul>
-                </div>-->
-                <!-- /.navbar-collapse
-            </div>
-            <!-- /.container
-        </nav>
-
--->
- 
-        <div class = "menu">
-            <nav>
-                <ul>
-                    <div id="sectionsLarge">
-                        <li class="home">
-                            <a href="#home" id="homeButton">HOME</a>
-                        </li>
-                        <li class="music">
-                            <a href="#music" id="musicButton">MUSIC</a>
-                        </li>
-                        <li class="members">
-                            <a href="#members" id="membersButton">MEMBERS</a>
-                        </li>
-                        <li class="gallery">
-                            <a href="#gallery" id="galleryButton">GALLERY</a>
-                        </li>
-                        <li class="album">
-                            <a href="#album" id="albumButton">ALBUM</a>
-                        </li>
-                    </div>
-                    
-                     <div id="menuToggle" class="menuToggle">
-                        <div id="menuToggle" class="menuToggle" onclick="myFunction(this)">
-                            <div class="bar1"></div>
-                            <div class="bar2"></div>
-                            <div class="bar3"></div>
-                        </div>
-                    </div>
-
-                    <div id="social">
-                         <li>
-                            <a href="http://youtube.com/PurdueTaal">
-                                <div class="youtube social" id="youtubeLink"></div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://facebook.com/PurdueTaal">
-                                <div class="facebook social" id="facebookLink"></div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="mailto:purduetaal@gmail.com?Subject=Contact%20Request%20for%20Purdue%20Taal">
-                                <div class="email social" id="emailLink"></div>
-                            </a>
-                        </li>
-                    </div>
-                </ul>
-            </nav>
-        </div>
-        
-        
-        <div id="mobileOverlay">
-            <div id="mobileWrapper">
-                <div id="mobileNav">
-                    <div class="mobileButton">
-                        <a href="#home" onclick="showContent()">HOME</a>
-                    </div>
-                    <div class="mobileButton">
-                        <a href="#music" onclick="showContent()">MUSIC</a>
-                    </div>
-                    <div class="mobileButton">
-                        <a href="#members" onclick="showContent()">MEMBERS</a>
-                    </div>
-                    <div class="mobileButton">
-                        <a href="#gallery" onclick="showContent()">GALLERY</a>
-                    </div>
-                    <div class="mobileButton">
-                        <a href="#album" onclick="showContent()">ALBUM</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
         <div id="innerWrapper">
-            <div id="home" class="page">
-                <div id="header"></div>
-                <div class="text500">Purdue Taal</div>
-            </div>
-
-            <div id="music" class="page">
-                <div class="text500">MUSIC</div>
-                <div>
-                    <span class="text300">2016</span>
-                    <span class="youtubeMusic">Kal Ho Naa Ho / See You Again</span>
-                    <span class="youtubeEvent">Purdue SASA Diwali Show</span>
+            <div id="trip">
+                <div id = "map">
+                    <img id = "mapThumbnail" src="sample%20map.png">
                 </div>
-                <div class="youtubeVideo">
-                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/crdN3uZS9Rw?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div>
-                    <span class="youtubeMusic">Sooraj Dooba Hai / Shut Up and Dance</span>
-                    <span class="youtubeEvent">Purdue SASA Diwali Show</span>
-                </div>
-                <div class="youtubeVideo">
-                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/O1KzeEnATTA?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div>
-                    <span class="youtubeMusic">Maahi Ve / Give Your Heart a Break</span>
-                    <span class="youtubeEvent">ASHA Tarang</span>
-                </div>
-                <div class="youtubeVideo">
-                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/DJLT1EsMgqg?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div>
-                    <span class="text300">2015 & Earlier...</span>
-                    <br><br>
-                    <span class="fancyButton"><a class="buttonText" href="http://youtube.com/PurdueTaal">YouTube Channel →</a> </span>
-                </div>
-            </div>
-
-            <div id="members" class="page">
-                <div class="text500">Members</div>
-                <div class="text300">Current</div>
-                
-                <div class="text300">Alumni</div>
-                <div id="alumni">
-                    We wouldn't be anywhere without the efforts of our past members. <br>
-                    A huge thank you to our alumni! <br><br>
-                    
-                    <div id ="alumniList">
-                        Abhinav Ravi <br>
-                        Aditi Rangarajan <br>
-                        Aditya Chandramohan <br>
-                        Aishwarya Balakrishna <br>
-                        Amber Janson <br>
-                        Arjun Desai <br>
-                        Ashwin Kumar <br>
-                        Ashwin Varma <br>
-                        Atish Parekh <br>
-                        Bhavya Rangaramanujan <br>
-                        Chetas Joshi <br>
-                        Deepika Garg <br>
-                        Devika Malhotra <br>
-                        Dijita Sundi <br>
-                        Hridya Nelson <br>
-                        Jane Parayil <br>
-                        Jazna Stannard <br>
-                        Julia Thiemonge <br>
-                        Jun Hongo <br>
-                        Kavit Kumar <br>
-                        Lixuan Yin <br>
-                        Mahmoud Gabal <br>
-                        Mahreen Hassan <br>
-                        Maxx Wright <br>
-                        Monish Mohanty <br>
-                        Nikhil Shekar <br>
-                        Nishtha Sinha <br>
-                        Omar Hoda <br>
-                        Prabhsimran Singh Arora <br>
-                        Pradeep Gopal <br>
-                        Prathik Kaundinya <br>
-                        Priya Ravuru <br>
-                        Ranjini Mohan <br>
-                        Rohan Choksi <br>
-                        Rohith Chandrasekar <br>
-                        Rohith Rao <br>
-                        Sabeen Rizvi <br>
-                        Safiya Khanum <br>
-                        Sahaana Mukundan <br>
-                        Sai Chodavarapu <br>
-                        Sathya Narayanan <br>
-                        Satya Hegde <br>
-                        Sebastian Matyiasik <br>
-                        Shahreen Kibriya <br>
-                        Sheryl Varghese <br>
-                        Shringesh Sukumaran <br>
-                        Shruthi Reddy Sanna <br>
-                        Shruti Umamaheshwaran <br>
-                        Shubha Kamath <br>
-                        Siddharth Sukhwal <br>
-                        Simran Kaur <br>
-                        Sophia Noon <br>
-                        Sudhanshu Dang <br>
-                        Suhani Mehta <br>
-                        Sumanth Chintamani <br>
-                        Talitha Fischer <br>
-                        Tejasvi Parupudi <br>
-                        Uma Ramaswamy <br>
-                        Upasna Viswanathan <br>
-                        Varun Subramanyam <br>
-                        Vignesh Gouthaman <br>
-                        Yang Zhao <br>
+                <div id="media">
+                    <img id="mediaThumbnail" src="sample%20image%201.JPG">
+                    <img id="mediaThumbnail" src="sample%20image%202.JPG">
+                    <img id="mediaThumbnail" src="sample%20image%203.JPG">
+                    <img id="mediaThumbnail" src="sample%20image%204.JPG">
+                    <img id="mediaThumbnail" src="sample%20image%205.JPG">
+                    <img id="mediaThumbnail" src="sample%20image%206.JPG">
+                    <div id="addMediaButton">
+                        <a href="https://youtu.be/lsJLLEwUYZM">Add Media +</a> 
                     </div>
                 </div>
-
-            </div>
-
-            <div id="gallery" class="page">
-                <div class="text500">Gallery</div>
-
-            </div>
-
-            <div id="album" class="page">
-                <div class="text500">Album</div>
+                <div id="description">
+                    <div id = "descriptionText">
+                        A Year in Hillenbrand – 2/25/17
+                    </div>
+                </div>
             </div>
         </div>
         
