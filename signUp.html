@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="signUpStyles.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Muli" />
+</head>
+    <body>
+
+      <form action="/" method="post">
+      
+        <h1>Sign Up for Panda!</h1>
+        
+        <fieldset>
+
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="user_username" required autocomplete="off">
+
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="user_name" required autocomplete="off">
+          
+          <label for="mail">Email:</label>
+          <input type="email" id="mail" name="user_email" required autocomplete="off">
+          
+          <label for="password">Password:</label>
+          <input type="password" id="password" minlength="8" name="user_password" required autocomplete="off">
+
+          <label for="password">Confirm Password:</label>
+          <input type="password" id="password1" name="user_password1" required autocomplete="off">
+          
+        </fieldset>
+
+        <button type="submit" value="submit">Sign Up</button>
+
+        <script type="text/javascript">
+          window.onload = function () {
+            document.getElementById("password").onchange = validatePassword;
+            document.getElementById("password1").onchange = validatePassword;
+          }
+          function validatePassword(){
+            var pass2=document.getElementById("password1").value;
+            var pass1=document.getElementById("password").value;
+            if(pass1!=pass2)
+              document.getElementById("password1").setCustomValidity("Passwords Don't Match");
+            else
+              document.getElementById("password1").setCustomValidity('');  
+              //empty string means no validation error
+          }
+        </script>
+
+      </form>
+      
+    </body>
+</html>
