@@ -51,10 +51,7 @@ body {
     padding-top: 50px;
     padding-bottom: 100px;
     margin-bottom: 60px;
-    margin-top: 20px;
-
-  
-    
+    margin-top: 20px;  
 
 }
 
@@ -71,5 +68,18 @@ h2 {
     margin: auto;
     text-align: center;
 
+    
+}
+
+
+#new account {
+    margin: auto;
+    text-align: center;
+    
+}
+
+p {
+    margin: auto;
+    text-align: center;
     
 }
