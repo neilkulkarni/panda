@@ -6,3 +6,8 @@ body {
 .navbar {
   margin-bottom: 20px;
 }
+
+.btn-success {
+    margin: auto;
+    text-align: center;
+}
