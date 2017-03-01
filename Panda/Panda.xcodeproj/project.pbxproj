@@ -13,6 +13,8 @@
 		A23ABFF91E6607BC005AAE48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A23ABFF71E6607BC005AAE48 /* Main.storyboard */; };
 		A23AC0041E6607BC005AAE48 /* PandaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AC0031E6607BC005AAE48 /* PandaTests.swift */; };
 		A23AC00F1E6607BC005AAE48 /* PandaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AC00E1E6607BC005AAE48 /* PandaUITests.swift */; };
+		A23AC01D1E665F5A005AAE48 /* pandaicon2.png in Resources */ = {isa = PBXBuildFile; fileRef = A23AC01C1E665F5A005AAE48 /* pandaicon2.png */; };
+		A23AC01F1E666567005AAE48 /* loginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AC01E1E666567005AAE48 /* loginScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		A23AC00A1E6607BC005AAE48 /* PandaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PandaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A23AC00E1E6607BC005AAE48 /* PandaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaUITests.swift; sourceTree = "<group>"; };
 		A23AC0101E6607BC005AAE48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A23AC01C1E665F5A005AAE48 /* pandaicon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pandaicon2.png; sourceTree = "<group>"; };
+		A23AC01E1E666567005AAE48 /* loginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +99,10 @@
 		A23ABFF01E6607BC005AAE48 /* Panda */ = {
 			isa = PBXGroup;
 			children = (
+				A23AC01C1E665F5A005AAE48 /* pandaicon2.png */,
 				A23ABFF11E6607BC005AAE48 /* AppDelegate.swift */,
 				A23ABFF31E6607BC005AAE48 /* ViewController.swift */,
+				A23AC01E1E666567005AAE48 /* loginScreen.swift */,
 				A23ABFF51E6607BC005AAE48 /* Assets.xcassets */,
 				A23ABFF71E6607BC005AAE48 /* Main.storyboard */,
 				A23ABFFA1E6607BC005AAE48 /* Info.plist */,
@@ -231,6 +237,7 @@
 			files = (
 				A23ABFF61E6607BC005AAE48 /* Assets.xcassets in Resources */,
 				A23ABFF91E6607BC005AAE48 /* Main.storyboard in Resources */,
+				A23AC01D1E665F5A005AAE48 /* pandaicon2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A23AC01F1E666567005AAE48 /* loginScreen.swift in Sources */,
 				A23ABFF41E6607BC005AAE48 /* ViewController.swift in Sources */,
 				A23ABFF21E6607BC005AAE48 /* AppDelegate.swift in Sources */,
 			);

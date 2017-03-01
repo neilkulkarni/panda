@@ -7,12 +7,19 @@
 //
 
 import Cocoa
+import WebKit
 
 class ViewController: NSViewController {
+    @IBOutlet var webview: WebView!
+    @IBOutlet weak var email: NSTextField!
+    @IBOutlet weak var password: NSSecureTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+     // webview.mainFrame.load(URLRequest(url: URL(string: "http://apple.com")!))
+       
+        
         // Do any additional setup after loading the view.
     }
 
@@ -23,5 +30,18 @@ class ViewController: NSViewController {
     }
 
 
+    
+    @IBAction func getUserInfo(_ sender: Any) {
+      NSString  str = [email];
+        NSLog("%@", &str);
+      
+        
+    }
+    
+
+    @IBAction func test(_ sender: NSTextField) {
+        let name = email.accessibilityValue()
+        
+    }
 }
 
