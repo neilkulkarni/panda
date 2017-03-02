@@ -2,25 +2,27 @@
 //  ViewController.swift
 //  Panda
 //
-//  Created by Winnie Lin on 2/28/17.
+//  Created by Winnie Lin on 3/1/17.
 //  Copyright © 2017 Panda. All rights reserved.
 //
 
 import Cocoa
-import WebKit
 
 class ViewController: NSViewController {
-    @IBOutlet var webview: WebView!
     @IBOutlet weak var email: NSTextField!
     @IBOutlet weak var password: NSSecureTextField!
 
-    @IBOutlet weak var output: NSTextField!
+    @IBOutlet weak var emailError: NSTextField!
+   
+   
     
-    
-    var inputName = ""
+    @IBAction func onClickLogin(_ sender: Any) {
+        let name = email.stringValue;
+        errorCheck();
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
     }
 
@@ -29,18 +31,13 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-
-    
-   // @IBOutlet weak var createAccount: NSButton!
-
-    @IBAction func onClickLogin(_ sender: NSButton) {
-        getName();
-                    }
-    func getName() {
-        //inputName = email.stringValue;
-        output.stringValue = email.stringValue;
-
+    func errorCheck() {
+        if(email.stringValue == "" || password.stringValue == ""){
+            emailError.stringValue = "Email or password incorrect";
+        }
+        
     }
-   
+
+
 }
 
