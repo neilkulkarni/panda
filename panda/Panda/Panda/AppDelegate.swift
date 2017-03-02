@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Panda
 //
-//  Created by Winnie Lin on 2/28/17.
+//  Created by Winnie Lin on 3/1/17.
 //  Copyright © 2017 Panda. All rights reserved.
 //
 

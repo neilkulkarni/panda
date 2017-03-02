@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A23ABFED1E6607BB005AAE48"
+               BlueprintIdentifier = "A2B947C21E67C59C00157BAB"
                BuildableName = "Panda.app"
                BlueprintName = "Panda"
                ReferencedContainer = "container:Panda.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A23ABFFE1E6607BC005AAE48"
+               BlueprintIdentifier = "A2B947D31E67C59C00157BAB"
                BuildableName = "PandaTests.xctest"
                BlueprintName = "PandaTests"
                ReferencedContainer = "container:Panda.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A23AC0091E6607BC005AAE48"
+               BlueprintIdentifier = "A2B947DE1E67C59C00157BAB"
                BuildableName = "PandaUITests.xctest"
                BlueprintName = "PandaUITests"
                ReferencedContainer = "container:Panda.xcodeproj">
@@ -52,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A23ABFED1E6607BB005AAE48"
+            BlueprintIdentifier = "A2B947C21E67C59C00157BAB"
             BuildableName = "Panda.app"
             BlueprintName = "Panda"
             ReferencedContainer = "container:Panda.xcodeproj">
@@ -75,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A23ABFED1E6607BB005AAE48"
+            BlueprintIdentifier = "A2B947C21E67C59C00157BAB"
             BuildableName = "Panda.app"
             BlueprintName = "Panda"
             ReferencedContainer = "container:Panda.xcodeproj">
@@ -94,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A23ABFED1E6607BB005AAE48"
+            BlueprintIdentifier = "A2B947C21E67C59C00157BAB"
             BuildableName = "Panda.app"
             BlueprintName = "Panda"
             ReferencedContainer = "container:Panda.xcodeproj">

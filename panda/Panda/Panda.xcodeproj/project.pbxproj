@@ -7,62 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A23ABFF21E6607BC005AAE48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23ABFF11E6607BC005AAE48 /* AppDelegate.swift */; };
-		A23ABFF41E6607BC005AAE48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23ABFF31E6607BC005AAE48 /* ViewController.swift */; };
-		A23ABFF61E6607BC005AAE48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A23ABFF51E6607BC005AAE48 /* Assets.xcassets */; };
-		A23ABFF91E6607BC005AAE48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A23ABFF71E6607BC005AAE48 /* Main.storyboard */; };
-		A23AC0041E6607BC005AAE48 /* PandaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AC0031E6607BC005AAE48 /* PandaTests.swift */; };
-		A23AC00F1E6607BC005AAE48 /* PandaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AC00E1E6607BC005AAE48 /* PandaUITests.swift */; };
+		A2B947C71E67C59C00157BAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B947C61E67C59C00157BAB /* AppDelegate.swift */; };
+		A2B947C91E67C59C00157BAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B947C81E67C59C00157BAB /* ViewController.swift */; };
+		A2B947CB1E67C59C00157BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2B947CA1E67C59C00157BAB /* Assets.xcassets */; };
+		A2B947CE1E67C59C00157BAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B947CC1E67C59C00157BAB /* Main.storyboard */; };
+		A2B947D91E67C59C00157BAB /* PandaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B947D81E67C59C00157BAB /* PandaTests.swift */; };
+		A2B947E41E67C59C00157BAB /* PandaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B947E31E67C59C00157BAB /* PandaUITests.swift */; };
+		A2B947F21E67C87A00157BAB /* pandaicon2.png in Resources */ = {isa = PBXBuildFile; fileRef = A2B947F11E67C87A00157BAB /* pandaicon2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A23AC0001E6607BC005AAE48 /* PBXContainerItemProxy */ = {
+		A2B947D51E67C59C00157BAB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A23ABFE61E6607BB005AAE48 /* Project object */;
+			containerPortal = A2B947BB1E67C59C00157BAB /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A23ABFED1E6607BB005AAE48;
+			remoteGlobalIDString = A2B947C21E67C59C00157BAB;
 			remoteInfo = Panda;
 		};
-		A23AC00B1E6607BC005AAE48 /* PBXContainerItemProxy */ = {
+		A2B947E01E67C59C00157BAB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A23ABFE61E6607BB005AAE48 /* Project object */;
+			containerPortal = A2B947BB1E67C59C00157BAB /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A23ABFED1E6607BB005AAE48;
+			remoteGlobalIDString = A2B947C21E67C59C00157BAB;
 			remoteInfo = Panda;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A23ABFEE1E6607BC005AAE48 /* Panda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Panda.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A23ABFF11E6607BC005AAE48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A23ABFF31E6607BC005AAE48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A23ABFF51E6607BC005AAE48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A23ABFF81E6607BC005AAE48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A23ABFFA1E6607BC005AAE48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A23ABFFF1E6607BC005AAE48 /* PandaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PandaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A23AC0031E6607BC005AAE48 /* PandaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaTests.swift; sourceTree = "<group>"; };
-		A23AC0051E6607BC005AAE48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A23AC00A1E6607BC005AAE48 /* PandaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PandaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A23AC00E1E6607BC005AAE48 /* PandaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaUITests.swift; sourceTree = "<group>"; };
-		A23AC0101E6607BC005AAE48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2B947C31E67C59C00157BAB /* Panda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Panda.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B947C61E67C59C00157BAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A2B947C81E67C59C00157BAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A2B947CA1E67C59C00157BAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2B947CD1E67C59C00157BAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A2B947CF1E67C59C00157BAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2B947D41E67C59C00157BAB /* PandaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PandaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B947D81E67C59C00157BAB /* PandaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaTests.swift; sourceTree = "<group>"; };
+		A2B947DA1E67C59C00157BAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2B947DF1E67C59C00157BAB /* PandaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PandaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B947E31E67C59C00157BAB /* PandaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaUITests.swift; sourceTree = "<group>"; };
+		A2B947E51E67C59C00157BAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2B947F11E67C87A00157BAB /* pandaicon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pandaicon2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A23ABFEB1E6607BB005AAE48 /* Frameworks */ = {
+		A2B947C01E67C59C00157BAB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A23ABFFC1E6607BC005AAE48 /* Frameworks */ = {
+		A2B947D11E67C59C00157BAB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A23AC0071E6607BC005AAE48 /* Frameworks */ = {
+		A2B947DC1E67C59C00157BAB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -72,52 +74,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A23ABFE51E6607BB005AAE48 = {
+		A2B947BA1E67C59C00157BAB = {
 			isa = PBXGroup;
 			children = (
-				A23ABFF01E6607BC005AAE48 /* Panda */,
-				A23AC0021E6607BC005AAE48 /* PandaTests */,
-				A23AC00D1E6607BC005AAE48 /* PandaUITests */,
-				A23ABFEF1E6607BC005AAE48 /* Products */,
+				A2B947C51E67C59C00157BAB /* Panda */,
+				A2B947D71E67C59C00157BAB /* PandaTests */,
+				A2B947E21E67C59C00157BAB /* PandaUITests */,
+				A2B947C41E67C59C00157BAB /* Products */,
+				A2B947F11E67C87A00157BAB /* pandaicon2.png */,
 			);
 			sourceTree = "<group>";
 		};
-		A23ABFEF1E6607BC005AAE48 /* Products */ = {
+		A2B947C41E67C59C00157BAB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A23ABFEE1E6607BC005AAE48 /* Panda.app */,
-				A23ABFFF1E6607BC005AAE48 /* PandaTests.xctest */,
-				A23AC00A1E6607BC005AAE48 /* PandaUITests.xctest */,
+				A2B947C31E67C59C00157BAB /* Panda.app */,
+				A2B947D41E67C59C00157BAB /* PandaTests.xctest */,
+				A2B947DF1E67C59C00157BAB /* PandaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A23ABFF01E6607BC005AAE48 /* Panda */ = {
+		A2B947C51E67C59C00157BAB /* Panda */ = {
 			isa = PBXGroup;
 			children = (
-				A23ABFF11E6607BC005AAE48 /* AppDelegate.swift */,
-				A23ABFF31E6607BC005AAE48 /* ViewController.swift */,
-				A23ABFF51E6607BC005AAE48 /* Assets.xcassets */,
-				A23ABFF71E6607BC005AAE48 /* Main.storyboard */,
-				A23ABFFA1E6607BC005AAE48 /* Info.plist */,
+				A2B947C61E67C59C00157BAB /* AppDelegate.swift */,
+				A2B947C81E67C59C00157BAB /* ViewController.swift */,
+				A2B947CA1E67C59C00157BAB /* Assets.xcassets */,
+				A2B947CC1E67C59C00157BAB /* Main.storyboard */,
+				A2B947CF1E67C59C00157BAB /* Info.plist */,
 			);
 			path = Panda;
 			sourceTree = "<group>";
 		};
-		A23AC0021E6607BC005AAE48 /* PandaTests */ = {
+		A2B947D71E67C59C00157BAB /* PandaTests */ = {
 			isa = PBXGroup;
 			children = (
-				A23AC0031E6607BC005AAE48 /* PandaTests.swift */,
-				A23AC0051E6607BC005AAE48 /* Info.plist */,
+				A2B947D81E67C59C00157BAB /* PandaTests.swift */,
+				A2B947DA1E67C59C00157BAB /* Info.plist */,
 			);
 			path = PandaTests;
 			sourceTree = "<group>";
 		};
-		A23AC00D1E6607BC005AAE48 /* PandaUITests */ = {
+		A2B947E21E67C59C00157BAB /* PandaUITests */ = {
 			isa = PBXGroup;
 			children = (
-				A23AC00E1E6607BC005AAE48 /* PandaUITests.swift */,
-				A23AC0101E6607BC005AAE48 /* Info.plist */,
+				A2B947E31E67C59C00157BAB /* PandaUITests.swift */,
+				A2B947E51E67C59C00157BAB /* Info.plist */,
 			);
 			path = PandaUITests;
 			sourceTree = "<group>";
@@ -125,13 +128,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A23ABFED1E6607BB005AAE48 /* Panda */ = {
+		A2B947C21E67C59C00157BAB /* Panda */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A23AC0131E6607BC005AAE48 /* Build configuration list for PBXNativeTarget "Panda" */;
+			buildConfigurationList = A2B947E81E67C59C00157BAB /* Build configuration list for PBXNativeTarget "Panda" */;
 			buildPhases = (
-				A23ABFEA1E6607BB005AAE48 /* Sources */,
-				A23ABFEB1E6607BB005AAE48 /* Frameworks */,
-				A23ABFEC1E6607BB005AAE48 /* Resources */,
+				A2B947BF1E67C59C00157BAB /* Sources */,
+				A2B947C01E67C59C00157BAB /* Frameworks */,
+				A2B947C11E67C59C00157BAB /* Resources */,
 			);
 			buildRules = (
 			);
@@ -139,72 +142,72 @@
 			);
 			name = Panda;
 			productName = Panda;
-			productReference = A23ABFEE1E6607BC005AAE48 /* Panda.app */;
+			productReference = A2B947C31E67C59C00157BAB /* Panda.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A23ABFFE1E6607BC005AAE48 /* PandaTests */ = {
+		A2B947D31E67C59C00157BAB /* PandaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A23AC0161E6607BC005AAE48 /* Build configuration list for PBXNativeTarget "PandaTests" */;
+			buildConfigurationList = A2B947EB1E67C59C00157BAB /* Build configuration list for PBXNativeTarget "PandaTests" */;
 			buildPhases = (
-				A23ABFFB1E6607BC005AAE48 /* Sources */,
-				A23ABFFC1E6607BC005AAE48 /* Frameworks */,
-				A23ABFFD1E6607BC005AAE48 /* Resources */,
+				A2B947D01E67C59C00157BAB /* Sources */,
+				A2B947D11E67C59C00157BAB /* Frameworks */,
+				A2B947D21E67C59C00157BAB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A23AC0011E6607BC005AAE48 /* PBXTargetDependency */,
+				A2B947D61E67C59C00157BAB /* PBXTargetDependency */,
 			);
 			name = PandaTests;
 			productName = PandaTests;
-			productReference = A23ABFFF1E6607BC005AAE48 /* PandaTests.xctest */;
+			productReference = A2B947D41E67C59C00157BAB /* PandaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A23AC0091E6607BC005AAE48 /* PandaUITests */ = {
+		A2B947DE1E67C59C00157BAB /* PandaUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A23AC0191E6607BC005AAE48 /* Build configuration list for PBXNativeTarget "PandaUITests" */;
+			buildConfigurationList = A2B947EE1E67C59C00157BAB /* Build configuration list for PBXNativeTarget "PandaUITests" */;
 			buildPhases = (
-				A23AC0061E6607BC005AAE48 /* Sources */,
-				A23AC0071E6607BC005AAE48 /* Frameworks */,
-				A23AC0081E6607BC005AAE48 /* Resources */,
+				A2B947DB1E67C59C00157BAB /* Sources */,
+				A2B947DC1E67C59C00157BAB /* Frameworks */,
+				A2B947DD1E67C59C00157BAB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A23AC00C1E6607BC005AAE48 /* PBXTargetDependency */,
+				A2B947E11E67C59C00157BAB /* PBXTargetDependency */,
 			);
 			name = PandaUITests;
 			productName = PandaUITests;
-			productReference = A23AC00A1E6607BC005AAE48 /* PandaUITests.xctest */;
+			productReference = A2B947DF1E67C59C00157BAB /* PandaUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A23ABFE61E6607BB005AAE48 /* Project object */ = {
+		A2B947BB1E67C59C00157BAB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Panda;
 				TargetAttributes = {
-					A23ABFED1E6607BB005AAE48 = {
+					A2B947C21E67C59C00157BAB = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
-					A23ABFFE1E6607BC005AAE48 = {
+					A2B947D31E67C59C00157BAB = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
-						TestTargetID = A23ABFED1E6607BB005AAE48;
+						TestTargetID = A2B947C21E67C59C00157BAB;
 					};
-					A23AC0091E6607BC005AAE48 = {
+					A2B947DE1E67C59C00157BAB = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
-						TestTargetID = A23ABFED1E6607BB005AAE48;
+						TestTargetID = A2B947C21E67C59C00157BAB;
 					};
 				};
 			};
-			buildConfigurationList = A23ABFE91E6607BB005AAE48 /* Build configuration list for PBXProject "Panda" */;
+			buildConfigurationList = A2B947BE1E67C59C00157BAB /* Build configuration list for PBXProject "Panda" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -212,36 +215,37 @@
 				en,
 				Base,
 			);
-			mainGroup = A23ABFE51E6607BB005AAE48;
-			productRefGroup = A23ABFEF1E6607BC005AAE48 /* Products */;
+			mainGroup = A2B947BA1E67C59C00157BAB;
+			productRefGroup = A2B947C41E67C59C00157BAB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A23ABFED1E6607BB005AAE48 /* Panda */,
-				A23ABFFE1E6607BC005AAE48 /* PandaTests */,
-				A23AC0091E6607BC005AAE48 /* PandaUITests */,
+				A2B947C21E67C59C00157BAB /* Panda */,
+				A2B947D31E67C59C00157BAB /* PandaTests */,
+				A2B947DE1E67C59C00157BAB /* PandaUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A23ABFEC1E6607BB005AAE48 /* Resources */ = {
+		A2B947C11E67C59C00157BAB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A23ABFF61E6607BC005AAE48 /* Assets.xcassets in Resources */,
-				A23ABFF91E6607BC005AAE48 /* Main.storyboard in Resources */,
+				A2B947CB1E67C59C00157BAB /* Assets.xcassets in Resources */,
+				A2B947CE1E67C59C00157BAB /* Main.storyboard in Resources */,
+				A2B947F21E67C87A00157BAB /* pandaicon2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A23ABFFD1E6607BC005AAE48 /* Resources */ = {
+		A2B947D21E67C59C00157BAB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A23AC0081E6607BC005AAE48 /* Resources */ = {
+		A2B947DD1E67C59C00157BAB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -251,51 +255,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A23ABFEA1E6607BB005AAE48 /* Sources */ = {
+		A2B947BF1E67C59C00157BAB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A23ABFF41E6607BC005AAE48 /* ViewController.swift in Sources */,
-				A23ABFF21E6607BC005AAE48 /* AppDelegate.swift in Sources */,
+				A2B947C91E67C59C00157BAB /* ViewController.swift in Sources */,
+				A2B947C71E67C59C00157BAB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A23ABFFB1E6607BC005AAE48 /* Sources */ = {
+		A2B947D01E67C59C00157BAB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A23AC0041E6607BC005AAE48 /* PandaTests.swift in Sources */,
+				A2B947D91E67C59C00157BAB /* PandaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A23AC0061E6607BC005AAE48 /* Sources */ = {
+		A2B947DB1E67C59C00157BAB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A23AC00F1E6607BC005AAE48 /* PandaUITests.swift in Sources */,
+				A2B947E41E67C59C00157BAB /* PandaUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A23AC0011E6607BC005AAE48 /* PBXTargetDependency */ = {
+		A2B947D61E67C59C00157BAB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A23ABFED1E6607BB005AAE48 /* Panda */;
-			targetProxy = A23AC0001E6607BC005AAE48 /* PBXContainerItemProxy */;
+			target = A2B947C21E67C59C00157BAB /* Panda */;
+			targetProxy = A2B947D51E67C59C00157BAB /* PBXContainerItemProxy */;
 		};
-		A23AC00C1E6607BC005AAE48 /* PBXTargetDependency */ = {
+		A2B947E11E67C59C00157BAB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A23ABFED1E6607BB005AAE48 /* Panda */;
-			targetProxy = A23AC00B1E6607BC005AAE48 /* PBXContainerItemProxy */;
+			target = A2B947C21E67C59C00157BAB /* Panda */;
+			targetProxy = A2B947E01E67C59C00157BAB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A23ABFF71E6607BC005AAE48 /* Main.storyboard */ = {
+		A2B947CC1E67C59C00157BAB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A23ABFF81E6607BC005AAE48 /* Base */,
+				A2B947CD1E67C59C00157BAB /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -303,7 +307,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A23AC0111E6607BC005AAE48 /* Debug */ = {
+		A2B947E61E67C59C00157BAB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -352,7 +356,7 @@
 			};
 			name = Debug;
 		};
-		A23AC0121E6607BC005AAE48 /* Release */ = {
+		A2B947E71E67C59C00157BAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -393,7 +397,7 @@
 			};
 			name = Release;
 		};
-		A23AC0141E6607BC005AAE48 /* Debug */ = {
+		A2B947E91E67C59C00157BAB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -406,7 +410,7 @@
 			};
 			name = Debug;
 		};
-		A23AC0151E6607BC005AAE48 /* Release */ = {
+		A2B947EA1E67C59C00157BAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -419,7 +423,7 @@
 			};
 			name = Release;
 		};
-		A23AC0171E6607BC005AAE48 /* Debug */ = {
+		A2B947EC1E67C59C00157BAB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -434,7 +438,7 @@
 			};
 			name = Debug;
 		};
-		A23AC0181E6607BC005AAE48 /* Release */ = {
+		A2B947ED1E67C59C00157BAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -449,7 +453,7 @@
 			};
 			name = Release;
 		};
-		A23AC01A1E6607BC005AAE48 /* Debug */ = {
+		A2B947EF1E67C59C00157BAB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -463,7 +467,7 @@
 			};
 			name = Debug;
 		};
-		A23AC01B1E6607BC005AAE48 /* Release */ = {
+		A2B947F01E67C59C00157BAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -480,40 +484,40 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A23ABFE91E6607BB005AAE48 /* Build configuration list for PBXProject "Panda" */ = {
+		A2B947BE1E67C59C00157BAB /* Build configuration list for PBXProject "Panda" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A23AC0111E6607BC005AAE48 /* Debug */,
-				A23AC0121E6607BC005AAE48 /* Release */,
+				A2B947E61E67C59C00157BAB /* Debug */,
+				A2B947E71E67C59C00157BAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A23AC0131E6607BC005AAE48 /* Build configuration list for PBXNativeTarget "Panda" */ = {
+		A2B947E81E67C59C00157BAB /* Build configuration list for PBXNativeTarget "Panda" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A23AC0141E6607BC005AAE48 /* Debug */,
-				A23AC0151E6607BC005AAE48 /* Release */,
+				A2B947E91E67C59C00157BAB /* Debug */,
+				A2B947EA1E67C59C00157BAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		A23AC0161E6607BC005AAE48 /* Build configuration list for PBXNativeTarget "PandaTests" */ = {
+		A2B947EB1E67C59C00157BAB /* Build configuration list for PBXNativeTarget "PandaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A23AC0171E6607BC005AAE48 /* Debug */,
-				A23AC0181E6607BC005AAE48 /* Release */,
+				A2B947EC1E67C59C00157BAB /* Debug */,
+				A2B947ED1E67C59C00157BAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		A23AC0191E6607BC005AAE48 /* Build configuration list for PBXNativeTarget "PandaUITests" */ = {
+		A2B947EE1E67C59C00157BAB /* Build configuration list for PBXNativeTarget "PandaUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A23AC01A1E6607BC005AAE48 /* Debug */,
-				A23AC01B1E6607BC005AAE48 /* Release */,
+				A2B947EF1E67C59C00157BAB /* Debug */,
+				A2B947F01E67C59C00157BAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A23ABFE61E6607BB005AAE48 /* Project object */;
+	rootObject = A2B947BB1E67C59C00157BAB /* Project object */;
 }
