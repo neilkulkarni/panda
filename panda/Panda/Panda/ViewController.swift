@@ -7,6 +7,9 @@
 //
 
 import Cocoa
+import CryptoSwift
+
+
 
 
 class ViewController: NSViewController {
@@ -19,7 +22,9 @@ class ViewController: NSViewController {
     
     @IBAction func onClickLogin(_ sender: Any) {
         let name = email.stringValue;
-        errorCheck();
+        if( errorCheck()) {
+        hashing();
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +37,24 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-    func errorCheck() {
+    
+    // check for incorrect input
+    func errorCheck() -> Bool {
         if(email.stringValue == "" || password.stringValue == ""){
             emailError.stringValue = "Email or password incorrect";
+            return false
         }
+        return true
         
     }
+    // function to hash password
+    func hashing(){
+        let hash = password.stringValue;
+        print( hash.md5());
+       
+    
+    }
+    
 
 
 }
