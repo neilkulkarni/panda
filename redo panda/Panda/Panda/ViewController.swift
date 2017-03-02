@@ -8,6 +8,7 @@
 
 import Cocoa
 
+
 class ViewController: NSViewController {
     @IBOutlet weak var email: NSTextField!
     @IBOutlet weak var password: NSSecureTextField!
