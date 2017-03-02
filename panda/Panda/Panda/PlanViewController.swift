@@ -15,6 +15,7 @@ class PlanViewController: NSViewController {
     @IBOutlet weak var categoryField: NSTextField!
     @IBOutlet weak var cityField: NSTextField!
     
+    @IBOutlet weak var printPlaces: NSTextField!
     var token:String?
     
     let clientID = "2xtPDNRnr_toiEhI1V0W9w"
@@ -25,17 +26,21 @@ class PlanViewController: NSViewController {
     
     let searchURL = "https://api.yelp.com/v3/businesses/search"
     
-    let location = "West Lafayette, IN"
-    
+     //   let location = "West Lafayette, IN"
+    var term:String?
+    var location:String?
+    //var term = categoryField.stringValue
+
     @IBAction func searchButton(_ sender: NSButton) {
-        
+        term = categoryField.stringValue
+        location = cityField.stringValue
+        getToken()
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        getToken()
+        
     }
     
     func getToken() {
@@ -56,8 +61,10 @@ class PlanViewController: NSViewController {
             }
         }
     }
+    
     func loadBusiness() {
-        Alamofire.request(searchURL, method: .get, parameters: ["location" : location], encoding: URLEncoding.default, headers: ["Authorization" : "Bearer \(token!)"]).validate().responseJSON { response in
+
+        Alamofire.request(searchURL, method: .get, parameters: ["term" : term, "location": location], encoding: URLEncoding.default, headers: ["Authorization" : "Bearer \(token!)"]).validate().responseJSON { response in
             if response.result.isSuccess {
                 guard let info = response.result.value else {
                     print("Error")
@@ -68,24 +75,43 @@ class PlanViewController: NSViewController {
                 //                print(json)
                 let businesses = json["businesses"].arrayValue
                 
-                let business = businesses[0]
+                var businessList: [Business] = []
                 
-                print(business)
+                for i in 0...9 {
+                    var tempBusiness = businesses[i]
+                    businessList[i].name = tempBusiness["name"].stringValue
+                    businessList[i].rating = tempBusiness["rating"].double
+//                    let categories = json["categories"].arrayValue
+//                    topCategory = categories[0]
+                    businessList[i].category = tempBusiness["categories.[0].title"].stringValue
+                    businessList[i].price = tempBusiness["price"].stringValue
+                    businessList[i].url = tempBusiness["url"].stringValue
+                    businessList[i].latitude = tempBusiness["coordinates.latitude"].double
+                    businessList[i].longitude = tempBusiness["coordinates.longitude"].double
+                    
+
+                }
                 
-                self.categoryField.stringValue = business["name"].stringValue
+//                let business = businesses[0]
+//                let text = business["name"].stringValue
+//                print("The first business is " + text)
+//                
+//                print(business)
+//                
+//                self.categoryField.stringValue = business["name"].stringValue
+//                
                 
                 
-                
-                let locationD = business["location"]
+               // let locationD = business["location"]
                 
                 //self.locationLabel.text = "\(locationD["address1"].stringValue), \(locationD["city"].stringValue)"
                 
-                let imageUrl = URL(string: business["image_url"].stringValue)
+               // let imageUrl = URL(string: business["image_url"].stringValue)
                 
                // let imageRequest = URLRequest(url: imageUrl!)
                 
-                let session = URLSession(configuration: .default)
-                
+//                let session = URLSession(configuration: .default)
+//                
 //                session.dataTask(with: imageRequest, completionHandler: { (data, response, error) in
 //                    guard let image = data else {
 //                        print(error?.localizedDescription ?? "error")

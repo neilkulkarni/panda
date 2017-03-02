@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3875BA9B1E67EB92003ED320 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3875BA9A1E67EB92003ED320 /* PlanViewController.swift */; };
+		3875BA9D1E68D75E003ED320 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3875BA9C1E68D75E003ED320 /* Business.swift */; };
 		3B5B2472C6F467375141917C /* Pods_PandaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF7DA1C0BC258ADDEA4571D /* Pods_PandaTests.framework */; };
 		8697CB2C7D67ECF2A9F38AD2 /* Pods_PandaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56BD628C06602F837582D360 /* Pods_PandaUITests.framework */; };
 		A2B947C71E67C59C00157BAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B947C61E67C59C00157BAB /* AppDelegate.swift */; };
@@ -41,6 +42,7 @@
 		06D0BAF5935782464F3EC038 /* Pods-PandaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PandaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PandaUITests/Pods-PandaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1EF7DA1C0BC258ADDEA4571D /* Pods_PandaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PandaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3875BA9A1E67EB92003ED320 /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
+		3875BA9C1E68D75E003ED320 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		43D7280E93BF7FF39123C566 /* Pods-Panda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda.release.xcconfig"; path = "Pods/Target Support Files/Pods-Panda/Pods-Panda.release.xcconfig"; sourceTree = "<group>"; };
 		4C8BC95058BE4FFF6754CEBE /* Pods-PandaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PandaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PandaTests/Pods-PandaTests.release.xcconfig"; sourceTree = "<group>"; };
 		56BD628C06602F837582D360 /* Pods_PandaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PandaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +135,7 @@
 				A2B947CC1E67C59C00157BAB /* Main.storyboard */,
 				A2B947CF1E67C59C00157BAB /* Info.plist */,
 				3875BA9A1E67EB92003ED320 /* PlanViewController.swift */,
+				3875BA9C1E68D75E003ED320 /* Business.swift */,
 			);
 			path = Panda;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2B947C91E67C59C00157BAB /* LoginViewController.swift in Sources */,
+				3875BA9D1E68D75E003ED320 /* Business.swift in Sources */,
 				A2B947C71E67C59C00157BAB /* AppDelegate.swift in Sources */,
 				3875BA9B1E67EB92003ED320 /* PlanViewController.swift in Sources */,
 			);
@@ -596,6 +600,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Panda/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.panda.Panda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -610,6 +615,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Panda/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.panda.Panda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
