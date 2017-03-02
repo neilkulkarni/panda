@@ -763,9 +763,9 @@
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="email" destination="S6W-Ne-aBH" id="e6k-T6-fYe"/>
+                        <outlet property="emailEntered" destination="S6W-Ne-aBH" id="ThF-57-EHM"/>
                         <outlet property="emailError" destination="gRx-9l-bQ3" id="jqm-Dx-hdo"/>
-                        <outlet property="password" destination="HqE-8u-H0c" id="nCM-e3-FT4"/>
+                        <outlet property="passwordEntered" destination="HqE-8u-H0c" id="k0V-Kt-xdZ"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

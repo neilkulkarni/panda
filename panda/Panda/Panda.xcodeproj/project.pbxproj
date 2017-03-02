@@ -15,6 +15,7 @@
 		A2B947E41E67C59C00157BAB /* PandaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B947E31E67C59C00157BAB /* PandaUITests.swift */; };
 		A2B947F21E67C87A00157BAB /* pandaicon2.png in Resources */ = {isa = PBXBuildFile; fileRef = A2B947F11E67C87A00157BAB /* pandaicon2.png */; };
 		A2B947FE1E67E82F00157BAB /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B947F91E67E7FA00157BAB /* CryptoSwift.framework */; };
+		A2B948021E68C82100157BAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B948011E68C82100157BAB /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		A2B947E51E67C59C00157BAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2B947F11E67C87A00157BAB /* pandaicon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pandaicon2.png; sourceTree = "<group>"; };
 		A2B947F31E67E7FA00157BAB /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = ../CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
+		A2B948011E68C82100157BAB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		A2B947C51E67C59C00157BAB /* Panda */ = {
 			isa = PBXGroup;
 			children = (
+				A2B948011E68C82100157BAB /* User.swift */,
 				A2B947C61E67C59C00157BAB /* AppDelegate.swift */,
 				A2B947C81E67C59C00157BAB /* ViewController.swift */,
 				A2B947CA1E67C59C00157BAB /* Assets.xcassets */,
@@ -319,6 +322,7 @@
 			files = (
 				A2B947C91E67C59C00157BAB /* ViewController.swift in Sources */,
 				A2B947C71E67C59C00157BAB /* AppDelegate.swift in Sources */,
+				A2B948021E68C82100157BAB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
