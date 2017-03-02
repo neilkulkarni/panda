@@ -702,6 +702,7 @@
                                 </buttonCell>
                                 <connections>
                                     <accessibilityConnection property="title" destination="ocs-gL-nJd" id="HT3-8M-ONT"/>
+                                    <action selector="onClickLogin:" target="XfG-lQ-9wD" id="C05-nE-D6d"/>
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bia-dV-1aL">
@@ -734,9 +735,9 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="pandaicon2" id="fdn-yg-ukT"/>
                             </imageView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="paC-NZ-Kdc">
-                                <rect key="frame" x="156" y="6" width="168" height="32"/>
+                                <rect key="frame" x="152" y="6" width="176" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Create a New Accout" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3j9-OH-4rB">
+                                <buttonCell key="cell" type="push" title="Create a New Account" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3j9-OH-4rB">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
