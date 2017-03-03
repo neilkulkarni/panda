@@ -19,6 +19,8 @@
 		A2B947E41E67C59C00157BAB /* PandaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B947E31E67C59C00157BAB /* PandaUITests.swift */; };
 		A2B947F21E67C87A00157BAB /* pandaicon2.png in Resources */ = {isa = PBXBuildFile; fileRef = A2B947F11E67C87A00157BAB /* pandaicon2.png */; };
 		DB9122370B15B0F2D3BE3ACD /* Pods_Panda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FEA735A7E10DEDABDD54162 /* Pods_Panda.framework */; };
+		A2B947FE1E67E82F00157BAB /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B947F91E67E7FA00157BAB /* CryptoSwift.framework */; };
+		A2B948021E68C82100157BAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B948011E68C82100157BAB /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = A2B947C21E67C59C00157BAB;
 			remoteInfo = Panda;
+		};
+		A2B947F81E67E7FA00157BAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A2B947F31E67E7FA00157BAB /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 754BE45519693E190098E6F3;
+			remoteInfo = CryptoSwift;
+		};
+		A2B947FA1E67E7FA00157BAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A2B947F31E67E7FA00157BAB /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 754BE46019693E190098E6F3;
+			remoteInfo = Tests;
+		};
+		A2B947FC1E67E81900157BAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A2B947F31E67E7FA00157BAB /* CryptoSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 754BE45419693E190098E6F3;
+			remoteInfo = CryptoSwift;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -63,6 +86,8 @@
 		BF311A052B66D45016D85C6C /* Pods-PandaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PandaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PandaTests/Pods-PandaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE067A4312DFBA0F15471E39 /* Pods-Panda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Panda/Pods-Panda.debug.xcconfig"; sourceTree = "<group>"; };
 		EA68CB1CA5289B46480051D0 /* Pods-PandaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PandaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PandaUITests/Pods-PandaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A2B947F31E67E7FA00157BAB /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = ../CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
+		A2B948011E68C82100157BAB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB9122370B15B0F2D3BE3ACD /* Pods_Panda.framework in Frameworks */,
+				A2B947FE1E67E82F00157BAB /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +139,7 @@
 				A2B947F11E67C87A00157BAB /* pandaicon2.png */,
 				FB1576DB09C36CA66C525683 /* Pods */,
 				392E4F758122571EA0548C4D /* Frameworks */,
+				A2B947F31E67E7FA00157BAB /* CryptoSwift.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +156,7 @@
 		A2B947C51E67C59C00157BAB /* Panda */ = {
 			isa = PBXGroup;
 			children = (
+				A2B948011E68C82100157BAB /* User.swift */,
 				A2B947C61E67C59C00157BAB /* AppDelegate.swift */,
 				A2B947C81E67C59C00157BAB /* LoginViewController.swift */,
 				A2B947CA1E67C59C00157BAB /* Assets.xcassets */,
@@ -169,6 +197,13 @@
 				EA68CB1CA5289B46480051D0 /* Pods-PandaUITests.release.xcconfig */,
 			);
 			name = Pods;
+		A2B947F41E67E7FA00157BAB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A2B947F91E67E7FA00157BAB /* CryptoSwift.framework */,
+				A2B947FB1E67E7FA00157BAB /* Tests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +223,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A2B947FD1E67E81900157BAB /* PBXTargetDependency */,
 			);
 			name = Panda;
 			productName = Panda;
@@ -273,6 +309,12 @@
 			mainGroup = A2B947BA1E67C59C00157BAB;
 			productRefGroup = A2B947C41E67C59C00157BAB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A2B947F41E67E7FA00157BAB /* Products */;
+					ProjectRef = A2B947F31E67E7FA00157BAB /* CryptoSwift.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A2B947C21E67C59C00157BAB /* Panda */,
@@ -281,6 +323,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A2B947F91E67E7FA00157BAB /* CryptoSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CryptoSwift.framework;
+			remoteRef = A2B947F81E67E7FA00157BAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A2B947FB1E67E7FA00157BAB /* Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Tests.xctest;
+			remoteRef = A2B947FA1E67E7FA00157BAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A2B947C11E67C59C00157BAB /* Resources */ = {
@@ -456,6 +515,7 @@
 				3875BA9D1E68D75E003ED320 /* Business.swift in Sources */,
 				A2B947C71E67C59C00157BAB /* AppDelegate.swift in Sources */,
 				3875BA9B1E67EB92003ED320 /* PlanViewController.swift in Sources */,
+				A2B948021E68C82100157BAB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +547,11 @@
 			isa = PBXTargetDependency;
 			target = A2B947C21E67C59C00157BAB /* Panda */;
 			targetProxy = A2B947E01E67C59C00157BAB /* PBXContainerItemProxy */;
+		};
+		A2B947FD1E67E81900157BAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CryptoSwift;
+			targetProxy = A2B947FC1E67E81900157BAB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
