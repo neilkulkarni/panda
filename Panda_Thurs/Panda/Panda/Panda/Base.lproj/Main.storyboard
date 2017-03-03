@@ -658,13 +658,13 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Panda" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="75" y="-161"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Panda" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -676,7 +676,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="74" y="82"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -689,8 +689,8 @@
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5gG-yu-dbp">
                                 <rect key="frame" x="269" y="292" width="291" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Email" drawsBackground="YES" id="eWn-Am-ff0">
-                                    <font key="font" metaFont="system"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Email" drawsBackground="YES" usesSingleLineMode="YES" id="eWn-Am-ff0">
+                                    <font key="font" metaFont="system" size="18"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -698,8 +698,8 @@
                             <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7kp-64-4QA">
                                 <rect key="frame" x="269" y="250" width="291" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Password" drawsBackground="YES" usesSingleLineMode="YES" id="tWt-wm-pFG">
-                                    <font key="font" metaFont="system"/>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" placeholderString="Password" drawsBackground="YES" usesSingleLineMode="YES" id="tWt-wm-pFG">
+                                    <font key="font" metaFont="system" size="18"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <allowedInputSourceLocales>
@@ -749,7 +749,8 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="jTC-1C-agO" kind="sheet" id="Jv2-h6-t0L"/>
+                                    <action selector="createAnAccountButton:" target="XfG-lQ-9wD" id="8ly-io-ooU"/>
+                                    <segue destination="jTC-1C-agO" kind="custom" identifier="idSegue" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="tNU-xW-BFr"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SCq-qc-jRm">
@@ -1015,6 +1016,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="createAccount:" target="jTC-1C-agO" id="lz5-gn-zyO"/>
+                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAP-8S-U4x">
                                 <rect key="frame" x="392" y="70" width="17" height="17"/>
@@ -1032,6 +1036,10 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="returnToLoginButton:" target="jTC-1C-agO" id="7OL-hz-Hqb"/>
+                                    <segue destination="XfG-lQ-9wD" kind="custom" identifier="idSegue" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="Oqs-O0-SkJ"/>
+                                </connections>
                             </button>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fb0-0F-sh6">
                                 <rect key="frame" x="531" y="435" width="232" height="17"/>
@@ -1173,4 +1181,7 @@
     <resources>
         <image name="pandaicon2" width="1039" height="1259"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="cq2-FE-JQM"/>
+    </inferredMetricsTieBreakers>
 </document>

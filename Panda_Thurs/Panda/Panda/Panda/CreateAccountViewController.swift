@@ -7,6 +7,8 @@
 //
 
 import Cocoa
+import Alamofire
+import SwiftyJSON
 
 class CreateAccountViewController: NSViewController {
 
@@ -33,9 +35,15 @@ class CreateAccountViewController: NSViewController {
     @IBOutlet weak var createAccountErrorLabel: NSTextField!
     
     
+    override func viewWillAppear() {
+        self.view.wantsLayer = true;
+        self.view.layer?.backgroundColor = CGColor(red: 220/255.0, green: 255/255.0, blue: 255/255.0, alpha: 0.5)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
     }
     
     var name:String?
@@ -155,4 +163,28 @@ class CreateAccountViewController: NSViewController {
             createAccountButton.isEnabled = true;
         }
     }
+    
+    
+    
+    @IBAction func createAccount(_ sender: Any) {
+        Alamofire.request("http://localhost:8080/panda/users").responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // HTTP URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+            }
+        }
+    }
+    
+    
+    @IBAction func returnToLoginButton(_ sender: Any) {
+        performSegue(withIdentifier: "idSegue", sender: self)
+    }
+    
+    
+    
+    
 }

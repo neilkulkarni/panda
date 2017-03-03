@@ -16,6 +16,11 @@ class LoginViewController: NSViewController {
     @IBOutlet weak var enteredPassword: NSSecureTextField!
     var obj = User();
     
+    override func viewWillAppear() {
+        self.view.wantsLayer = true;
+        self.view.layer?.backgroundColor = CGColor(red: 220/255.0, green: 255/255.0, blue: 255/255.0, alpha: 0.5)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -70,7 +75,10 @@ class LoginViewController: NSViewController {
         
     }
 
-
+    @IBAction func createAnAccountButton(_ sender: Any) {
+        performSegue(withIdentifier: "idSegue", sender: self)
+    }
+    
 
 }
 
