@@ -9,7 +9,7 @@
 import Cocoa
 import CryptoSwift
 
-class ViewController: NSViewController {
+class LoginViewController: NSViewController {
     @IBOutlet weak var enteredEmail: NSTextField!
 
     @IBOutlet weak var errortextfield: NSTextField!
