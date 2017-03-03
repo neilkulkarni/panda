@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  Panda
 //
 //  Created by Winnie Lin on 3/1/17.
@@ -12,7 +12,7 @@ import CryptoSwift
 
 
 
-class ViewController: NSViewController {
+class LoginViewController: NSViewController {
     
     @IBOutlet weak var emailEntered: NSTextField!
   
