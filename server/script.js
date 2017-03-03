@@ -46,7 +46,36 @@ var router = express.Router();              // get an instance of the express Ro
 
 // test route for users (accessed at GET http://localhost:8080/api/users
 
-router.post("/rq", function (request, res) {
+router.post('/createUser', function(request, response){
+	var q = request.body; 
+	conn.query('select * from user', function(err, result) {
+    var error = 0;
+	for (var i = 0; i < result.length; i++) {
+            		if(((result[i].email) + "").localeCompare(((q.email).toLowerCase())) == 0) {
+            			console.log('Alright found user');
+            	//		res.render('Name or email found');
+            			
+            		error = 1;
+            		break;
+            			
+        			}
+                }
+                
+                if(error == 0) {
+
+                conn.query('insert into user set ?', q, function(err, result) {
+                      console.log('Added user');
+                    //  res.render('Added user');
+                  
+            		 
+                    });
+            }
+        });
+       // your JSON
+  response.send(request.body);    // echo the result back
+});
+
+/*router.post("/rq", function (request, res) {
         var body = '';
         request.on('data', function (data) {
             body += data;
@@ -100,7 +129,7 @@ router.post("/rq", function (request, res) {
         res.end();
     });
          
-         
+*/         
       
 
 router.get('/users', function(req, res) {        
