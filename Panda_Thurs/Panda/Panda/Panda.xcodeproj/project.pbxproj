@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D1F8A8156AB769A6C93D9B0 /* Pods_Panda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6688EC38FEF58572A493CDEE /* Pods_Panda.framework */; };
 		192BBFD2FCDD502D7E159B87 /* Pods_PandaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94730C007A08755F26167F33 /* Pods_PandaUITests.framework */; };
+		2842240D1E6940D900BF2A33 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2842240C1E6940D900BF2A33 /* CreateAccountViewController.swift */; };
 		3875BAA51E6921AC003ED320 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3875BAA41E6921AC003ED320 /* Business.swift */; };
 		3875BAA91E6922E6003ED320 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3875BAA81E6922E6003ED320 /* PlanViewController.swift */; };
 		5799F746CD5EE7A7636E8CB9 /* Pods_PandaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6904C858F20F62B4F10213 /* Pods_PandaTests.framework */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		02D331AE99A1165C903AE491 /* Pods-PandaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PandaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PandaTests/Pods-PandaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		216C1759F19AB2818B30210F /* Pods-PandaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PandaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PandaTests/Pods-PandaTests.release.xcconfig"; sourceTree = "<group>"; };
+		2842240C1E6940D900BF2A33 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		3875BAA41E6921AC003ED320 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		3875BAA81E6922E6003ED320 /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		3E6904C858F20F62B4F10213 /* Pods_PandaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PandaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +162,7 @@
 				A220D6B31E68F7E300345B92 /* LoginViewController.swift */,
 				A220D6B51E68F7E300345B92 /* Assets.xcassets */,
 				A220D6B71E68F7E300345B92 /* Main.storyboard */,
+				2842240C1E6940D900BF2A33 /* CreateAccountViewController.swift */,
 				A220D7001E68FCFF00345B92 /* User.swift */,
 				A220D6BA1E68F7E300345B92 /* Info.plist */,
 				3875BAA41E6921AC003ED320 /* Business.swift */,
@@ -513,6 +516,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2842240D1E6940D900BF2A33 /* CreateAccountViewController.swift in Sources */,
 				A220D6B41E68F7E300345B92 /* LoginViewController.swift in Sources */,
 				3875BAA91E6922E6003ED320 /* PlanViewController.swift in Sources */,
 				3875BAA51E6921AC003ED320 /* Business.swift in Sources */,
