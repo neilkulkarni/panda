@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		286295621E68E07000568C6B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286295611E68E07000568C6B /* CreateAccountViewController.swift */; };
 		A2B947C71E67C59C00157BAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B947C61E67C59C00157BAB /* AppDelegate.swift */; };
 		A2B947C91E67C59C00157BAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B947C81E67C59C00157BAB /* ViewController.swift */; };
 		A2B947CB1E67C59C00157BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2B947CA1E67C59C00157BAB /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		286295611E68E07000568C6B /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		A2B947C31E67C59C00157BAB /* Panda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Panda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B947C61E67C59C00157BAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2B947C81E67C59C00157BAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				A2B947CA1E67C59C00157BAB /* Assets.xcassets */,
 				A2B947CC1E67C59C00157BAB /* Main.storyboard */,
 				A2B947CF1E67C59C00157BAB /* Info.plist */,
+				286295611E68E07000568C6B /* CreateAccountViewController.swift */,
 			);
 			path = Panda;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				286295621E68E07000568C6B /* CreateAccountViewController.swift in Sources */,
 				A2B947C91E67C59C00157BAB /* ViewController.swift in Sources */,
 				A2B947C71E67C59C00157BAB /* AppDelegate.swift in Sources */,
 			);
