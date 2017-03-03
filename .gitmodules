@@ -1,3 +1,9 @@
 [submodule "panda/CryptoSwift"]
 	path = panda/CryptoSwift
 	url = https://github.com/krzyzanowskim/CryptoSwift.git
+[submodule "Panda_Thurs/CryptoSwift"]
+	path = Panda_Thurs/CryptoSwift
+	url = https://github.com/krzyzanowskim/CryptoSwift.git
+[submodule "Panda_Thurs/panda/CryptoSwift"]
+	path = Panda_Thurs/panda/CryptoSwift
+	url = https://github.com/krzyzanowskim/CryptoSwift.git

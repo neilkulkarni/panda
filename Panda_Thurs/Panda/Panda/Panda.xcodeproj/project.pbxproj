@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A220D6B21E68F7E300345B92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A220D6B11E68F7E300345B92 /* AppDelegate.swift */; };
+		A220D6B41E68F7E300345B92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A220D6B31E68F7E300345B92 /* ViewController.swift */; };
+		A220D6B61E68F7E300345B92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A220D6B51E68F7E300345B92 /* Assets.xcassets */; };
+		A220D6B91E68F7E300345B92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A220D6B71E68F7E300345B92 /* Main.storyboard */; };
+		A220D6C41E68F7E300345B92 /* PandaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A220D6C31E68F7E300345B92 /* PandaTests.swift */; };
+		A220D6CF1E68F7E300345B92 /* PandaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A220D6CE1E68F7E300345B92 /* PandaUITests.swift */; };
+		A220D6FD1E68FA4400345B92 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A220D6F81E68FA3500345B92 /* CryptoSwift.framework */; };
+		A220D6FF1E68FB1500345B92 /* pandaicon2.png in Resources */ = {isa = PBXBuildFile; fileRef = A220D6FE1E68FB1500345B92 /* pandaicon2.png */; };
+		A220D7011E68FCFF00345B92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A220D7001E68FCFF00345B92 /* User.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A220D6C01E68F7E300345B92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A220D6A61E68F7E300345B92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A220D6AD1E68F7E300345B92;
+			remoteInfo = Panda;
+		};
+		A220D6CB1E68F7E300345B92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A220D6A61E68F7E300345B92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A220D6AD1E68F7E300345B92;
+			remoteInfo = Panda;
+		};
+		A220D6F71E68FA3500345B92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A220D6DC1E68F80000345B92 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 754BE45519693E190098E6F3;
+			remoteInfo = CryptoSwift;
+		};
+		A220D6F91E68FA3500345B92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A220D6DC1E68F80000345B92 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 754BE46019693E190098E6F3;
+			remoteInfo = Tests;
+		};
+		A220D6FB1E68FA3F00345B92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A220D6DC1E68F80000345B92 /* CryptoSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 754BE45419693E190098E6F3;
+			remoteInfo = CryptoSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A220D6AE1E68F7E300345B92 /* Panda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Panda.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A220D6B11E68F7E300345B92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A220D6B31E68F7E300345B92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A220D6B51E68F7E300345B92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A220D6B81E68F7E300345B92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A220D6BA1E68F7E300345B92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A220D6BF1E68F7E300345B92 /* PandaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PandaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A220D6C31E68F7E300345B92 /* PandaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaTests.swift; sourceTree = "<group>"; };
+		A220D6C51E68F7E300345B92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A220D6CA1E68F7E300345B92 /* PandaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PandaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A220D6CE1E68F7E300345B92 /* PandaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaUITests.swift; sourceTree = "<group>"; };
+		A220D6D01E68F7E300345B92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A220D6DC1E68F80000345B92 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = ../../CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
+		A220D6FE1E68FB1500345B92 /* pandaicon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pandaicon2.png; sourceTree = "<group>"; };
+		A220D7001E68FCFF00345B92 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A220D6AB1E68F7E300345B92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A220D6FD1E68FA4400345B92 /* CryptoSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A220D6BC1E68F7E300345B92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A220D6C71E68F7E300345B92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A220D6A51E68F7E300345B92 = {
+			isa = PBXGroup;
+			children = (
+				A220D6B01E68F7E300345B92 /* Panda */,
+				A220D6C21E68F7E300345B92 /* PandaTests */,
+				A220D6CD1E68F7E300345B92 /* PandaUITests */,
+				A220D6AF1E68F7E300345B92 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A220D6AF1E68F7E300345B92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A220D6AE1E68F7E300345B92 /* Panda.app */,
+				A220D6BF1E68F7E300345B92 /* PandaTests.xctest */,
+				A220D6CA1E68F7E300345B92 /* PandaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A220D6B01E68F7E300345B92 /* Panda */ = {
+			isa = PBXGroup;
+			children = (
+				A220D6FE1E68FB1500345B92 /* pandaicon2.png */,
+				A220D6B11E68F7E300345B92 /* AppDelegate.swift */,
+				A220D6DC1E68F80000345B92 /* CryptoSwift.xcodeproj */,
+				A220D6B31E68F7E300345B92 /* ViewController.swift */,
+				A220D6B51E68F7E300345B92 /* Assets.xcassets */,
+				A220D6B71E68F7E300345B92 /* Main.storyboard */,
+				A220D7001E68FCFF00345B92 /* User.swift */,
+				A220D6BA1E68F7E300345B92 /* Info.plist */,
+			);
+			path = Panda;
+			sourceTree = "<group>";
+		};
+		A220D6C21E68F7E300345B92 /* PandaTests */ = {
+			isa = PBXGroup;
+			children = (
+				A220D6C31E68F7E300345B92 /* PandaTests.swift */,
+				A220D6C51E68F7E300345B92 /* Info.plist */,
+			);
+			path = PandaTests;
+			sourceTree = "<group>";
+		};
+		A220D6CD1E68F7E300345B92 /* PandaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A220D6CE1E68F7E300345B92 /* PandaUITests.swift */,
+				A220D6D01E68F7E300345B92 /* Info.plist */,
+			);
+			path = PandaUITests;
+			sourceTree = "<group>";
+		};
+		A220D6F31E68FA3500345B92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A220D6F81E68FA3500345B92 /* CryptoSwift.framework */,
+				A220D6FA1E68FA3500345B92 /* Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A220D6AD1E68F7E300345B92 /* Panda */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A220D6D31E68F7E300345B92 /* Build configuration list for PBXNativeTarget "Panda" */;
+			buildPhases = (
+				A220D6AA1E68F7E300345B92 /* Sources */,
+				A220D6AB1E68F7E300345B92 /* Frameworks */,
+				A220D6AC1E68F7E300345B92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A220D6FC1E68FA3F00345B92 /* PBXTargetDependency */,
+			);
+			name = Panda;
+			productName = Panda;
+			productReference = A220D6AE1E68F7E300345B92 /* Panda.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A220D6BE1E68F7E300345B92 /* PandaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A220D6D61E68F7E300345B92 /* Build configuration list for PBXNativeTarget "PandaTests" */;
+			buildPhases = (
+				A220D6BB1E68F7E300345B92 /* Sources */,
+				A220D6BC1E68F7E300345B92 /* Frameworks */,
+				A220D6BD1E68F7E300345B92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A220D6C11E68F7E300345B92 /* PBXTargetDependency */,
+			);
+			name = PandaTests;
+			productName = PandaTests;
+			productReference = A220D6BF1E68F7E300345B92 /* PandaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A220D6C91E68F7E300345B92 /* PandaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A220D6D91E68F7E300345B92 /* Build configuration list for PBXNativeTarget "PandaUITests" */;
+			buildPhases = (
+				A220D6C61E68F7E300345B92 /* Sources */,
+				A220D6C71E68F7E300345B92 /* Frameworks */,
+				A220D6C81E68F7E300345B92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A220D6CC1E68F7E300345B92 /* PBXTargetDependency */,
+			);
+			name = PandaUITests;
+			productName = PandaUITests;
+			productReference = A220D6CA1E68F7E300345B92 /* PandaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A220D6A61E68F7E300345B92 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Panda;
+				TargetAttributes = {
+					A220D6AD1E68F7E300345B92 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					A220D6BE1E68F7E300345B92 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A220D6AD1E68F7E300345B92;
+					};
+					A220D6C91E68F7E300345B92 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A220D6AD1E68F7E300345B92;
+					};
+				};
+			};
+			buildConfigurationList = A220D6A91E68F7E300345B92 /* Build configuration list for PBXProject "Panda" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A220D6A51E68F7E300345B92;
+			productRefGroup = A220D6AF1E68F7E300345B92 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A220D6F31E68FA3500345B92 /* Products */;
+					ProjectRef = A220D6DC1E68F80000345B92 /* CryptoSwift.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				A220D6AD1E68F7E300345B92 /* Panda */,
+				A220D6BE1E68F7E300345B92 /* PandaTests */,
+				A220D6C91E68F7E300345B92 /* PandaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A220D6F81E68FA3500345B92 /* CryptoSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CryptoSwift.framework;
+			remoteRef = A220D6F71E68FA3500345B92 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A220D6FA1E68FA3500345B92 /* Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Tests.xctest;
+			remoteRef = A220D6F91E68FA3500345B92 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A220D6AC1E68F7E300345B92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A220D6B61E68F7E300345B92 /* Assets.xcassets in Resources */,
+				A220D6B91E68F7E300345B92 /* Main.storyboard in Resources */,
+				A220D6FF1E68FB1500345B92 /* pandaicon2.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A220D6BD1E68F7E300345B92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A220D6C81E68F7E300345B92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A220D6AA1E68F7E300345B92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A220D6B41E68F7E300345B92 /* ViewController.swift in Sources */,
+				A220D6B21E68F7E300345B92 /* AppDelegate.swift in Sources */,
+				A220D7011E68FCFF00345B92 /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A220D6BB1E68F7E300345B92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A220D6C41E68F7E300345B92 /* PandaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A220D6C61E68F7E300345B92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A220D6CF1E68F7E300345B92 /* PandaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A220D6C11E68F7E300345B92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A220D6AD1E68F7E300345B92 /* Panda */;
+			targetProxy = A220D6C01E68F7E300345B92 /* PBXContainerItemProxy */;
+		};
+		A220D6CC1E68F7E300345B92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A220D6AD1E68F7E300345B92 /* Panda */;
+			targetProxy = A220D6CB1E68F7E300345B92 /* PBXContainerItemProxy */;
+		};
+		A220D6FC1E68FA3F00345B92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CryptoSwift;
+			targetProxy = A220D6FB1E68FA3F00345B92 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A220D6B71E68F7E300345B92 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A220D6B81E68F7E300345B92 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A220D6D11E68F7E300345B92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A220D6D21E68F7E300345B92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		A220D6D41E68F7E300345B92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Panda/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.panda.Panda;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A220D6D51E68F7E300345B92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Panda/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.panda.Panda;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		A220D6D71E68F7E300345B92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PandaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.panda.PandaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Panda.app/Contents/MacOS/Panda";
+			};
+			name = Debug;
+		};
+		A220D6D81E68F7E300345B92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PandaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.panda.PandaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Panda.app/Contents/MacOS/Panda";
+			};
+			name = Release;
+		};
+		A220D6DA1E68F7E300345B92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PandaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.panda.PandaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Panda;
+			};
+			name = Debug;
+		};
+		A220D6DB1E68F7E300345B92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PandaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.panda.PandaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Panda;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A220D6A91E68F7E300345B92 /* Build configuration list for PBXProject "Panda" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A220D6D11E68F7E300345B92 /* Debug */,
+				A220D6D21E68F7E300345B92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A220D6D31E68F7E300345B92 /* Build configuration list for PBXNativeTarget "Panda" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A220D6D41E68F7E300345B92 /* Debug */,
+				A220D6D51E68F7E300345B92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A220D6D61E68F7E300345B92 /* Build configuration list for PBXNativeTarget "PandaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A220D6D71E68F7E300345B92 /* Debug */,
+				A220D6D81E68F7E300345B92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A220D6D91E68F7E300345B92 /* Build configuration list for PBXNativeTarget "PandaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A220D6DA1E68F7E300345B92 /* Debug */,
+				A220D6DB1E68F7E300345B92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A220D6A61E68F7E300345B92 /* Project object */;
+}
