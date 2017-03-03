@@ -18,7 +18,7 @@ var sqlFile = fs.readFileSync('schema.sql').toString();
 var conn = mysql.createConnection({ //you need to run a sqlserver with a database called user
     host     : 'localhost',
     user     : 'root',
-    password : '', //use your own password
+    password : 'Richmond5223', //use your own password
     database : 'user'
 });
 
@@ -45,56 +45,68 @@ var router = express.Router();              // get an instance of the express Ro
 
 
 // test route for users (accessed at GET http://localhost:8080/api/users
-router.post("/requestAccount", function (req, res) {
-  /* var body = '';
-    req.on('data', function(chunk) {
-      body += chunk;
+
+router.post("/rq", function (request, res) {
+        var body = '';
+        request.on('data', function (data) {
+            body += data;
+
+            // Too much POST data, kill the connection!
+            // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB
+        });
+
+        request.on('end', function () {
+
+ 
+            var post = qs.unescape(body);
+            var str = '' + post;
+            var res = str.split("\"");                                                                              
+            var user = {
+                        name: (res[3].toLowerCase()), 
+                        email: (res[7].toLowerCase()),
+                        password: res[11]
+                        
+                    };
+                 console.log(user);
+            conn.query('select * from user', function(err, result) {
+            	var error = 0;
+        
+        		for (var i = 0; i < result.length; i++) {
+
+
+            		if(((result[i].email) + "").localeCompare((res[7].toLowerCase())) == 0) {
+            			console.log('Alright found user');
+            	//		res.render('Name or email found');
+            			
+            		error = 1;
+            		break;
+            			
+        			}
+        			  
+                
+                }
+                
+                if(error == 0) {
+
+                conn.query('insert into user set ?', user, function(err, result) {
+                      console.log('Added user');
+                    //  res.render('Added user');
+                  
+            		 
+                    });
+            }
+            });
+     });
+        res.end();
     });
-    req.on('end', function() {
-      var data = qs.parse(body);
-      // now you can access `data.email` and `data.password`
-      res.writeHead(200);
-      res.end(JSON.stringify(data));
-      console.log(data);
-      var name ='';
-      var email = '';
-      var password = '';
-      var loc = 0;
-      console.log(data.name);
-      for(var i = 0; i < data.length; i++) {
+         
+         
+      
 
-      		if(data.substring(i, i+ 1) == '"') {
-      			while(data.charAt == '"') {
-      				i++;
-      				if(loc == 0) {
-      					name += data.charAt(i);
-      				}
-      				if(loc == 1) {
-      					email += data.charAt(i);
-      				}
-      				if(loc == 2) {
-      					password += data.charAt(i);
-      				}
-      				
-      			}
-      			loc++;
-      		}
-      }
-}); */
-    }); 
-
-router.get('/users', function(req, res) {        res.json({ userList });
+router.get('/users', function(req, res) {        
+	res.json({ userList });
 });
 
- var user = {
-                        name: 'bob', 
-                        password: '123',
-                        email: 'd@some.com'
-                    };
-               conn.query('insert into user set ?', user, function(err, result) {
-                        //confirm user;
-                        return;
-                    });
 
 var userList = [];
 conn.query('select * from user', function(err, result) {
@@ -105,43 +117,6 @@ for (var i = 0; i < result.length; i++) {
 });
 
 
-
-
-if(1) { //creating a new account
-    conn.query('select * from user', function(err, result) {
-        if(err) {
-            console.error(err);
-            return;
-        }
-        for (var i = 0; i < result.length; i++) {
-            if(result[i].name.localeCompare('natha') == 0) {
-                if(result[i].password.localeCompare('123') == 0) {
-                	if(err) {
-            			console.error(err);
-            			return;
-        			}
-                   
-                    break;
-                }
-            }
-        }
-    });
-}
-if(1) { //logging
-    conn.query('select * from user', function(err, result) {
-        if(err) {
-            console.error(err);
-            return;
-        }
-        for (var i = 0; i < result.length; i++) {
-            if((result[i].name).localeCompare(('natha').toLowerCase)) {
-                if(result[i].password.localeCompare('123') == 0) {
-                    //confirm that it is a user
-                }
-            }
-        }
-    });
-}
 
 
 // more routes for our API will happen here
