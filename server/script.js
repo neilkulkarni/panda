@@ -7,15 +7,21 @@
 var express    = require('express');        // call express
 var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
+var fs = require("fs");
 
 var mysql = require("mysql");
+var myDBF = 'schema.sql';
+
+var sqlFile = fs.readFileSync('schema.sql').toString();
+
 
 var conn = mysql.createConnection({ //you need to run a sqlserver with a database called user
     host     : 'localhost',
     user     : 'root',
     password : '', //use your own password
-    database : 'user',
+    database : 'user'
 });
+
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -30,24 +36,53 @@ var router = express.Router();              // get an instance of the express Ro
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 router.get('/', function(req, res) {
-    res.json({ message: 'hooray! welcome to our api!' });   
+    res.json({ message: 'hooray! welcome to our api!' });
 });
+
 // manually adding one user to the database  
-/* var user = { 
-	username: 'natha',
-	password: '123'
+if(1) { //creating a new account
+    conn.query('select * from user', function(err, result) {
+        if(err) {
+            console.error(err);
+            return;
+        }
+        for (var i = 0; i < result.length; i++) {
+            if(result[i].username.localeCompare('natha') == 0) {
+                if(result[i].password.localeCompare('123') == 0) {
+                	if(err) {
+            			console.error(err);
+            			return;
+        			}
+                    var user = {
+                        username: '??', //get from frontend
+                        password: '??'
+                    };
+                    conn.query('insert into user set ?', user, function(err, result) {
+                        //confirm user;
+                        return;
+                    });
+                    break;
+                }
+            }
+        }
+    });
+}
+if(1) { //logging
+    conn.query('select * from user', function(err, result) {
+        if(err) {
+            console.error(err);
+            return;
+        }
+        for (var i = 0; i < result.length; i++) {
+            if((result[i].username).localeCompare(('natha').toLowerCase)) {
+                if(result[i].password.localeCompare('123') == 0) {
+                    //confirm that it is a user
+                }
+            }
+        }
+    });
+}
 
-};
-
-var query = conn.query('insert into user set ?', user, function(err, result) {
-	
-	if(err) {
-		console.error(err);
-		return;
-	}
-	console.log(query.sql);
-});
-*/
 
 // more routes for our API will happen here
 
