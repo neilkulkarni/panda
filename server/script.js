@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 
 
 
-var port = process.env.PORT || 8080;        // set our port
+var port = process.env.PORT || 8081;        // set our port
 var qs = require('querystring');
 
 // ROUTES FOR OUR API
@@ -48,13 +48,21 @@ var router = express.Router();              // get an instance of the express Ro
 
 router.post('/createUser', function(request, response){
 	var q = request.body; 
+	console.log(q);
+	var user = {
+		name: q.name, 
+                email: q.email,
+                password: q.password
+	} 
 	conn.query('select * from user', function(err, result) {
     var error = 0;
 	for (var i = 0; i < result.length; i++) {
             		if(((result[i].email) + "").localeCompare(((q.email).toLowerCase())) == 0) {
             			console.log('Alright found user');
             	//		res.render('Name or email found');
-            			
+            		
+			var code = { code: 1};	
+			response.send(code); 
             		error = 1;
             		break;
             			
@@ -63,8 +71,10 @@ router.post('/createUser', function(request, response){
                 
                 if(error == 0) {
 
-                conn.query('insert into user set ?', q, function(err, result) {
+                conn.query('insert into user set ?', user, function(err, result) {
                       console.log('Added user');
+			var code2 = { code: 2};
+			response.send(code2);
                     //  res.render('Added user');
                   
             		 
@@ -72,7 +82,7 @@ router.post('/createUser', function(request, response){
             }
         });
        // your JSON
-  response.send(request.body);    // echo the result back
+  	//response.send('1');    // echo the result back
 });
 
 /*router.post("/rq", function (request, res) {
@@ -140,7 +150,7 @@ router.get('/users', function(req, res) {
 var userList = [];
 conn.query('select * from user', function(err, result) {
 for (var i = 0; i < result.length; i++) {
-        var tempUser = { name: result[i].name , email: result[i].email, password: result[i].password };
+        var tempUser = { id: result[i].id, name: result[i].name , email: result[i].email, password: result[i].password };
         userList[i] = tempUser;
 }
 });

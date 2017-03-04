@@ -161,20 +161,42 @@ class CreateAccountViewController: NSViewController {
         }
         else {
             createAccountButton.isEnabled = true;
+            self.createAccountErrorLabel.isHidden = true;
         }
     }
     
     
     
     @IBAction func createAccount(_ sender: Any) {
-        Alamofire.request("http://localhost:8080/panda/users").responseJSON { response in
+        
+        let parameters: Parameters = [
+            "name": name!,
+            "email": email!,
+            "password": password!.md5()
+        ]
+        
+        Alamofire.request("http://localhost:8081/panda/createUser", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             print(response.request)  // original URL request
             print(response.response) // HTTP URL response
             print(response.data)     // server data
             print(response.result)   // result of response serialization
             
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
+            if response.result.isSuccess {
+                guard let info = response.result.value else {
+                    print("Error")
+                    return
+                }
+                
+                let json = JSON(info)
+                
+                print(json)
+                print(json["code"])
+                
+                if (json["code"] == 1) {
+                    print("Hello from the other side")
+                    self.createAccountButton.isEnabled = false;
+                    self.createAccountErrorLabel.isHidden = false;
+                }
             }
         }
     }

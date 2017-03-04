@@ -9,6 +9,7 @@
 import Cocoa
 
 class CustomSegue: NSStoryboardSegue {
+    
     override func perform() {
         let source = sourceController as! NSViewController
         let destination = destinationController as! NSViewController
@@ -17,4 +18,5 @@ class CustomSegue: NSStoryboardSegue {
         source.removeFromParentViewController()
     }
 
+    
 }

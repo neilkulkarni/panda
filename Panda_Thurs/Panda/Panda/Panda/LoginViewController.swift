@@ -8,12 +8,20 @@
 
 import Cocoa
 import CryptoSwift
+import Alamofire
+import SwiftyJSON
 
 class LoginViewController: NSViewController {
     @IBOutlet weak var enteredEmail: NSTextField!
 
     @IBOutlet weak var errortextfield: NSTextField!
     @IBOutlet weak var enteredPassword: NSSecureTextField!
+    
+    @IBOutlet weak var verifyCheckbox: NSButton!
+    @IBOutlet weak var loginButton: NSButton!
+    @IBOutlet weak var loginErrorLabel: NSTextField!
+    
+    
     var obj = User();
     
     override func viewWillAppear() {
@@ -73,6 +81,66 @@ class LoginViewController: NSViewController {
         
         return true
         
+    }
+
+    
+    @IBAction func verifyCheckboxSelected(_ sender: Any) {
+        
+        let email = enteredEmail.stringValue
+        let password = enteredPassword.stringValue.md5()
+        
+        var id:Int = -1
+        var emailMatches:Bool = false
+        var passwordMatches:Bool = false
+        
+        Alamofire.request("http://localhost:8081/panda/users").responseJSON { response in
+            if response.result.isSuccess {
+                guard let info = response.result.value else {
+                    print("Error")
+                    return
+                }
+                print(info)
+                let json = JSON(info)
+                
+                print(json["userList"])
+                print(json["userList"][0])
+                print(json["userList"][0]["email"])
+                print(json["userList"].count)
+                
+                for i in 0..<json["userList"].count {
+                    if (email == json["userList"][i]["email"].string) {
+                        id = i
+                        emailMatches = true
+                        break
+                    }
+                }
+                
+                if (emailMatches) {
+                    if (password == json["userList"][id]["password"].string) {
+                        passwordMatches = true;
+                    }
+                }
+                
+                print(password)
+                print(passwordMatches)
+            
+                if (passwordMatches) {
+                    print("verified")
+                    self.loginButton.isEnabled = true;
+                    self.loginErrorLabel.isHidden = true;
+                }
+                else {
+                    print("not verified")
+                    self.verifyCheckbox.state = NSOffState;
+                    self.loginErrorLabel.isHidden = false;
+                }
+            }
+        }
+    }
+    
+    
+    @IBAction func loginButton(_ sender: Any) {
+        performSegue(withIdentifier: "idSegue", sender: self)
     }
 
     @IBAction func createAnAccountButton(_ sender: Any) {

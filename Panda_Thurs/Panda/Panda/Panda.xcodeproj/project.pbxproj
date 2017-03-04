@@ -11,6 +11,9 @@
 		192BBFD2FCDD502D7E159B87 /* Pods_PandaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94730C007A08755F26167F33 /* Pods_PandaUITests.framework */; };
 		2842240D1E6940D900BF2A33 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2842240C1E6940D900BF2A33 /* CreateAccountViewController.swift */; };
 		2861AFBD1E6A06A6002871CD /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861AFBC1E6A06A6002871CD /* CustomSegue.swift */; };
+		2861AFBF1E6A4EA3002871CD /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861AFBE1E6A4EA3002871CD /* HomepageViewController.swift */; };
+		2861AFC11E6A527D002871CD /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861AFC01E6A527D002871CD /* RecordViewController.swift */; };
+		2861AFC31E6A53FC002871CD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861AFC21E6A53FC002871CD /* ProfileViewController.swift */; };
 		3875BAA51E6921AC003ED320 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3875BAA41E6921AC003ED320 /* Business.swift */; };
 		3875BAA91E6922E6003ED320 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3875BAA81E6922E6003ED320 /* PlanViewController.swift */; };
 		5799F746CD5EE7A7636E8CB9 /* Pods_PandaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6904C858F20F62B4F10213 /* Pods_PandaTests.framework */; };
@@ -68,6 +71,9 @@
 		216C1759F19AB2818B30210F /* Pods-PandaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PandaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PandaTests/Pods-PandaTests.release.xcconfig"; sourceTree = "<group>"; };
 		2842240C1E6940D900BF2A33 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		2861AFBC1E6A06A6002871CD /* CustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegue.swift; sourceTree = "<group>"; };
+		2861AFBE1E6A4EA3002871CD /* HomepageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
+		2861AFC01E6A527D002871CD /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		2861AFC21E6A53FC002871CD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3875BAA41E6921AC003ED320 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		3875BAA81E6922E6003ED320 /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		3E6904C858F20F62B4F10213 /* Pods_PandaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PandaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +176,9 @@
 				3875BAA41E6921AC003ED320 /* Business.swift */,
 				3875BAA81E6922E6003ED320 /* PlanViewController.swift */,
 				2861AFBC1E6A06A6002871CD /* CustomSegue.swift */,
+				2861AFBE1E6A4EA3002871CD /* HomepageViewController.swift */,
+				2861AFC01E6A527D002871CD /* RecordViewController.swift */,
+				2861AFC21E6A53FC002871CD /* ProfileViewController.swift */,
 			);
 			path = Panda;
 			sourceTree = "<group>";
@@ -521,8 +530,11 @@
 			files = (
 				2842240D1E6940D900BF2A33 /* CreateAccountViewController.swift in Sources */,
 				A220D6B41E68F7E300345B92 /* LoginViewController.swift in Sources */,
+				2861AFC31E6A53FC002871CD /* ProfileViewController.swift in Sources */,
 				3875BAA91E6922E6003ED320 /* PlanViewController.swift in Sources */,
+				2861AFC11E6A527D002871CD /* RecordViewController.swift in Sources */,
 				3875BAA51E6921AC003ED320 /* Business.swift in Sources */,
+				2861AFBF1E6A4EA3002871CD /* HomepageViewController.swift in Sources */,
 				2861AFBD1E6A06A6002871CD /* CustomSegue.swift in Sources */,
 				A220D6B21E68F7E300345B92 /* AppDelegate.swift in Sources */,
 				A220D7011E68FCFF00345B92 /* User.swift in Sources */,
