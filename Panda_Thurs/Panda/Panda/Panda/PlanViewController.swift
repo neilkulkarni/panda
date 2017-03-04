@@ -112,20 +112,21 @@ class PlanViewController: NSViewController {
                 
                 var businessList: [Business] = []
                 
-                for i in 0...9 {
+                for i in 0...2 {
+                    //self.convertToBusiness(businessObject: businesses[i])
                     businessList.append(self.convertToBusiness(businessObject: businesses[i]))
                     
                 }
                 self.outputLabel.stringValue = self.toString(item: businessList[0])
                 self.outputLabel2.stringValue = self.toString(item: businessList[1])
                 self.outputLabel3.stringValue = self.toString(item: businessList[2])
-                self.outputLabel4.stringValue = self.toString(item: businessList[3])
-                self.outputLabel5.stringValue = self.toString(item: businessList[4])
-                self.outputLabel6.stringValue = self.toString(item: businessList[5])
-                self.outputLabel7.stringValue = self.toString(item: businessList[6])
-                self.outputLabel8.stringValue = self.toString(item: businessList[7])
-                self.outputLabel9.stringValue = self.toString(item: businessList[8])
-                self.outputLabel10.stringValue = self.toString(item: businessList[9])
+//                self.outputLabel4.stringValue = self.toString(item: businessList[3])
+//                self.outputLabel5.stringValue = self.toString(item: businessList[4])
+//                self.outputLabel6.stringValue = self.toString(item: businessList[5])
+//                self.outputLabel7.stringValue = self.toString(item: businessList[6])
+//                self.outputLabel8.stringValue = self.toString(item: businessList[7])
+//                self.outputLabel9.stringValue = self.toString(item: businessList[8])
+//                self.outputLabel10.stringValue = self.toString(item: businessList[9])
                  //               let business = businesses[0]
                 //                let text = business["name"].stringValue
                 //                print("The first business is " + text)
@@ -158,16 +159,22 @@ class PlanViewController: NSViewController {
         
     }
     
-    @IBOutlet weak var searchButton: NSButton!
+   
     
     override func viewWillAppear() {
         self.view.wantsLayer = true;
-        self.view.layer?.backgroundColor = CGColor(red: 220/255.0, green: 255/255.0, blue: 255/255.0, alpha: 0.5)
+        self.view.layer?.backgroundColor = CGColor(red: 220/255.0, green: 220/255.0, blue: 255/255.0, alpha: 0.5)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+    }
+    @IBAction func homeButton(_ sender: Any) {
+         performSegue(withIdentifier: "idSegue", sender: self)
+    }
+    @IBAction func logoutButton(_ sender: Any) {
+         performSegue(withIdentifier: "idSegue", sender: self)
     }
     
 }
