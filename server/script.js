@@ -18,7 +18,7 @@ var sqlFile = fs.readFileSync('schema.sql').toString();
 var conn = mysql.createConnection({ //you need to run a sqlserver with a database called user
     host     : 'localhost',
     user     : 'root',
-    password : '', //use your own password
+    password : 'password', //use your own password
     database : 'user'
 });
 
@@ -143,10 +143,17 @@ router.post('/createUser', function(request, response){
       
 
 router.get('/users', function(req, res) {        
+	var userList = [];
+conn.query('select * from user', function(err, result) {
+for (var i = 0; i < result.length; i++) {
+        var tempUser = { id: result[i].id, name: result[i].name , email: result[i].email, password: result[i].password };
+        userList[i] = tempUser;
+}
+});
 	res.json({ userList });
 });
 
-
+/*
 var userList = [];
 conn.query('select * from user', function(err, result) {
 for (var i = 0; i < result.length; i++) {
@@ -154,7 +161,7 @@ for (var i = 0; i < result.length; i++) {
         userList[i] = tempUser;
 }
 });
-
+*/
 
 
 
