@@ -18,7 +18,7 @@ var sqlFile = fs.readFileSync('schema.sql').toString();
 var conn = mysql.createConnection({ //you need to run a sqlserver with a database called user
     host     : 'localhost',
     user     : 'root',
-    password : 'aartime123', //use your own password
+    password : '', //use your own password
     database : 'user'
 });
 
