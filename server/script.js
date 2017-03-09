@@ -18,7 +18,7 @@ var sqlFile = fs.readFileSync('schema.sql').toString();
 var conn = mysql.createConnection({ //you need to run a sqlserver with a database called user
     host     : 'localhost',
     user     : 'root',
-    password : 'password', //use your own password
+    password : '', //use your own password
     database : 'user'
 });
 
@@ -43,8 +43,18 @@ var router = express.Router();              // get an instance of the express Ro
 
 // manually adding one user to the database  
 
-
-// test route for users (accessed at GET http://localhost:8080/api/users
+router.get('/users', function(req, res) {        
+	var userList = [];
+conn.query('select * from user', function(err, result) {
+for (var i = 0; i < result.length; i++) {
+	
+        var tempUser = { id: result[i].id, name: result[i].name , email: result[i].email, password: result[i].password };
+        userList[i] = tempUser;
+}
+	res.json({ userList });
+});
+	
+});
 
 router.post('/createUser', function(request, response){
 	var q = request.body; 
@@ -58,7 +68,7 @@ router.post('/createUser', function(request, response){
     var error = 0;
 	for (var i = 0; i < result.length; i++) {
             		if(((result[i].email) + "").localeCompare(((q.email).toLowerCase())) == 0) {
-            			console.log('Alright found user');
+            			console.log('User already exists');
             	//		res.render('Name or email found');
             		
 			var code = { code: 1};	
@@ -89,13 +99,10 @@ router.post('/createUser', function(request, response){
         var body = '';
         request.on('data', function (data) {
             body += data;
-
             // Too much POST data, kill the connection!
             // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB
         });
-
         request.on('end', function () {
-
  
             var post = qs.unescape(body);
             var str = '' + post;
@@ -111,8 +118,6 @@ router.post('/createUser', function(request, response){
             	var error = 0;
         
         		for (var i = 0; i < result.length; i++) {
-
-
             		if(((result[i].email) + "").localeCompare((res[7].toLowerCase())) == 0) {
             			console.log('Alright found user');
             	//		res.render('Name or email found');
@@ -126,7 +131,6 @@ router.post('/createUser', function(request, response){
                 }
                 
                 if(error == 0) {
-
                 conn.query('insert into user set ?', user, function(err, result) {
                       console.log('Added user');
                     //  res.render('Added user');
@@ -140,18 +144,8 @@ router.post('/createUser', function(request, response){
     });
          
 */         
-      
 
-router.get('/users', function(req, res) {        
-	var userList = [];
-conn.query('select * from user', function(err, result) {
-for (var i = 0; i < result.length; i++) {
-        var tempUser = { id: result[i].id, name: result[i].name , email: result[i].email, password: result[i].password };
-        userList[i] = tempUser;
-}
-});
-	res.json({ userList });
-});
+
 
 /*
 var userList = [];
@@ -160,8 +154,8 @@ for (var i = 0; i < result.length; i++) {
         var tempUser = { id: result[i].id, name: result[i].name , email: result[i].email, password: result[i].password };
         userList[i] = tempUser;
 }
-});
-*/
+}); */
+
 
 
 
