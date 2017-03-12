@@ -26,6 +26,8 @@
 		A220D6FD1E68FA4400345B92 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A220D6F81E68FA3500345B92 /* CryptoSwift.framework */; };
 		A220D6FF1E68FB1500345B92 /* pandaicon2.png in Resources */ = {isa = PBXBuildFile; fileRef = A220D6FE1E68FB1500345B92 /* pandaicon2.png */; };
 		A220D7011E68FCFF00345B92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A220D7001E68FCFF00345B92 /* User.swift */; };
+		A260349C1E7617BC0072178A /* roadwebanner.png in Resources */ = {isa = PBXBuildFile; fileRef = A260349B1E7617BC0072178A /* roadwebanner.png */; };
+		A260349E1E7618060072178A /* pawbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = A260349D1E7618060072178A /* pawbutton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		A220D6DC1E68F80000345B92 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = ../../CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
 		A220D6FE1E68FB1500345B92 /* pandaicon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pandaicon2.png; sourceTree = "<group>"; };
 		A220D7001E68FCFF00345B92 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A260349B1E7617BC0072178A /* roadwebanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roadwebanner.png; sourceTree = "<group>"; };
+		A260349D1E7618060072178A /* pawbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pawbutton.png; sourceTree = "<group>"; };
 		C0ECF7F9A53FFF550A60B12B /* Pods-PandaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PandaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PandaUITests/Pods-PandaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,6 +183,8 @@
 				2861AFBE1E6A4EA3002871CD /* HomepageViewController.swift */,
 				2861AFC01E6A527D002871CD /* RecordViewController.swift */,
 				2861AFC21E6A53FC002871CD /* ProfileViewController.swift */,
+				A260349B1E7617BC0072178A /* roadwebanner.png */,
+				A260349D1E7618060072178A /* pawbutton.png */,
 			);
 			path = Panda;
 			sourceTree = "<group>";
@@ -366,6 +372,8 @@
 				A220D6B61E68F7E300345B92 /* Assets.xcassets in Resources */,
 				A220D6B91E68F7E300345B92 /* Main.storyboard in Resources */,
 				A220D6FF1E68FB1500345B92 /* pandaicon2.png in Resources */,
+				A260349C1E7617BC0072178A /* roadwebanner.png in Resources */,
+				A260349E1E7618060072178A /* pawbutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
