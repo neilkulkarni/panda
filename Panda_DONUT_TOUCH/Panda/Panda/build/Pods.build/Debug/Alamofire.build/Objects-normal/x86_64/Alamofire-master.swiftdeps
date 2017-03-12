@@ -1,0 +1,21 @@
+version: "Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)"
+options: "36574ff805fa89ea1963de55347d054e"
+build_time: [541836090, 994692000]
+inputs:
+  "/Users/Neil/Dropbox/GitHub/panda/Panda_Thurs/Panda/Panda/Pods/Alamofire/Source/AFError.swift": [541835773, 0]
+  "/Users/Neil/Dropbox/GitHub/panda/Panda_Thurs/Panda/Panda/Pods/Alamofire/Source/Alamofire.swift": [541835773, 0]
+  "/Users/Neil/Dropbox/GitHub/panda/Panda_Thurs/Panda/Panda/Pods/Alamofire/Source/DispatchQueue+Alamofire.swift": [541835773, 0]
+  "/Users/Neil/Dropbox/GitHub/panda/Panda_Thurs/Panda/Panda/Pods/Alamofire/Source/MultipartFormData.swift": [541835773, 0]
+  "/Users/Neil/Dropbox/GitHub/panda/Panda_Thurs/Panda/Panda/Pods/Alamofire/Source/NetworkReachabilityManager.swift": [541835773, 0]
+  "/Users/Neil/Dropbox/GitHub/panda/Panda_Thurs/Panda/Panda/Pods/Alamofire/Source/Notifications.swift": [541835773, 0]
+  "/Users/Neil/Dropbox/GitHub/panda/Panda_Thurs/Panda/Panda/Pods/Alamofire/Source/ParameterEncoding.swift": [541835773, 0]
+  "/Users/Neil/Dropbox/GitHub/panda/Panda_Thurs/Panda/Panda/Pods/Alamofire/Source/Request.swift": [541835773, 0]
+  "/Users/Neil/Dropbox/GitHub/panda/Panda_Thurs/Panda/Panda/Pods/Alamofire/Source/Response.swift": [541835773, 0]
+  "/Users/Neil/Dropbox/GitHub/panda/Panda_Thurs/Panda/Panda/Pods/Alamofire/Source/ResponseSerialization.swift": [541835773, 0]
+  "/Users/Neil/Dropbox/GitHub/panda/Panda_Thurs/Panda/Panda/Pods/Alamofire/Source/Result.swift": [541835773, 0]
+  "/Users/Neil/Dropbox/GitHub/panda/Panda_Thurs/Panda/Panda/Pods/Alamofire/Source/ServerTrustPolicy.swift": [541835773, 0]
+  "/Users/Neil/Dropbox/GitHub/panda/Panda_Thurs/Panda/Panda/Pods/Alamofire/Source/SessionDelegate.swift": [541835773, 0]
+  "/Users/Neil/Dropbox/GitHub/panda/Panda_Thurs/Panda/Panda/Pods/Alamofire/Source/SessionManager.swift": [541835773, 0]
+  "/Users/Neil/Dropbox/GitHub/panda/Panda_Thurs/Panda/Panda/Pods/Alamofire/Source/TaskDelegate.swift": [541835773, 0]
+  "/Users/Neil/Dropbox/GitHub/panda/Panda_Thurs/Panda/Panda/Pods/Alamofire/Source/Timeline.swift": [541835773, 0]
+  "/Users/Neil/Dropbox/GitHub/panda/Panda_Thurs/Panda/Panda/Pods/Alamofire/Source/Validation.swift": [541835774, 0]

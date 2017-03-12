@@ -1,0 +1,6 @@
+framework module Pods_PandaUITests {
+  umbrella header "Pods-PandaUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

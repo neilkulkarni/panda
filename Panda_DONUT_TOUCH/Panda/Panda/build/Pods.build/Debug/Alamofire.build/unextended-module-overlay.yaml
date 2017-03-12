@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': '/Users/Neil/Dropbox/GitHub/panda/Panda_Thurs/Panda/Panda/build/Debug/Alamofire/Alamofire.framework/Modules'
+    'contents': [{
+      'type': 'file',
+      'name': 'module.modulemap',
+      'external-contents': '/Users/Neil/Dropbox/GitHub/panda/Panda_Thurs/Panda/Panda/build/Pods.build/Debug/Alamofire.build/unextended-module.modulemap',
+    }]
+  }]
+}
