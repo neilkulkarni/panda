@@ -8,13 +8,20 @@
 
 import Cocoa
 
-class ProfileViewController: NSViewController {
+
+class ProfileViewController: NSViewController   {
     override func viewWillAppear() {
         self.view.wantsLayer = true;
         self.view.layer?.backgroundColor = CGColor(red: 255/255.0, green: 220/255.0, blue: 200/255.0, alpha: 0.5)
     }
     
+    @IBOutlet weak var profileImageView: NSImageView!
     
+    @IBAction func uploadImageButton(_ sender: Any) {
+        let image = profileImageView;
+     
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
