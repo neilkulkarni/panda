@@ -30,6 +30,7 @@ class CreateAccountViewController: NSViewController {
     @IBOutlet weak var termsCheckbox: NSButton!
     @IBOutlet weak var termsErrorLabel: NSTextField!
     
+    @IBOutlet weak var profileBioField: NSTextField!
     
     @IBOutlet weak var createAccountButton: NSButton!
     @IBOutlet weak var createAccountErrorLabel: NSTextField!
@@ -52,6 +53,7 @@ class CreateAccountViewController: NSViewController {
     
     var password:String?
     var confirmPassword:String?
+    var bio:String?
     
     var nameErrorFlag:Bool = true;
     var emailErrorFlag:Bool = true;
@@ -169,10 +171,12 @@ class CreateAccountViewController: NSViewController {
     
     @IBAction func createAccount(_ sender: Any) {
         
+        bio = (text: profileBioField.stringValue);
         let parameters: Parameters = [
             "name": name!,
             "email": email!,
-            "password": password!.md5()
+            "password": password!.md5(),
+            "bio": bio!
         ]
         
         Alamofire.request("http://localhost:8081/panda/createUser", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in

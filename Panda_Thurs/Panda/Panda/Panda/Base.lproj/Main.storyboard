@@ -1174,7 +1174,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4R-cQ-UaN">
-                                <rect key="frame" x="374" y="463" width="52" height="22"/>
+                                <rect key="frame" x="374" y="487" width="52" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name" id="hsn-vH-RnW">
                                     <font key="font" metaFont="system" size="18"/>
@@ -1183,7 +1183,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbe-TJ-3bv">
-                                <rect key="frame" x="376" y="382" width="48" height="22"/>
+                                <rect key="frame" x="376" y="420" width="48" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Email" id="1Iu-jp-aBN">
                                     <font key="font" metaFont="system" size="18"/>
@@ -1192,7 +1192,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06j-kd-d4z">
-                                <rect key="frame" x="359" y="298" width="82" height="22"/>
+                                <rect key="frame" x="359" y="352" width="82" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Password" id="60w-pR-cpK">
                                     <font key="font" metaFont="system" size="18"/>
@@ -1201,7 +1201,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXh-vD-hVD">
-                                <rect key="frame" x="324" y="209" width="152" height="22"/>
+                                <rect key="frame" x="324" y="277" width="152" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Confirm Password" id="32f-pj-s8d">
                                     <font key="font" metaFont="system" size="18"/>
@@ -1210,7 +1210,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNl-vV-w8M">
-                                <rect key="frame" x="301" y="433" width="198" height="22"/>
+                                <rect key="frame" x="301" y="457" width="198" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Name" drawsBackground="YES" id="XbB-bb-Oza">
                                     <font key="font" metaFont="system"/>
@@ -1222,7 +1222,7 @@
                                 </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsP-fW-d7D">
-                                <rect key="frame" x="301" y="352" width="198" height="22"/>
+                                <rect key="frame" x="301" y="390" width="198" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="example@domain.com" drawsBackground="YES" id="8zE-AQ-tFn">
                                     <font key="font" metaFont="system"/>
@@ -1234,7 +1234,7 @@
                                 </connections>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sor-aJ-OTT">
-                                <rect key="frame" x="324" y="88" width="153" height="32"/>
+                                <rect key="frame" x="324" y="79" width="153" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Create an Account" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7KZ-TT-XDr">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1266,7 +1266,7 @@
                                 </connections>
                             </button>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fb0-0F-sh6">
-                                <rect key="frame" x="531" y="435" width="232" height="17"/>
+                                <rect key="frame" x="531" y="459" width="232" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please enter a valid name" id="tpD-7S-dDI">
                                     <font key="font" metaFont="system"/>
@@ -1275,7 +1275,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9c-lF-ObJ">
-                                <rect key="frame" x="531" y="354" width="232" height="17"/>
+                                <rect key="frame" x="531" y="392" width="232" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please enter a valid email" id="gE4-3L-X8L">
                                     <font key="font" metaFont="system"/>
@@ -1284,7 +1284,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aed-Eb-pWa">
-                                <rect key="frame" x="531" y="270" width="232" height="17"/>
+                                <rect key="frame" x="531" y="324" width="232" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please enter a valid password" id="fys-NX-lyD">
                                     <font key="font" metaFont="system"/>
@@ -1293,7 +1293,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIa-Zq-mId">
-                                <rect key="frame" x="531" y="245" width="232" height="17"/>
+                                <rect key="frame" x="531" y="299" width="232" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="– 8-20 characters" id="fyy-Zo-w3E">
                                     <font key="font" metaFont="system"/>
@@ -1302,7 +1302,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHI-ab-w08">
-                                <rect key="frame" x="531" y="220" width="232" height="17"/>
+                                <rect key="frame" x="531" y="274" width="232" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="– include only letters and numbers" id="UbT-QJ-Vux">
                                     <font key="font" metaFont="system"/>
@@ -1311,7 +1311,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRk-eM-xrI">
-                                <rect key="frame" x="531" y="181" width="232" height="17"/>
+                                <rect key="frame" x="531" y="249" width="232" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Passwords do not match" id="tss-EG-b5i">
                                     <font key="font" metaFont="system"/>
@@ -1320,7 +1320,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8x-Lw-cCr">
-                                <rect key="frame" x="531" y="134" width="232" height="17"/>
+                                <rect key="frame" x="531" y="125" width="232" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please agree to the Terms of Use" id="FTn-zI-8T3">
                                     <font key="font" metaFont="system"/>
@@ -1329,7 +1329,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvf-US-nNp">
-                                <rect key="frame" x="531" y="97" width="254" height="17"/>
+                                <rect key="frame" x="531" y="89" width="254" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="You're already a user! Please login friend." id="3NB-Tf-yYd">
                                     <font key="font" metaFont="system"/>
@@ -1338,7 +1338,7 @@
                                 </textFieldCell>
                             </textField>
                             <secureTextField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOM-Wi-Z3R">
-                                <rect key="frame" x="301" y="268" width="198" height="22"/>
+                                <rect key="frame" x="301" y="322" width="198" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" placeholderString="Password" drawsBackground="YES" usesSingleLineMode="YES" id="JNT-CO-Dls">
                                     <font key="font" metaFont="system"/>
@@ -1353,7 +1353,7 @@
                                 </connections>
                             </secureTextField>
                             <secureTextField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYw-nV-u7c">
-                                <rect key="frame" x="301" y="179" width="198" height="22"/>
+                                <rect key="frame" x="301" y="247" width="198" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" placeholderString="Confirm Password" drawsBackground="YES" usesSingleLineMode="YES" id="2ad-t5-g8B">
                                     <font key="font" metaFont="system"/>
@@ -1368,7 +1368,7 @@
                                 </connections>
                             </secureTextField>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cB7-Iu-s4P">
-                                <rect key="frame" x="299" y="134" width="202" height="18"/>
+                                <rect key="frame" x="299" y="125" width="202" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="I agree to the Terms of Use" bezelStyle="regularSquare" imagePosition="left" alignment="center" inset="2" id="fZq-LH-iEN">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -1378,6 +1378,33 @@
                                     <action selector="termsSelected:" target="jTC-1C-agO" id="6qL-Jw-OUA"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AZ-ux-y9b">
+                                <rect key="frame" x="357" y="211" width="86" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Profile Bio" id="xjD-xo-386">
+                                    <font key="font" metaFont="system" size="18"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYL-9F-8Cb" userLabel="Profile Bio Field">
+                                <rect key="frame" x="301" y="149" width="198" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="(Optional)" drawsBackground="YES" id="QCc-Mw-y8Q">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8r-qc-uJl" userLabel="Profile Bio Field">
+                                <rect key="frame" x="301" y="149" width="198" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="(Optional)" drawsBackground="YES" id="FDw-t0-Lsf">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
@@ -1393,6 +1420,7 @@
                         <outlet property="passwordErrorLabel2" destination="tIa-Zq-mId" id="HVy-d2-9VB"/>
                         <outlet property="passwordErrorLabel3" destination="gHI-ab-w08" id="v4C-dY-jy9"/>
                         <outlet property="passwordField" destination="rOM-Wi-Z3R" id="ZOi-z0-emo"/>
+                        <outlet property="profileBioField" destination="n8r-qc-uJl" id="KW4-2n-ce8"/>
                         <outlet property="termsCheckbox" destination="cB7-Iu-s4P" id="Ank-lR-5z7"/>
                         <outlet property="termsErrorLabel" destination="e8x-Lw-cCr" id="Wal-wL-adF"/>
                     </connections>
@@ -1406,7 +1434,7 @@
         <image name="pandaicon2" width="1039" height="1259"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Oqs-O0-SkJ"/>
         <segue reference="hwy-4c-1ZJ"/>
-        <segue reference="Kzz-ui-Eye"/>
     </inferredMetricsTieBreakers>
 </document>

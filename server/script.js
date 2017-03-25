@@ -45,14 +45,15 @@ var router = express.Router();              // get an instance of the express Ro
 
 router.get('/users', function(req, res) {        
 	var userList = [];
-conn.query('select * from user', function(err, result) {
-for (var i = 0; i < result.length; i++) {
-	
-        var tempUser = { id: result[i].id, name: result[i].name , email: result[i].email, password: result[i].password };
-        userList[i] = tempUser;
-}
+    conn.query('select * from user', function(err, result) {
+        for (var i = 0; i < result.length; i++) {
+
+            var tempUser = { id: result[i].id, name: result[i].name , email: result[i].email, password: result[i].password, bio: result[i].bio};
+            userList[i] = tempUser;
+        }
+        
 	res.json({ userList });
-});
+    });
 	
 });
 
@@ -62,35 +63,33 @@ router.post('/createUser', function(request, response){
 	var user = {
 		name: q.name, 
                 email: q.email,
-                password: q.password
+                password: q.password,
+                bio: q.bio
 	} 
 	conn.query('select * from user', function(err, result) {
-    var error = 0;
-	for (var i = 0; i < result.length; i++) {
-            		if(((result[i].email) + "").localeCompare(((q.email).toLowerCase())) == 0) {
-            			console.log('User already exists');
+        var error = 0;
+    	for (var i = 0; i < result.length; i++) {
+            if(((result[i].email) + "").localeCompare(((q.email).toLowerCase())) == 0) {
+		    	console.log('User already exists');
             	//		res.render('Name or email found');
             		
-			var code = { code: 1};	
-			response.send(code); 
-            		error = 1;
-            		break;
-            			
-        			}
-                }
-                
-                if(error == 0) {
-
-                conn.query('insert into user set ?', user, function(err, result) {
-                      console.log('Added user');
-			var code2 = { code: 2};
-			response.send(code2);
-                    //  res.render('Added user');
-                  
-            		 
-                    });
+                var code = { code: 1};	
+            	response.send(code); 
+            	error = 1;
+            	break;
             }
-        });
+        }
+                
+        if(error == 0) {
+
+            conn.query('insert into user set ?', user, function(err, result) {
+                console.log('Added user');
+	            var code2 = { code: 2};
+                response.send(code2);
+                    //  res.render('Added user');      
+            });
+        }
+    });
        // your JSON
   	//response.send('1');    // echo the result back
 });
