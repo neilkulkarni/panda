@@ -22,73 +22,147 @@ var conn = mysql.createConnection({ //you need to run a sqlserver with a databas
     database : 'user'
 });
 
-
 // configure app to use bodyParser()
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 8080;        // set our port
+
+
+var port = process.env.PORT || 8081;        // set our port
+var qs = require('querystring');
 
 // ROUTES FOR OUR API
 // =============================================================================
 var router = express.Router();              // get an instance of the express Router
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
-router.get('/', function(req, res) {
+/*router.get('/', function(req, res) {
     res.json({ message: 'hooray! welcome to our api!' });
-});
+});*/
 
 // manually adding one user to the database  
-if(1) { //creating a new account
+
+router.get('/users', function(req, res) {        
+	var userList = [];
     conn.query('select * from user', function(err, result) {
-        if(err) {
-            console.error(err);
-            return;
-        }
         for (var i = 0; i < result.length; i++) {
-            if(result[i].username.localeCompare('natha') == 0) {
-                if(result[i].password.localeCompare('123') == 0) {
-                	if(err) {
-            			console.error(err);
-            			return;
-        			}
-                    var user = {
-                        username: '??', //get from frontend
-                        password: '??'
+
+            var tempUser = { id: result[i].id, name: result[i].name , email: result[i].email, password: result[i].password, bio: result[i].bio};
+            userList[i] = tempUser;
+        }
+        
+	res.json({ userList });
+    });
+	
+});
+
+router.post('/createUser', function(request, response){
+	var q = request.body; 
+	console.log(q);
+	var user = {
+		name: q.name, 
+                email: q.email,
+                password: q.password,
+                bio: q.bio
+	} 
+	conn.query('select * from user', function(err, result) {
+        var error = 0;
+    	for (var i = 0; i < result.length; i++) {
+            if(((result[i].email) + "").localeCompare(((q.email).toLowerCase())) == 0) {
+		    	console.log('User already exists');
+            	//		res.render('Name or email found');
+            		
+                var code = { code: 1};	
+            	response.send(code); 
+            	error = 1;
+            	break;
+            }
+        }
+                
+        if(error == 0) {
+
+            conn.query('insert into user set ?', user, function(err, result) {
+                console.log('Added user');
+	            var code2 = { code: 2};
+                response.send(code2);
+                    //  res.render('Added user');      
+            });
+        }
+    });
+       // your JSON
+  	//response.send('1');    // echo the result back
+});
+
+/*router.post("/rq", function (request, res) {
+        var body = '';
+        request.on('data', function (data) {
+            body += data;
+            // Too much POST data, kill the connection!
+            // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB
+        });
+        request.on('end', function () {
+ 
+            var post = qs.unescape(body);
+            var str = '' + post;
+            var res = str.split("\"");                                                                              
+            var user = {
+                        name: (res[3].toLowerCase()), 
+                        email: (res[7].toLowerCase()),
+                        password: res[11]
+                        
                     };
-                    conn.query('insert into user set ?', user, function(err, result) {
-                        //confirm user;
-                        return;
+                 console.log(user);
+            conn.query('select * from user', function(err, result) {
+            	var error = 0;
+        
+        		for (var i = 0; i < result.length; i++) {
+            		if(((result[i].email) + "").localeCompare((res[7].toLowerCase())) == 0) {
+            			console.log('Alright found user');
+            	//		res.render('Name or email found');
+            			
+            		error = 1;
+            		break;
+            			
+        			}
+        			  
+                
+                }
+                
+                if(error == 0) {
+                conn.query('insert into user set ?', user, function(err, result) {
+                      console.log('Added user');
+                    //  res.render('Added user');
+                  
+            		 
                     });
-                    break;
-                }
             }
-        }
+            });
+     });
+        res.end();
     });
+         
+*/         
+
+
+
+/*
+var userList = [];
+conn.query('select * from user', function(err, result) {
+for (var i = 0; i < result.length; i++) {
+        var tempUser = { id: result[i].id, name: result[i].name , email: result[i].email, password: result[i].password };
+        userList[i] = tempUser;
 }
-if(1) { //logging
-    conn.query('select * from user', function(err, result) {
-        if(err) {
-            console.error(err);
-            return;
-        }
-        for (var i = 0; i < result.length; i++) {
-            if((result[i].username).localeCompare(('natha').toLowerCase)) {
-                if(result[i].password.localeCompare('123') == 0) {
-                    //confirm that it is a user
-                }
-            }
-        }
-    });
-}
+}); */
+
+
 
 
 // more routes for our API will happen here
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
-app.use('/api', router);
+app.use('/panda', router);
 
 // START THE SERVER
 // =============================================================================
