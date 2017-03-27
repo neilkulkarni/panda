@@ -16,10 +16,10 @@ var sqlFile = fs.readFileSync('schema.sql').toString();
 
 
 var conn = mysql.createConnection({ //you need to run a sqlserver with a database called user
-    host     : 'localhost',
-    user     : 'root',
-    password : 'password', //use your own password
-    database : 'user'
+    host     : 'sql9.freemysqlhosting.net',
+    user     : 'sql9165914',
+    password : 'qA5Y91n4CE', //use your own password
+    database : 'sql9165914'
 });
 
 // configure app to use bodyParser()
@@ -36,140 +36,142 @@ var qs = require('querystring');
 // =============================================================================
 var router = express.Router();              // get an instance of the express Router
 
-// test route to make sure everything is working (accessed at GET http://localhost:8080/api)
-/*router.get('/', function(req, res) {
-    res.json({ message: 'hooray! welcome to our api!' });
-});*/
 
-// manually adding one user to the database  
-
-
-// test route for users (accessed at GET http://localhost:8080/api/users
-
-router.post('/createUser', function(request, response){
+// route create a user (accessed at POST http://localhost:8081/users)
+router.post('/user', function(request, response) {
 	var q = request.body; 
-	console.log(q);
 	var user = {
 		name: q.name, 
-                email: q.email,
-                password: q.password
+        email: q.email,
+        password: q.password,
+        bio: q.bio,
+        picture: q.picture
 	} 
-	conn.query('select * from user', function(err, result) {
-    var error = 0;
-	for (var i = 0; i < result.length; i++) {
-            		if(((result[i].email) + "").localeCompare(((q.email).toLowerCase())) == 0) {
-            			console.log('Alright found user');
-            	//		res.render('Name or email found');
-            		
-			var code = { code: 1};	
-			response.send(code); 
-            		error = 1;
-            		break;
-            			
-        			}
-                }
-                
-                if(error == 0) {
+	conn.query('SELECT * FROM user', function(err, result) {
+        var error = 0;
+        for (var i = 0; i < result.length; i++) {
+            if (result[i].email == q.email.toLowerCase()) {
+                console.log('User exists.');
 
-                conn.query('insert into user set ?', user, function(err, result) {
-                      console.log('Added user');
-			var code2 = { code: 2};
-			response.send(code2);
-                    //  res.render('Added user');
-                  
-            		 
-                    });
+                var code = { code: 400 };	
+                response.send(code); 
+
+                error = 1;
+                break;
             }
-        });
-       // your JSON
-  	//response.send('1');    // echo the result back
+        }
+
+        if(error == 0) {
+            conn.query('INSERT INTO user SET ?', user, function(err, result) {
+                console.log('Added user');
+
+                var code = { code: 200 };
+                response.send(code);
+                
+                console.log(user);
+            });
+        }
+    });
 });
 
-/*router.post("/rq", function (request, res) {
-        var body = '';
-        request.on('data', function (data) {
-            body += data;
-
-            // Too much POST data, kill the connection!
-            // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB
-        });
-
-        request.on('end', function () {
-
- 
-            var post = qs.unescape(body);
-            var str = '' + post;
-            var res = str.split("\"");                                                                              
-            var user = {
-                        name: (res[3].toLowerCase()), 
-                        email: (res[7].toLowerCase()),
-                        password: res[11]
-                        
-                    };
-                 console.log(user);
-            conn.query('select * from user', function(err, result) {
-            	var error = 0;
-        
-        		for (var i = 0; i < result.length; i++) {
 
 
-            		if(((result[i].email) + "").localeCompare((res[7].toLowerCase())) == 0) {
-            			console.log('Alright found user');
-            	//		res.render('Name or email found');
-            			
-            		error = 1;
-            		break;
-            			
-        			}
-        			  
+router.put('/user', function(request, response) {
+    var q = request.body;
+    var id = q.id;
+    var bio = q.bio;
+    var picture = q.picture;
+    
+    console.log(q);
+    
+    conn.query('SELECT * FROM user', function(err, result) {
+        var error = 1;
+        for (var i = 0; i < result.length; i++) {
+            if (result[i].id == q.id) {
+                console.log('User exists.');
+
+                conn.query('UPDATE user SET bio=?, picture=? WHERE id=?', [bio, picture, id], function(err, result) {
+                    var code = { code: 200 };	
+                    response.send(code); 
+                });
                 
-                }
-                
-                if(error == 0) {
-
-                conn.query('insert into user set ?', user, function(err, result) {
-                      console.log('Added user');
-                    //  res.render('Added user');
-                  
-            		 
-                    });
+                error = 0;
+                break;
             }
-            });
-     });
-        res.end();
+        }
+        
+        if (error == 1) {    
+                var code = { code: 400 };	
+                response.send(code); 
+        }
     });
-         
-*/         
+});
       
 
-router.get('/users', function(req, res) {        
+// route get all users (accessed at GET http://localhost:8081/users)
+router.get('/users', function(request, response) {        
 	var userList = [];
-conn.query('select * from user', function(err, result) {
-for (var i = 0; i < result.length; i++) {
-        var tempUser = { id: result[i].id, name: result[i].name , email: result[i].email, password: result[i].password };
-        userList[i] = tempUser;
-}
+    conn.query('SELECT * FROM user', function(err, result) {
+        for (var i = 0; i < result.length; i++) {
+            var tempUser = { 
+                id: result[i].id, 
+                name: result[i].name, 
+                email: result[i].email, 
+                bio: result[i].bio,
+                picture: result[i].picture
+            };
+        
+            userList.push(tempUser);
+        }
+        
+        response.json({ userList });
+    });
 });
-	res.json({ userList });
+
+// route get a user (accessed at GET http://localhost:8081/user/{id})
+router.get('/user/:id', function(request, response) {
+    var userID = request.params.id;
+    var user;
+    conn.query('SELECT * FROM user WHERE id=?', [userID], function(err, result) {
+        user = {
+            id: result[0].id, 
+            name: result[0].name, 
+            email: result[0].email, 
+            bio: result[0].bio,
+            picture: result[0].picture
+        };
+        
+        response.json({ user });
+    });
 });
 
-/*
-var userList = [];
-conn.query('select * from user', function(err, result) {
-for (var i = 0; i < result.length; i++) {
-        var tempUser = { id: result[i].id, name: result[i].name , email: result[i].email, password: result[i].password };
-        userList[i] = tempUser;
-}
+router.get('/login', function(request, response) {
+    var email = request.query.email;
+    var password = request.query.password;
+    var user;
+    conn.query('SELECT * FROM user', function(err, result) {
+        for (var i = 0; i < result.length; i++) {
+            if (result[i].email == email && result[i].password == password) {
+                user = { 
+                    id: result[i].id, 
+                    name: result[i].name, 
+                    email: result[i].email, 
+                    password: result[i].password,
+                    bio: result[i].bio,
+                    picture: result[i].picture
+                };
+
+                break;
+            }
+        }
+        
+        response.json({ user });
+    });
 });
-*/
-
-
-
-// more routes for our API will happen here
 
 // REGISTER OUR ROUTES -------------------------------
-// all of our routes will be prefixed with /api
-app.use('/panda', router);
+// all of our routes will be not be prefixed
+app.use('', router);
 
 // START THE SERVER
 // =============================================================================
