@@ -31,6 +31,7 @@ class CreateAccountViewController: NSViewController {
     @IBOutlet weak var termsErrorLabel: NSTextField!
     
     @IBOutlet weak var profileBioField: NSTextField!
+    @IBOutlet weak var profileBioErrorLabel: NSTextField!
     
     @IBOutlet weak var createAccountButton: NSButton!
     @IBOutlet weak var createAccountErrorLabel: NSTextField!
@@ -60,6 +61,7 @@ class CreateAccountViewController: NSViewController {
     var passwordErrorFlag:Bool = true;
     var confirmPasswordErrorFlag:Bool = true;
     var termsErrorFlag:Bool = true;
+    var profileBioErrorFlag:Bool = true;
     
     
     @IBAction func exitName(_ sender: Any) {
@@ -139,6 +141,22 @@ class CreateAccountViewController: NSViewController {
         enableCreateAccountButton()
     }
     
+    @IBAction func exitProfileBio(_ sender: Any) {
+        
+        bio = (text: profileBioField.stringValue);
+        
+        if ((self.bio?.characters.count)! > 160) {
+            profileBioErrorLabel.isHidden = false
+            profileBioErrorFlag = true
+        }
+        else {
+            profileBioErrorLabel.isHidden = true
+            profileBioErrorFlag = false
+        }
+        
+        enableCreateAccountButton()
+    }
+    
     
     func trim(text:String) -> String {
         return text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
@@ -158,7 +176,7 @@ class CreateAccountViewController: NSViewController {
     }
     
     func enableCreateAccountButton() {
-        if (nameErrorFlag || emailErrorFlag || passwordErrorFlag || confirmPasswordErrorFlag || termsErrorFlag) {
+        if (nameErrorFlag || emailErrorFlag || passwordErrorFlag || confirmPasswordErrorFlag || termsErrorFlag || profileBioErrorFlag) {
             createAccountButton.isEnabled = false;
         }
         else {
@@ -171,7 +189,7 @@ class CreateAccountViewController: NSViewController {
     
     @IBAction func createAccount(_ sender: Any) {
         
-        bio = (text: profileBioField.stringValue);
+        //bio = (text: profileBioField.stringValue);
         let parameters: Parameters = [
             "name": name!,
             "email": email!,
