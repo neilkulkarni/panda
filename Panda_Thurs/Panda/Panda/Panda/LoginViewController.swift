@@ -90,19 +90,30 @@ class LoginViewController: NSViewController {
         let password = enteredPassword.stringValue.md5()
         
         var id:Int = -1
-        var emailMatches:Bool = false
+        //var emailMatches:Bool = false
         var passwordMatches:Bool = false
+        var request = "http://localhost:8081/login?email=" + email + "&password=" + password
         
-        Alamofire.request("http://localhost:8081/panda/users").responseJSON { response in
+        Alamofire.request(request).responseJSON { response in
             if response.result.isSuccess {
                 guard let info = response.result.value else {
                     print("Error")
                     return
                 }
                 print(info)
-                let json = JSON(info)
                 
-                print(json["userList"])
+                let json = JSON(info)
+                if (json["user"]["email"].string != email || json["user"]["password"].string != password) {
+                    print("not verified")
+                    self.verifyCheckbox.state = NSOffState;
+                    self.loginErrorLabel.isHidden = false;
+                }
+                else {
+                    print("verified")
+                    self.loginButton.isEnabled = true;
+                    self.loginErrorLabel.isHidden = true;
+                }
+                /*print(json["userList"])
                 print(json["userList"][0])
                 print(json["userList"][0]["email"])
                 print(json["userList"].count)
@@ -133,8 +144,10 @@ class LoginViewController: NSViewController {
                     print("not verified")
                     self.verifyCheckbox.state = NSOffState;
                     self.loginErrorLabel.isHidden = false;
-                }
+                }*/
             }
+            
+            
         }
     }
     

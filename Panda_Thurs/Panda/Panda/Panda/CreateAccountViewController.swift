@@ -176,10 +176,11 @@ class CreateAccountViewController: NSViewController {
             "name": name!,
             "email": email!,
             "password": password!.md5(),
-            "bio": bio!
+            "bio": bio!,
+            "picture": ""
         ]
         
-        Alamofire.request("http://localhost:8081/panda/createUser", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+        Alamofire.request("http://localhost:8081/user", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             print(response.request)  // original URL request
             print(response.response) // HTTP URL response
             print(response.data)     // server data
