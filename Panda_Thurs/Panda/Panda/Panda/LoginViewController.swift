@@ -113,6 +113,8 @@ class LoginViewController: NSViewController {
                     self.loginButton.isEnabled = true;
                     self.loginErrorLabel.isHidden = true;
                 }
+                
+                //-----------Old Code: In case s**t hits the fan
                 /*print(json["userList"])
                 print(json["userList"][0])
                 print(json["userList"][0]["email"])
