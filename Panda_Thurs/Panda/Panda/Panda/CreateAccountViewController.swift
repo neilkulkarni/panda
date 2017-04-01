@@ -48,6 +48,8 @@ class CreateAccountViewController: NSViewController {
         
     }
     
+    var user: User = User()
+    
     var name:String?
     
     var email:String?
@@ -189,7 +191,7 @@ class CreateAccountViewController: NSViewController {
     
     @IBAction func createAccount(_ sender: Any) {
         
-        //bio = (text: profileBioField.stringValue);
+        bio = profileBioField.stringValue
         let parameters: Parameters = [
             "name": name!,
             "email": email!,
@@ -197,6 +199,8 @@ class CreateAccountViewController: NSViewController {
             "bio": bio!,
             "picture": ""
         ]
+        
+        var isSuccessful = false
         
         Alamofire.request("http://localhost:8081/user", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             print(response.request)  // original URL request
@@ -215,21 +219,47 @@ class CreateAccountViewController: NSViewController {
                 print(json)
                 print(json["code"])
                 
-                if (json["code"] == 1) {
-                    print("Hello from the other side")
-                    self.createAccountButton.isEnabled = false;
-                    self.createAccountErrorLabel.isHidden = false;
+                if (json["code"] == 200) {
+                    isSuccessful = true
+                }
+                else {
+                    self.createAccountErrorLabel.isHidden = false
                 }
             }
         }
+        
+        if (isSuccessful) {
+            let email = self.email!
+            let password = self.password!.md5()
+            
+            let request = "http://localhost:8081/login?email=" + email + "&password=" + password
+            
+            Alamofire.request(request).responseJSON { response in
+                if response.result.isSuccess {
+                    guard let info = response.result.value else {
+                        print("Error")
+                        return
+                    }
+                    print(info)
+                    
+                    let json = JSON(info)
+                    
+                    
+                    
+                    self.user.setUser(id: json["user"]["id"].intValue,
+                                      name: json["user"]["name"].stringValue,
+                                      email: json["user"]["email"].stringValue,
+                                      bio: json["user"]["bio"].stringValue,
+                                      picture: json["user"]["picture"].stringValue);
+                }
+            }
+        }
+        
+        createAccountButton.isEnabled = false
     }
     
     
     @IBAction func returnToLoginButton(_ sender: Any) {
         performSegue(withIdentifier: "idSegue", sender: self)
     }
-    
-    
-    
-    
 }
