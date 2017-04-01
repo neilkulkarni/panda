@@ -15,6 +15,7 @@ class ProfileViewController: NSViewController {
     @IBOutlet weak var bioField: NSTextField!
     @IBOutlet weak var pictureField: NSTextField!
     
+    @IBOutlet weak var profilePictureView: NSImageView!
     var user: User = User()
     
     override func viewWillAppear() {
@@ -39,6 +40,20 @@ class ProfileViewController: NSViewController {
     
     @IBAction func logoutButton(_ sender: Any) {
      performSegue(withIdentifier: "idSegue", sender: self)
+    }
+    @IBAction func editProfileButton(_ sender: Any) {
+        let imagePicker: NSOpenPanel = NSOpenPanel()
+        imagePicker.allowsMultipleSelection = false
+        imagePicker.canChooseFiles = true
+        imagePicker.canChooseDirectories = false
+        
+        imagePicker.runModal()
+        var imageChosen = imagePicker.url
+        if(imageChosen != nil ){
+            var image = NSImage(contentsOf: imageChosen!)
+            profilePictureView.image = image
+            
+        }
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
