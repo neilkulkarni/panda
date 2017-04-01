@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -686,7 +686,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5gG-yu-dbp">
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5gG-yu-dbp">
                                 <rect key="frame" x="269" y="292" width="291" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Email" drawsBackground="YES" usesSingleLineMode="YES" id="eWn-Am-ff0">
@@ -695,7 +695,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7kp-64-4QA">
+                            <secureTextField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7kp-64-4QA">
                                 <rect key="frame" x="269" y="250" width="291" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" placeholderString="Password" drawsBackground="YES" usesSingleLineMode="YES" id="tWt-wm-pFG">
@@ -712,7 +712,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="pandaicon2" id="goT-tg-c7I"/>
                             </imageView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lDu-eR-k3J">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lDu-eR-k3J">
                                 <rect key="frame" x="299" y="332" width="230" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="8N2-o3-bv7">
@@ -730,10 +730,10 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="loginButton:" target="XfG-lQ-9wD" id="E1n-pb-S8y"/>
-                                    <segue destination="dVH-PP-KSF" kind="custom" identifier="idSegue" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="dU0-9R-g9i"/>
+                                    <segue destination="dVH-PP-KSF" kind="custom" identifier="idSegueToHome" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="dU0-9R-g9i"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gis-j8-6s6">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gis-j8-6s6">
                                 <rect key="frame" x="406" y="142" width="17" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="or" id="JbP-QR-NtT">
@@ -806,7 +806,7 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="planTripButton:" target="dVH-PP-KSF" id="r0F-LB-Vnn"/>
-                                    <segue destination="6Zc-8g-Gko" kind="custom" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="GXJ-P3-mHc"/>
+                                    <segue destination="6Zc-8g-Gko" kind="custom" identifier="idSegueToPlan" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="GXJ-P3-mHc"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vt3-fx-jab">
@@ -818,13 +818,13 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="profileButton:" target="dVH-PP-KSF" id="dPi-jg-wAr"/>
-                                    <segue destination="yqe-G2-okV" kind="custom" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="k7Y-wv-6os"/>
+                                    <segue destination="yqe-G2-okV" kind="custom" identifier="idSegueToProfile" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="k7Y-wv-6os"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjn-14-QbW">
                                 <rect key="frame" x="86" y="454" width="628" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Neil Kulkarni" id="fvu-iJ-l74">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Name" id="fvu-iJ-l74">
                                     <font key="font" metaFont="system" size="32"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -851,11 +851,14 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="recordTripButton:" target="dVH-PP-KSF" id="xIi-Ck-oA5"/>
-                                    <segue destination="F6W-mE-MvV" kind="custom" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="Tko-sN-BPy"/>
+                                    <segue destination="F6W-mE-MvV" kind="custom" identifier="idSegueToRecord" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="Tko-sN-BPy"/>
                                 </connections>
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="nameField" destination="rjn-14-QbW" id="qdK-DA-Ah0"/>
+                    </connections>
                 </viewController>
                 <customObject id="YwV-hc-nQp" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -881,7 +884,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kad-ut-QSe">
                                 <rect key="frame" x="273" y="414" width="254" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Neil Kulkarni" id="iam-OU-ohJ">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Name" id="iam-OU-ohJ">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -890,7 +893,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6e-xo-uPf">
                                 <rect key="frame" x="273" y="389" width="254" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="neil_kulkarni@icloud.com" id="iqm-jd-77v">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Email" id="iqm-jd-77v">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -917,11 +920,35 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="homeButton:" target="yqe-G2-okV" id="cZE-4o-JQJ"/>
-                                    <segue destination="dVH-PP-KSF" kind="custom" identifier="idSegue" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="zZz-ep-SOj"/>
+                                    <segue destination="dVH-PP-KSF" kind="custom" identifier="idSegueToHome" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="zZz-ep-SOj"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jjy-KN-jAo">
+                                <rect key="frame" x="273" y="332" width="254" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Bio" id="Zoa-jS-ewo">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wti-9H-SkK">
+                                <rect key="frame" x="273" y="307" width="254" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Picture" id="1za-my-n5z">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="bioField" destination="Jjy-KN-jAo" id="yW7-gK-zjD"/>
+                        <outlet property="emailField" destination="u6e-xo-uPf" id="oI8-Nj-1vR"/>
+                        <outlet property="nameField" destination="kad-ut-QSe" id="qLz-x4-JdO"/>
+                        <outlet property="pictureField" destination="Wti-9H-SkK" id="MHI-fL-NX2"/>
+                    </connections>
                 </viewController>
                 <customObject id="Vhk-Ww-JAp" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -965,7 +992,7 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="homeButtone:" target="F6W-mE-MvV" id="51c-iq-GfL"/>
-                                    <segue destination="dVH-PP-KSF" kind="custom" identifier="idSegue" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="iTU-0V-wiV"/>
+                                    <segue destination="dVH-PP-KSF" kind="custom" identifier="idSegueToHome" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="iTU-0V-wiV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -983,7 +1010,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iu4-0N-Esy">
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iu4-0N-Esy">
                                 <rect key="frame" x="183" y="447" width="172" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Category" drawsBackground="YES" id="L9t-Xb-ycE">
@@ -992,7 +1019,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oux-3A-W43">
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oux-3A-W43">
                                 <rect key="frame" x="363" y="446" width="176" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="City, State" drawsBackground="YES" id="RgM-Mf-hEz">
@@ -1012,7 +1039,7 @@
                                     <action selector="actualSearchButton:" target="6Zc-8g-Gko" id="K2m-Bw-Hco"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yux-QG-LEW">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yux-QG-LEW">
                                 <rect key="frame" x="161" y="378" width="478" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="eMn-Wu-d6N">
@@ -1021,7 +1048,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pOz-cM-ufO">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pOz-cM-ufO">
                                 <rect key="frame" x="161" y="353" width="478" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="bUy-St-ipb">
@@ -1030,7 +1057,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dJy-1P-r41">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dJy-1P-r41">
                                 <rect key="frame" x="161" y="328" width="478" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="xYw-b0-iyD">
@@ -1039,7 +1066,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nR9-aX-wLl">
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nR9-aX-wLl">
                                 <rect key="frame" x="161" y="303" width="478" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="mbr-Es-b1E">
@@ -1048,7 +1075,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s7V-kl-vW3">
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s7V-kl-vW3">
                                 <rect key="frame" x="161" y="278" width="478" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="3of-Ly-xR1">
@@ -1057,7 +1084,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xhe-UA-xhg">
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xhe-UA-xhg">
                                 <rect key="frame" x="161" y="253" width="478" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="X2l-jA-pUP">
@@ -1066,7 +1093,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y79-AL-hQ0">
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y79-AL-hQ0">
                                 <rect key="frame" x="161" y="228" width="478" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="acH-YM-PTO">
@@ -1075,7 +1102,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cmu-Rg-PMf">
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cmu-Rg-PMf">
                                 <rect key="frame" x="161" y="203" width="478" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="as3-Fv-j3a">
@@ -1084,7 +1111,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UBM-ga-oo1">
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UBM-ga-oo1">
                                 <rect key="frame" x="161" y="178" width="478" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Sjy-ac-xi2">
@@ -1111,7 +1138,7 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="homeButton:" target="6Zc-8g-Gko" id="TcW-pO-FG2"/>
-                                    <segue destination="dVH-PP-KSF" kind="custom" identifier="idSegue" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="hwy-4c-1ZJ"/>
+                                    <segue destination="dVH-PP-KSF" kind="custom" identifier="idSegueToHome" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="hwy-4c-1ZJ"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IL4-aR-yJB">
@@ -1126,7 +1153,7 @@
                                     <segue destination="XfG-lQ-9wD" kind="custom" identifier="idSegue" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="Kzz-ui-Eye"/>
                                 </connections>
                             </button>
-                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GhV-xb-WtM">
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GhV-xb-WtM">
                                 <rect key="frame" x="161" y="153" width="478" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Nzw-xA-a64">
@@ -1434,7 +1461,7 @@
         <image name="pandaicon2" width="1039" height="1259"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Oqs-O0-SkJ"/>
-        <segue reference="hwy-4c-1ZJ"/>
+        <segue reference="pZJ-m3-y5B"/>
+        <segue reference="zZz-ep-SOj"/>
     </inferredMetricsTieBreakers>
 </document>
