@@ -51,7 +51,7 @@ class ProfileViewController: NSViewController {
         
         //var isSuccessful = false
         
-        Alamofire.request("http://localhost:8081/user", method: .put, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+     /*   Alamofire.request("http://localhost:8081/user", method: .put, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             print(response.request)  // original URL request
             print(response.response) // HTTP URL response
             print(response.data)     // server data
@@ -66,7 +66,7 @@ class ProfileViewController: NSViewController {
                 let json = JSON(info)
             }
         }
-        user.setBio(bio: newBio.stringValue)
+        user.setBio(bio: newBio.stringValue)*/
     }
     @IBAction func homeButton(_ sender: Any) {
          performSegue(withIdentifier: "idSegue", sender: self)
