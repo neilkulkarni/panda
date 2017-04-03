@@ -7,6 +7,8 @@
 //
 
 import Cocoa
+import Alamofire
+import SwiftyJSON
 
 class ProfileViewController: NSViewController {
     
@@ -14,9 +16,13 @@ class ProfileViewController: NSViewController {
     @IBOutlet weak var emailField: NSTextField!
     @IBOutlet weak var bioField: NSTextField!
     @IBOutlet weak var pictureField: NSTextField!
+    @IBOutlet weak var newBio: NSTextField!
     
     @IBOutlet weak var profilePictureView: NSImageView!
     var user: User = User()
+    var id:Int?
+    var bio:String?
+    var picture:String?
     
     override func viewWillAppear() {
         self.view.wantsLayer = true;
@@ -24,7 +30,7 @@ class ProfileViewController: NSViewController {
         
         nameField.stringValue = user.getName()
         emailField.stringValue = user.getEmail()
-        bioField.stringValue = user.getBio()
+        newBio.stringValue = user.getBio()
         pictureField.stringValue = user.getPicture()
     }
     
@@ -33,6 +39,34 @@ class ProfileViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+    }
+    @IBAction func editBio(_ sender: Any) {
+        bio = newBio.stringValue
+        id = user.getID()
+        let parameters: Parameters = [
+            "id": id!,
+            "bio": bio!,
+            "picture": ""
+        ]
+        
+        //var isSuccessful = false
+        
+        Alamofire.request("http://localhost:8081/user", method: .put, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // HTTP URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            
+            if response.result.isSuccess {
+                guard let info = response.result.value else {
+                    print("Error")
+                    return
+                }
+                
+                let json = JSON(info)
+            }
+        }
+        user.setBio(bio: newBio.stringValue)
     }
     @IBAction func homeButton(_ sender: Any) {
          performSegue(withIdentifier: "idSegue", sender: self)
