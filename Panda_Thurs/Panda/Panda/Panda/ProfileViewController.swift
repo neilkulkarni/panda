@@ -49,9 +49,33 @@ class ProfileViewController: NSViewController {
         
         imagePicker.runModal()
         var imageChosen = imagePicker.url
+        print(imagePicker.url)
         if(imageChosen != nil ){
             var image = NSImage(contentsOf: imageChosen!)
             profilePictureView.image = image
+            
+          /*  let parameters: Parameters = [
+                "name": name!,
+                "bio": bio!,
+                "picture": imageChosen!
+            ]
+            
+            var isSuccessful = false
+            
+            Alamofire.request("http://localhost:8081/user", method: .pull, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // HTTP URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if response.result.isSuccess {
+                    guard let info = response.result.value else {
+                        print("Error")
+                        return
+                    }
+                    
+                    let json = JSON(info)*/
+
             
         }
     }
