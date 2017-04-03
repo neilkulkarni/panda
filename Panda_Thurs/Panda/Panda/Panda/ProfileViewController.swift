@@ -15,6 +15,7 @@ class ProfileViewController: NSViewController {
     @IBOutlet weak var bioField: NSTextField!
     @IBOutlet weak var pictureField: NSTextField!
     
+    @IBOutlet weak var profilePictureView: NSImageView!
     var user: User = User()
     
     override func viewWillAppear() {
@@ -39,6 +40,44 @@ class ProfileViewController: NSViewController {
     
     @IBAction func logoutButton(_ sender: Any) {
      performSegue(withIdentifier: "idSegue", sender: self)
+    }
+    @IBAction func editProfileButton(_ sender: Any) {
+        let imagePicker: NSOpenPanel = NSOpenPanel()
+        imagePicker.allowsMultipleSelection = false
+        imagePicker.canChooseFiles = true
+        imagePicker.canChooseDirectories = false
+        
+        imagePicker.runModal()
+        var imageChosen = imagePicker.url
+        print(imagePicker.url)
+        if(imageChosen != nil ){
+            var image = NSImage(contentsOf: imageChosen!)
+            profilePictureView.image = image
+            
+          /*  let parameters: Parameters = [
+                "name": name!,
+                "bio": bio!,
+                "picture": imageChosen!
+            ]
+            
+            var isSuccessful = false
+            
+            Alamofire.request("http://localhost:8081/user", method: .pull, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // HTTP URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if response.result.isSuccess {
+                    guard let info = response.result.value else {
+                        print("Error")
+                        return
+                    }
+                    
+                    let json = JSON(info)*/
+
+            
+        }
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {

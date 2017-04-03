@@ -145,7 +145,7 @@ class CreateAccountViewController: NSViewController {
     
     @IBAction func exitProfileBio(_ sender: Any) {
         
-        bio = (text: profileBioField.stringValue);
+        bio = ( profileBioField.stringValue);
         
         if ((self.bio?.characters.count)! > 160) {
             profileBioErrorLabel.isHidden = false
