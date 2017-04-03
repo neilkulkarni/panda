@@ -145,7 +145,11 @@ class CreateAccountViewController: NSViewController {
     
     @IBAction func exitProfileBio(_ sender: Any) {
         
+<<<<<<< Updated upstream
         bio = ( profileBioField.stringValue);
+=======
+        bio = profileBioField.stringValue
+>>>>>>> Stashed changes
         
         if ((self.bio?.characters.count)! > 160) {
             profileBioErrorLabel.isHidden = false
