@@ -980,7 +980,6 @@
                         </subviews>
                     </view>
                     <connections>
-
                         <outlet property="bioField" destination="Jjy-KN-jAo" id="TRD-no-tBR"/>
                         <outlet property="emailField" destination="u6e-xo-uPf" id="oI8-Nj-1vR"/>
                         <outlet property="nameField" destination="kad-ut-QSe" id="qLz-x4-JdO"/>
@@ -1283,7 +1282,7 @@
                                     <rect key="frame" x="1" y="197" width="514" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="YJ4-Pl-Pzc">
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="YJ4-Pl-Pzc">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -1398,7 +1397,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" selectedItem="end-CI-eq1" id="4d4-TF-FtS">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="8Nt-3e-K17">
                                         <items>
                                             <menuItem title="1" state="on" id="end-CI-eq1"/>

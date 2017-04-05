@@ -28,15 +28,15 @@ class HomepageViewController: NSViewController {
         // Do view setup here.
     }
     @IBAction func profileButton(_ sender: Any) {
-        performSegue(withIdentifier: "idSegue", sender: self)
+        performSegue(withIdentifier: "idSegueToProfile", sender: self)
     }
     
     @IBAction func planTripButton(_ sender: Any) {
-        performSegue(withIdentifier: "idSegue", sender: self)
+        performSegue(withIdentifier: "idSegueToPlan", sender: self)
     }
     
     @IBAction func recordTripButton(_ sender: Any) {
-        performSegue(withIdentifier: "idSegue", sender: self)
+        performSegue(withIdentifier: "idSegueToRecord", sender: self)
     }
     @IBAction func logoutButton(_ sender: Any) {
         performSegue(withIdentifier: "idSegue", sender: self)
