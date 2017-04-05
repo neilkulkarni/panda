@@ -13,6 +13,7 @@ class Business: NSObject {
     var name:String?
     var rating:Double?
     var category:String?
+    var location:String?
     //time is not supported by the Yelp API
     var price:String?
     var url:String?

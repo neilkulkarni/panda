@@ -221,13 +221,13 @@ class PlanViewController: NSViewController {
         tempBusiness.image = NSImage(byReferencingFile: businessObject["image_url"].stringValue)
         tempBusiness.name = businessObject["name"].stringValue
         tempBusiness.rating = businessObject["rating"].double
-        tempBusiness.category = businessObject["categories.[0].title"].stringValue
+        tempBusiness.category = businessObject["categories"][0]["title"].stringValue
+        tempBusiness.location = "\(businessObject["location"]["city"]), \(businessObject["location"]["state"])"
         tempBusiness.price = businessObject["price"].stringValue
         tempBusiness.url = businessObject["url"].stringValue
         tempBusiness.latitude = businessObject["coordinates.latitude"].double
         tempBusiness.longitude = businessObject["coordinates.longitude"].double
         return tempBusiness
-        
     }
     
     func toString(item: Business) ->String{
@@ -360,14 +360,20 @@ extension PlanViewController: NSTableViewDelegate {
         } else if tableColumn == tableView.tableColumns[1] {
             text = item.category!
             if (text.characters.count == 0) {
-                text = categoryField.stringValue.capitalized
+                text = "N/A"
             }
             cellIdentifier = CellIdentifiers.CategoryCell
         } else if tableColumn == tableView.tableColumns[2] {
             text = item.price!
+            if (text.characters.count == 0) {
+                text = "-"
+            }
             cellIdentifier = CellIdentifiers.PriceCell
         } else if tableColumn == tableView.tableColumns[3] {
             text = "\(item.rating!)"
+            if (text.characters.count == 0) {
+                text = "-"
+            }
             cellIdentifier = CellIdentifiers.RatingCell
         }
         
