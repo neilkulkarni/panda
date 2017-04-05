@@ -1641,7 +1641,7 @@
                                 </buttonCell>
                             </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QI8-o4-YWD">
-                                <rect key="frame" x="23" y="130" width="277" height="22"/>
+                                <rect key="frame" x="23" y="130" width="332" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Add a Trip Name! (Optional)" drawsBackground="YES" id="Vza-Zq-HNq">
                                     <font key="font" metaFont="system"/>
