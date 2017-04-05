@@ -32,6 +32,11 @@ class ProfileViewController: NSViewController {
         emailField.stringValue = user.getEmail()
         newBio.stringValue = user.getBio()
         pictureField.stringValue = user.getPicture()
+        
+        print("view will appear \(user.getPicture())")
+        
+        
+        print(profilePictureView.image)
     }
     
     
@@ -39,14 +44,15 @@ class ProfileViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        profilePictureView.image = NSImage(byReferencingFile: user.getPicture())
     }
     @IBAction func editBio(_ sender: Any) {
         bio = newBio.stringValue
-        id = user.getID()
+        //id = user.getID()
         let parameters: Parameters = [
-            "id": id!,
+            "id": user.getID(),
             "bio": bio!,
-            "picture": ""
+            "picture": user.getPicture()
         ]
         
         //var isSuccessful = false
@@ -87,16 +93,17 @@ class ProfileViewController: NSViewController {
         if(imageChosen != nil ){
             var image = NSImage(contentsOf: imageChosen!)
             profilePictureView.image = image
+            user.setPicture(picture: imageChosen!.absoluteString)
             
-          /*  let parameters: Parameters = [
-                "name": name!,
-                "bio": bio!,
-                "picture": imageChosen!
+            print("user set \(user.getPicture())")
+            
+            let parameters: Parameters = [
+                "id": user.getID(),
+                "bio": user.getBio(),
+                "picture": user.getPicture()
             ]
             
-            var isSuccessful = false
-            
-            Alamofire.request("http://localhost:8081/user", method: .pull, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+            Alamofire.request("http://localhost:8081/user", method: .put, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // HTTP URL response
                 print(response.data)     // server data
@@ -108,9 +115,9 @@ class ProfileViewController: NSViewController {
                         return
                     }
                     
-                    let json = JSON(info)*/
-
-            
+                    //let json = JSON(info)
+                }
+            }
         }
     }
     
