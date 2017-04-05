@@ -44,6 +44,7 @@ class PlanViewController: NSViewController {
     @IBOutlet weak var tripDescriptionField: NSTextFieldCell!
     @IBOutlet weak var tripNameField: NSTextField!
     @IBOutlet weak var tripDescriptionErrorLabel: NSTextField!
+    @IBOutlet weak var tripNameErrorLabel: NSTextField!
     
     var tripDesc:String?
     var tripName:String?
@@ -56,6 +57,17 @@ class PlanViewController: NSViewController {
         }
         else {
             tripDescriptionErrorLabel.isHidden = true
+        }
+    }
+    
+    @IBAction func exitTripName(_ sender: Any) {
+        tripName = tripNameField.stringValue
+        
+        if ((self.tripName?.characters.count)! > 160) {
+            tripNameErrorLabel.isHidden = false
+        }
+        else {
+            tripNameErrorLabel.isHidden = true
         }
     }
     
