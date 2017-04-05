@@ -1795,7 +1795,7 @@
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktj-8R-rYw">
                                 <rect key="frame" x="23" y="20" width="332" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Add a trip Description! (Optional)" drawsBackground="YES" id="ZGg-aG-sCr">
+                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Add a Trip Description! (Optional)" drawsBackground="YES" id="ZGg-aG-sCr">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -2147,13 +2147,8 @@
         <image name="street" width="77" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
+        <segue reference="dBU-vf-RpB"/>
         <segue reference="hwy-4c-1ZJ"/>
         <segue reference="Kzz-ui-Eye"/>
-=======
-        <segue reference="TQ2-EL-7de"/>
-        <segue reference="zZz-ep-SOj"/>
-        <segue reference="dBU-vf-RpB"/>
->>>>>>> master
     </inferredMetricsTieBreakers>
 </document>
