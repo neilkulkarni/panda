@@ -113,6 +113,10 @@ class ProfileViewController: NSViewController {
             
         }
     }
+  
+    @IBAction func mapOverview(_ sender: Any) {
+    }
+  
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if (segue.identifier == "idSegueToHome") {
