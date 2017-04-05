@@ -22,7 +22,7 @@ class LoginViewController: NSViewController {
     @IBOutlet weak var loginErrorLabel: NSTextField!
     
     
-    var obj = User();
+    var user: User = User()
     
     override func viewWillAppear() {
         self.view.wantsLayer = true;
@@ -40,15 +40,8 @@ class LoginViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-    @IBAction func onClickLogin(_ sender: Any) {
-        if( errorCheck()) {
-            obj.email = enteredEmail.stringValue;
-            obj.password = enteredPassword.stringValue.md5();
-            //print( obj.email);
-            //print(obj.password);
-        }
-        
-    }
+   
+    
     // check for incorrect input
     func errorCheck() -> Bool {
         if(enteredEmail.stringValue == "" || enteredPassword.stringValue == ""){
@@ -89,7 +82,6 @@ class LoginViewController: NSViewController {
         let email = enteredEmail.stringValue
         let password = enteredPassword.stringValue.md5()
         
-        var id:Int = -1
         //var emailMatches:Bool = false
         var passwordMatches:Bool = false
         var request = "http://localhost:8081/login?email=" + email + "&password=" + password
@@ -112,6 +104,12 @@ class LoginViewController: NSViewController {
                     print("verified")
                     self.loginButton.isEnabled = true;
                     self.loginErrorLabel.isHidden = true;
+                    
+                    self.user.setUser(id: json["user"]["id"].intValue,
+                                name: json["user"]["name"].stringValue,
+                                email: json["user"]["email"].stringValue,
+                                bio: json["user"]["bio"].stringValue,
+                                picture: json["user"]["picture"].stringValue);
                 }
                 
                 //-----------Old Code: In case s**t hits the fan
@@ -155,13 +153,19 @@ class LoginViewController: NSViewController {
     
     
     @IBAction func loginButton(_ sender: Any) {
-        performSegue(withIdentifier: "idSegue", sender: self)
+        performSegue(withIdentifier: "idSegueToHome", sender: self)
     }
 
     @IBAction func createAnAccountButton(_ sender: Any) {
         performSegue(withIdentifier: "idSegue", sender: self)
     }
     
-
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "idSegueToHome") {
+            if let destination = segue.destinationController as? HomepageViewController {
+                destination.user.setUser(id: user.getID(), name: user.getName(), email: user.getEmail(), bio: user.getBio(), picture: user.getPicture())
+            }
+        }
+    }
 }
 
