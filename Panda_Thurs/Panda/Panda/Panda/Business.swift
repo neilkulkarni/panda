@@ -9,6 +9,7 @@
 import Cocoa
 
 class Business: NSObject {
+    var image:NSImage?
     var name:String?
     var rating:Double?
     var category:String?
