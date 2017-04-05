@@ -26,6 +26,7 @@
 		A220D6FD1E68FA4400345B92 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A220D6F81E68FA3500345B92 /* CryptoSwift.framework */; };
 		A220D6FF1E68FB1500345B92 /* pandaicon2.png in Resources */ = {isa = PBXBuildFile; fileRef = A220D6FE1E68FB1500345B92 /* pandaicon2.png */; };
 		A220D7011E68FCFF00345B92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A220D7001E68FCFF00345B92 /* User.swift */; };
+		A27C5FBD1E954BA800CD0E80 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27C5FBC1E954BA800CD0E80 /* TripViewController.swift */; };
 		A2CFD4B41E94A02D00F959BE /* lateaMug.png in Resources */ = {isa = PBXBuildFile; fileRef = A2CFD4B31E94A02D00F959BE /* lateaMug.png */; };
 		A2CFD4B61E94A04500F959BE /* street.png in Resources */ = {isa = PBXBuildFile; fileRef = A2CFD4B51E94A04500F959BE /* street.png */; };
 		A2CFD4B81E94A05A00F959BE /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = A2CFD4B71E94A05A00F959BE /* lightbulb.png */; };
@@ -102,6 +103,7 @@
 		A220D6DC1E68F80000345B92 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = ../../CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
 		A220D6FE1E68FB1500345B92 /* pandaicon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pandaicon2.png; sourceTree = "<group>"; };
 		A220D7001E68FCFF00345B92 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A27C5FBC1E954BA800CD0E80 /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		A2CFD4B31E94A02D00F959BE /* lateaMug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lateaMug.png; sourceTree = "<group>"; };
 		A2CFD4B51E94A04500F959BE /* street.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = street.png; sourceTree = "<group>"; };
 		A2CFD4B71E94A05A00F959BE /* lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightbulb.png; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				A2CFD4B71E94A05A00F959BE /* lightbulb.png */,
 				A2CFD4B91E94A07500F959BE /* bookshelf.png */,
 				A2CFD4BB1E94AE9200F959BE /* purduetrip.png */,
+				A27C5FBC1E954BA800CD0E80 /* TripViewController.swift */,
 			);
 			path = Panda;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				3875BAA91E6922E6003ED320 /* PlanViewController.swift in Sources */,
 				2861AFC11E6A527D002871CD /* RecordViewController.swift in Sources */,
 				3875BAA51E6921AC003ED320 /* Business.swift in Sources */,
+				A27C5FBD1E954BA800CD0E80 /* TripViewController.swift in Sources */,
 				2861AFBF1E6A4EA3002871CD /* HomepageViewController.swift in Sources */,
 				2861AFBD1E6A06A6002871CD /* CustomSegue.swift in Sources */,
 				A220D6B21E68F7E300345B92 /* AppDelegate.swift in Sources */,
