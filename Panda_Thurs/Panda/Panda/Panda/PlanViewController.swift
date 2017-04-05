@@ -36,6 +36,7 @@ class PlanViewController: NSViewController {
     
     @IBOutlet weak var outputLabel10: NSTextField!
     
+    var user: User = User()
     
     let clientID = "2xtPDNRnr_toiEhI1V0W9w"
     
@@ -177,4 +178,11 @@ class PlanViewController: NSViewController {
          performSegue(withIdentifier: "idSegue", sender: self)
     }
     
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "idSegueToHome") {
+            if let destination = segue.destinationController as? HomepageViewController {
+                destination.user.setUser(id: user.getID(), name: user.getName(), email: user.getEmail(), bio: user.getBio(), picture: user.getPicture())
+            }
+        }
+    }
 }
