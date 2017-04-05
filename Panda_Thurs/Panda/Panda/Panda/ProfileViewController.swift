@@ -19,6 +19,7 @@ class ProfileViewController: NSViewController {
     @IBOutlet weak var newBio: NSTextField!
     
     @IBOutlet weak var profilePictureView: NSImageView!
+    
     var user: User = User()
     var id:Int?
     var bio:String?
@@ -137,6 +138,7 @@ class ProfileViewController: NSViewController {
     @IBAction func clickDescription(_ sender: Any) {
         performSegue(withIdentifier: "idSegueToTrip", sender: self)
     }
+  
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if (segue.identifier == "idSegueToHome") {
             if let destination = segue.destinationController as? HomepageViewController {

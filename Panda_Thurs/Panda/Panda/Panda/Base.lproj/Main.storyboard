@@ -923,15 +923,6 @@
                                     <segue destination="dVH-PP-KSF" kind="custom" identifier="idSegueToHome" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="zZz-ep-SOj"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wti-9H-SkK">
-                                <rect key="frame" x="548" y="487" width="254" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Picture" id="1za-my-n5z">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Fv-fe-csz">
                                 <rect key="frame" x="62" y="426" width="133" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -1058,6 +1049,26 @@
                                     <segue destination="T7y-PX-Wml" kind="custom" identifier="idSegueToTrip" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="3aR-RD-fOQ"/>
                                 </connections>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="anF-ZC-rx9">
+                                <rect key="frame" x="366" y="127" width="86" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="My Trip" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iOd-SY-nwU">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="T7y-PX-Wml" kind="custom" identifier="idSegueToTrip" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="dBU-vf-RpB"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wti-9H-SkK">
+                                <rect key="frame" x="602" y="514" width="254" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Picture" id="1za-my-n5z">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
@@ -1099,7 +1110,7 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="logoutButton:" target="F6W-mE-MvV" id="SaD-tW-RQc"/>
-                                    <segue destination="XfG-lQ-9wD" kind="custom" identifier="idSegue" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="pZJ-m3-y5B"/>
+                                    <segue destination="XfG-lQ-9wD" kind="custom" id="dql-0i-KtJ"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RDZ-uN-Kvh">
@@ -1126,13 +1137,48 @@
             <objects>
                 <viewController id="T7y-PX-Wml" customClass="TripViewController" customModule="Panda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="oyn-Sd-4ih">
-                        <rect key="frame" x="0.0" y="0.0" width="800" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vnR-GQ-3Lv">
+                                <rect key="frame" x="17" y="552" width="76" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Home" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="k8p-sy-Dgf">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="homeButton:" target="T7y-PX-Wml" id="qR2-BX-67w"/>
+                                    <segue destination="dVH-PP-KSF" kind="custom" identifier="idSegueToHome" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="7nr-vg-CEo"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fGs-17-c7O">
+                                <rect key="frame" x="703" y="552" width="83" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Logout" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1bM-gH-14w">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="logoutButton:" target="T7y-PX-Wml" id="pXR-Vr-EIv"/>
+                                    <segue destination="XfG-lQ-9wD" kind="custom" identifier="idSegue" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="fgN-qe-Z4K"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfN-Cz-Tof">
+                                <rect key="frame" x="330" y="482" width="159" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="My Trip" id="Yk7-hp-B71">
+                                    <font key="font" metaFont="system" size="24"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
                     </view>
                 </viewController>
                 <customObject id="SHG-yo-Fgt" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1692" y="1543"/>
+            <point key="canvasLocation" x="1906" y="1635"/>
         </scene>
         <!--Plan View Controller-->
         <scene sceneID="p4N-1i-vJp">
@@ -1604,6 +1650,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="TQ2-EL-7de"/>
         <segue reference="zZz-ep-SOj"/>
-        <segue reference="3aR-RD-fOQ"/>
+        <segue reference="dBU-vf-RpB"/>
     </inferredMetricsTieBreakers>
 </document>
