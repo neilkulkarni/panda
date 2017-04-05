@@ -41,6 +41,23 @@ class PlanViewController: NSViewController {
     @IBOutlet weak var popUpButton9: NSPopUpButton!
     @IBOutlet weak var popUpButton10: NSPopUpButton!
     
+    @IBOutlet weak var tripDescriptionField: NSTextFieldCell!
+    @IBOutlet weak var tripNameField: NSTextField!
+    @IBOutlet weak var tripDescriptionErrorLabel: NSTextField!
+    
+    var tripDesc:String?
+    var tripName:String?
+    
+    @IBAction func exitTripDescription(_ sender: Any) {
+        tripDesc = tripDescriptionField.stringValue
+        
+        if ((self.tripDesc?.characters.count)! > 160) {
+            tripDescriptionErrorLabel.isHidden = false
+        }
+        else {
+            tripDescriptionErrorLabel.isHidden = true
+        }
+    }
     
     @IBAction func selectLocationButton(_ sender: Any) {
         let row = resultsTableView.selectedRow

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
@@ -1640,6 +1640,36 @@
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                             </button>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QI8-o4-YWD">
+                                <rect key="frame" x="23" y="130" width="277" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Add a Trip Name! (Optional)" drawsBackground="YES" id="Vza-Zq-HNq">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktj-8R-rYw">
+                                <rect key="frame" x="23" y="20" width="332" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Add a trip Description! (Optional)" drawsBackground="YES" id="ZGg-aG-sCr">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="exitTripDescription:" target="6Zc-8g-Gko" id="qJo-go-YJk"/>
+                                </connections>
+                            </textField>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCg-WF-ZTs">
+                                <rect key="frame" x="361" y="61" width="217" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Limit Description to 160 characters" id="et0-6b-9UV">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
@@ -1668,6 +1698,9 @@
                         <outlet property="selection7" destination="Gbj-SR-ArZ" id="k42-Wz-nZO"/>
                         <outlet property="selection8" destination="x3I-4c-wGk" id="214-Q4-dDY"/>
                         <outlet property="selection9" destination="gcV-Ag-3Zj" id="hhw-fc-dXM"/>
+                        <outlet property="tripDescriptionErrorLabel" destination="YCg-WF-ZTs" id="X1p-lE-IzW"/>
+                        <outlet property="tripDescriptionField" destination="ZGg-aG-sCr" id="6z6-gV-Xdr"/>
+                        <outlet property="tripNameField" destination="QI8-o4-YWD" id="ZBO-io-Ul6"/>
                     </connections>
                 </viewController>
                 <customObject id="pmq-Re-v7g" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1956,7 +1989,7 @@
         <image name="pandaicon2" width="1039" height="1259"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zZz-ep-SOj"/>
-        <segue reference="TQ2-EL-7de"/>
+        <segue reference="hwy-4c-1ZJ"/>
+        <segue reference="Kzz-ui-Eye"/>
     </inferredMetricsTieBreakers>
 </document>
