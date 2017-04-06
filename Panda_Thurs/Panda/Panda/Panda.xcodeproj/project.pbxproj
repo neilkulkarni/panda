@@ -314,7 +314,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Panda;
 				TargetAttributes = {
 					A220D6AD1E68F7E300345B92 = {
@@ -707,6 +707,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E7283B9CE9EBBD11D60F573 /* Pods-Panda.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Panda/Info.plist;
@@ -722,6 +723,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7A2E72538938D956EA19ECB2 /* Pods-Panda.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Panda/Info.plist;
