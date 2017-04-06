@@ -197,6 +197,7 @@ class PlanViewController: NSViewController {
         tempBusiness.url = businessObject["url"].stringValue
         tempBusiness.latitude = businessObject["coordinates.latitude"].double
         tempBusiness.longitude = businessObject["coordinates.longitude"].double
+        tempBusiness.address = ""
         return tempBusiness
         
     }

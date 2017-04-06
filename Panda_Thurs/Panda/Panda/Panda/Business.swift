@@ -21,4 +21,5 @@ class Business: NSObject {
     //var apiRequestPath:String?
     var eventId = -1
     //name rating category time address price picture
+    var address:String?
 }
