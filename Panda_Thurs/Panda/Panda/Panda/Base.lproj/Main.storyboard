@@ -2146,9 +2146,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
-                                <connections>
-                                    <action selector="removeLocationButton1:" target="6Zc-8g-Gko" id="kiu-Uu-wOF"/>
-                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Sp-tV-Vwe">
                                 <rect key="frame" x="766" y="355" width="23" height="19"/>
@@ -2157,9 +2154,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
-                                <connections>
-                                    <action selector="removeLocationButton2:" target="6Zc-8g-Gko" id="0fx-lh-lXM"/>
-                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Mf-BC-I4t">
                                 <rect key="frame" x="766" y="331" width="23" height="19"/>
@@ -2168,9 +2162,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
-                                <connections>
-                                    <action selector="removeLocationButton3:" target="6Zc-8g-Gko" id="OQo-QS-8Fy"/>
-                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JDL-AR-yg9">
                                 <rect key="frame" x="766" y="306" width="23" height="19"/>
@@ -2179,9 +2170,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
-                                <connections>
-                                    <action selector="removeLocationButton4:" target="6Zc-8g-Gko" id="ipv-EA-j3H"/>
-                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ecc-qb-hoE">
                                 <rect key="frame" x="766" y="281" width="23" height="19"/>
@@ -2190,9 +2178,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
-                                <connections>
-                                    <action selector="removeLocationButton5:" target="6Zc-8g-Gko" id="9ZM-9f-dIb"/>
-                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q4M-90-h28">
                                 <rect key="frame" x="766" y="256" width="23" height="19"/>
@@ -2201,9 +2186,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
-                                <connections>
-                                    <action selector="removeLocationButton6:" target="6Zc-8g-Gko" id="B3v-RX-3mG"/>
-                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DbM-Qc-YFq">
                                 <rect key="frame" x="766" y="231" width="23" height="19"/>
@@ -2212,9 +2194,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
-                                <connections>
-                                    <action selector="removeLocationButton7:" target="6Zc-8g-Gko" id="B24-X2-WwQ"/>
-                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fd9-QU-uqV">
                                 <rect key="frame" x="766" y="206" width="23" height="19"/>
@@ -2223,9 +2202,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
-                                <connections>
-                                    <action selector="removeLocationButton8:" target="6Zc-8g-Gko" id="cG6-4Z-QgS"/>
-                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="srf-cn-Rj5">
                                 <rect key="frame" x="766" y="181" width="23" height="19"/>
@@ -2234,9 +2210,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
-                                <connections>
-                                    <action selector="removeLocationButton9:" target="6Zc-8g-Gko" id="g2o-xy-qaa"/>
-                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F4a-28-8FJ">
                                 <rect key="frame" x="717" y="406" width="44" height="17"/>
@@ -2278,9 +2251,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
-                                <connections>
-                                    <action selector="removeLocationButton10:" target="6Zc-8g-Gko" id="tJK-wO-TYY"/>
-                                </connections>
                             </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QI8-o4-YWD">
                                 <rect key="frame" x="23" y="130" width="332" height="22"/>
@@ -2341,7 +2311,6 @@
                         <outlet property="popUpButton7" destination="HXy-jB-D4p" id="cL0-De-Azp"/>
                         <outlet property="popUpButton8" destination="2ke-N4-0gP" id="jXq-bL-939"/>
                         <outlet property="popUpButton9" destination="rs2-OB-ug1" id="sfj-TJ-WDV"/>
-                        <outlet property="removeLocationButton1" destination="6YK-4C-NbC" id="GJJ-Vc-auu"/>
                         <outlet property="resultsTableView" destination="T3X-zi-TVc" id="wlf-1R-TbM"/>
                         <outlet property="selection1" destination="V1u-dc-VYD" id="fcf-0p-D4L"/>
                         <outlet property="selection10" destination="QtP-uC-KBd" id="Qqy-HO-WAA"/>
