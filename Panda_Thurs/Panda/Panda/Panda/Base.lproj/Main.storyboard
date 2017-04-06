@@ -2147,8 +2147,8 @@
         <image name="street" width="77" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dBU-vf-RpB"/>
         <segue reference="hwy-4c-1ZJ"/>
         <segue reference="Kzz-ui-Eye"/>
+        <segue reference="dBU-vf-RpB"/>
     </inferredMetricsTieBreakers>
 </document>
