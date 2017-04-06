@@ -19,6 +19,7 @@ class ProfileViewController: NSViewController {
     @IBOutlet weak var newBio: NSTextField!
     
     @IBOutlet weak var profilePictureView: NSImageView!
+    
     var user: User = User()
     var id:Int?
     var bio:String?
@@ -32,6 +33,11 @@ class ProfileViewController: NSViewController {
         emailField.stringValue = user.getEmail()
         newBio.stringValue = user.getBio()
         pictureField.stringValue = user.getPicture()
+        
+        print("view will appear \(user.getPicture())")
+        
+        
+        print(profilePictureView.image)
     }
     
     
@@ -39,14 +45,15 @@ class ProfileViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        profilePictureView.image = NSImage(byReferencingFile: user.getPicture())
     }
     @IBAction func editBio(_ sender: Any) {
         bio = newBio.stringValue
-        id = user.getID()
+        //id = user.getID()
         let parameters: Parameters = [
-            "id": id!,
+            "id": user.getID(),
             "bio": bio!,
-            "picture": ""
+            "picture": user.getPicture()
         ]
         
         //var isSuccessful = false
@@ -86,17 +93,19 @@ class ProfileViewController: NSViewController {
         print(imagePicker.url)
         if(imageChosen != nil ){
             var image = NSImage(contentsOf: imageChosen!)
+          //  user.setPicture(picture: imageChosen!.absoluteString)
             profilePictureView.image = image
+            user.setPicture(picture: imageChosen!.absoluteString)
             
-          /*  let parameters: Parameters = [
-                "name": name!,
-                "bio": bio!,
-                "picture": imageChosen!
+            print("user set \(user.getPicture())")
+            
+            let parameters: Parameters = [
+                "id": user.getID(),
+                "bio": user.getBio(),
+                "picture": user.getPicture()
             ]
             
-            var isSuccessful = false
-            
-            Alamofire.request("http://localhost:8081/user", method: .pull, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+            Alamofire.request("http://localhost:8081/user", method: .put, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // HTTP URL response
                 print(response.data)     // server data
@@ -108,15 +117,43 @@ class ProfileViewController: NSViewController {
                         return
                     }
                     
-                    let json = JSON(info)*/
-
-            
+                    //let json = JSON(info)
+                }
+            }
         }
     }
+  
+    @IBAction func mapOverview(_ sender: Any) {
+    }
+  
+    @IBAction func clickMap(_ sender: Any) {
+        performSegue(withIdentifier: "idSegueToTrip", sender: self)
+    }
     
+    @IBAction func clickPictureUpperLeft(_ sender: Any) {
+        performSegue(withIdentifier: "idSegueToTrip", sender: self)
+    }
+    @IBAction func clickPictureUpperRight(_ sender: Any) {
+        performSegue(withIdentifier: "idSegueToTrip", sender: self)
+    }
+    @IBAction func clickPictureLowerLeft(_ sender: Any) {
+        performSegue(withIdentifier: "idSegueToTrip", sender: self)
+    }
+    @IBAction func clickPictureLowerRight(_ sender: Any) {
+        performSegue(withIdentifier: "idSegueToTrip", sender: self)
+    }
+    @IBAction func clickDescription(_ sender: Any) {
+        performSegue(withIdentifier: "idSegueToTrip", sender: self)
+    }
+  
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if (segue.identifier == "idSegueToHome") {
             if let destination = segue.destinationController as? HomepageViewController {
+                destination.user.setUser(id: user.getID(), name: user.getName(), email: user.getEmail(), bio: user.getBio(), picture: user.getPicture())
+            }
+        }
+        else if (segue.identifier == "idSegueToTrip") {
+            if let destination = segue.destinationController as? TripViewController {
                 destination.user.setUser(id: user.getID(), name: user.getName(), email: user.getEmail(), bio: user.getBio(), picture: user.getPicture())
             }
         }

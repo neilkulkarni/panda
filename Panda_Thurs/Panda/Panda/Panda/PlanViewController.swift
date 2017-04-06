@@ -41,10 +41,39 @@ class PlanViewController: NSViewController {
     @IBOutlet weak var popUpButton9: NSPopUpButton!
     @IBOutlet weak var popUpButton10: NSPopUpButton!
     
+    @IBOutlet weak var tripDescriptionField: NSTextFieldCell!
+    @IBOutlet weak var tripNameField: NSTextField!
+    @IBOutlet weak var tripDescriptionErrorLabel: NSTextField!
+    @IBOutlet weak var tripNameErrorLabel: NSTextField!
+    
+    var tripDesc:String?
+    var tripName:String?
+    
+    @IBAction func exitTripDescription(_ sender: Any) {
+        tripDesc = tripDescriptionField.stringValue
+        
+        if ((self.tripDesc?.characters.count)! > 160) {
+            tripDescriptionErrorLabel.isHidden = false
+        }
+        else {
+            tripDescriptionErrorLabel.isHidden = true
+        }
+    }
+    
+    @IBAction func exitTripName(_ sender: Any) {
+        tripName = tripNameField.stringValue
+        
+        if ((self.tripName?.characters.count)! > 160) {
+            tripNameErrorLabel.isHidden = false
+        }
+        else {
+            tripNameErrorLabel.isHidden = true
+        }
+    }
     
     @IBAction func selectLocationButton(_ sender: Any) {
         let row = resultsTableView.selectedRow
-        if (row >= 0 || row <= 10) {
+        if (row >= 0 && selectedList.count < 10) {
             selectedList.append(businessList[row])
         
             popUpButton1.addItem(withTitle: "\(selectedList.count)")
@@ -143,6 +172,1253 @@ class PlanViewController: NSViewController {
         }
     }
     
+    @IBAction func removeLocationButton1(_ sender: Any) {
+        if (selectedList.count > 0) {
+            for i in 0 ... selectedList.count - 1 {
+                if (i == selectedList.count - 1) {
+                    if (i == 0) {
+                        selection1.isHidden = true
+                        selection1.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton1.isHidden = true
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 1) {
+                        popUpButton2.isHidden = true
+                        selection2.isHidden = true
+                        selection2.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        break
+                    }
+                    if (i == 2) {
+                        selection3.isHidden = true
+                        selection3.stringValue = ""
+                        popUpButton3.isHidden = true
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        break
+                    }
+                    if (i == 3) {
+                        popUpButton4.isHidden = true
+                        selection4.isHidden = true
+                        selection4.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        break
+                    }
+                    if (i == 4) {
+                        popUpButton5.isHidden = true
+                        selection5.isHidden = true
+                        selection5.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 5) {
+                        popUpButton6.isHidden = true
+                        selection6.isHidden = true
+                        selection6.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 6) {
+                        popUpButton7.isHidden = true
+                        selection7.isHidden = true
+                        selection7.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 7) {
+                        popUpButton8.isHidden = true
+                        selection8.isHidden = true
+                        selection8.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 8) {
+                        popUpButton9.isHidden = true
+                        selection9.isHidden = true
+                        selection9.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 9) {
+                        popUpButton10.isHidden = true
+                        selection10.isHidden = true
+                        selection10.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                }
+                selectedList[i] = selectedList[i+1]
+                if (i == 0) {
+                    selection1.stringValue = selectedList[i].name!
+                }
+                if (i == 1) {
+                    selection2.stringValue = selectedList[i].name!
+                }
+                if (i == 2) {
+                    selection3.stringValue = selectedList[i].name!
+                }
+                if (i == 3) {
+                    selection4.stringValue = selectedList[i].name!
+                }
+                if (i == 4) {
+                    selection5.stringValue = selectedList[i].name!
+                }
+                if (i == 5) {
+                    selection6.stringValue = selectedList[i].name!
+                }
+                if (i == 6) {
+                    selection7.stringValue = selectedList[i].name!
+                }
+                if (i == 7) {
+                    selection8.stringValue = selectedList[i].name!
+                }
+                if (i == 8) {
+                    selection9.stringValue = selectedList[i].name!
+                }
+                if (i == 9) {
+                    selection10.stringValue = selectedList[i].name!
+                }
+            }
+        }
+    }
+    
+    @IBAction func removeLocationButton2(_ sender: Any) {
+        if (selectedList.count > 1) {
+            for i in 1 ... selectedList.count - 1 {
+                if (i == selectedList.count - 1) {
+                    if (i == 1) {
+                        popUpButton2.isHidden = true
+                        selection2.isHidden = true
+                        selection2.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        break
+                    }
+                    if (i == 2) {
+                        selection3.isHidden = true
+                        selection3.stringValue = ""
+                        popUpButton3.isHidden = true
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        break
+                    }
+                    if (i == 3) {
+                        popUpButton4.isHidden = true
+                        selection4.isHidden = true
+                        selection4.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        break
+                    }
+                    if (i == 4) {
+                        popUpButton5.isHidden = true
+                        selection5.isHidden = true
+                        selection5.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 5) {
+                        popUpButton6.isHidden = true
+                        selection6.isHidden = true
+                        selection6.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 6) {
+                        popUpButton7.isHidden = true
+                        selection7.isHidden = true
+                        selection7.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 7) {
+                        popUpButton8.isHidden = true
+                        selection8.isHidden = true
+                        selection8.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 8) {
+                        popUpButton9.isHidden = true
+                        selection9.isHidden = true
+                        selection9.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 9) {
+                        popUpButton10.isHidden = true
+                        selection10.isHidden = true
+                        selection10.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                }
+                selectedList[i] = selectedList[i+1]
+                if (i == 1) {
+                    selection2.stringValue = selectedList[i].name!
+                }
+                if (i == 2) {
+                    selection3.stringValue = selectedList[i].name!
+                }
+                if (i == 3) {
+                    selection4.stringValue = selectedList[i].name!
+                }
+                if (i == 4) {
+                    selection5.stringValue = selectedList[i].name!
+                }
+                if (i == 5) {
+                    selection6.stringValue = selectedList[i].name!
+                }
+                if (i == 6) {
+                    selection7.stringValue = selectedList[i].name!
+                }
+                if (i == 7) {
+                    selection8.stringValue = selectedList[i].name!
+                }
+                if (i == 8) {
+                    selection9.stringValue = selectedList[i].name!
+                }
+                if (i == 9) {
+                    selection10.stringValue = selectedList[i].name!
+                }
+            }
+        }
+
+    }
+    
+    @IBAction func removeLocationButton3(_ sender: Any) {
+        if (selectedList.count > 2) {
+            for i in 2 ... selectedList.count - 1 {
+                if (i == selectedList.count - 1) {
+                    if (i == 2) {
+                        selection3.isHidden = true
+                        selection3.stringValue = ""
+                        popUpButton3.isHidden = true
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        break
+                    }
+                    if (i == 3) {
+                        popUpButton4.isHidden = true
+                        selection4.isHidden = true
+                        selection4.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        break
+                    }
+                    if (i == 4) {
+                        popUpButton5.isHidden = true
+                        selection5.isHidden = true
+                        selection5.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 5) {
+                        popUpButton6.isHidden = true
+                        selection6.isHidden = true
+                        selection6.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 6) {
+                        popUpButton7.isHidden = true
+                        selection7.isHidden = true
+                        selection7.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 7) {
+                        popUpButton8.isHidden = true
+                        selection8.isHidden = true
+                        selection8.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 8) {
+                        popUpButton9.isHidden = true
+                        selection9.isHidden = true
+                        selection9.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 9) {
+                        popUpButton10.isHidden = true
+                        selection10.isHidden = true
+                        selection10.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                }
+                selectedList[i] = selectedList[i+1]
+                if (i == 2) {
+                    selection3.stringValue = selectedList[i].name!
+                }
+                if (i == 3) {
+                    selection4.stringValue = selectedList[i].name!
+                }
+                if (i == 4) {
+                    selection5.stringValue = selectedList[i].name!
+                }
+                if (i == 5) {
+                    selection6.stringValue = selectedList[i].name!
+                }
+                if (i == 6) {
+                    selection7.stringValue = selectedList[i].name!
+                }
+                if (i == 7) {
+                    selection8.stringValue = selectedList[i].name!
+                }
+                if (i == 8) {
+                    selection9.stringValue = selectedList[i].name!
+                }
+                if (i == 9) {
+                    selection10.stringValue = selectedList[i].name!
+                }
+            }
+        }
+    }
+    
+    @IBAction func removeLocationButton4(_ sender: Any) {
+        if (selectedList.count > 3) {
+            for i in 3 ... selectedList.count - 1 {
+                if (i == selectedList.count - 1) {
+                    if (i == 3) {
+                        popUpButton4.isHidden = true
+                        selection4.isHidden = true
+                        selection4.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        break
+                    }
+                    if (i == 4) {
+                        popUpButton5.isHidden = true
+                        selection5.isHidden = true
+                        selection5.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 5) {
+                        popUpButton6.isHidden = true
+                        selection6.isHidden = true
+                        selection6.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 6) {
+                        popUpButton7.isHidden = true
+                        selection7.isHidden = true
+                        selection7.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 7) {
+                        popUpButton8.isHidden = true
+                        selection8.isHidden = true
+                        selection8.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 8) {
+                        popUpButton9.isHidden = true
+                        selection9.isHidden = true
+                        selection9.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 9) {
+                        popUpButton10.isHidden = true
+                        selection10.isHidden = true
+                        selection10.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                }
+                selectedList[i] = selectedList[i+1]
+                if (i == 3) {
+                    selection4.stringValue = selectedList[i].name!
+                }
+                if (i == 4) {
+                    selection5.stringValue = selectedList[i].name!
+                }
+                if (i == 5) {
+                    selection6.stringValue = selectedList[i].name!
+                }
+                if (i == 6) {
+                    selection7.stringValue = selectedList[i].name!
+                }
+                if (i == 7) {
+                    selection8.stringValue = selectedList[i].name!
+                }
+                if (i == 8) {
+                    selection9.stringValue = selectedList[i].name!
+                }
+                if (i == 9) {
+                    selection10.stringValue = selectedList[i].name!
+                }
+            }
+        }
+    }
+    
+    
+    @IBAction func removeLocationButton5(_ sender: Any) {
+        if (selectedList.count > 4) {
+            for i in 4 ... selectedList.count - 1 {
+                if (i == selectedList.count - 1) {
+                    if (i == 4) {
+                        popUpButton5.isHidden = true
+                        selection5.isHidden = true
+                        selection5.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 5) {
+                        popUpButton6.isHidden = true
+                        selection6.isHidden = true
+                        selection6.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 6) {
+                        popUpButton7.isHidden = true
+                        selection7.isHidden = true
+                        selection7.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 7) {
+                        popUpButton8.isHidden = true
+                        selection8.isHidden = true
+                        selection8.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 8) {
+                        popUpButton9.isHidden = true
+                        selection9.isHidden = true
+                        selection9.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 9) {
+                        popUpButton10.isHidden = true
+                        selection10.isHidden = true
+                        selection10.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                }
+                selectedList[i] = selectedList[i+1]
+                if (i == 4) {
+                    selection5.stringValue = selectedList[i].name!
+                }
+                if (i == 5) {
+                    selection6.stringValue = selectedList[i].name!
+                }
+                if (i == 6) {
+                    selection7.stringValue = selectedList[i].name!
+                }
+                if (i == 7) {
+                    selection8.stringValue = selectedList[i].name!
+                }
+                if (i == 8) {
+                    selection9.stringValue = selectedList[i].name!
+                }
+                if (i == 9) {
+                    selection10.stringValue = selectedList[i].name!
+                }
+            }
+        }
+    }
+    
+    @IBAction func removeLocationButton6(_ sender: Any) {
+        if (selectedList.count > 5) {
+            for i in 5 ... selectedList.count - 1 {
+                if (i == selectedList.count - 1) {
+                    if (i == 5) {
+                        popUpButton6.isHidden = true
+                        selection6.isHidden = true
+                        selection6.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 6) {
+                        popUpButton7.isHidden = true
+                        selection7.isHidden = true
+                        selection7.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 7) {
+                        popUpButton8.isHidden = true
+                        selection8.isHidden = true
+                        selection8.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 8) {
+                        popUpButton9.isHidden = true
+                        selection9.isHidden = true
+                        selection9.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 9) {
+                        popUpButton10.isHidden = true
+                        selection10.isHidden = true
+                        selection10.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                }
+                selectedList[i] = selectedList[i+1]
+                if (i == 5) {
+                    selection6.stringValue = selectedList[i].name!
+                }
+                if (i == 6) {
+                    selection7.stringValue = selectedList[i].name!
+                }
+                if (i == 7) {
+                    selection8.stringValue = selectedList[i].name!
+                }
+                if (i == 8) {
+                    selection9.stringValue = selectedList[i].name!
+                }
+                if (i == 9) {
+                    selection10.stringValue = selectedList[i].name!
+                }
+            }
+        }
+    }
+    
+    @IBAction func removeLocationButton7(_ sender: Any) {
+        if (selectedList.count > 6) {
+            for i in 6 ... selectedList.count - 1 {
+                if (i == selectedList.count - 1) {
+                    if (i == 6) {
+                        popUpButton7.isHidden = true
+                        selection7.isHidden = true
+                        selection7.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 7) {
+                        popUpButton8.isHidden = true
+                        selection8.isHidden = true
+                        selection8.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 8) {
+                        popUpButton9.isHidden = true
+                        selection9.isHidden = true
+                        selection9.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 9) {
+                        popUpButton10.isHidden = true
+                        selection10.isHidden = true
+                        selection10.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                }
+                selectedList[i] = selectedList[i+1]
+                if (i == 6) {
+                    selection7.stringValue = selectedList[i].name!
+                }
+                if (i == 7) {
+                    selection8.stringValue = selectedList[i].name!
+                }
+                if (i == 8) {
+                    selection9.stringValue = selectedList[i].name!
+                }
+                if (i == 9) {
+                    selection10.stringValue = selectedList[i].name!
+                }
+            }
+        }
+    }
+    
+    @IBAction func removeLocationButton8(_ sender: Any) {
+        if (selectedList.count > 7) {
+            for i in 7 ... selectedList.count - 1 {
+                if (i == selectedList.count - 1) {
+                    if (i == 7) {
+                        popUpButton8.isHidden = true
+                        selection8.isHidden = true
+                        selection8.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 8) {
+                        popUpButton9.isHidden = true
+                        selection9.isHidden = true
+                        selection9.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 9) {
+                        popUpButton10.isHidden = true
+                        selection10.isHidden = true
+                        selection10.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                }
+                selectedList[i] = selectedList[i+1]
+                if (i == 7) {
+                    selection8.stringValue = selectedList[i].name!
+                }
+                if (i == 8) {
+                    selection9.stringValue = selectedList[i].name!
+                }
+                if (i == 9) {
+                    selection10.stringValue = selectedList[i].name!
+                }
+            }
+        }
+    }
+    
+    @IBAction func removeLocationButton9(_ sender: Any) {
+        if (selectedList.count > 8) {
+            for i in 8 ... selectedList.count - 1 {
+                if (i == selectedList.count - 1) {
+                    if (i == 8) {
+                        popUpButton9.isHidden = true
+                        selection9.isHidden = true
+                        selection9.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                    if (i == 9) {
+                        popUpButton10.isHidden = true
+                        selection10.isHidden = true
+                        selection10.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                }
+                selectedList[i] = selectedList[i+1]
+                if (i == 8) {
+                    selection9.stringValue = selectedList[i].name!
+                }
+                if (i == 9) {
+                    selection10.stringValue = selectedList[i].name!
+                }
+            }
+        }
+    }
+    
+    @IBAction func removeLocationButton10(_ sender: Any) {
+        if (selectedList.count > 9) {
+            for i in 9 ... selectedList.count - 1 {
+                if (i == selectedList.count - 1) {
+                    if (i == 9) {
+                        popUpButton10.isHidden = true
+                        selection10.isHidden = true
+                        selection10.stringValue = ""
+                        popUpButton1.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton2.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton3.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton4.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton5.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton6.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton7.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton8.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton9.removeItem(withTitle: "\(selectedList.count)")
+                        popUpButton10.removeItem(withTitle: "\(selectedList.count)")
+                        selectedList.remove(at: selectedList.count-1)
+                        
+                        break
+                    }
+                }
+                selectedList[i] = selectedList[i+1]
+                if (i == 9) {
+                    selection10.stringValue = selectedList[i].name!
+                }
+            }
+        }
+    }
     
     var businessList: [Business] = []
     var selectedList: [Business] = []
@@ -192,14 +1468,14 @@ class PlanViewController: NSViewController {
         tempBusiness.image = NSImage(byReferencingFile: businessObject["image_url"].stringValue)
         tempBusiness.name = businessObject["name"].stringValue
         tempBusiness.rating = businessObject["rating"].double
-        tempBusiness.category = businessObject["categories.[0].title"].stringValue
+        tempBusiness.category = businessObject["categories"][0]["title"].stringValue
+        tempBusiness.location = "\(businessObject["location"]["city"]), \(businessObject["location"]["state"])"
         tempBusiness.price = businessObject["price"].stringValue
         tempBusiness.url = businessObject["url"].stringValue
         tempBusiness.latitude = businessObject["coordinates.latitude"].double
         tempBusiness.longitude = businessObject["coordinates.longitude"].double
         tempBusiness.address = ""
         return tempBusiness
-        
     }
     
     func toString(item: Business) ->String{
@@ -332,14 +1608,20 @@ extension PlanViewController: NSTableViewDelegate {
         } else if tableColumn == tableView.tableColumns[1] {
             text = item.category!
             if (text.characters.count == 0) {
-                text = categoryField.stringValue.capitalized
+                text = "N/A"
             }
             cellIdentifier = CellIdentifiers.CategoryCell
         } else if tableColumn == tableView.tableColumns[2] {
             text = item.price!
+            if (text.characters.count == 0) {
+                text = "-"
+            }
             cellIdentifier = CellIdentifiers.PriceCell
         } else if tableColumn == tableView.tableColumns[3] {
             text = "\(item.rating!)"
+            if (text.characters.count == 0) {
+                text = "-"
+            }
             cellIdentifier = CellIdentifiers.RatingCell
         }
         
