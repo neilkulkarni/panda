@@ -73,7 +73,7 @@ class PlanViewController: NSViewController {
     
     @IBAction func selectLocationButton(_ sender: Any) {
         let row = resultsTableView.selectedRow
-        if (row >= 0 || row <= 10) {
+        if (row >= 0 && selectedList.count < 10) {
             selectedList.append(businessList[row])
         
             popUpButton1.addItem(withTitle: "\(selectedList.count)")
