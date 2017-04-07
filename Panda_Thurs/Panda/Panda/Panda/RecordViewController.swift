@@ -71,6 +71,7 @@ class RecordViewController: NSViewController {
     
     var businessList: [Business] = []
     var selectedList: [Business] = []
+    var orderedList: [Business] = []
     
     @IBOutlet weak var selection1: NSTextField!
 
@@ -119,6 +120,8 @@ class RecordViewController: NSViewController {
                     selection2.isHidden = false
                     selection2.stringValue = selectedList[i].name!
                     popUpButton2.isHidden = false
+                    reorderButton.isHidden = false
+                    
                     if (i == selectedList.count - 1) {
                         popUpButton2.selectItem(at: i)
                     }
@@ -208,8 +211,92 @@ class RecordViewController: NSViewController {
     @IBOutlet weak var popUpButton9: NSPopUpButton!
     @IBOutlet weak var popUpButton10: NSPopUpButton!
 
+    @IBOutlet weak var reorderButton: NSButton!
 
-
+    
+    @IBAction func reorderButton(_ sender: Any) {
+        orderedList.removeAll()
+        
+        for i in 0..<selectedList.count {
+            if(0 < selectedList.count && popUpButton1.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[0])
+            }
+            if (1 < selectedList.count && popUpButton2.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[1])
+            }
+            if (2 < selectedList.count && popUpButton3.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[2])
+            }
+            if (3 < selectedList.count && popUpButton4.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[3])
+            }
+            if (4 < selectedList.count && popUpButton5.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[4])
+            }
+            if (5 < selectedList.count && popUpButton6.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[5])
+            }
+            if (6 < selectedList.count && popUpButton7.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[6])
+            }
+            if (7 < selectedList.count && popUpButton8.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[7])
+            }
+            if (8 < selectedList.count && popUpButton9.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[8])
+            }
+            if (9 < selectedList.count && popUpButton10.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[9])
+            }
+        }
+        
+        if (0 < orderedList.count) {
+            selection1.stringValue = orderedList[0].name!
+            popUpButton1.selectItem(at: 0)
+        }
+        if (1 < orderedList.count) {
+            selection2.stringValue = orderedList[1].name!
+            popUpButton2.selectItem(at: 1)
+        }
+        if (2 < orderedList.count) {
+            selection3.stringValue = orderedList[2].name!
+            popUpButton3.selectItem(at: 2)
+        }
+        if (3 < orderedList.count) {
+            selection4.stringValue = orderedList[3].name!
+            popUpButton4.selectItem(at: 3)
+        }
+        if (4 < orderedList.count) {
+            selection5.stringValue = orderedList[4].name!
+            popUpButton5.selectItem(at: 4)
+        }
+        if (5 < orderedList.count) {
+            selection6.stringValue = orderedList[5].name!
+            popUpButton6.selectItem(at: 5)
+        }
+        if (6 < orderedList.count) {
+            selection7.stringValue = orderedList[6].name!
+            popUpButton7.selectItem(at: 6)
+        }
+        if (7 < orderedList.count) {
+            selection8.stringValue = orderedList[7].name!
+            popUpButton8.selectItem(at: 7)
+        }
+        if (8 < orderedList.count) {
+            selection9.stringValue = orderedList[8].name!
+            popUpButton9.selectItem(at: 8)
+        }
+        if (9 < orderedList.count) {
+            selection10.stringValue = orderedList[9].name!
+            popUpButton10.selectItem(at: 9)
+        }
+        
+        selectedList.removeAll()
+        for j in 0..<orderedList.count {
+            selectedList.append(orderedList[j])
+        }
+    }
+    
     
     
     
