@@ -1111,7 +1111,7 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="logoutButton:" target="F6W-mE-MvV" id="SaD-tW-RQc"/>
-                                    <segue destination="XfG-lQ-9wD" kind="custom" id="dql-0i-KtJ"/>
+                                    <segue destination="XfG-lQ-9wD" kind="custom" identifier="idSegue" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="dql-0i-KtJ"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RDZ-uN-Kvh">
