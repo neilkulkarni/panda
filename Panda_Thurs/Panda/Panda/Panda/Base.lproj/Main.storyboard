@@ -1070,9 +1070,19 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIU-h4-agY">
+                                <rect key="frame" x="517" y="418" width="166" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Limit bio to 160 characters" id="hlh-4d-bMd">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="bioErrorLabel" destination="uIU-h4-agY" id="N06-0h-i0f"/>
                         <outlet property="bioField" destination="Jjy-KN-jAo" id="TRD-no-tBR"/>
                         <outlet property="emailField" destination="u6e-xo-uPf" id="oI8-Nj-1vR"/>
                         <outlet property="nameField" destination="kad-ut-QSe" id="qLz-x4-JdO"/>
@@ -2686,8 +2696,8 @@
         <image name="street" width="77" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iTU-0V-wiV"/>
-        <segue reference="dql-0i-KtJ"/>
+        <segue reference="zZz-ep-SOj"/>
+        <segue reference="TQ2-EL-7de"/>
         <segue reference="dBU-vf-RpB"/>
     </inferredMetricsTieBreakers>
 </document>

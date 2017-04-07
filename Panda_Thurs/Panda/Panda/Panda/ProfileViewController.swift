@@ -17,6 +17,7 @@ class ProfileViewController: NSViewController {
     @IBOutlet weak var bioField: NSTextField!
     @IBOutlet weak var pictureField: NSTextField!
     @IBOutlet weak var newBio: NSTextField!
+    @IBOutlet weak var bioErrorLabel: NSTextField!
     
     @IBOutlet weak var profilePictureView: NSImageView!
     
@@ -52,6 +53,13 @@ class ProfileViewController: NSViewController {
         profilePictureView.image = NSImage(byReferencingFile: user.getPicture())
     }
     @IBAction func editBio(_ sender: Any) {
+        if (newBio.stringValue.characters.count > 160) {
+            bioErrorLabel.isHidden = false
+            return
+        }
+        else {
+            bioErrorLabel.isHidden = true
+        }
         bio = newBio.stringValue
         //id = user.getID()
         let parameters: Parameters = [
