@@ -1568,6 +1568,17 @@
                                     <nil key="identifier"/>
                                 </webPreferences>
                             </webView>
+                            <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdr-Ju-s4N">
+                                <rect key="frame" x="710" y="525" width="89" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Reorder" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="D4d-W5-LMj">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="reorderButton:" target="F6W-mE-MvV" id="bzU-UR-2oI"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -1584,6 +1595,7 @@
                         <outlet property="popUpButton7" destination="u0g-gL-sDL" id="fgU-af-k7H"/>
                         <outlet property="popUpButton8" destination="Kqi-YE-fMb" id="PaE-ib-0DA"/>
                         <outlet property="popUpButton9" destination="zWi-wH-wvV" id="nZc-YV-RBW"/>
+                        <outlet property="reorderButton" destination="hdr-Ju-s4N" id="DCX-q9-CP3"/>
                         <outlet property="resultsTableView" destination="0Bp-Ae-3e3" id="7Fz-Qb-AEA"/>
                         <outlet property="selection1" destination="456-ly-h6l" id="6Is-yb-Cqd"/>
                         <outlet property="selection10" destination="8vT-Wx-lqE" id="Hbl-rU-8mB"/>
@@ -2674,8 +2686,8 @@
         <image name="street" width="77" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kzz-ui-Eye"/>
-        <segue reference="hwy-4c-1ZJ"/>
+        <segue reference="iTU-0V-wiV"/>
+        <segue reference="dql-0i-KtJ"/>
         <segue reference="dBU-vf-RpB"/>
     </inferredMetricsTieBreakers>
 </document>
