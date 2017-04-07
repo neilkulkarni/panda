@@ -21,10 +21,53 @@ class RecordViewController: NSViewController {
     
     //@IBOutlet weak var webPageView: WebView!
     
+    @IBOutlet weak var mapWebView: WebView!
 
+    @IBAction func generateMap(_ sender: Any) {
+        //selected list
+        //https://maps.googleapis.com/maps/api/staticmap?size=600x300&maptype=roadmap &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318 &markers=color:red%7Clabel:C%7C40.718217,-73.998284 &key=AIzaSyCqXFkHzOLwEw00zOTq_1kzGwkgNjAKHTE
+        var imageString:String = "https://maps.googleapis.com/maps/api/staticmap?size=600x300&maptype=roadmap"
+        
+        for i in 0...(selectedList.count-1){
+            var temp:String = ""
+            if(i == 0){ temp = "A" }
+            else if (i == 1){ temp = "B" }
+            else if (i == 2){ temp = "C" }
+            else if (i == 3){ temp = "D" }
+            else if (i == 4){ temp = "E" }
+            else if (i == 5){ temp = "F" }
+            else if (i == 6){ temp = "G" }
+            else if (i == 7){ temp = "H" }
+            else if (i == 8){ temp = "I" }
+            else if (i == 9){ temp = "J" }
+            
+            let initString = selectedList[i].address
+            let addressString = initString?.replacingOccurrences(of: " ", with: "+")
+
+            imageString += "&markers=size:mid%7Ccolor:red%7Clabel:" + temp + "%7C"
+            imageString += addressString!
+        }
+        
+        imageString += "&key=AIzaSyCqXFkHzOLwEw00zOTq_1kzGwkgNjAKHTE"
+        print(imageString)
+        
+        let requesturl = URL(string: imageString)
+        let request = URLRequest(url: requesturl!)
+        mapWebView.mainFrame.load(request)
+        
+//        let requesturl = NSURL(string: imageString)
+//        let request = NSURLRequest(url: requesturl!)
+//        mapWebView.mainFrame.load(request)
+//        
+       //mapWebView.loadRequest(NSURLRequest(URL: NSURL(imageString)!))
+        
+        
+        mapWebView.isHidden = false
+    }
     
     @IBOutlet weak var startingAddress: NSTextField!
 
+    @IBOutlet weak var imageThing: NSImageView!
     
     var businessList: [Business] = []
     var selectedList: [Business] = []
@@ -45,6 +88,7 @@ class RecordViewController: NSViewController {
     @IBOutlet weak var tripTitle: NSTextField!
     @IBOutlet weak var tripDescription: NSTextField!
     
+    @IBOutlet weak var generateMapButton: NSButton!
     
     @IBAction func selectLocationButton(_ sender: Any) {
         let row = resultsTableView.selectedRow
@@ -145,6 +189,10 @@ class RecordViewController: NSViewController {
                 }
             }
         }
+        
+        if (selectedList.count > 0) {
+            generateMapButton.isHidden = false
+        }
     }
 
     
@@ -185,6 +233,10 @@ class RecordViewController: NSViewController {
 
     
     @IBAction func searchButton(_ sender: Any) {
+        if (startingAddress.stringValue.characters.count == 0) {
+            startingAddress.stringValue = "Purdue University"
+        }
+        
         let tempArr = startingAddress.stringValue
         var myStringArr = tempArr.components(separatedBy: " ")
         var locationSearchQuery: String = "https://maps.googleapis.com/maps/api/place/textsearch/json?query="
