@@ -16,19 +16,23 @@ import Alamofire
 class RecordViewController: NSViewController {
     
     var user: User = User()
-    
+
     @IBOutlet weak var resultsTableView: NSTableView!
+    
     //@IBOutlet weak var webPageView: WebView!
     
-    @IBOutlet weak var webPageView2: WebView!
+
     
     @IBOutlet weak var startingAddress: NSTextField!
+
     
     var businessList: [Business] = []
     var selectedList: [Business] = []
     
     @IBOutlet weak var selection1: NSTextField!
+
     @IBOutlet weak var selection2: NSTextField!
+    
     @IBOutlet weak var selection3: NSTextField!
     @IBOutlet weak var selection4: NSTextField!
     @IBOutlet weak var selection5: NSTextField!
@@ -38,9 +42,13 @@ class RecordViewController: NSViewController {
     @IBOutlet weak var selection9: NSTextField!
     @IBOutlet weak var selection10: NSTextField!
     
+    @IBOutlet weak var tripTitle: NSTextField!
+    @IBOutlet weak var tripDescription: NSTextField!
+    
+    
     @IBAction func selectLocationButton(_ sender: Any) {
         let row = resultsTableView.selectedRow
-        if (row >= 0 || row <= 10) {
+        if (row >= 0 && selectedList.count < 10) {
             selectedList.append(businessList[row])
             
             popUpButton1.addItem(withTitle: "\(selectedList.count)")
@@ -139,7 +147,8 @@ class RecordViewController: NSViewController {
         }
     }
 
-
+    
+    
     @IBOutlet weak var popUpButton1: NSPopUpButton!
     @IBOutlet weak var popUpButton2: NSPopUpButton!
     @IBOutlet weak var popUpButton3: NSPopUpButton!
@@ -150,6 +159,9 @@ class RecordViewController: NSViewController {
     @IBOutlet weak var popUpButton8: NSPopUpButton!
     @IBOutlet weak var popUpButton9: NSPopUpButton!
     @IBOutlet weak var popUpButton10: NSPopUpButton!
+
+
+
     
     
     
@@ -171,7 +183,8 @@ class RecordViewController: NSViewController {
         self.view.layer?.backgroundColor = CGColor(red: 220/255.0, green: 220/255.0, blue: 255/255.0, alpha: 0.5)
     }
 
-    @IBAction func finishedAddressButton(_ sender: Any) {
+    
+    @IBAction func searchButton(_ sender: Any) {
         let tempArr = startingAddress.stringValue
         var myStringArr = tempArr.components(separatedBy: " ")
         var locationSearchQuery: String = "https://maps.googleapis.com/maps/api/place/textsearch/json?query="
@@ -218,11 +231,10 @@ class RecordViewController: NSViewController {
                 
                 //self.storeResults()
                 //self.token = json["access_token"].stringValue
-
+                
             }
         }
     }
-    
     
     
     func convertToBusiness(businessObject: JSON) -> Business{
@@ -230,7 +242,7 @@ class RecordViewController: NSViewController {
         tempBusiness.image = NSImage(byReferencingFile: businessObject["icon"].stringValue)                 ///needs to be changed if we want the actual picture
         tempBusiness.name = businessObject["name"].stringValue
         tempBusiness.rating = businessObject["rating"].double
-        tempBusiness.category = businessObject["types.[0]"].stringValue
+        tempBusiness.category = businessObject["types"][0].stringValue
         tempBusiness.price = businessObject["price_level"].stringValue
         tempBusiness.url = businessObject["id"].stringValue             //set to be the id for now
         tempBusiness.latitude = businessObject["geometry.location.lat"].double
