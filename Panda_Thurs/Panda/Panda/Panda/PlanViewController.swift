@@ -41,6 +41,22 @@ class PlanViewController: NSViewController {
     @IBOutlet weak var popUpButton9: NSPopUpButton!
     @IBOutlet weak var popUpButton10: NSPopUpButton!
     
+    @IBOutlet weak var removeButton1: NSButton!
+    @IBOutlet weak var removeButton2: NSButton!
+    @IBOutlet weak var removeButton3: NSButton!
+    @IBOutlet weak var removeButton4: NSButton!
+    @IBOutlet weak var removeButton5: NSButton!
+    @IBOutlet weak var removeButton6: NSButton!
+    @IBOutlet weak var removeButton7: NSButton!
+    @IBOutlet weak var removeButton8: NSButton!
+    @IBOutlet weak var removeButton9: NSButton!
+    @IBOutlet weak var removeButton10: NSButton!
+    
+    @IBOutlet weak var selectedLocationsField: NSTextField!
+    @IBOutlet weak var orderField: NSTextField!
+    @IBOutlet weak var reorderButton: NSButton!
+    
+    
     @IBOutlet weak var tripDescriptionField: NSTextFieldCell!
     @IBOutlet weak var tripNameField: NSTextField!
     @IBOutlet weak var tripDescriptionErrorLabel: NSTextField!
@@ -95,6 +111,10 @@ class PlanViewController: NSViewController {
                     if (i == selectedList.count - 1) {
                         popUpButton1.selectItem(at: i)
                     }
+                    removeButton1.isHidden = false
+                    
+                    selectedLocationsField.isHidden = false
+                    orderField.isHidden = false
                 }
                 else if (i == 1) {
                     selection2.isHidden = false
@@ -103,6 +123,9 @@ class PlanViewController: NSViewController {
                     if (i == selectedList.count - 1) {
                         popUpButton2.selectItem(at: i)
                     }
+                    removeButton2.isHidden = false
+                    
+                    reorderButton.isHidden = false
                 }
                 else if (i == 2) {
                     selection3.isHidden = false
@@ -111,6 +134,7 @@ class PlanViewController: NSViewController {
                     if (i == selectedList.count - 1) {
                         popUpButton3.selectItem(at: i)
                     }
+                    removeButton3.isHidden = false
                 }
                 else if (i == 3) {
                     selection4.isHidden = false
@@ -119,6 +143,7 @@ class PlanViewController: NSViewController {
                     if (i == selectedList.count - 1) {
                         popUpButton4.selectItem(at: i)
                     }
+                    removeButton4.isHidden = false
                 }
                 else if (i == 4) {
                     selection5.isHidden = false
@@ -127,6 +152,7 @@ class PlanViewController: NSViewController {
                     if (i == selectedList.count - 1) {
                         popUpButton5.selectItem(at: i)
                     }
+                    removeButton5.isHidden = false
                 }
                 else if (i == 5) {
                     selection6.isHidden = false
@@ -135,6 +161,7 @@ class PlanViewController: NSViewController {
                     if (i == selectedList.count - 1) {
                         popUpButton6.selectItem(at: i)
                     }
+                    removeButton6.isHidden = false
                 }
                 else if (i == 6) {
                     selection7.isHidden = false
@@ -143,6 +170,7 @@ class PlanViewController: NSViewController {
                     if (i == selectedList.count - 1) {
                         popUpButton7.selectItem(at: i)
                     }
+                    removeButton7.isHidden = false
                 }
                 else if (i == 7) {
                     selection8.isHidden = false
@@ -151,6 +179,7 @@ class PlanViewController: NSViewController {
                     if (i == selectedList.count - 1) {
                         popUpButton8.selectItem(at: i)
                     }
+                    removeButton8.isHidden = false
                 }
                 else if (i == 8) {
                     selection9.isHidden = false
@@ -159,6 +188,7 @@ class PlanViewController: NSViewController {
                     if (i == selectedList.count - 1) {
                         popUpButton9.selectItem(at: i)
                     }
+                    removeButton9.isHidden = false
                 }
                 else if (i == 9) {
                     selection10.isHidden = false
@@ -167,6 +197,7 @@ class PlanViewController: NSViewController {
                     if (i == selectedList.count - 1) {
                         popUpButton10.selectItem(at: i)
                     }
+                    removeButton10.isHidden = false
                 }
             }
         }
@@ -179,6 +210,11 @@ class PlanViewController: NSViewController {
                     if (i == 0) {
                         selection1.isHidden = true
                         selection1.stringValue = ""
+                        popUpButton1.isHidden = true
+                        removeButton1.isHidden = true
+                        selectedLocationsField.isHidden = true
+                        orderField.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -189,15 +225,17 @@ class PlanViewController: NSViewController {
                         popUpButton8.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton9.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton10.removeItem(withTitle: "\(selectedList.count)")
-                        popUpButton1.isHidden = true
                         selectedList.remove(at: selectedList.count-1)
                         
                         break
                     }
                     if (i == 1) {
-                        popUpButton2.isHidden = true
                         selection2.isHidden = true
                         selection2.stringValue = ""
+                        popUpButton2.isHidden = true
+                        removeButton2.isHidden = true
+                        reorderButton.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -215,6 +253,8 @@ class PlanViewController: NSViewController {
                         selection3.isHidden = true
                         selection3.stringValue = ""
                         popUpButton3.isHidden = true
+                        removeButton3.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -229,9 +269,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 3) {
-                        popUpButton4.isHidden = true
                         selection4.isHidden = true
                         selection4.stringValue = ""
+                        popUpButton4.isHidden = true
+                        removeButton4.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -246,9 +288,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 4) {
-                        popUpButton5.isHidden = true
                         selection5.isHidden = true
                         selection5.stringValue = ""
+                        popUpButton5.isHidden = true
+                        removeButton5.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -264,9 +308,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 5) {
-                        popUpButton6.isHidden = true
                         selection6.isHidden = true
                         selection6.stringValue = ""
+                        popUpButton6.isHidden = true
+                        removeButton6.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -282,9 +328,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 6) {
-                        popUpButton7.isHidden = true
                         selection7.isHidden = true
                         selection7.stringValue = ""
+                        popUpButton7.isHidden = true
+                        removeButton7.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -300,9 +348,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 7) {
-                        popUpButton8.isHidden = true
                         selection8.isHidden = true
                         selection8.stringValue = ""
+                        popUpButton8.isHidden = true
+                        removeButton8.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -318,9 +368,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 8) {
-                        popUpButton9.isHidden = true
                         selection9.isHidden = true
                         selection9.stringValue = ""
+                        popUpButton9.isHidden = true
+                        removeButton9.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -336,9 +388,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 9) {
-                        popUpButton10.isHidden = true
                         selection10.isHidden = true
                         selection10.stringValue = ""
+                        popUpButton10.isHidden = true
+                        removeButton10.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -394,9 +448,12 @@ class PlanViewController: NSViewController {
             for i in 1 ... selectedList.count - 1 {
                 if (i == selectedList.count - 1) {
                     if (i == 1) {
-                        popUpButton2.isHidden = true
                         selection2.isHidden = true
                         selection2.stringValue = ""
+                        popUpButton2.isHidden = true
+                        removeButton2.isHidden = true
+                        
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -414,6 +471,8 @@ class PlanViewController: NSViewController {
                         selection3.isHidden = true
                         selection3.stringValue = ""
                         popUpButton3.isHidden = true
+                        removeButton3.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -428,9 +487,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 3) {
-                        popUpButton4.isHidden = true
                         selection4.isHidden = true
                         selection4.stringValue = ""
+                        popUpButton4.isHidden = true
+                        removeButton4.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -445,9 +506,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 4) {
-                        popUpButton5.isHidden = true
                         selection5.isHidden = true
                         selection5.stringValue = ""
+                        popUpButton5.isHidden = true
+                        removeButton5.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -463,9 +526,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 5) {
-                        popUpButton6.isHidden = true
                         selection6.isHidden = true
                         selection6.stringValue = ""
+                        popUpButton6.isHidden = true
+                        removeButton6.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -481,9 +546,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 6) {
-                        popUpButton7.isHidden = true
                         selection7.isHidden = true
                         selection7.stringValue = ""
+                        popUpButton7.isHidden = true
+                        removeButton7.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -499,9 +566,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 7) {
-                        popUpButton8.isHidden = true
                         selection8.isHidden = true
                         selection8.stringValue = ""
+                        popUpButton8.isHidden = true
+                        removeButton8.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -535,9 +604,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 9) {
-                        popUpButton10.isHidden = true
                         selection10.isHidden = true
                         selection10.stringValue = ""
+                        popUpButton10.isHidden = true
+                        removeButton10.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -594,6 +665,8 @@ class PlanViewController: NSViewController {
                         selection3.isHidden = true
                         selection3.stringValue = ""
                         popUpButton3.isHidden = true
+                        removeButton3.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -608,9 +681,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 3) {
-                        popUpButton4.isHidden = true
                         selection4.isHidden = true
                         selection4.stringValue = ""
+                        popUpButton4.isHidden = true
+                        removeButton4.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -625,9 +700,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 4) {
-                        popUpButton5.isHidden = true
                         selection5.isHidden = true
                         selection5.stringValue = ""
+                        popUpButton5.isHidden = true
+                        removeButton5.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -643,9 +720,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 5) {
-                        popUpButton6.isHidden = true
                         selection6.isHidden = true
                         selection6.stringValue = ""
+                        popUpButton6.isHidden = true
+                        removeButton6.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -661,9 +740,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 6) {
-                        popUpButton7.isHidden = true
                         selection7.isHidden = true
                         selection7.stringValue = ""
+                        popUpButton7.isHidden = true
+                        removeButton7.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -679,9 +760,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 7) {
-                        popUpButton8.isHidden = true
                         selection8.isHidden = true
                         selection8.stringValue = ""
+                        popUpButton8.isHidden = true
+                        removeButton8.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -697,9 +780,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 8) {
-                        popUpButton9.isHidden = true
                         selection9.isHidden = true
                         selection9.stringValue = ""
+                        popUpButton9.isHidden = true
+                        removeButton9.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -715,9 +800,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 9) {
-                        popUpButton10.isHidden = true
                         selection10.isHidden = true
                         selection10.stringValue = ""
+                        popUpButton10.isHidden = true
+                        removeButton10.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -767,9 +854,11 @@ class PlanViewController: NSViewController {
             for i in 3 ... selectedList.count - 1 {
                 if (i == selectedList.count - 1) {
                     if (i == 3) {
-                        popUpButton4.isHidden = true
                         selection4.isHidden = true
                         selection4.stringValue = ""
+                        popUpButton4.isHidden = true
+                        removeButton4.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -784,9 +873,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 4) {
-                        popUpButton5.isHidden = true
                         selection5.isHidden = true
                         selection5.stringValue = ""
+                        popUpButton5.isHidden = true
+                        removeButton5.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -802,9 +893,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 5) {
-                        popUpButton6.isHidden = true
                         selection6.isHidden = true
                         selection6.stringValue = ""
+                        popUpButton6.isHidden = true
+                        removeButton6.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -820,9 +913,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 6) {
-                        popUpButton7.isHidden = true
                         selection7.isHidden = true
                         selection7.stringValue = ""
+                        popUpButton7.isHidden = true
+                        removeButton7.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -838,9 +933,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 7) {
-                        popUpButton8.isHidden = true
                         selection8.isHidden = true
                         selection8.stringValue = ""
+                        popUpButton8.isHidden = true
+                        removeButton8.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -856,9 +953,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 8) {
-                        popUpButton9.isHidden = true
                         selection9.isHidden = true
                         selection9.stringValue = ""
+                        popUpButton9.isHidden = true
+                        removeButton9.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -874,9 +973,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 9) {
-                        popUpButton10.isHidden = true
                         selection10.isHidden = true
                         selection10.stringValue = ""
+                        popUpButton10.isHidden = true
+                        removeButton10.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -924,9 +1025,11 @@ class PlanViewController: NSViewController {
             for i in 4 ... selectedList.count - 1 {
                 if (i == selectedList.count - 1) {
                     if (i == 4) {
-                        popUpButton5.isHidden = true
                         selection5.isHidden = true
                         selection5.stringValue = ""
+                        popUpButton5.isHidden = true
+                        removeButton5.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -942,9 +1045,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 5) {
-                        popUpButton6.isHidden = true
                         selection6.isHidden = true
                         selection6.stringValue = ""
+                        popUpButton6.isHidden = true
+                        removeButton6.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -960,9 +1065,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 6) {
-                        popUpButton7.isHidden = true
                         selection7.isHidden = true
                         selection7.stringValue = ""
+                        popUpButton7.isHidden = true
+                        removeButton7.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -978,9 +1085,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 7) {
-                        popUpButton8.isHidden = true
                         selection8.isHidden = true
                         selection8.stringValue = ""
+                        popUpButton8.isHidden = true
+                        removeButton8.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -996,9 +1105,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 8) {
-                        popUpButton9.isHidden = true
                         selection9.isHidden = true
                         selection9.stringValue = ""
+                        popUpButton9.isHidden = true
+                        removeButton9.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -1014,9 +1125,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 9) {
-                        popUpButton10.isHidden = true
                         selection10.isHidden = true
                         selection10.stringValue = ""
+                        popUpButton10.isHidden = true
+                        removeButton10.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -1060,9 +1173,11 @@ class PlanViewController: NSViewController {
             for i in 5 ... selectedList.count - 1 {
                 if (i == selectedList.count - 1) {
                     if (i == 5) {
-                        popUpButton6.isHidden = true
                         selection6.isHidden = true
                         selection6.stringValue = ""
+                        popUpButton6.isHidden = true
+                        removeButton6.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -1078,9 +1193,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 6) {
-                        popUpButton7.isHidden = true
                         selection7.isHidden = true
                         selection7.stringValue = ""
+                        popUpButton7.isHidden = true
+                        removeButton7.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -1096,9 +1213,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 7) {
-                        popUpButton8.isHidden = true
                         selection8.isHidden = true
                         selection8.stringValue = ""
+                        popUpButton8.isHidden = true
+                        removeButton8.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -1114,9 +1233,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 8) {
-                        popUpButton9.isHidden = true
                         selection9.isHidden = true
                         selection9.stringValue = ""
+                        popUpButton9.isHidden = true
+                        removeButton9.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -1132,9 +1253,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 9) {
-                        popUpButton10.isHidden = true
                         selection10.isHidden = true
                         selection10.stringValue = ""
+                        popUpButton10.isHidden = true
+                        removeButton10.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -1175,9 +1298,11 @@ class PlanViewController: NSViewController {
             for i in 6 ... selectedList.count - 1 {
                 if (i == selectedList.count - 1) {
                     if (i == 6) {
-                        popUpButton7.isHidden = true
                         selection7.isHidden = true
                         selection7.stringValue = ""
+                        popUpButton7.isHidden = true
+                        removeButton7.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -1193,9 +1318,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 7) {
-                        popUpButton8.isHidden = true
                         selection8.isHidden = true
                         selection8.stringValue = ""
+                        popUpButton8.isHidden = true
+                        removeButton8.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -1211,9 +1338,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 8) {
-                        popUpButton9.isHidden = true
                         selection9.isHidden = true
                         selection9.stringValue = ""
+                        popUpButton9.isHidden = true
+                        removeButton9.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -1229,9 +1358,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 9) {
-                        popUpButton10.isHidden = true
                         selection10.isHidden = true
                         selection10.stringValue = ""
+                        popUpButton10.isHidden = true
+                        removeButton10.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -1269,9 +1400,12 @@ class PlanViewController: NSViewController {
             for i in 7 ... selectedList.count - 1 {
                 if (i == selectedList.count - 1) {
                     if (i == 7) {
-                        popUpButton8.isHidden = true
                         selection8.isHidden = true
                         selection8.stringValue = ""
+                        popUpButton8.isHidden = true
+                        removeButton8.isHidden = true
+                        
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -1287,9 +1421,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 8) {
-                        popUpButton9.isHidden = true
                         selection9.isHidden = true
                         selection9.stringValue = ""
+                        popUpButton9.isHidden = true
+                        removeButton8.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -1305,9 +1441,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 9) {
-                        popUpButton10.isHidden = true
                         selection10.isHidden = true
                         selection10.stringValue = ""
+                        popUpButton10.isHidden = true
+                        removeButton10.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -1342,9 +1480,11 @@ class PlanViewController: NSViewController {
             for i in 8 ... selectedList.count - 1 {
                 if (i == selectedList.count - 1) {
                     if (i == 8) {
-                        popUpButton9.isHidden = true
                         selection9.isHidden = true
                         selection9.stringValue = ""
+                        popUpButton9.isHidden = true
+                        removeButton9.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -1360,9 +1500,11 @@ class PlanViewController: NSViewController {
                         break
                     }
                     if (i == 9) {
-                        popUpButton10.isHidden = true
                         selection10.isHidden = true
                         selection10.stringValue = ""
+                        popUpButton10.isHidden = true
+                        removeButton10.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -1394,9 +1536,11 @@ class PlanViewController: NSViewController {
             for i in 9 ... selectedList.count - 1 {
                 if (i == selectedList.count - 1) {
                     if (i == 9) {
-                        popUpButton10.isHidden = true
                         selection10.isHidden = true
                         selection10.stringValue = ""
+                        popUpButton10.isHidden = true
+                        removeButton10.isHidden = true
+                        
                         popUpButton1.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton2.removeItem(withTitle: "\(selectedList.count)")
                         popUpButton3.removeItem(withTitle: "\(selectedList.count)")
@@ -1421,8 +1565,94 @@ class PlanViewController: NSViewController {
     }
     
     
+    @IBAction func reorderButton(_ sender: Any) {
+        orderedList.removeAll()
+        
+        for i in 0..<selectedList.count {
+            if(0 < selectedList.count && popUpButton1.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[0])
+            }
+            if (1 < selectedList.count && popUpButton2.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[1])
+            }
+            if (2 < selectedList.count && popUpButton3.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[2])
+            }
+            if (3 < selectedList.count && popUpButton4.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[3])
+            }
+            if (4 < selectedList.count && popUpButton5.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[4])
+            }
+            if (5 < selectedList.count && popUpButton6.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[5])
+            }
+            if (6 < selectedList.count && popUpButton7.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[6])
+            }
+            if (7 < selectedList.count && popUpButton8.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[7])
+            }
+            if (8 < selectedList.count && popUpButton9.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[8])
+            }
+            if (9 < selectedList.count && popUpButton10.selectedItem?.title == "\(i+1)") {
+                orderedList.append(selectedList[9])
+            }
+        }
+        
+        if (0 < orderedList.count) {
+            selection1.stringValue = orderedList[0].name!
+            popUpButton1.selectItem(at: 0)
+        }
+        if (1 < orderedList.count) {
+            selection2.stringValue = orderedList[1].name!
+            popUpButton2.selectItem(at: 1)
+        }
+        if (2 < orderedList.count) {
+            selection3.stringValue = orderedList[2].name!
+            popUpButton3.selectItem(at: 2)
+        }
+        if (3 < orderedList.count) {
+            selection4.stringValue = orderedList[3].name!
+            popUpButton4.selectItem(at: 3)
+        }
+        if (4 < orderedList.count) {
+            selection5.stringValue = orderedList[4].name!
+            popUpButton5.selectItem(at: 4)
+        }
+        if (5 < orderedList.count) {
+            selection6.stringValue = orderedList[5].name!
+            popUpButton6.selectItem(at: 5)
+        }
+        if (6 < orderedList.count) {
+            selection7.stringValue = orderedList[6].name!
+            popUpButton7.selectItem(at: 6)
+        }
+        if (7 < orderedList.count) {
+            selection8.stringValue = orderedList[7].name!
+            popUpButton8.selectItem(at: 7)
+        }
+        if (8 < orderedList.count) {
+            selection9.stringValue = orderedList[8].name!
+            popUpButton9.selectItem(at: 8)
+        }
+        if (9 < orderedList.count) {
+            selection10.stringValue = orderedList[9].name!
+            popUpButton10.selectItem(at: 9)
+        }
+        
+        selectedList.removeAll()
+        for j in 0..<orderedList.count {
+            print(toString(item: orderedList[j]))
+            selectedList.append(orderedList[j])
+        }
+    }
+    
+    
     var businessList: [Business] = []
     var selectedList: [Business] = []
+    var orderedList: [Business] = []
     var user: User = User()
     
     
@@ -1442,7 +1672,7 @@ class PlanViewController: NSViewController {
         
         location = cityField.stringValue
         if(location!.isEmpty){
-            location = "West Lafayette, IN"
+            location = "San Francisco, CA"
         }
         getToken()
     }
@@ -1598,9 +1828,7 @@ extension PlanViewController: NSTableViewDelegate {
         else {
             return nil
         }
-        
-        print("business:")
-        print(self.toString(item: item))
+    
         
         // 2
         if tableColumn == tableView.tableColumns[0] {
