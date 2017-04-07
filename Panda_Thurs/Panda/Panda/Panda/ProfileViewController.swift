@@ -32,18 +32,7 @@ class ProfileViewController: NSViewController {
         nameField.stringValue = user.getName()
         emailField.stringValue = user.getEmail()
         newBio.stringValue = user.getBio()
-        //pictureField.stringValue = user.getPicture()
-       
-       /* print(user.getpicBoolean())
-        if(user.getpicBoolean() == 1) {
-        var urlStr = URL(string: user.getPicture())
-        profilePictureView.image = NSImage(contentsOf: urlStr!)
-        }
-        else {
-            print("hi")
-            profilePictureView.image = #imageLiteral(resourceName: "pandaicon2.png")
-        }*/
-        if(user.getPicture() != "") {
+    if(user.getPicture() != "") {
             var urlStr = URL(string: user.getPicture())
             profilePictureView.image = NSImage(contentsOf: urlStr!)
         }
@@ -135,17 +124,12 @@ class ProfileViewController: NSViewController {
             }
 
            user.setPicture(picture: imageChosen!.absoluteString)
-            //user.setpicBoolean(picBoolean: 1)
-            
             
             
             
             
           
-            print("what")
-            
-            //var urlString: String = imageChosen!.absoluteString
-            //user.setPicture(picture: urlString)
+    
         }
         
             
