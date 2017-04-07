@@ -21,6 +21,7 @@ class User: NSObject {
         self.email = "";
         self.bio = "";
         self.picture = "";
+       
     }
     
     
@@ -43,6 +44,7 @@ class User: NSObject {
     func getPicture() -> String {
         return self.picture
     }
+   
     
     func setID(id: Int) {
         self.id = id
@@ -63,12 +65,14 @@ class User: NSObject {
     func setPicture(picture: String) {
         self.picture = picture
     }
-    
+       
     func setUser(id: Int, name: String, email: String, bio: String, picture: String) {
         self.id = id
         self.name = name
         self.email = email
         self.bio = bio
         self.picture = picture
+       
+        
     }
 }
