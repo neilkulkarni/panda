@@ -32,12 +32,16 @@ class ProfileViewController: NSViewController {
         nameField.stringValue = user.getName()
         emailField.stringValue = user.getEmail()
         newBio.stringValue = user.getBio()
-        pictureField.stringValue = user.getPicture()
-        
-        print("view will appear \(user.getPicture())")
-        
-        
-        print(profilePictureView.image)
+
+    if(user.getPicture() != "") {
+            var urlStr = URL(string: user.getPicture())
+            profilePictureView.image = NSImage(contentsOf: urlStr!)
+        }
+        else {
+            print("hi")
+            profilePictureView.image = #imageLiteral(resourceName: "pandaicon2.png")
+        }
+
     }
     
     
@@ -90,20 +94,22 @@ class ProfileViewController: NSViewController {
         
         imagePicker.runModal()
         var imageChosen = imagePicker.url
-        print(imagePicker.url)
+       // print(imagePicker.url)
         if(imageChosen != nil ){
             var image = NSImage(contentsOf: imageChosen!)
-          //  user.setPicture(picture: imageChosen!.absoluteString)
+         // user.setPicture(picture: imageChosen!.absoluteString)
             profilePictureView.image = image
             user.setPicture(picture: imageChosen!.absoluteString)
             
-            print("user set \(user.getPicture())")
+
             
             let parameters: Parameters = [
                 "id": user.getID(),
                 "bio": user.getBio(),
                 "picture": user.getPicture()
+
             ]
+
             
             Alamofire.request("http://localhost:8081/user", method: .put, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
                 print(response.request)  // original URL request
@@ -117,10 +123,24 @@ class ProfileViewController: NSViewController {
                         return
                     }
                     
-                    //let json = JSON(info)
+
+                    let json = JSON(info)
                 }
             }
+
+           user.setPicture(picture: imageChosen!.absoluteString)
+            
+            
+            
+            
+          
+
         }
+        
+            
+            
+          
+            
     }
   
     @IBAction func mapOverview(_ sender: Any) {
