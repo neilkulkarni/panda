@@ -32,6 +32,7 @@ class ProfileViewController: NSViewController {
         nameField.stringValue = user.getName()
         emailField.stringValue = user.getEmail()
         newBio.stringValue = user.getBio()
+
     if(user.getPicture() != "") {
             var urlStr = URL(string: user.getPicture())
             profilePictureView.image = NSImage(contentsOf: urlStr!)
@@ -40,6 +41,7 @@ class ProfileViewController: NSViewController {
             print("hi")
             profilePictureView.image = #imageLiteral(resourceName: "pandaicon2.png")
         }
+
     }
     
     
@@ -47,14 +49,15 @@ class ProfileViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        profilePictureView.image = NSImage(byReferencingFile: user.getPicture())
     }
     @IBAction func editBio(_ sender: Any) {
         bio = newBio.stringValue
-        id = user.getID()
+        //id = user.getID()
         let parameters: Parameters = [
-            "id": id!,
+            "id": user.getID(),
             "bio": bio!,
-            "picture": ""
+            "picture": user.getPicture()
         ]
         
         //var isSuccessful = false
@@ -98,6 +101,7 @@ class ProfileViewController: NSViewController {
             profilePictureView.image = image
             user.setPicture(picture: imageChosen!.absoluteString)
             
+
             
             let parameters: Parameters = [
                 "id": user.getID(),
@@ -105,7 +109,7 @@ class ProfileViewController: NSViewController {
                 "picture": user.getPicture()
 
             ]
-            
+
             
             Alamofire.request("http://localhost:8081/user", method: .put, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
                 print(response.request)  // original URL request
@@ -119,6 +123,7 @@ class ProfileViewController: NSViewController {
                         return
                     }
                     
+
                     let json = JSON(info)
                 }
             }
@@ -129,7 +134,7 @@ class ProfileViewController: NSViewController {
             
             
           
-    
+
         }
         
             
