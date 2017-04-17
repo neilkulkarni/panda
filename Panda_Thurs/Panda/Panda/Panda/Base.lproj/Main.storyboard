@@ -1366,7 +1366,7 @@
                                 </textFieldCell>
                             </textField>
                             <popUpButton hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V2s-pT-lLA">
-                                <rect key="frame" x="717" y="884" width="76" height="26"/>
+                                <rect key="frame" x="680" y="884" width="76" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="hJC-JQ-KAr" id="y0k-Fh-GS1">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -1381,7 +1381,7 @@
                                 </popUpButtonCell>
                             </popUpButton>
                             <popUpButton hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="abt-0Q-sWR">
-                                <rect key="frame" x="717" y="850" width="76" height="26"/>
+                                <rect key="frame" x="680" y="850" width="76" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="xpZ-gU-o78" id="PiH-FR-V4h">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -1396,7 +1396,7 @@
                                 </popUpButtonCell>
                             </popUpButton>
                             <popUpButton hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iES-Wf-Q1o">
-                                <rect key="frame" x="717" y="819" width="76" height="26"/>
+                                <rect key="frame" x="680" y="819" width="76" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="4rb-7a-Rfy" id="JdC-Kd-ISP">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -1411,7 +1411,7 @@
                                 </popUpButtonCell>
                             </popUpButton>
                             <popUpButton hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5lT-tD-c9U">
-                                <rect key="frame" x="717" y="784" width="76" height="26"/>
+                                <rect key="frame" x="680" y="784" width="76" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="gjM-FO-NTM" id="aDh-G2-hi6">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -1426,7 +1426,7 @@
                                 </popUpButtonCell>
                             </popUpButton>
                             <popUpButton hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q3w-Ld-EdR">
-                                <rect key="frame" x="717" y="743" width="76" height="26"/>
+                                <rect key="frame" x="680" y="744" width="76" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="RqG-ZB-fiw" id="PiL-oM-jjb">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -1441,7 +1441,7 @@
                                 </popUpButtonCell>
                             </popUpButton>
                             <popUpButton hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FPw-60-eY2">
-                                <rect key="frame" x="717" y="707" width="76" height="26"/>
+                                <rect key="frame" x="680" y="707" width="76" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="IgM-nl-Nfp" id="Eam-x0-t4A">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -1456,7 +1456,7 @@
                                 </popUpButtonCell>
                             </popUpButton>
                             <popUpButton hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u0g-gL-sDL">
-                                <rect key="frame" x="717" y="668" width="76" height="26"/>
+                                <rect key="frame" x="680" y="668" width="76" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="HTH-C1-tYP" id="Kyz-MA-nNd">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -1471,7 +1471,7 @@
                                 </popUpButtonCell>
                             </popUpButton>
                             <popUpButton hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kqi-YE-fMb">
-                                <rect key="frame" x="717" y="629" width="76" height="26"/>
+                                <rect key="frame" x="680" y="629" width="76" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="jEi-b6-IOZ" id="zJ1-48-UuS">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -1486,7 +1486,7 @@
                                 </popUpButtonCell>
                             </popUpButton>
                             <popUpButton hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zWi-wH-wvV">
-                                <rect key="frame" x="717" y="591" width="76" height="26"/>
+                                <rect key="frame" x="680" y="591" width="76" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="0ta-Uw-o2y" id="cs0-Yi-N2v">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -1501,7 +1501,7 @@
                                 </popUpButtonCell>
                             </popUpButton>
                             <popUpButton hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IFZ-wO-osA">
-                                <rect key="frame" x="717" y="559" width="76" height="26"/>
+                                <rect key="frame" x="680" y="559" width="76" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="k1A-Qx-HGr" id="fmt-UQ-7hm">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -1589,6 +1589,116 @@
                                     <action selector="reorderButton:" target="F6W-mE-MvV" id="bzU-UR-2oI"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zJy-lo-qdH">
+                                <rect key="frame" x="755" y="880" width="44" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="X" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kid-Ru-Ung">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="removeLocationButton1:" target="F6W-mE-MvV" id="PW9-bo-P7H"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zfB-H0-qKd">
+                                <rect key="frame" x="755" y="846" width="44" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="X" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jls-a3-8q0">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="removeLocationButton2:" target="F6W-mE-MvV" id="7RQ-oy-3i1"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W4T-jJ-nJa">
+                                <rect key="frame" x="755" y="815" width="44" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="X" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JOb-1o-LNC">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="removeLocationButton3:" target="F6W-mE-MvV" id="g3s-Pr-lPe"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qw8-Jv-J1L">
+                                <rect key="frame" x="755" y="780" width="44" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="X" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VIy-Gr-kFF">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="removeLocationButton4:" target="F6W-mE-MvV" id="Sxw-Mr-90B"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a9V-4H-aCk">
+                                <rect key="frame" x="755" y="740" width="44" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="X" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xdm-Nr-h8o">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="removeLocationButton5:" target="F6W-mE-MvV" id="S4L-GA-sJN"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vri-sn-Tqe">
+                                <rect key="frame" x="755" y="703" width="44" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="X" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IcP-k9-Pmb">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="removeLocationButton6:" target="F6W-mE-MvV" id="v5L-4O-SSt"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c50-kw-4eY">
+                                <rect key="frame" x="755" y="664" width="44" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="X" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rsc-V1-50J">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="removeLocationButton7:" target="F6W-mE-MvV" id="be8-lo-hwS"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mBu-tu-Cjz">
+                                <rect key="frame" x="755" y="625" width="44" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="X" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GR8-zs-JYS">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="removeLocationButton8:" target="F6W-mE-MvV" id="uXX-LZ-pmU"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OrM-wE-qVS">
+                                <rect key="frame" x="755" y="587" width="44" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="X" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EGw-AL-S4y">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="removeLocationButton9:" target="F6W-mE-MvV" id="GCf-LK-7kv"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UVN-eD-98O">
+                                <rect key="frame" x="755" y="555" width="44" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="X" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JX8-IB-Aty">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="removeLocationButton10:" target="F6W-mE-MvV" id="rvg-Oz-E13"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -1605,6 +1715,17 @@
                         <outlet property="popUpButton7" destination="u0g-gL-sDL" id="fgU-af-k7H"/>
                         <outlet property="popUpButton8" destination="Kqi-YE-fMb" id="PaE-ib-0DA"/>
                         <outlet property="popUpButton9" destination="zWi-wH-wvV" id="nZc-YV-RBW"/>
+                        <outlet property="removeButton1" destination="zJy-lo-qdH" id="ovN-ya-KBs"/>
+                        <outlet property="removeButton10" destination="UVN-eD-98O" id="YOM-On-xFs"/>
+                        <outlet property="removeButton2" destination="zfB-H0-qKd" id="hcr-DO-vgu"/>
+                        <outlet property="removeButton3" destination="W4T-jJ-nJa" id="T83-DQ-Ryp"/>
+                        <outlet property="removeButton4" destination="Qw8-Jv-J1L" id="hQV-4y-Wh4"/>
+                        <outlet property="removeButton5" destination="a9V-4H-aCk" id="y3O-Xd-Q1X"/>
+                        <outlet property="removeButton6" destination="Vri-sn-Tqe" id="Bbr-vT-F3l"/>
+                        <outlet property="removeButton7" destination="c50-kw-4eY" id="ft7-t3-m6N"/>
+                        <outlet property="removeButton8" destination="mBu-tu-Cjz" id="2au-QZ-tf2"/>
+                        <outlet property="removeButton9" destination="OrM-wE-qVS" id="9WN-CG-vaK"/>
+                        <outlet property="removeLocationButton2" destination="zfB-H0-qKd" id="C0V-rE-Ysk"/>
                         <outlet property="reorderButton" destination="hdr-Ju-s4N" id="DCX-q9-CP3"/>
                         <outlet property="resultsTableView" destination="0Bp-Ae-3e3" id="7Fz-Qb-AEA"/>
                         <outlet property="selection1" destination="456-ly-h6l" id="6Is-yb-Cqd"/>
@@ -1659,7 +1780,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfN-Cz-Tof">
-                                <rect key="frame" x="330" y="482" width="159" height="57"/>
+                                <rect key="frame" x="330" y="510" width="159" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="My Trip" id="Yk7-hp-B71">
                                     <font key="font" metaFont="system" size="24"/>
@@ -2696,8 +2817,8 @@
         <image name="street" width="77" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zZz-ep-SOj"/>
-        <segue reference="TQ2-EL-7de"/>
+        <segue reference="iTU-0V-wiV"/>
+        <segue reference="dql-0i-KtJ"/>
         <segue reference="dBU-vf-RpB"/>
     </inferredMetricsTieBreakers>
 </document>
