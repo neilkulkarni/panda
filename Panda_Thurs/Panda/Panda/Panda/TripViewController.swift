@@ -25,7 +25,25 @@ class TripViewController: NSViewController {
     @IBAction func logoutButton(_ sender: Any) {
         performSegue(withIdentifier: "idSegue", sender: self)
     }
+    @IBOutlet weak var pictureUpperLeft: NSImageView!
+    @IBOutlet weak var pictureUpperRight: NSImageView!
+    @IBOutlet weak var pictureLowerLeft: NSImageView!
+    @IBOutlet weak var pictureLowerRight: NSImageView!
     
+    @IBOutlet weak var addButtonUpperLeft: NSButton!
+    @IBOutlet weak var addButtonUpperRight: NSButton!
+    @IBOutlet weak var addButtonLowerLeft: NSButton!
+    @IBOutlet weak var addButtonLowerLeft: NSButton!
+    @IBAction func addPhoto1(_ sender: Any) {
+    }
+    
+    @IBAction func addPhoto2(_ sender: Any) {
+    }
+    @IBAction func addPhoto3(_ sender: Any) {
+    }
+   
+    @IBAction func addPhoto4(_ sender: Any) {
+    }
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if (segue.identifier == "idSegueToHome") {
             if let destination = segue.destinationController as? HomepageViewController {
