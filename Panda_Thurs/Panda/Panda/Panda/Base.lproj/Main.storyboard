@@ -1855,7 +1855,7 @@
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="addButtonLowerLeft" destination="R5Z-EV-xnY" id="nFz-Lf-ZMa"/>
+                        <outlet property="addButtonLowerRight" destination="R5Z-EV-xnY" id="kzR-gc-Gdg"/>
                         <outlet property="addButtonUpperLeft" destination="Vqx-3l-UBl" id="bdl-kY-AhJ"/>
                         <outlet property="addButtonUpperRight" destination="4xb-cC-UC2" id="Y8Y-zr-Laz"/>
                         <outlet property="pictureLowerLeft" destination="JtV-dI-zZQ" id="USn-pL-ZCh"/>
