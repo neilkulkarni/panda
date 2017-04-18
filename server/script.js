@@ -183,8 +183,8 @@ router.post('/trip', function(request, response) {
     conn.query('INSERT INTO trip SET ?', trip, function(err, result) {
         console.log('Added trip to user ?', trip.user_id);
 
-        var code = { code: 200 };
-        response.send(code);
+        var trip_id = { trip_id: result.insertId };
+        response.send(trip_id);
         
         console.log(trip);
     });
@@ -302,8 +302,8 @@ router.post('/event', function(request, response) {
     conn.query('INSERT INTO event SET ?', event, function(err, result) {
         console.log('Added trip to event ?', event.trip_id);
 
-        var code = { code: 200 };
-        response.send(code);
+        var event_id = { event_id: result.insertId };
+        response.send(event_id);
         
         console.log(event);
     });
