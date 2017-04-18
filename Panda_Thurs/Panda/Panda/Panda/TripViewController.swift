@@ -33,16 +33,85 @@ class TripViewController: NSViewController {
     @IBOutlet weak var addButtonUpperLeft: NSButton!
     @IBOutlet weak var addButtonUpperRight: NSButton!
     @IBOutlet weak var addButtonLowerLeft: NSButton!
-    @IBOutlet weak var addButtonLowerLeft: NSButton!
+    
+    @IBOutlet weak var addButtonLowerRight: NSButton!
+
     @IBAction func addPhoto1(_ sender: Any) {
+        let imagePicker: NSOpenPanel = NSOpenPanel()
+        imagePicker.allowsMultipleSelection = false
+        imagePicker.canChooseFiles = true
+        imagePicker.canChooseDirectories = false
+        
+        imagePicker.runModal()
+        var imageChosen = imagePicker.url
+        // print(imagePicker.url)
+        if(imageChosen != nil ){
+            var image = NSImage(contentsOf: imageChosen!)
+            // user.setPicture(picture: imageChosen!.absoluteString)
+            //profilePictureView.image = image
+            pictureUpperLeft.image = image;
+          //  user.setPicture(picture: imageChosen!.absoluteString)
+            
+        }
     }
     
     @IBAction func addPhoto2(_ sender: Any) {
+        let imagePicker: NSOpenPanel = NSOpenPanel()
+        imagePicker.allowsMultipleSelection = false
+        imagePicker.canChooseFiles = true
+        imagePicker.canChooseDirectories = false
+        
+        imagePicker.runModal()
+        var imageChosen = imagePicker.url
+        // print(imagePicker.url)
+        if(imageChosen != nil ){
+            var image = NSImage(contentsOf: imageChosen!)
+            // user.setPicture(picture: imageChosen!.absoluteString)
+            //profilePictureView.image = image
+            pictureUpperRight.image = image;
+            //  user.setPicture(picture: imageChosen!.absoluteString)
+            
+        }
+
     }
     @IBAction func addPhoto3(_ sender: Any) {
+        let imagePicker: NSOpenPanel = NSOpenPanel()
+        imagePicker.allowsMultipleSelection = false
+        imagePicker.canChooseFiles = true
+        imagePicker.canChooseDirectories = false
+        
+        imagePicker.runModal()
+        var imageChosen = imagePicker.url
+        // print(imagePicker.url)
+        if(imageChosen != nil ){
+            var image = NSImage(contentsOf: imageChosen!)
+            // user.setPicture(picture: imageChosen!.absoluteString)
+            //profilePictureView.image = image
+            pictureLowerLeft.image = image;
+            //  user.setPicture(picture: imageChosen!.absoluteString)
+            
+        }
+
     }
    
     @IBAction func addPhoto4(_ sender: Any) {
+        let imagePicker: NSOpenPanel = NSOpenPanel()
+        imagePicker.allowsMultipleSelection = false
+        imagePicker.canChooseFiles = true
+        imagePicker.canChooseDirectories = false
+        
+        imagePicker.runModal()
+        var imageChosen = imagePicker.url
+        // print(imagePicker.url)
+        if(imageChosen != nil ){
+            var image = NSImage(contentsOf: imageChosen!)
+            // user.setPicture(picture: imageChosen!.absoluteString)
+            //profilePictureView.image = image
+            pictureLowerRight.image = image;
+            //  user.setPicture(picture: imageChosen!.absoluteString)
+            
+        }
+
     }
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if (segue.identifier == "idSegueToHome") {

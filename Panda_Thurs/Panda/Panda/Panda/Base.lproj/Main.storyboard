@@ -1149,11 +1149,11 @@
                                 <rect key="frame" x="20" y="704" width="469" height="135"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <clipView key="contentView" ambiguous="YES" id="Pcy-Rs-iaJ">
-                                    <rect key="frame" x="1" y="0.0" width="467" height="119"/>
+                                    <rect key="frame" x="1" y="0.0" width="467" height="134"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="pfw-mQ-zHB" viewBased="YES" id="0Bp-Ae-3e3">
-                                            <rect key="frame" x="0.0" y="0.0" width="473" height="96"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="473" height="111"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1263,7 +1263,7 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="rth-Gp-75c">
-                                    <rect key="frame" x="1" y="119" width="467" height="15"/>
+                                    <rect key="frame" x="1" y="118" width="467" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="69E-r7-78v">
@@ -1699,6 +1699,18 @@
                                     <action selector="removeLocationButton10:" target="F6W-mE-MvV" id="rvg-Oz-E13"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wf3-k5-5Es">
+                                <rect key="frame" x="676" y="220" width="110" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Finalize Trip" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3jS-bt-Ky0">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="goToMyTripButton:" target="F6W-mE-MvV" id="34S-Sz-mkB"/>
+                                    <segue destination="T7y-PX-Wml" kind="custom" identifier="idSegueToMyTrip" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="KkM-TH-GJC"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -1745,7 +1757,7 @@
                 </viewController>
                 <customObject id="Ybv-5B-D9c" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1768" y="747"/>
+            <point key="canvasLocation" x="1945" y="738"/>
         </scene>
         <!--Trip View Controller-->
         <scene sceneID="i22-fg-ga4">
@@ -1855,7 +1867,7 @@
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="addButtonLowerLeft" destination="R5Z-EV-xnY" id="nFz-Lf-ZMa"/>
+                        <outlet property="addButtonLowerRight" destination="R5Z-EV-xnY" id="kzR-gc-Gdg"/>
                         <outlet property="addButtonUpperLeft" destination="Vqx-3l-UBl" id="bdl-kY-AhJ"/>
                         <outlet property="addButtonUpperRight" destination="4xb-cC-UC2" id="Y8Y-zr-Laz"/>
                         <outlet property="pictureLowerLeft" destination="JtV-dI-zZQ" id="USn-pL-ZCh"/>
@@ -1933,11 +1945,11 @@
                                 <rect key="frame" x="23" y="609" width="516" height="214"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <clipView key="contentView" ambiguous="YES" id="whh-TK-ZUe">
-                                    <rect key="frame" x="1" y="0.0" width="514" height="198"/>
+                                    <rect key="frame" x="1" y="0.0" width="514" height="213"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="YUe-Iw-5pr" viewBased="YES" id="T3X-zi-TVc">
-                                            <rect key="frame" x="0.0" y="0.0" width="518" height="175"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="518" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -2080,7 +2092,7 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="mne-w0-CIk">
-                                    <rect key="frame" x="1" y="198" width="514" height="15"/>
+                                    <rect key="frame" x="1" y="197" width="514" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="YJ4-Pl-Pzc">
@@ -2891,8 +2903,8 @@
         <image name="street" width="77" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7nr-vg-CEo"/>
-        <segue reference="dBU-vf-RpB"/>
+        <segue reference="iTU-0V-wiV"/>
+        <segue reference="KkM-TH-GJC"/>
         <segue reference="fgN-qe-Z4K"/>
     </inferredMetricsTieBreakers>
 </document>
