@@ -218,6 +218,7 @@ class RecordViewController: NSViewController {
                     removeButton10.isHidden = false
                 }
             }
+            print(selectedList[0])
         }
         
         if (selectedList.count > 0) {
@@ -1820,11 +1821,9 @@ class RecordViewController: NSViewController {
         performSegue(withIdentifier: "idSegue", sender: self)
     }
     
-    var tripID: Int = -1
-    
     @IBAction func goToMyTripButton(_ sender: Any) {
-        uploadTrip()
-        performSegue(withIdentifier: "idSegue", sender: self)
+        //uploadTrip()
+        performSegue(withIdentifier: "idSegueToMyTrip", sender: self)
     }
     
     
@@ -1836,25 +1835,27 @@ class RecordViewController: NSViewController {
         }
         if (segue.identifier == "idSegueToMyTrip") {
             if let destination = segue.destinationController as? TripViewController {
+                uploadTrip()
                 destination.user.setUser(id: user.getID(), name: user.getName(), email: user.getEmail(), bio: user.getBio(), picture: user.getPicture())
-                destination.trip_id = tripID
+                destination.trip_id = id
             }
         }
     }
     
+    var id: Int = -1
+    
     func uploadTrip() {
-        var tripName = tripTitle.stringValue
-        var tripDesc = tripDescription.stringValue
         
         let tripParams: Parameters = [
-            "name": tripName,
-            "description": tripDesc,
+            "name": tripTitle.stringValue,
+            "description": tripDescription.stringValue,
             "private": 0,
             "api": imageString,
             "user_id": user.id
         ]
         
-        print(tripParams)
+        //print(tripParams)
+        
         
         Alamofire.request("http://localhost:8081/trip", method: .post, parameters: tripParams, encoding: JSONEncoding.default).responseJSON { response in
             print(response.request)  // original URL request
@@ -1868,11 +1869,20 @@ class RecordViewController: NSViewController {
             }
             
             let json = JSON(info)
+            //print(json)
             print(json)
-            self.tripID = json["user_id"].int!
-            print(self.tripID)
+            self.id = json["trip_id"].int!
+            //print(id)
+            self.uploadEvents(id: self.id)
         }
-        
+        //print(id)
+        //uploadEvents(id: id)
+        //return id
+        //print(self.id)
+    }
+    
+    func uploadEvents(id: Int) {
+        //print(id)
         for i in 0...(selectedList.count - 1) {
             var eventName = selectedList[i].name
             var eventLat = selectedList[i].latitude
@@ -1881,10 +1891,11 @@ class RecordViewController: NSViewController {
             let eventParams: Parameters = [
                 "name": eventName!,
                 "description": "",
-                "latitude": eventLat!,
-                "longitude": eventLong!,
+                "latitude": "\(selectedList[i].latitude)",
+                "longitude": "\(selectedList[i].longitude)",
                 "date": "",
-                "trip_id": tripID
+                "api": "",
+                "trip_id": id
             ]
             
             Alamofire.request("http://localhost:8081/event", method: .post, parameters: eventParams, encoding: JSONEncoding.default).responseJSON { response in

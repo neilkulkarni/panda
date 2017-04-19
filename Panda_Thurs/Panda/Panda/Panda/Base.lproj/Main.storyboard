@@ -1791,15 +1791,6 @@
                                     <segue destination="XfG-lQ-9wD" kind="custom" identifier="idSegue" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="fgN-qe-Z4K"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfN-Cz-Tof">
-                                <rect key="frame" x="330" y="510" width="159" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="My Trip" id="Yk7-hp-B71">
-                                    <font key="font" metaFont="system" size="24"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ozj-Sh-2H7">
                                 <rect key="frame" x="533" y="408" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -1908,6 +1899,24 @@
                                     <action selector="removeButtonLowerRight:" target="T7y-PX-Wml" id="odN-aD-5rT"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKc-LS-0bm">
+                                <rect key="frame" x="285" y="454" width="229" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="akj-f5-EoB">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfN-Cz-Tof">
+                                <rect key="frame" x="321" y="510" width="159" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="My Trip" id="Yk7-hp-B71">
+                                    <font key="font" metaFont="system" size="24"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
@@ -1923,6 +1932,7 @@
                         <outlet property="removeButtonLowerRight" destination="Xxf-QO-6YG" id="Ekr-Z9-rib"/>
                         <outlet property="removeButtonUpperLeft" destination="pLp-FG-wWq" id="MIG-Ve-zfU"/>
                         <outlet property="removeButtonUpperRight" destination="Ghy-Vs-41c" id="GKm-1e-2nh"/>
+                        <outlet property="tripDescLabel" destination="oKc-LS-0bm" id="lgF-VX-bMH"/>
                         <outlet property="tripNameField" destination="cfN-Cz-Tof" id="yoj-Qn-j7F"/>
                         <outlet property="tripNameLabel" destination="cfN-Cz-Tof" id="pdm-PH-r8w"/>
                     </connections>
@@ -2954,8 +2964,8 @@
         <image name="street" width="77" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iTU-0V-wiV"/>
+        <segue reference="fgN-qe-Z4K"/>
         <segue reference="KkM-TH-GJC"/>
-        <segue reference="dql-0i-KtJ"/>
+        <segue reference="7nr-vg-CEo"/>
     </inferredMetricsTieBreakers>
 </document>

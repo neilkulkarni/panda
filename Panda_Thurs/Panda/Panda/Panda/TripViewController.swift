@@ -21,12 +21,14 @@ class TripViewController: NSViewController {
     @IBOutlet weak var mapWebView: WebView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        //print(trip_id)
         // Do view setup here.
-        let tripParams: Parameters = [
+        /*let tripParams: Parameters = [
             "trip_id": trip_id
-        ]
-        
-        Alamofire.request("http://localhost:8081/trip/:id", method: .get, parameters: tripParams, encoding: JSONEncoding.default).responseJSON { response in
+        ]*/
+        //print(trip_id)
+        let request = "http://localhost:8081/trip/" + "\(trip_id)"
+        Alamofire.request(request).responseJSON { response in
             print(response.request)  // original URL request
             print(response.response) // HTTP URL response
             print(response.data)     // server data
@@ -39,11 +41,11 @@ class TripViewController: NSViewController {
             
             let tripJSON = JSON(info)
             print(tripJSON)
-            self.tripNameField.stringValue = tripJSON["name"].stringValue
-            self.tripDescLabel.stringValue = tripJSON["description"].stringValue
-            let requesturl = URL(string: tripJSON["api"].stringValue)
+            self.tripNameField.stringValue = tripJSON["trip"]["name"].stringValue
+            self.tripDescLabel.stringValue = tripJSON["trip"]["description"].stringValue
+            /*let requesturl = URL(string: tripJSON["api"].stringValue)
             let request = URLRequest(url: requesturl!)
-            self.mapWebView.mainFrame.load(request)
+            self.mapWebView.mainFrame.load(request)*/
         }
         
     }
