@@ -855,6 +855,11 @@
                                     <segue destination="F6W-mE-MvV" kind="custom" identifier="idSegueToRecord" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="Tko-sN-BPy"/>
                                 </connections>
                             </button>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wWF-ep-40G">
+                                <rect key="frame" x="44" y="255" width="219" height="305"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="pandaonCloud" id="Yoy-n1-sQE"/>
+                            </imageView>
                         </subviews>
                     </view>
                     <connections>
@@ -1896,6 +1901,11 @@
                                     <action selector="removeButtonLowerRight:" target="T7y-PX-Wml" id="odN-aD-5rT"/>
                                 </connections>
                             </button>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PWX-Yq-oTV">
+                                <rect key="frame" x="304" y="490" width="68" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="pawbutton" id="sm8-t3-RVJ"/>
+                            </imageView>
                         </subviews>
                     </view>
                     <connections>
@@ -2936,6 +2946,8 @@
         <image name="lateaMug" width="83" height="80"/>
         <image name="lightbulb" width="77" height="77"/>
         <image name="pandaicon2" width="1039" height="1259"/>
+        <image name="pandaonCloud" width="1039" height="1259"/>
+        <image name="pawbutton" width="1039" height="1259"/>
         <image name="purduetrip" width="385" height="195"/>
         <image name="street" width="77" height="80"/>
     </resources>
