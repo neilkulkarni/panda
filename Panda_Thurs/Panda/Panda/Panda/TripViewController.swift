@@ -18,6 +18,7 @@ class TripViewController: NSViewController {
     override func viewWillAppear() {
         self.view.wantsLayer = true;
         self.view.layer?.backgroundColor = CGColor(red: 220/255.0, green: 220/255.0, blue: 255/255.0, alpha: 0.5)
+        
     }
     @IBAction func homeButton(_ sender: Any) {
          performSegue(withIdentifier: "idSegue", sender: self)
@@ -32,9 +33,12 @@ class TripViewController: NSViewController {
     
     @IBOutlet weak var addButtonUpperLeft: NSButton!
     @IBOutlet weak var addButtonUpperRight: NSButton!
+  //  @IBOutlet weak var addButtonLowerLeft: NSButton!
     @IBOutlet weak var addButtonLowerLeft: NSButton!
-    
     @IBOutlet weak var addButtonLowerRight: NSButton!
+    
+    
+   
     @IBAction func addPhoto1(_ sender: Any) {
         let imagePicker: NSOpenPanel = NSOpenPanel()
         imagePicker.allowsMultipleSelection = false
@@ -51,6 +55,9 @@ class TripViewController: NSViewController {
             pictureUpperLeft.image = image;
           //  user.setPicture(picture: imageChosen!.absoluteString)
             
+        }
+        if(pictureUpperLeft != nil){
+            addButtonUpperLeft.isHidden = true;
         }
     }
     
@@ -71,6 +78,9 @@ class TripViewController: NSViewController {
             //  user.setPicture(picture: imageChosen!.absoluteString)
             
         }
+        if(pictureUpperRight != nil){
+           addButtonUpperRight.isHidden = true;
+        }
 
     }
     @IBAction func addPhoto3(_ sender: Any) {
@@ -90,8 +100,12 @@ class TripViewController: NSViewController {
             //  user.setPicture(picture: imageChosen!.absoluteString)
             
         }
+        if(pictureLowerLeft != nil){
+           addButtonLowerLeft.isHidden = true;
+        }
 
     }
+    
    
     @IBAction func addPhoto4(_ sender: Any) {
         let imagePicker: NSOpenPanel = NSOpenPanel()
@@ -109,6 +123,9 @@ class TripViewController: NSViewController {
             pictureLowerRight.image = image;
             //  user.setPicture(picture: imageChosen!.absoluteString)
             
+        }
+        if(pictureLowerRight != nil){
+            addButtonLowerRight.isHidden = true;
         }
 
     }
