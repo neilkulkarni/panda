@@ -22,11 +22,12 @@ class RecordViewController: NSViewController {
     //@IBOutlet weak var webPageView: WebView!
     
     @IBOutlet weak var mapWebView: WebView!
+    var imageString: String = ""
 
     @IBAction func generateMap(_ sender: Any) {
         //selected list
         //https://maps.googleapis.com/maps/api/staticmap?size=600x300&maptype=roadmap &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318 &markers=color:red%7Clabel:C%7C40.718217,-73.998284 &key=AIzaSyCqXFkHzOLwEw00zOTq_1kzGwkgNjAKHTE
-        var imageString:String = "https://maps.googleapis.com/maps/api/staticmap?size=600x300&maptype=roadmap"
+        imageString = "https://maps.googleapis.com/maps/api/staticmap?size=600x300&maptype=roadmap"
         
         if (selectedList.count == 0) {
             return
@@ -1812,14 +1813,17 @@ class RecordViewController: NSViewController {
     }
     
     @IBAction func homeButtone(_ sender: Any) {
-         performSegue(withIdentifier: "idSegue", sender: self)
+        performSegue(withIdentifier: "idSegue", sender: self)
     }
     
     @IBAction func logoutButton(_ sender: Any) {
-         performSegue(withIdentifier: "idSegue", sender: self)
+        performSegue(withIdentifier: "idSegue", sender: self)
     }
     
+    var tripID: Int = -1
+    
     @IBAction func goToMyTripButton(_ sender: Any) {
+        uploadTrip()
         performSegue(withIdentifier: "idSegue", sender: self)
     }
     
@@ -1833,6 +1837,69 @@ class RecordViewController: NSViewController {
         if (segue.identifier == "idSegueToMyTrip") {
             if let destination = segue.destinationController as? TripViewController {
                 destination.user.setUser(id: user.getID(), name: user.getName(), email: user.getEmail(), bio: user.getBio(), picture: user.getPicture())
+                destination.trip_id = tripID
+            }
+        }
+    }
+    
+    func uploadTrip() {
+        var tripName = tripTitle.stringValue
+        var tripDesc = tripDescription.stringValue
+        
+        let tripParams: Parameters = [
+            "name": tripName,
+            "description": tripDesc,
+            "private": 0,
+            "api": imageString,
+            "user_id": user.id
+        ]
+        
+        print(tripParams)
+        
+        Alamofire.request("http://localhost:8081/trip", method: .post, parameters: tripParams, encoding: JSONEncoding.default).responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // HTTP URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            
+            guard let info = response.result.value else {
+                print("Error")
+                return
+            }
+            
+            let json = JSON(info)
+            print(json)
+            self.tripID = json["user_id"].int!
+            print(self.tripID)
+        }
+        
+        for i in 0...(selectedList.count - 1) {
+            var eventName = selectedList[i].name
+            var eventLat = selectedList[i].latitude
+            var eventLong = selectedList[i].longitude
+            
+            let eventParams: Parameters = [
+                "name": eventName!,
+                "description": "",
+                "latitude": eventLat!,
+                "longitude": eventLong!,
+                "date": "",
+                "trip_id": tripID
+            ]
+            
+            Alamofire.request("http://localhost:8081/event", method: .post, parameters: eventParams, encoding: JSONEncoding.default).responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // HTTP URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                guard let info = response.result.value else {
+                    print("Error")
+                    return
+                }
+                
+                let json = JSON(info)
+                print(json)
             }
         }
     }

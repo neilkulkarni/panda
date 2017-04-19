@@ -7,18 +7,51 @@
 //
 
 import Cocoa
+import Alamofire
+import SwiftyJSON
+import MapKit
+import WebKit
 
 class TripViewController: NSViewController {
     var user: User = User()
+    var trip_id: Int = -1
 
+    @IBOutlet weak var tripNameField: NSTextField!
+    @IBOutlet weak var tripDescLabel: NSTextField!
+    @IBOutlet weak var mapWebView: WebView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        let tripParams: Parameters = [
+            "trip_id": trip_id
+        ]
+        
+        Alamofire.request("http://localhost:8081/trip/:id", method: .get, parameters: tripParams, encoding: JSONEncoding.default).responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // HTTP URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            
+            guard let info = response.result.value else {
+                print("Error")
+                return
+            }
+            
+            let tripJSON = JSON(info)
+            print(tripJSON)
+            self.tripNameField.stringValue = tripJSON["name"].stringValue
+            self.tripDescLabel.stringValue = tripJSON["description"].stringValue
+            let requesturl = URL(string: tripJSON["api"].stringValue)
+            let request = URLRequest(url: requesturl!)
+            self.mapWebView.mainFrame.load(request)
+        }
+        
     }
     override func viewWillAppear() {
         self.view.wantsLayer = true;
         self.view.layer?.backgroundColor = CGColor(red: 220/255.0, green: 220/255.0, blue: 255/255.0, alpha: 0.5)
     }
+    
     @IBAction func homeButton(_ sender: Any) {
          performSegue(withIdentifier: "idSegue", sender: self)
     }

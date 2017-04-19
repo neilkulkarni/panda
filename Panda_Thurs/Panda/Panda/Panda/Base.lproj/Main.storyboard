@@ -1864,16 +1864,37 @@
                                     <action selector="addPhoto4:" target="T7y-PX-Wml" id="eEb-ns-BiC"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7NY-zj-vBz">
+                                <rect key="frame" x="302" y="447" width="215" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="E2u-Bo-vg6">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <webView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ODP-Kz-O7U">
+                                <rect key="frame" x="33" y="208" width="492" height="239"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0">
+                                    <nil key="identifier"/>
+                                </webPreferences>
+                            </webView>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="addButtonLowerRight" destination="R5Z-EV-xnY" id="kzR-gc-Gdg"/>
                         <outlet property="addButtonUpperLeft" destination="Vqx-3l-UBl" id="bdl-kY-AhJ"/>
                         <outlet property="addButtonUpperRight" destination="4xb-cC-UC2" id="Y8Y-zr-Laz"/>
+                        <outlet property="mapWebView" destination="ODP-Kz-O7U" id="ebs-3x-UNg"/>
                         <outlet property="pictureLowerLeft" destination="JtV-dI-zZQ" id="USn-pL-ZCh"/>
                         <outlet property="pictureLowerRight" destination="P2C-nE-oMC" id="wfu-M0-Ivl"/>
                         <outlet property="pictureUpperLeft" destination="Ozj-Sh-2H7" id="Frg-dv-jX7"/>
                         <outlet property="pictureUpperRight" destination="uP0-KR-bCd" id="fbV-fc-0Xr"/>
+                        <outlet property="tripDescField" destination="7NY-zj-vBz" id="cct-Y1-WS9"/>
+                        <outlet property="tripDescLabel" destination="7NY-zj-vBz" id="bFz-hM-OOO"/>
+                        <outlet property="tripNameField" destination="cfN-Cz-Tof" id="yoj-Qn-j7F"/>
+                        <outlet property="tripNameLabel" destination="cfN-Cz-Tof" id="pdm-PH-r8w"/>
                     </connections>
                 </viewController>
                 <customObject id="SHG-yo-Fgt" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -2903,7 +2924,7 @@
         <image name="street" width="77" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iTU-0V-wiV"/>
+        <segue reference="7nr-vg-CEo"/>
         <segue reference="KkM-TH-GJC"/>
         <segue reference="fgN-qe-Z4K"/>
     </inferredMetricsTieBreakers>
