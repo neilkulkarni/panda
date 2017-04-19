@@ -18,6 +18,10 @@ class TripViewController: NSViewController {
     override func viewWillAppear() {
         self.view.wantsLayer = true;
         self.view.layer?.backgroundColor = CGColor(red: 220/255.0, green: 220/255.0, blue: 255/255.0, alpha: 0.5)
+        removeButtonUpperLeft.isHidden = true
+        removeButtonUpperRight.isHidden = true
+        removeButtonLowerLeft.isHidden = true
+        removeButtonLowerRight.isHidden = true
         
     }
     @IBAction func homeButton(_ sender: Any) {
@@ -33,12 +37,18 @@ class TripViewController: NSViewController {
     
     @IBOutlet weak var addButtonUpperLeft: NSButton!
     @IBOutlet weak var addButtonUpperRight: NSButton!
-  //  @IBOutlet weak var addButtonLowerLeft: NSButton!
     @IBOutlet weak var addButtonLowerLeft: NSButton!
     @IBOutlet weak var addButtonLowerRight: NSButton!
     
+    @IBOutlet weak var removeButtonUpperLeft: NSButton!
+ 
     
-   
+    @IBOutlet weak var removeButtonLowerLeft: NSButton!
+    @IBOutlet weak var removeButtonUpperRight: NSButton!
+ 
+    @IBOutlet weak var removeButtonLowerRight: NSButton!
+    
+    
     @IBAction func addPhoto1(_ sender: Any) {
         let imagePicker: NSOpenPanel = NSOpenPanel()
         imagePicker.allowsMultipleSelection = false
@@ -58,6 +68,7 @@ class TripViewController: NSViewController {
         }
         if(pictureUpperLeft != nil){
             addButtonUpperLeft.isHidden = true;
+            removeButtonUpperLeft.isHidden = false
         }
     }
     
@@ -80,6 +91,7 @@ class TripViewController: NSViewController {
         }
         if(pictureUpperRight != nil){
            addButtonUpperRight.isHidden = true;
+            removeButtonUpperRight.isHidden = false
         }
 
     }
@@ -102,6 +114,7 @@ class TripViewController: NSViewController {
         }
         if(pictureLowerLeft != nil){
            addButtonLowerLeft.isHidden = true;
+            removeButtonLowerLeft.isHidden = false
         }
 
     }
@@ -126,8 +139,31 @@ class TripViewController: NSViewController {
         }
         if(pictureLowerRight != nil){
             addButtonLowerRight.isHidden = true;
+            removeButtonLowerRight.isHidden = false
         }
 
+    }
+    @IBAction func removeButtonUpperLeft(_ sender: Any) {
+        pictureUpperLeft.image = nil
+        addButtonUpperLeft.isHidden = false
+        removeButtonUpperLeft.isHidden = true
+        
+    }
+    @IBAction func removeButtonUpperRight(_ sender: Any) {
+        pictureUpperRight.image = nil
+        addButtonUpperRight.isHidden = false
+        removeButtonUpperRight.isHidden = true
+    }
+    @IBAction func removeButtonLowerLeft(_ sender: Any) {
+        pictureLowerLeft.image = nil
+        addButtonLowerLeft.isHidden = false
+        removeButtonLowerLeft.isHidden = true
+    }
+   
+    @IBAction func removeButtonLowerRight(_ sender: Any) {
+        pictureLowerRight.image = nil
+        addButtonLowerRight.isHidden = false
+        removeButtonLowerRight.isHidden = true
     }
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if (segue.identifier == "idSegueToHome") {
