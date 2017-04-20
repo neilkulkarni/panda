@@ -14,7 +14,7 @@ import WebKit
 
 class TripViewController: NSViewController {
     var user: User = User()
-    var trip_id: Int = -1
+    var trip_id: TripID = TripID()
 
     @IBOutlet weak var tripNameField: NSTextField!
     @IBOutlet weak var tripDescLabel: NSTextField!
@@ -27,7 +27,7 @@ class TripViewController: NSViewController {
             "trip_id": trip_id
         ]*/
         //print(trip_id)
-        let request = "http://localhost:8081/trip/" + "\(trip_id)"
+        let request = "http://localhost:8081/trip/" + "\(trip_id.getID())"
         Alamofire.request(request).responseJSON { response in
             print(response.request)  // original URL request
             print(response.response) // HTTP URL response

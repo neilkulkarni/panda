@@ -16,6 +16,7 @@ import Alamofire
 class RecordViewController: NSViewController {
     
     var user: User = User()
+    var tripID: TripID = TripID()
 
     @IBOutlet weak var resultsTableView: NSTableView!
     
@@ -105,6 +106,7 @@ class RecordViewController: NSViewController {
     
     @IBOutlet weak var tripTitle: NSTextField!
     @IBOutlet weak var tripDescription: NSTextField!
+    @IBOutlet weak var finalizeTripButton: NSButton!
     
     @IBOutlet weak var generateMapButton: NSButton!
     
@@ -218,7 +220,6 @@ class RecordViewController: NSViewController {
                     removeButton10.isHidden = false
                 }
             }
-            print(selectedList[0])
         }
         
         if (selectedList.count > 0) {
@@ -1810,7 +1811,14 @@ class RecordViewController: NSViewController {
         popUpButton8.removeAllItems()
         popUpButton9.removeAllItems()
         popUpButton10.removeAllItems()
+        finalizeTripButton.isEnabled = false
         
+    }
+    @IBOutlet weak var tripSavedLabel: NSTextField!
+    @IBAction func saveTripButtonClick(_ sender: Any) {
+        uploadTrip()
+        finalizeTripButton.isEnabled = true
+        tripSavedLabel.isHidden = false
     }
     
     @IBAction func homeButtone(_ sender: Any) {
@@ -1835,14 +1843,13 @@ class RecordViewController: NSViewController {
         }
         if (segue.identifier == "idSegueToMyTrip") {
             if let destination = segue.destinationController as? TripViewController {
-                uploadTrip()
+                //uploadTrip()
+                destination.trip_id.setID(id: tripID.getID())
+                print(destination.trip_id)
                 destination.user.setUser(id: user.getID(), name: user.getName(), email: user.getEmail(), bio: user.getBio(), picture: user.getPicture())
-                destination.trip_id = id
             }
         }
     }
-    
-    var id: Int = -1
     
     func uploadTrip() {
         
@@ -1869,16 +1876,13 @@ class RecordViewController: NSViewController {
             }
             
             let json = JSON(info)
-            //print(json)
             print(json)
-            self.id = json["trip_id"].int!
-            //print(id)
-            self.uploadEvents(id: self.id)
+            self.tripID.setID(id: json["trip_id"].int!)
+            self.uploadEvents(id: self.tripID.getID())
         }
         //print(id)
         //uploadEvents(id: id)
         //return id
-        //print(self.id)
     }
     
     func uploadEvents(id: Int) {

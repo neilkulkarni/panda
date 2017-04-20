@@ -1572,7 +1572,7 @@
                                 </connections>
                             </button>
                             <webView hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="br5-Tf-rI3">
-                                <rect key="frame" x="300" y="46" width="351" height="202"/>
+                                <rect key="frame" x="20" y="29" width="351" height="202"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0">
                                     <nil key="identifier"/>
@@ -1711,9 +1711,30 @@
                                     <segue destination="T7y-PX-Wml" kind="custom" identifier="idSegueToMyTrip" customClass="CustomSegue" customModule="Panda" customModuleProvider="target" id="KkM-TH-GJC"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NGM-dm-ESq">
+                                <rect key="frame" x="676" y="253" width="110" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Save Trip" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EAt-A2-Faq">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="saveTripButtonClick:" target="F6W-mE-MvV" id="aqX-61-RNa"/>
+                                </connections>
+                            </button>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xzv-n9-bc6">
+                                <rect key="frame" x="457" y="262" width="219" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Saved! Now go make the trip yours!" id="a14-YQ-cuq">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="finalizeTripButton" destination="Wf3-k5-5Es" id="k3b-xk-OKY"/>
                         <outlet property="generateMapButton" destination="VRU-HZ-3NT" id="RdC-6C-HU9"/>
                         <outlet property="imageThing" destination="nbO-Qh-kZN" id="LB2-Sm-3zk"/>
                         <outlet property="mapWebView" destination="br5-Tf-rI3" id="FEy-tu-mzX"/>
@@ -1752,6 +1773,7 @@
                         <outlet property="selection9" destination="OYN-44-eCh" id="vH5-x9-kHm"/>
                         <outlet property="startingAddress" destination="aUp-Db-Bjn" id="HHM-gD-gpT"/>
                         <outlet property="tripDescription" destination="G8i-pC-H7A" id="LV9-H8-t13"/>
+                        <outlet property="tripSavedLabel" destination="Xzv-n9-bc6" id="NmE-KS-rNf"/>
                         <outlet property="tripTitle" destination="vGx-mT-1PO" id="50T-eA-DBX"/>
                     </connections>
                 </viewController>
@@ -1900,16 +1922,16 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKc-LS-0bm">
-                                <rect key="frame" x="285" y="454" width="229" height="48"/>
+                                <rect key="frame" x="228" y="454" width="343" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="akj-f5-EoB">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="I'm a normie with no trip description" id="akj-f5-EoB">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfN-Cz-Tof">
-                                <rect key="frame" x="321" y="510" width="159" height="29"/>
+                                <rect key="frame" x="116" y="510" width="569" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="My Trip" id="Yk7-hp-B71">
                                     <font key="font" metaFont="system" size="24"/>
@@ -2964,8 +2986,8 @@
         <image name="street" width="77" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fgN-qe-Z4K"/>
-        <segue reference="KkM-TH-GJC"/>
         <segue reference="7nr-vg-CEo"/>
+        <segue reference="KkM-TH-GJC"/>
+        <segue reference="fgN-qe-Z4K"/>
     </inferredMetricsTieBreakers>
 </document>
