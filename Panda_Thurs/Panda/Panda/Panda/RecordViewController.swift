@@ -1816,6 +1816,9 @@ class RecordViewController: NSViewController {
     }
     @IBOutlet weak var tripSavedLabel: NSTextField!
     @IBAction func saveTripButtonClick(_ sender: Any) {
+        if (selectedList.count == 0) {
+            return
+        }
         uploadTrip()
         finalizeTripButton.isEnabled = true
         tripSavedLabel.isHidden = false

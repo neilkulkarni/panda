@@ -21,6 +21,7 @@ class TripViewController: NSViewController {
     @IBOutlet weak var mapWebView: WebView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapWebView.delete(<#T##sender: Any?##Any?#>)
         //print(trip_id)
         // Do view setup here.
         /*let tripParams: Parameters = [
@@ -43,10 +44,11 @@ class TripViewController: NSViewController {
             print(tripJSON)
             self.tripNameField.stringValue = tripJSON["trip"]["name"].stringValue
             self.tripDescLabel.stringValue = tripJSON["trip"]["description"].stringValue
-            /*let requesturl = URL(string: tripJSON["api"].stringValue)
+            let requesturl = URL(string: tripJSON["trip"]["api"].stringValue)
             let request = URLRequest(url: requesturl!)
-            self.mapWebView.mainFrame.load(request)*/
+            self.mapWebView.mainFrame.load(request)
         }
+        
         
     }
     override func viewWillAppear() {
@@ -88,7 +90,6 @@ class TripViewController: NSViewController {
         imagePicker.allowsMultipleSelection = false
         imagePicker.canChooseFiles = true
         imagePicker.canChooseDirectories = false
-        
         imagePicker.runModal()
         var imageChosen = imagePicker.url
         // print(imagePicker.url)
