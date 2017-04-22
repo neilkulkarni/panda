@@ -28,6 +28,9 @@
 		A220D6FF1E68FB1500345B92 /* pandaicon2.png in Resources */ = {isa = PBXBuildFile; fileRef = A220D6FE1E68FB1500345B92 /* pandaicon2.png */; };
 		A220D7011E68FCFF00345B92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A220D7001E68FCFF00345B92 /* User.swift */; };
 		A27C5FBD1E954BA800CD0E80 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27C5FBC1E954BA800CD0E80 /* TripViewController.swift */; };
+		A28C74461EA7F21D00C5867D /* roadwebanner.png in Resources */ = {isa = PBXBuildFile; fileRef = A28C74451EA7F21D00C5867D /* roadwebanner.png */; };
+		A28C74491EA7F32C00C5867D /* pandaonCloud.png in Resources */ = {isa = PBXBuildFile; fileRef = A28C74481EA7F32C00C5867D /* pandaonCloud.png */; };
+		A28C744B1EA7F4FF00C5867D /* pawbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = A28C744A1EA7F4FF00C5867D /* pawbutton.png */; };
 		A2CFD4B41E94A02D00F959BE /* lateaMug.png in Resources */ = {isa = PBXBuildFile; fileRef = A2CFD4B31E94A02D00F959BE /* lateaMug.png */; };
 		A2CFD4B61E94A04500F959BE /* street.png in Resources */ = {isa = PBXBuildFile; fileRef = A2CFD4B51E94A04500F959BE /* street.png */; };
 		A2CFD4B81E94A05A00F959BE /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = A2CFD4B71E94A05A00F959BE /* lightbulb.png */; };
@@ -107,6 +110,9 @@
 		A220D7001E68FCFF00345B92 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A261BB5E1E97163500EF3D22 /* Panda-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Panda-Bridging-Header.h"; sourceTree = "<group>"; };
 		A27C5FBC1E954BA800CD0E80 /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
+		A28C74451EA7F21D00C5867D /* roadwebanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roadwebanner.png; sourceTree = "<group>"; };
+		A28C74481EA7F32C00C5867D /* pandaonCloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pandaonCloud.png; sourceTree = "<group>"; };
+		A28C744A1EA7F4FF00C5867D /* pawbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pawbutton.png; sourceTree = "<group>"; };
 		A2CFD4B31E94A02D00F959BE /* lateaMug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lateaMug.png; sourceTree = "<group>"; };
 		A2CFD4B51E94A04500F959BE /* street.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = street.png; sourceTree = "<group>"; };
 		A2CFD4B71E94A05A00F959BE /* lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightbulb.png; sourceTree = "<group>"; };
@@ -188,13 +194,16 @@
 				2842240C1E6940D900BF2A33 /* CreateAccountViewController.swift */,
 				A220D7001E68FCFF00345B92 /* User.swift */,
 				A220D6BA1E68F7E300345B92 /* Info.plist */,
+				A28C744A1EA7F4FF00C5867D /* pawbutton.png */,
 				3875BAA41E6921AC003ED320 /* Business.swift */,
 				3875BAA81E6922E6003ED320 /* PlanViewController.swift */,
 				2861AFBC1E6A06A6002871CD /* CustomSegue.swift */,
 				2861AFBE1E6A4EA3002871CD /* HomepageViewController.swift */,
 				2861AFC01E6A527D002871CD /* RecordViewController.swift */,
 				2861AFC21E6A53FC002871CD /* ProfileViewController.swift */,
+				A28C74451EA7F21D00C5867D /* roadwebanner.png */,
 				A2CFD4B31E94A02D00F959BE /* lateaMug.png */,
+				A28C74481EA7F32C00C5867D /* pandaonCloud.png */,
 				A2CFD4B51E94A04500F959BE /* street.png */,
 				A2CFD4B71E94A05A00F959BE /* lightbulb.png */,
 				A2CFD4B91E94A07500F959BE /* bookshelf.png */,
@@ -389,8 +398,11 @@
 			files = (
 				A220D6B61E68F7E300345B92 /* Assets.xcassets in Resources */,
 				A220D6B91E68F7E300345B92 /* Main.storyboard in Resources */,
+				A28C74461EA7F21D00C5867D /* roadwebanner.png in Resources */,
+				A28C744B1EA7F4FF00C5867D /* pawbutton.png in Resources */,
 				A2CFD4B61E94A04500F959BE /* street.png in Resources */,
 				A2CFD4B41E94A02D00F959BE /* lateaMug.png in Resources */,
+				A28C74491EA7F32C00C5867D /* pandaonCloud.png in Resources */,
 				A2CFD4B81E94A05A00F959BE /* lightbulb.png in Resources */,
 				A2CFD4BC1E94AE9200F959BE /* purduetrip.png in Resources */,
 				A2CFD4BA1E94A07500F959BE /* bookshelf.png in Resources */,

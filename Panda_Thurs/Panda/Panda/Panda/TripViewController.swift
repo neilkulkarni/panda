@@ -99,7 +99,15 @@ class TripViewController: NSViewController {
             //profilePictureView.image = image
             pictureUpperLeft.image = image;
           //  user.setPicture(picture: imageChosen!.absoluteString)
+          
+            /*  if let bits = image?.representations.first as? NSBitmapImageRep {
+                let data = bits.representationUsingType(using: NSJPEGFileType, properties: [:])
+               // data?.writeToFile("/path/myImage.jpg", atomically: false)*/
+            //let imageData = image?.tiffRepresentation
+            //let bits = image?.representations.first as? NSBitmapImageRep
             
+            
+  
         }
         if(pictureUpperLeft != nil){
             addButtonUpperLeft.isHidden = true;
