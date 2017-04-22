@@ -1764,7 +1764,7 @@ class PlanViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        
+        savedTripLabel.isHidden = true
         resultsTableView.delegate = self
         resultsTableView.dataSource = self
         
@@ -1780,6 +1780,110 @@ class PlanViewController: NSViewController {
         popUpButton10.removeAllItems()
     }
     
+    @IBOutlet weak var savedTripLabel: NSTextField!
+    @IBAction func saveTripButton(_ sender: Any) {
+        if (selectedList.count == 0) {
+            return
+        }
+        uploadTrip()
+        savedTripLabel.isHidden = false
+    }
+    var tripLocationName = ""
+    
+    //TODO: complete this method
+    func determineLocationName() {
+        //var cityList = [String]()
+        var max = 0
+        var maxLocation = -1;
+        for i in 0...selectedList.count - 1{
+            //cityList[i] = selectedList[i].location!
+            var count = 0
+            for j in 0...selectedList.count - 1{
+                if(selectedList[i].location!.isEqual(selectedList[j].location)){
+                    count += 1
+                }
+            }
+            if(count > max){
+                max = count
+                maxLocation = i
+            }
+        }
+        tripLocationName = selectedList[maxLocation].location!
+        
+    }
+    var tripID: TripID = TripID() //todo?
+    func uploadTrip() {
+        
+        let tripParams: Parameters = [
+            "name": tripNameField.stringValue,
+            "description": tripDescriptionField.stringValue,
+            "location": tripLocationName,
+            "private": 0,
+            "api": "",
+            "user_id": user.id
+        ]
+        
+        //print(tripParams)
+        
+        
+        Alamofire.request("http://localhost:8081/trip", method: .post, parameters: tripParams, encoding: JSONEncoding.default).responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // HTTP URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            
+            guard let info = response.result.value else {
+                print("Error")
+                return
+            }
+            
+            let json = JSON(info)
+            print(json)
+            self.tripID.setID(id: json["trip_id"].int!)
+            self.uploadEvents(id: self.tripID.getID())
+        }
+        //print(id)
+        //uploadEvents(id: id)
+        //return id
+    }
+    
+    func uploadEvents(id: Int) {
+        //print(id)
+        for i in 0...(selectedList.count - 1) {
+            var eventName = selectedList[i].name
+            var eventLat = selectedList[i].latitude
+            var eventLong = selectedList[i].longitude
+            
+            let eventParams: Parameters = [
+                "name": eventName!,
+                "description": "",
+                "latitude": "\(selectedList[i].latitude)",
+                "longitude": "\(selectedList[i].longitude)",
+                "picture1": "",
+                "picture2": "",
+                "picture3": "",
+                "picture4": "",
+                "date": "",
+                "api": "",
+                "trip_id": id
+            ]
+            
+            Alamofire.request("http://localhost:8081/event", method: .post, parameters: eventParams, encoding: JSONEncoding.default).responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // HTTP URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                guard let info = response.result.value else {
+                    print("Error")
+                    return
+                }
+                
+                let json = JSON(info)
+                print(json)
+            }
+        }
+    }
     @IBAction func homeButton(_ sender: Any) {
          performSegue(withIdentifier: "idSegueToHome", sender: self)
     }
