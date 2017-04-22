@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="12120"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="12118"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -1154,11 +1154,11 @@
                                 <rect key="frame" x="20" y="704" width="469" height="135"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <clipView key="contentView" ambiguous="YES" id="Pcy-Rs-iaJ">
-                                    <rect key="frame" x="1" y="0.0" width="467" height="119"/>
+                                    <rect key="frame" x="1" y="0.0" width="467" height="134"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="pfw-mQ-zHB" viewBased="YES" id="0Bp-Ae-3e3">
-                                            <rect key="frame" x="0.0" y="0.0" width="473" height="96"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="473" height="111"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1268,7 +1268,7 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="rth-Gp-75c">
-                                    <rect key="frame" x="1" y="119" width="467" height="15"/>
+                                    <rect key="frame" x="1" y="118" width="467" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="69E-r7-78v">
@@ -2043,11 +2043,11 @@
                                 <rect key="frame" x="23" y="609" width="516" height="214"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <clipView key="contentView" ambiguous="YES" id="whh-TK-ZUe">
-                                    <rect key="frame" x="1" y="0.0" width="514" height="198"/>
+                                    <rect key="frame" x="1" y="0.0" width="514" height="213"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="YUe-Iw-5pr" viewBased="YES" id="T3X-zi-TVc">
-                                            <rect key="frame" x="0.0" y="0.0" width="518" height="175"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="518" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -2190,7 +2190,7 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="mne-w0-CIk">
-                                    <rect key="frame" x="1" y="198" width="514" height="15"/>
+                                    <rect key="frame" x="1" y="197" width="514" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="YJ4-Pl-Pzc">
@@ -2661,6 +2661,26 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pzy-EK-Boq">
+                                <rect key="frame" x="17" y="385" width="97" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Save Trip" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zRy-xY-BM6">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="saveTripButton:" target="6Zc-8g-Gko" id="JiS-oV-cW5"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HyV-i4-R57">
+                                <rect key="frame" x="21" y="353" width="140" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Saved! Enjoy your trip!" id="eZ3-FB-5Il">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
@@ -2692,6 +2712,7 @@
                         <outlet property="removeLocationButton1" destination="6YK-4C-NbC" id="GJJ-Vc-auu"/>
                         <outlet property="reorderButton" destination="WvI-je-q45" id="hCB-JR-x8Q"/>
                         <outlet property="resultsTableView" destination="T3X-zi-TVc" id="wlf-1R-TbM"/>
+                        <outlet property="savedTripLabel" destination="HyV-i4-R57" id="vmj-Cw-4lV"/>
                         <outlet property="selectedLocationsField" destination="XQk-9F-CmP" id="4by-Vp-7nf"/>
                         <outlet property="selection1" destination="V1u-dc-VYD" id="fcf-0p-D4L"/>
                         <outlet property="selection10" destination="QtP-uC-KBd" id="Qqy-HO-WAA"/>
