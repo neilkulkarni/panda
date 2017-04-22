@@ -175,6 +175,7 @@ router.post('/trip', function(request, response) {
     var trip = {
         name: q.name, 
         description: q.description,
+        location: q.location,
         private: q.private,
         api: q.api,
         user_id: q.user_id
@@ -200,6 +201,7 @@ router.get('/all-trips/:id', function(request, response) {
                 id: result[i].id, 
                 name: result[i].name, 
                 description: result[i].description,
+                location: result[i].location,
                 private: result[i].private,
                 api: result[i].api,
                 user_id: result[i].user_id
@@ -222,6 +224,7 @@ router.get('/public-trips/:id', function(request, response) {
                 id: result[i].id, 
                 name: result[i].name, 
                 description: result[i].description,
+                location: result[i].location,
                 private: result[i].private,
                 api: result[i].api,
                 user_id: result[i].user_id
@@ -243,6 +246,7 @@ router.get('/trip/:id', function(request, response) {
             id: result[0].id, 
             name: result[0].name, 
             description: result[0].description,
+            location: result[0].location,
             private: result[0].private,
             api: result[0].api,
             user_id: result[0].user_id
@@ -257,6 +261,7 @@ router.put('/trip', function(request, response) {
     var q = request.body;
     var id = q.id;
     var description = q.description;
+    var location = q.location;
     var private = q.private;
     var api = q.api;
     
@@ -292,6 +297,10 @@ router.post('/event', function(request, response) {
     var event = {
         name: q.name, 
         description: q.description,
+        picture1: q.picture1,
+        picture2: q.picture2,
+        picture3: q.picture3,
+        picture4: q.picture4,
         latitude: q.latitude,
         longitude: q.longitude,
         date: q.date,
@@ -319,6 +328,10 @@ router.get('/events/:id', function(request, response) {
                 id: result[i].id, 
                 name: result[i].name, 
                 description: result[i].description,
+                picture1: result[i].picture1,
+                picture2: result[i].picture2,
+                picture3: result[i].picture3,
+                picture4: result[i].picture4,
                 latitude: result[i].latitude,
                 longitude: result[i].longitude,
                 date: result[i].date,
@@ -342,6 +355,10 @@ router.get('/event/:id', function(request, response) {
             id: result[0].id, 
             name: result[0].name, 
             description: result[0].description,
+            picture1: result[0].picture1,
+            picture2: result[0].picture2,
+            picture3: result[0].picture3,
+            picture4: result[0].picture4,
             latitude: result[0].latitude,
             longitude: result[0].longitude,
             date: result[0].date,
@@ -357,6 +374,10 @@ router.put('/event', function(request, response) {
     var q = request.body;
     var id = q.id;
     var description = q.description;
+    var picture1 = q.picture1;
+    var picture2 = q.picture2;
+    var picture3 = q.picture3;
+    var picture4 = q.picture4;
     var latitude = q.latitude;
     var longitude = q.longitude;
     var date = q.date;
@@ -370,8 +391,56 @@ router.put('/event', function(request, response) {
             if (result[i].id == q.id) {
                 console.log('Event exists.');
 
-                conn.query('UPDATE event SET description=?, latitude=?, longitude=?, date=?, api=? WHERE id=?', 
-                    [description, latitude, longitude, date, api, id], function(err, result) {
+                conn.query('UPDATE event SET description=?, picture1=?, picture2=?, picture3=?, picture4=?, latitude=?, longitude=?, date=?, api=? WHERE id=?', 
+                    [description, picture1, picture2, picture3, picture4, latitude, longitude, date, api, id], function(err, result) {
+                    var code = { code: 200 };   
+                    response.send(code); 
+                });
+                
+                error = 0;
+                break;
+            }
+        }
+        
+        if (error == 1) {    
+                var code = { code: 400 };   
+                response.send(code); 
+        }
+    });
+});
+
+
+router.get('/pictures/:id', function(request, response) {
+    var eventID = request.params.id;
+
+    conn.query('SELECT * FROM event WHERE id=?', [eventID], function(err, result) {
+        var pictures = {
+            picture1: result[0].picture1,
+            picture2: result[0].picture2,
+            picture3: result[0].picture3,
+            picture4: result[0].picture4
+        }
+
+        response.send(pictures);
+    });
+});
+
+router.put('/pictures', function (request, response) {
+    var q = request.body;
+    var id = q.id;
+    var picture1 = q.picture1;
+    var picture2 = q.picture2;
+    var picture3 = q.picture3;
+    var picture4 = q.picture4;
+
+    conn.query('SELECT * FROM event', function(err, result) {
+        var error = 1;
+        for (var i = 0; i < result.length; i++) {
+            if (result[i].id == q.id) {
+                console.log('Event exists.');
+
+                conn.query('UPDATE event SET picture1=?, picture2=?, picture3=?, picture4=? WHERE id=?', 
+                    [picture1, picture2, picture3, picture4, id], function(err, result) {
                     var code = { code: 200 };   
                     response.send(code); 
                 });
