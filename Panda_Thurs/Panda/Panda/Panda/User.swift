@@ -21,9 +21,7 @@ class User: NSObject {
         self.email = "";
         self.bio = "";
         self.picture = "";
-       
     }
-    
     
     func getID() -> Int {
         return self.id

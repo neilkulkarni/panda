@@ -57,9 +57,12 @@ class RecordViewController: NSViewController {
         imageString += "&key=AIzaSyCqXFkHzOLwEw00zOTq_1kzGwkgNjAKHTE"
         print(imageString)
         
-        /*let requesturl = URL(string: imageString)
+
+        let requesturl = URL(string: imageString)
+        print(requesturl)
         let request = URLRequest(url: requesturl!)
-        mapWebView.mainFrame.load(request)*/
+        print(request)
+        mapWebView.mainFrame.load(request)
         
 //        let requesturl = NSURL(string: imageString)
 //        let request = NSURLRequest(url: requesturl!)
@@ -1923,6 +1926,7 @@ class RecordViewController: NSViewController {
             
             let eventParams: Parameters = [
                 "name": eventName!,
+                "order": i + 1,
                 "description": "",
                 "latitude": "\(selectedList[i].latitude)",
                 "longitude": "\(selectedList[i].longitude)",
