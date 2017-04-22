@@ -1900,7 +1900,7 @@ class RecordViewController: NSViewController {
                 "name": eventName!,
                 "description": "",
                 "latitude": "\(selectedList[i].latitude)",
-                "longitude": "\(selectedList[i].longitude!)",
+                "longitude": "\(selectedList[i].longitude)",
                 "picture1": "",
                 "picture2": "",
                 "picture3": "",
