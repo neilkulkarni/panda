@@ -1565,17 +1565,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="szO-2f-7Hx"/>
                             </imageView>
-                            <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VRU-HZ-3NT">
-                                <rect key="frame" x="369" y="656" width="126" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Generate Map" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4s4-JX-pCb">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="generateMap:" target="F6W-mE-MvV" id="PXc-QQ-XR6"/>
-                                </connections>
-                            </button>
                             <webView hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="br5-Tf-rI3">
                                 <rect key="frame" x="20" y="29" width="351" height="202"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -1707,7 +1696,7 @@
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wf3-k5-5Es">
                                 <rect key="frame" x="676" y="220" width="110" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Finalize Trip" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3jS-bt-Ky0">
+                                <buttonCell key="cell" type="push" title="Go to Trip" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3jS-bt-Ky0">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -1719,7 +1708,7 @@
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NGM-dm-ESq">
                                 <rect key="frame" x="676" y="253" width="110" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Save Trip" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EAt-A2-Faq">
+                                <buttonCell key="cell" type="push" title="Finalize Trip" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EAt-A2-Faq">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -1740,7 +1729,6 @@
                     </view>
                     <connections>
                         <outlet property="finalizeTripButton" destination="Wf3-k5-5Es" id="k3b-xk-OKY"/>
-                        <outlet property="generateMapButton" destination="VRU-HZ-3NT" id="RdC-6C-HU9"/>
                         <outlet property="imageThing" destination="nbO-Qh-kZN" id="LB2-Sm-3zk"/>
                         <outlet property="mapWebView" destination="br5-Tf-rI3" id="FEy-tu-mzX"/>
                         <outlet property="popUpButton1" destination="V2s-pT-lLA" id="QoR-d7-2WY"/>
