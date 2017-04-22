@@ -18,6 +18,7 @@
 		3875BAA91E6922E6003ED320 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3875BAA81E6922E6003ED320 /* PlanViewController.swift */; };
 		5799F746CD5EE7A7636E8CB9 /* Pods_PandaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6904C858F20F62B4F10213 /* Pods_PandaTests.framework */; };
 		9B19708D1EA9271200F065E1 /* TripID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19708C1EA9271200F065E1 /* TripID.swift */; };
+		A2029A8A1EABD07200B52EF7 /* pandaonCloud.png in Resources */ = {isa = PBXBuildFile; fileRef = A2029A891EABD07200B52EF7 /* pandaonCloud.png */; };
 		A220D6B21E68F7E300345B92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A220D6B11E68F7E300345B92 /* AppDelegate.swift */; };
 		A220D6B41E68F7E300345B92 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A220D6B31E68F7E300345B92 /* LoginViewController.swift */; };
 		A220D6B61E68F7E300345B92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A220D6B51E68F7E300345B92 /* Assets.xcassets */; };
@@ -29,7 +30,6 @@
 		A220D7011E68FCFF00345B92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A220D7001E68FCFF00345B92 /* User.swift */; };
 		A27C5FBD1E954BA800CD0E80 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27C5FBC1E954BA800CD0E80 /* TripViewController.swift */; };
 		A28C74461EA7F21D00C5867D /* roadwebanner.png in Resources */ = {isa = PBXBuildFile; fileRef = A28C74451EA7F21D00C5867D /* roadwebanner.png */; };
-		A28C74491EA7F32C00C5867D /* pandaonCloud.png in Resources */ = {isa = PBXBuildFile; fileRef = A28C74481EA7F32C00C5867D /* pandaonCloud.png */; };
 		A28C744B1EA7F4FF00C5867D /* pawbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = A28C744A1EA7F4FF00C5867D /* pawbutton.png */; };
 		A2CFD4B41E94A02D00F959BE /* lateaMug.png in Resources */ = {isa = PBXBuildFile; fileRef = A2CFD4B31E94A02D00F959BE /* lateaMug.png */; };
 		A2CFD4B61E94A04500F959BE /* street.png in Resources */ = {isa = PBXBuildFile; fileRef = A2CFD4B51E94A04500F959BE /* street.png */; };
@@ -93,6 +93,7 @@
 		7A2E72538938D956EA19ECB2 /* Pods-Panda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda.release.xcconfig"; path = "Pods/Target Support Files/Pods-Panda/Pods-Panda.release.xcconfig"; sourceTree = "<group>"; };
 		94730C007A08755F26167F33 /* Pods_PandaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PandaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B19708C1EA9271200F065E1 /* TripID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripID.swift; sourceTree = "<group>"; };
+		A2029A891EABD07200B52EF7 /* pandaonCloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pandaonCloud.png; sourceTree = "<group>"; };
 		A220D6AE1E68F7E300345B92 /* Panda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Panda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A220D6B11E68F7E300345B92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A220D6B31E68F7E300345B92 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +112,6 @@
 		A261BB5E1E97163500EF3D22 /* Panda-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Panda-Bridging-Header.h"; sourceTree = "<group>"; };
 		A27C5FBC1E954BA800CD0E80 /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		A28C74451EA7F21D00C5867D /* roadwebanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roadwebanner.png; sourceTree = "<group>"; };
-		A28C74481EA7F32C00C5867D /* pandaonCloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pandaonCloud.png; sourceTree = "<group>"; };
 		A28C744A1EA7F4FF00C5867D /* pawbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pawbutton.png; sourceTree = "<group>"; };
 		A2CFD4B31E94A02D00F959BE /* lateaMug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lateaMug.png; sourceTree = "<group>"; };
 		A2CFD4B51E94A04500F959BE /* street.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = street.png; sourceTree = "<group>"; };
@@ -203,10 +203,10 @@
 				2861AFC21E6A53FC002871CD /* ProfileViewController.swift */,
 				A28C74451EA7F21D00C5867D /* roadwebanner.png */,
 				A2CFD4B31E94A02D00F959BE /* lateaMug.png */,
-				A28C74481EA7F32C00C5867D /* pandaonCloud.png */,
 				A2CFD4B51E94A04500F959BE /* street.png */,
 				A2CFD4B71E94A05A00F959BE /* lightbulb.png */,
 				A2CFD4B91E94A07500F959BE /* bookshelf.png */,
+				A2029A891EABD07200B52EF7 /* pandaonCloud.png */,
 				A2CFD4BB1E94AE9200F959BE /* purduetrip.png */,
 				A27C5FBC1E954BA800CD0E80 /* TripViewController.swift */,
 				A261BB5E1E97163500EF3D22 /* Panda-Bridging-Header.h */,
@@ -401,8 +401,8 @@
 				A28C74461EA7F21D00C5867D /* roadwebanner.png in Resources */,
 				A28C744B1EA7F4FF00C5867D /* pawbutton.png in Resources */,
 				A2CFD4B61E94A04500F959BE /* street.png in Resources */,
+				A2029A8A1EABD07200B52EF7 /* pandaonCloud.png in Resources */,
 				A2CFD4B41E94A02D00F959BE /* lateaMug.png in Resources */,
-				A28C74491EA7F32C00C5867D /* pandaonCloud.png in Resources */,
 				A2CFD4B81E94A05A00F959BE /* lightbulb.png in Resources */,
 				A2CFD4BC1E94AE9200F959BE /* purduetrip.png in Resources */,
 				A2CFD4BA1E94A07500F959BE /* bookshelf.png in Resources */,
