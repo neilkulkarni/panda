@@ -21,7 +21,6 @@ class TripViewController: NSViewController {
     @IBOutlet weak var mapWebView: WebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-       // mapWebView.delete(<#T##sender: Any?##Any?#>)
         //print(trip_id)
         // Do view setup here.
         /*let tripParams: Parameters = [

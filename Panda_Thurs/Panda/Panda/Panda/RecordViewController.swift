@@ -1859,6 +1859,7 @@ class RecordViewController: NSViewController {
         let tripParams: Parameters = [
             "name": tripTitle.stringValue,
             "description": tripDescription.stringValue,
+            "location": "",
             "private": 0,
             "api": imageString,
             "user_id": user.id
@@ -1899,7 +1900,11 @@ class RecordViewController: NSViewController {
                 "name": eventName!,
                 "description": "",
                 "latitude": "\(selectedList[i].latitude)",
-                "longitude": "\(selectedList[i].longitude)",
+                "longitude": "\(selectedList[i].longitude!)",
+                "picture1": "",
+                "picture2": "",
+                "picture3": "",
+                "picture4": "",
                 "date": "",
                 "api": "",
                 "trip_id": id
