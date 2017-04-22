@@ -25,7 +25,7 @@ class RecordViewController: NSViewController {
     @IBOutlet weak var mapWebView: WebView!
     var imageString: String = ""
 
-    @IBAction func generateMap(_ sender: Any) {
+    func generateMap() {
         //selected list
         //https://maps.googleapis.com/maps/api/staticmap?size=600x300&maptype=roadmap &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318 &markers=color:red%7Clabel:C%7C40.718217,-73.998284 &key=AIzaSyCqXFkHzOLwEw00zOTq_1kzGwkgNjAKHTE
         imageString = "https://maps.googleapis.com/maps/api/staticmap?size=600x300&maptype=roadmap"
@@ -57,6 +57,7 @@ class RecordViewController: NSViewController {
         imageString += "&key=AIzaSyCqXFkHzOLwEw00zOTq_1kzGwkgNjAKHTE"
         print(imageString)
         
+
         let requesturl = URL(string: imageString)
         print(requesturl)
         let request = URLRequest(url: requesturl!)
@@ -70,7 +71,7 @@ class RecordViewController: NSViewController {
        //mapWebView.loadRequest(NSURLRequest(URL: NSURL(imageString)!))
         
         
-        mapWebView.isHidden = false
+        //mapWebView.isHidden = false
     }
     
     @IBOutlet weak var startingAddress: NSTextField!
@@ -224,9 +225,9 @@ class RecordViewController: NSViewController {
             }
         }
         
-        if (selectedList.count > 0) {
+        /*if (selectedList.count > 0) {
             generateMapButton.isHidden = false
-        }
+        }*/
     }
 
     @IBAction func removeLocationButton1(_ sender: Any) {
@@ -1821,6 +1822,7 @@ class RecordViewController: NSViewController {
         if (selectedList.count == 0) {
             return
         }
+        generateMap()
         uploadTrip()
         finalizeTripButton.isEnabled = true
         tripSavedLabel.isHidden = false
@@ -1856,12 +1858,36 @@ class RecordViewController: NSViewController {
         }
     }
     
+    var tripLocationName = ""
+    
+    //TODO: complete this method
+    func determineLocationName() {
+        //var cityList = [String]()
+        var max = 0
+        var maxLocation = -1;
+        for i in 0...selectedList.count - 1{
+            //cityList[i] = selectedList[i].location!
+            var count = 0
+            for j in 0...selectedList.count - 1{
+                if(selectedList[i].location!.isEqual(selectedList[j].location)){
+                    count += 1
+                }
+            }
+            if(count > max){
+                max = count
+                maxLocation = i
+            }
+        }
+        tripLocationName = selectedList[maxLocation].location!
+        
+    }
+    
     func uploadTrip() {
         
         let tripParams: Parameters = [
             "name": tripTitle.stringValue,
             "description": tripDescription.stringValue,
-            "location": "",
+            "location": tripLocationName,
             "private": 0,
             "api": imageString,
             "user_id": user.id

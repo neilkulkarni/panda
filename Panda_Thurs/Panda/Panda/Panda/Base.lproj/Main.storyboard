@@ -1154,11 +1154,11 @@
                                 <rect key="frame" x="20" y="704" width="469" height="135"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <clipView key="contentView" ambiguous="YES" id="Pcy-Rs-iaJ">
-                                    <rect key="frame" x="1" y="0.0" width="467" height="134"/>
+                                    <rect key="frame" x="1" y="0.0" width="467" height="119"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="pfw-mQ-zHB" viewBased="YES" id="0Bp-Ae-3e3">
-                                            <rect key="frame" x="0.0" y="0.0" width="473" height="111"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="473" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1268,7 +1268,7 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="rth-Gp-75c">
-                                    <rect key="frame" x="1" y="118" width="467" height="16"/>
+                                    <rect key="frame" x="1" y="119" width="467" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="69E-r7-78v">
@@ -1565,17 +1565,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="szO-2f-7Hx"/>
                             </imageView>
-                            <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VRU-HZ-3NT">
-                                <rect key="frame" x="369" y="656" width="126" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Generate Map" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4s4-JX-pCb">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="generateMap:" target="F6W-mE-MvV" id="PXc-QQ-XR6"/>
-                                </connections>
-                            </button>
                             <webView hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="br5-Tf-rI3">
                                 <rect key="frame" x="20" y="29" width="351" height="202"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -1707,7 +1696,7 @@
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wf3-k5-5Es">
                                 <rect key="frame" x="676" y="220" width="110" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Finalize Trip" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3jS-bt-Ky0">
+                                <buttonCell key="cell" type="push" title="Go to Trip" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3jS-bt-Ky0">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -1719,7 +1708,7 @@
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NGM-dm-ESq">
                                 <rect key="frame" x="676" y="253" width="110" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Save Trip" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EAt-A2-Faq">
+                                <buttonCell key="cell" type="push" title="Finalize Trip" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EAt-A2-Faq">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -1740,7 +1729,6 @@
                     </view>
                     <connections>
                         <outlet property="finalizeTripButton" destination="Wf3-k5-5Es" id="k3b-xk-OKY"/>
-                        <outlet property="generateMapButton" destination="VRU-HZ-3NT" id="RdC-6C-HU9"/>
                         <outlet property="imageThing" destination="nbO-Qh-kZN" id="LB2-Sm-3zk"/>
                         <outlet property="mapWebView" destination="br5-Tf-rI3" id="FEy-tu-mzX"/>
                         <outlet property="popUpButton1" destination="V2s-pT-lLA" id="QoR-d7-2WY"/>
@@ -2048,6 +2036,31 @@
                                     <nil key="identifier"/>
                                 </webPreferences>
                             </webView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9B8-9Q-jTX">
+                                <rect key="frame" x="365" y="688" width="68" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="pawbutton" id="wnF-hL-xxZ"/>
+                            </imageView>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzI-ez-Sz4">
+                                <rect key="frame" x="23" y="269" width="407" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Hht-E4-JPe">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yfu-N9-X5s">
+                                <rect key="frame" x="246" y="228" width="15" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" title="x" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ps2-SA-Zq4">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystem"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="removeButtonLowerLeft:" target="T7y-PX-Wml" id="cSG-ww-COy"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -2139,11 +2152,11 @@
                                 <rect key="frame" x="23" y="609" width="516" height="214"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <clipView key="contentView" ambiguous="YES" id="whh-TK-ZUe">
-                                    <rect key="frame" x="1" y="0.0" width="514" height="213"/>
+                                    <rect key="frame" x="1" y="0.0" width="514" height="198"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="YUe-Iw-5pr" viewBased="YES" id="T3X-zi-TVc">
-                                            <rect key="frame" x="0.0" y="0.0" width="518" height="190"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="518" height="175"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -2286,7 +2299,7 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="mne-w0-CIk">
-                                    <rect key="frame" x="1" y="197" width="514" height="16"/>
+                                    <rect key="frame" x="1" y="198" width="514" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="YJ4-Pl-Pzc">
@@ -3094,6 +3107,7 @@
         <image name="lightbulb" width="77" height="77"/>
         <image name="pandaicon2" width="1039" height="1259"/>
         <image name="pandaonCloud" width="1039" height="1259"/>
+        <image name="pawbutton" width="1039" height="1259"/>
         <image name="purduetrip" width="385" height="195"/>
         <image name="street" width="77" height="80"/>
     </resources>
