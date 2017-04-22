@@ -1951,6 +1951,11 @@
                                     <nil key="identifier"/>
                                 </webPreferences>
                             </webView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X5A-QR-h2F">
+                                <rect key="frame" x="297" y="651" width="63" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="pawbutton" id="OV8-kO-7gE"/>
+                            </imageView>
                         </subviews>
                     </view>
                     <connections>
@@ -2996,12 +3001,13 @@
         <image name="lightbulb" width="77" height="77"/>
         <image name="pandaicon2" width="1039" height="1259"/>
         <image name="pandaonCloud" width="1039" height="1259"/>
+        <image name="pawbutton" width="1039" height="1259"/>
         <image name="purduetrip" width="385" height="195"/>
         <image name="street" width="77" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7nr-vg-CEo"/>
         <segue reference="KkM-TH-GJC"/>
-        <segue reference="fQE-vy-LD8"/>
+        <segue reference="fgN-qe-Z4K"/>
     </inferredMetricsTieBreakers>
 </document>
