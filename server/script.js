@@ -296,6 +296,7 @@ router.post('/event', function(request, response) {
     var q = request.body; 
     var event = {
         name: q.name, 
+        order: q.order,
         description: q.description,
         picture1: q.picture1,
         picture2: q.picture2,
@@ -326,6 +327,7 @@ router.get('/events/:id', function(request, response) {
         for (var i = 0; i < result.length; i++) {
             var tempEvent = { 
                 id: result[i].id, 
+                order: result[i].order,
                 name: result[i].name, 
                 description: result[i].description,
                 picture1: result[i].picture1,
@@ -353,6 +355,7 @@ router.get('/event/:id', function(request, response) {
     conn.query('SELECT * FROM event WHERE id=?', [eventID], function(err, result) {
         event = {
             id: result[0].id, 
+            order: result[0].order,
             name: result[0].name, 
             description: result[0].description,
             picture1: result[0].picture1,
@@ -373,6 +376,7 @@ router.get('/event/:id', function(request, response) {
 router.put('/event', function(request, response) {
     var q = request.body;
     var id = q.id;
+    var order = q.order;
     var description = q.description;
     var picture1 = q.picture1;
     var picture2 = q.picture2;

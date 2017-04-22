@@ -15,18 +15,20 @@ import WebKit
 class TripViewController: NSViewController {
     var user: User = User()
     var trip_id: TripID = TripID()
+    var eventList: [Event] = []
 
     @IBOutlet weak var tripNameField: NSTextField!
     @IBOutlet weak var tripDescLabel: NSTextField!
     @IBOutlet weak var mapWebView: WebView!
+    
+    @IBOutlet weak var resultsTableView: NSTableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print(trip_id)
-        // Do view setup here.
-        /*let tripParams: Parameters = [
-            "trip_id": trip_id
-        ]*/
-        //print(trip_id)
+        
+        resultsTableView.delegate = self
+        resultsTableView.dataSource = self
+        
         let request = "http://localhost:8081/trip/" + "\(trip_id.getID())"
         Alamofire.request(request).responseJSON { response in
             print(response.request)  // original URL request
@@ -48,8 +50,55 @@ class TripViewController: NSViewController {
             self.mapWebView.mainFrame.load(request)
         }
         
-        
+        let eventRequest = "http://localhost:8081/events/" + "\(trip_id.getID())"
+        Alamofire.request(eventRequest).responseJSON { response in
+            
+            guard let info = response.result.value else {
+                print("Error")
+                return
+            }
+            
+            let eventJSON = JSON(info)
+            print(eventJSON)
+            
+            let eventResults = eventJSON["eventList"].arrayValue
+            
+            self.eventList.removeAll()
+            
+            for i in 0...(eventResults.count-1) {
+                self.eventList.append(self.convertToEvent(result: eventResults[i]))
+            }
+            
+            // order trips here
+            
+            self.loadEventResults()
+            
+            for i in 0...(self.eventList.count-1) {
+                print(self.eventList[i].getName())
+            }
+        }
     }
+    
+    func convertToEvent(result: JSON) -> Event {
+        let event: Event = Event()
+        
+        event.setEvent(id: result["id"].intValue, name: result["name"].stringValue, descripshun: result["description"].stringValue, picture1: result["picture1"].stringValue, picture2: result["picture2"].stringValue, picture3: result["picture3"].stringValue, picture4: result["picture4"].stringValue, latitude: result["latitude"].stringValue, longitude: result["longitude"].stringValue, date: result["date"].stringValue, api: result["api"].stringValue, tripID: result["trip_id"].intValue)
+        
+        return event
+    }
+    
+    func loadEventResults() {
+        let numRows = resultsTableView.numberOfRows
+        var rangeToRemove: IndexSet = []
+        rangeToRemove.insert(integersIn: 0..<numRows)
+        resultsTableView.removeRows(at: rangeToRemove, withAnimation: NSTableViewAnimationOptions.effectFade)
+        
+        var rangeToAdd: IndexSet = []
+        rangeToAdd.insert(integersIn: 0..<eventList.count)
+        resultsTableView.insertRows(at: rangeToAdd, withAnimation: NSTableViewAnimationOptions.slideUp)
+    }
+    
+    
     override func viewWillAppear() {
         self.view.wantsLayer = true;
         self.view.layer?.backgroundColor = CGColor(red: 220/255.0, green: 220/255.0, blue: 255/255.0, alpha: 0.5)
@@ -215,5 +264,61 @@ class TripViewController: NSViewController {
         }
     }
 
+    
+}
+
+extension TripViewController: NSTableViewDataSource {
+    
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return eventList.count ?? 0
+    }
+    
+}
+
+extension TripViewController: NSTableViewDelegate {
+    
+    fileprivate enum CellIdentifiers {
+        static let OrderCell = "OrderCellID"
+        static let NameCell = "NameCellID"
+    }
+    
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        
+        var image: NSImage?
+        var text: String = ""
+        var cellIdentifier: String = ""
+        
+        
+        // 1
+        var item: Event = Event()
+        if (self.eventList[row] != nil) {
+            item = self.eventList[row]
+        }
+        else {
+            return nil
+        }
+        
+        
+        // 2
+        if tableColumn == tableView.tableColumns[0] {
+            text = "\(row + 1)"
+            cellIdentifier = CellIdentifiers.OrderCell
+        } else if tableColumn == tableView.tableColumns[1] {
+            text = item.name
+            if (text.characters.count == 0) {
+                text = "N/A"
+            }
+            cellIdentifier = CellIdentifiers.NameCell
+        }
+        
+        // 3
+        if let cell = tableView.make(withIdentifier: cellIdentifier, owner: nil) as? NSTableCellView {
+            cell.textField?.stringValue = text
+            cell.imageView?.image = image ?? nil
+            return cell
+        }
+        
+        return nil
+    }
     
 }

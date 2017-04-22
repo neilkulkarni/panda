@@ -36,6 +36,7 @@
 		A2CFD4B81E94A05A00F959BE /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = A2CFD4B71E94A05A00F959BE /* lightbulb.png */; };
 		A2CFD4BA1E94A07500F959BE /* bookshelf.png in Resources */ = {isa = PBXBuildFile; fileRef = A2CFD4B91E94A07500F959BE /* bookshelf.png */; };
 		A2CFD4BC1E94AE9200F959BE /* purduetrip.png in Resources */ = {isa = PBXBuildFile; fileRef = A2CFD4BB1E94AE9200F959BE /* purduetrip.png */; };
+		D13828C01EAC008D00A0B8AA /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13828BF1EAC008D00A0B8AA /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		A2CFD4B91E94A07500F959BE /* bookshelf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookshelf.png; sourceTree = "<group>"; };
 		A2CFD4BB1E94AE9200F959BE /* purduetrip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purduetrip.png; sourceTree = "<group>"; };
 		C0ECF7F9A53FFF550A60B12B /* Pods-PandaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PandaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PandaUITests/Pods-PandaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D13828BF1EAC008D00A0B8AA /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 		A220D6B01E68F7E300345B92 /* Panda */ = {
 			isa = PBXGroup;
 			children = (
+				D13828BF1EAC008D00A0B8AA /* Event.swift */,
 				A220D6FE1E68FB1500345B92 /* pandaicon2.png */,
 				A220D6B11E68F7E300345B92 /* AppDelegate.swift */,
 				A220D6DC1E68F80000345B92 /* CryptoSwift.xcodeproj */,
@@ -581,6 +584,7 @@
 				2861AFBD1E6A06A6002871CD /* CustomSegue.swift in Sources */,
 				A220D6B21E68F7E300345B92 /* AppDelegate.swift in Sources */,
 				A220D7011E68FCFF00345B92 /* User.swift in Sources */,
+				D13828C01EAC008D00A0B8AA /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
