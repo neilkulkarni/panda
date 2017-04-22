@@ -1854,12 +1854,36 @@ class RecordViewController: NSViewController {
         }
     }
     
+    var tripLocationName = ""
+    
+    //TODO: complete this method
+    func determineLocationName() {
+        //var cityList = [String]()
+        var max = 0
+        var maxLocation = -1;
+        for i in 0...selectedList.count - 1{
+            //cityList[i] = selectedList[i].location!
+            var count = 0
+            for j in 0...selectedList.count - 1{
+                if(selectedList[i].location!.isEqual(selectedList[j].location)){
+                    count += 1
+                }
+            }
+            if(count > max){
+                max = count
+                maxLocation = i
+            }
+        }
+        tripLocationName = selectedList[maxLocation].location!
+        
+    }
+    
     func uploadTrip() {
         
         let tripParams: Parameters = [
             "name": tripTitle.stringValue,
             "description": tripDescription.stringValue,
-            "location": "",
+            "location": tripLocationName,
             "private": 0,
             "api": imageString,
             "user_id": user.id
