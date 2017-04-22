@@ -17,6 +17,7 @@
 		3875BAA51E6921AC003ED320 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3875BAA41E6921AC003ED320 /* Business.swift */; };
 		3875BAA91E6922E6003ED320 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3875BAA81E6922E6003ED320 /* PlanViewController.swift */; };
 		5799F746CD5EE7A7636E8CB9 /* Pods_PandaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6904C858F20F62B4F10213 /* Pods_PandaTests.framework */; };
+		9B19708D1EA9271200F065E1 /* TripID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19708C1EA9271200F065E1 /* TripID.swift */; };
 		A220D6B21E68F7E300345B92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A220D6B11E68F7E300345B92 /* AppDelegate.swift */; };
 		A220D6B41E68F7E300345B92 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A220D6B31E68F7E300345B92 /* LoginViewController.swift */; };
 		A220D6B61E68F7E300345B92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A220D6B51E68F7E300345B92 /* Assets.xcassets */; };
@@ -91,6 +92,7 @@
 		6688EC38FEF58572A493CDEE /* Pods_Panda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Panda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2E72538938D956EA19ECB2 /* Pods-Panda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda.release.xcconfig"; path = "Pods/Target Support Files/Pods-Panda/Pods-Panda.release.xcconfig"; sourceTree = "<group>"; };
 		94730C007A08755F26167F33 /* Pods_PandaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PandaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B19708C1EA9271200F065E1 /* TripID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripID.swift; sourceTree = "<group>"; };
 		A220D6AE1E68F7E300345B92 /* Panda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Panda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A220D6B11E68F7E300345B92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A220D6B31E68F7E300345B92 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				A2CFD4BB1E94AE9200F959BE /* purduetrip.png */,
 				A27C5FBC1E954BA800CD0E80 /* TripViewController.swift */,
 				A261BB5E1E97163500EF3D22 /* Panda-Bridging-Header.h */,
+				9B19708C1EA9271200F065E1 /* TripID.swift */,
 			);
 			path = Panda;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				2861AFC11E6A527D002871CD /* RecordViewController.swift in Sources */,
 				3875BAA51E6921AC003ED320 /* Business.swift in Sources */,
 				A27C5FBD1E954BA800CD0E80 /* TripViewController.swift in Sources */,
+				9B19708D1EA9271200F065E1 /* TripID.swift in Sources */,
 				2861AFBF1E6A4EA3002871CD /* HomepageViewController.swift in Sources */,
 				2861AFBD1E6A06A6002871CD /* CustomSegue.swift in Sources */,
 				A220D6B21E68F7E300345B92 /* AppDelegate.swift in Sources */,

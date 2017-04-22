@@ -7,13 +7,49 @@
 //
 
 import Cocoa
+import Alamofire
+import SwiftyJSON
+import MapKit
+import WebKit
 
 class TripViewController: NSViewController {
     var user: User = User()
+    var trip_id: TripID = TripID()
 
+    @IBOutlet weak var tripNameField: NSTextField!
+    @IBOutlet weak var tripDescLabel: NSTextField!
+    @IBOutlet weak var mapWebView: WebView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapWebView.delete(<#T##sender: Any?##Any?#>)
+        //print(trip_id)
         // Do view setup here.
+        /*let tripParams: Parameters = [
+            "trip_id": trip_id
+        ]*/
+        //print(trip_id)
+        let request = "http://localhost:8081/trip/" + "\(trip_id.getID())"
+        Alamofire.request(request).responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // HTTP URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            
+            guard let info = response.result.value else {
+                print("Error")
+                return
+            }
+            
+            let tripJSON = JSON(info)
+            print(tripJSON)
+            self.tripNameField.stringValue = tripJSON["trip"]["name"].stringValue
+            self.tripDescLabel.stringValue = tripJSON["trip"]["description"].stringValue
+            let requesturl = URL(string: tripJSON["trip"]["api"].stringValue)
+            let request = URLRequest(url: requesturl!)
+            self.mapWebView.mainFrame.load(request)
+        }
+        
+        
     }
     override func viewWillAppear() {
         self.view.wantsLayer = true;
@@ -24,6 +60,7 @@ class TripViewController: NSViewController {
         removeButtonLowerRight.isHidden = true
         
     }
+    
     @IBAction func homeButton(_ sender: Any) {
          performSegue(withIdentifier: "idSegue", sender: self)
     }
@@ -48,13 +85,11 @@ class TripViewController: NSViewController {
  
     @IBOutlet weak var removeButtonLowerRight: NSButton!
     
-    
     @IBAction func addPhoto1(_ sender: Any) {
         let imagePicker: NSOpenPanel = NSOpenPanel()
         imagePicker.allowsMultipleSelection = false
         imagePicker.canChooseFiles = true
         imagePicker.canChooseDirectories = false
-        
         imagePicker.runModal()
         var imageChosen = imagePicker.url
         // print(imagePicker.url)

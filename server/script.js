@@ -183,8 +183,8 @@ router.post('/trip', function(request, response) {
     conn.query('INSERT INTO trip SET ?', trip, function(err, result) {
         console.log('Added trip to user ?', trip.user_id);
 
-        var code = { code: 200 };
-        response.send(code);
+        var trip_id = { trip_id: result.insertId };
+        response.send(trip_id);
         
         console.log(trip);
     });
@@ -302,8 +302,8 @@ router.post('/event', function(request, response) {
     conn.query('INSERT INTO event SET ?', event, function(err, result) {
         console.log('Added trip to event ?', event.trip_id);
 
-        var code = { code: 200 };
-        response.send(code);
+        var event_id = { event_id: result.insertId };
+        response.send(event_id);
         
         console.log(event);
     });
@@ -385,6 +385,81 @@ router.put('/event', function(request, response) {
                 var code = { code: 400 };   
                 response.send(code); 
         }
+    });
+});
+
+router.get('/search/:email', function(request, response) {
+    var email = request.params.email;
+
+    conn.query('SELECT * FROM user', function(err, result) {
+        for (var i = 0; i < result.length; i++) {
+            if (result[i].email == email.toLowerCase()) {
+                console.log('User exists.');
+
+                var tempUser = { 
+                    id: result[i].id, 
+                    name: result[i].name, 
+                    email: result[i].email, 
+                    bio: result[i].bio,
+                    picture: result[i].picture
+                };
+
+                response.send(tempUser); 
+
+                break;
+            }
+        }
+    });
+});
+
+
+// route create a user (accessed at POST http://localhost:8081/users)
+router.post('/friend', function(request, response) {
+    var q = request.body; 
+    var user_id = q.user_id;
+    var friend_id = q.friend_id;
+
+    conn.query('SELECT * FROM friend where user_id=?', [user_id], function(err, result) {
+        var error = 0;
+        for (var i = 0; i < result.length; i++) {
+            if (result[i].friend_id == friend_id) {
+                error = 1;
+                break;
+            }
+        }
+
+        if (error == 0) {
+            var friend = {
+                user_id: user_id,
+                friend_id: friend_id
+            };
+
+            conn.query('INSERT INTO friend SET ?', friend, function(err, result) {
+                var code = { code: 201 };   
+                response.send(code); 
+            });
+        }
+        else {
+            var code = { code: 400 };   
+            response.send(code); 
+        }
+    });
+});
+
+router.get('/friend/:id', function(request, response) {
+    var user_id = request.params.id;
+    var friendList = [];
+
+    conn.query('SELECT * FROM friend WHERE user_id=?', [user_id], function(err, result) {
+        for (var i = 0; i < result.length; i++) {
+            /*var ids = {
+                id: result[i].friend_id;
+            }*/
+
+            friendList.push(result[i].friend_id);
+        }
+        
+        response.json({ friendList });
     });
 });
 

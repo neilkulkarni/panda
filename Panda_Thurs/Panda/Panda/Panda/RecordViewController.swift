@@ -16,17 +16,19 @@ import Alamofire
 class RecordViewController: NSViewController {
     
     var user: User = User()
+    var tripID: TripID = TripID()
 
     @IBOutlet weak var resultsTableView: NSTableView!
     
     //@IBOutlet weak var webPageView: WebView!
     
     @IBOutlet weak var mapWebView: WebView!
+    var imageString: String = ""
 
     @IBAction func generateMap(_ sender: Any) {
         //selected list
         //https://maps.googleapis.com/maps/api/staticmap?size=600x300&maptype=roadmap &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318 &markers=color:red%7Clabel:C%7C40.718217,-73.998284 &key=AIzaSyCqXFkHzOLwEw00zOTq_1kzGwkgNjAKHTE
-        var imageString:String = "https://maps.googleapis.com/maps/api/staticmap?size=600x300&maptype=roadmap"
+        imageString = "https://maps.googleapis.com/maps/api/staticmap?size=600x300&maptype=roadmap"
         
         if (selectedList.count == 0) {
             return
@@ -104,6 +106,7 @@ class RecordViewController: NSViewController {
     
     @IBOutlet weak var tripTitle: NSTextField!
     @IBOutlet weak var tripDescription: NSTextField!
+    @IBOutlet weak var finalizeTripButton: NSButton!
     
     @IBOutlet weak var generateMapButton: NSButton!
     
@@ -1808,21 +1811,113 @@ class RecordViewController: NSViewController {
         popUpButton8.removeAllItems()
         popUpButton9.removeAllItems()
         popUpButton10.removeAllItems()
+        finalizeTripButton.isEnabled = false
         
+    }
+    @IBOutlet weak var tripSavedLabel: NSTextField!
+    @IBAction func saveTripButtonClick(_ sender: Any) {
+        if (selectedList.count == 0) {
+            return
+        }
+        uploadTrip()
+        finalizeTripButton.isEnabled = true
+        tripSavedLabel.isHidden = false
     }
     
     @IBAction func homeButtone(_ sender: Any) {
-         performSegue(withIdentifier: "idSegue", sender: self)
+        performSegue(withIdentifier: "idSegue", sender: self)
     }
     
     @IBAction func logoutButton(_ sender: Any) {
-         performSegue(withIdentifier: "idSegue", sender: self)
+        performSegue(withIdentifier: "idSegue", sender: self)
     }
+    
+    @IBAction func goToMyTripButton(_ sender: Any) {
+        //uploadTrip()
+        performSegue(withIdentifier: "idSegueToMyTrip", sender: self)
+    }
+    
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if (segue.identifier == "idSegueToHome") {
             if let destination = segue.destinationController as? HomepageViewController {
                 destination.user.setUser(id: user.getID(), name: user.getName(), email: user.getEmail(), bio: user.getBio(), picture: user.getPicture())
+            }
+        }
+        if (segue.identifier == "idSegueToMyTrip") {
+            if let destination = segue.destinationController as? TripViewController {
+                //uploadTrip()
+                destination.trip_id.setID(id: tripID.getID())
+                print(destination.trip_id)
+                destination.user.setUser(id: user.getID(), name: user.getName(), email: user.getEmail(), bio: user.getBio(), picture: user.getPicture())
+            }
+        }
+    }
+    
+    func uploadTrip() {
+        
+        let tripParams: Parameters = [
+            "name": tripTitle.stringValue,
+            "description": tripDescription.stringValue,
+            "private": 0,
+            "api": imageString,
+            "user_id": user.id
+        ]
+        
+        //print(tripParams)
+        
+        
+        Alamofire.request("http://localhost:8081/trip", method: .post, parameters: tripParams, encoding: JSONEncoding.default).responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // HTTP URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            
+            guard let info = response.result.value else {
+                print("Error")
+                return
+            }
+            
+            let json = JSON(info)
+            print(json)
+            self.tripID.setID(id: json["trip_id"].int!)
+            self.uploadEvents(id: self.tripID.getID())
+        }
+        //print(id)
+        //uploadEvents(id: id)
+        //return id
+    }
+    
+    func uploadEvents(id: Int) {
+        //print(id)
+        for i in 0...(selectedList.count - 1) {
+            var eventName = selectedList[i].name
+            var eventLat = selectedList[i].latitude
+            var eventLong = selectedList[i].longitude
+            
+            let eventParams: Parameters = [
+                "name": eventName!,
+                "description": "",
+                "latitude": "\(selectedList[i].latitude)",
+                "longitude": "\(selectedList[i].longitude)",
+                "date": "",
+                "api": "",
+                "trip_id": id
+            ]
+            
+            Alamofire.request("http://localhost:8081/event", method: .post, parameters: eventParams, encoding: JSONEncoding.default).responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // HTTP URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                guard let info = response.result.value else {
+                    print("Error")
+                    return
+                }
+                
+                let json = JSON(info)
+                print(json)
             }
         }
     }
