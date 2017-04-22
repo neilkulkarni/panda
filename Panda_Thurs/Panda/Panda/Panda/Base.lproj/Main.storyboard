@@ -1824,7 +1824,7 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="CIb-06-bkj"/>
                             </imageView>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JtV-dI-zZQ">
-                                <rect key="frame" x="341" y="148" width="95" height="95"/>
+                                <rect key="frame" x="246" y="148" width="95" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="C9q-eU-qXU"/>
                             </imageView>
@@ -1904,17 +1904,6 @@
                                     <action selector="removeButtonUpperRight:" target="T7y-PX-Wml" id="cqS-nH-Rxj"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yfu-N9-X5s">
-                                <rect key="frame" x="246" y="228" width="15" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" title="x" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ps2-SA-Zq4">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="smallSystem"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="removeButtonLowerLeft:" target="T7y-PX-Wml" id="cSG-ww-COy"/>
-                                </connections>
-                            </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xxf-QO-6YG">
                                 <rect key="frame" x="358" y="228" width="15" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -1965,6 +1954,17 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yfu-N9-X5s">
+                                <rect key="frame" x="246" y="228" width="15" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" title="x" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ps2-SA-Zq4">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystem"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="removeButtonLowerLeft:" target="T7y-PX-Wml" id="cSG-ww-COy"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -3015,8 +3015,8 @@
         <image name="street" width="77" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iTU-0V-wiV"/>
-        <segue reference="dql-0i-KtJ"/>
+        <segue reference="7nr-vg-CEo"/>
         <segue reference="KkM-TH-GJC"/>
+        <segue reference="fgN-qe-Z4K"/>
     </inferredMetricsTieBreakers>
 </document>
