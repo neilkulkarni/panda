@@ -17,6 +17,7 @@ class TripViewController: NSViewController {
     var trip_id: TripID = TripID()
     var eventList: [Event] = []
     var selectedEvent: Event = Event()
+    var eventID: Int = -1
 
     @IBOutlet weak var tripNameField: NSTextField!
     @IBOutlet weak var tripDescLabel: NSTextField!
@@ -273,18 +274,22 @@ class TripViewController: NSViewController {
         if (eventsTable.clickedRow == -1) {
             return
         }
+        eventID = eventList[eventsTable.clickedRow].id
         selectedEvent = eventList[eventsTable.clickedRow]
-        saveEventButton.isEnabled = true
         eventDescriptionField.stringValue = selectedEvent.descripshun
+        saveEventButton.isEnabled = true
     }
     
     @IBOutlet weak var eventDescriptionField: NSTextField!
     
     @IBAction func saveEventButtonClick(_ sender: Any) {
+        let eventDescription = eventDescriptionField.stringValue
+        print(eventID)
+        print(eventDescription)
         let eventParam: Parameters = [
-            "id": selectedEvent.id,
+            "id": eventID,
             "order": selectedEvent.order,
-            "description": eventDescriptionField.stringValue,
+            "description": eventDescription,
             "picture1": picture1URL,
             "picture2": picture2URL,
             "picture3": picture3URL,
@@ -308,6 +313,17 @@ class TripViewController: NSViewController {
                 }
                 
                 let json = JSON(info)
+            }
+        }
+        
+        for i in 0...(eventList.count-1) {
+            if (eventList[i].id == eventID) {
+                eventList[i].descripshun = eventDescription
+                eventList[i].picture1 = picture1URL
+                eventList[i].picture2 = picture2URL
+                eventList[i].picture3 = picture3URL
+                eventList[i].picture4 = picture4URL
+                break
             }
         }
     }
