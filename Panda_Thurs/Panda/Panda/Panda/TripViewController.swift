@@ -270,6 +270,9 @@ class TripViewController: NSViewController {
     
     @IBOutlet weak var eventsTable: NSTableView!
     @IBAction func eventsTableRowClick(_ sender: Any) {
+        if (eventsTable.clickedRow == -1) {
+            return
+        }
         selectedEvent = eventList[eventsTable.clickedRow]
         saveEventButton.isEnabled = true
         eventDescriptionField.stringValue = selectedEvent.descripshun
