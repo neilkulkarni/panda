@@ -170,6 +170,7 @@ class TripViewController: NSViewController {
             
             var image = NSImage(contentsOf: imageChosen!)
             pictureUpperLeft.image = image;
+            
           //  user.setPicture(picture: imageChosen!.absoluteString)
           
             
@@ -250,23 +251,27 @@ class TripViewController: NSViewController {
         pictureUpperLeft.image = nil
         addButtonUpperLeft.isHidden = false
         removeButtonUpperLeft.isHidden = true
+        picture1URL = ""
         
     }
     @IBAction func removeButtonUpperRight(_ sender: Any) {
         pictureUpperRight.image = nil
         addButtonUpperRight.isHidden = false
         removeButtonUpperRight.isHidden = true
+        picture2URL = ""
     }
     @IBAction func removeButtonLowerLeft(_ sender: Any) {
         pictureLowerLeft.image = nil
         addButtonLowerLeft.isHidden = false
         removeButtonLowerLeft.isHidden = true
+        picture3URL = ""
     }
    
     @IBAction func removeButtonLowerRight(_ sender: Any) {
         pictureLowerRight.image = nil
         addButtonLowerRight.isHidden = false
         removeButtonLowerRight.isHidden = true
+        picture4URL = ""
     }
     
     @IBOutlet weak var eventsTable: NSTableView!
@@ -274,10 +279,95 @@ class TripViewController: NSViewController {
         if (eventsTable.clickedRow == -1) {
             return
         }
+        pictureUpperLeft.image = nil
+        addButtonUpperLeft.isHidden = false
+        removeButtonUpperLeft.isHidden = true
+        
+        pictureUpperRight.image = nil
+        addButtonUpperRight.isHidden = false
+        removeButtonUpperRight.isHidden = true
+
+        pictureLowerLeft.image = nil
+        addButtonLowerLeft.isHidden = false
+        removeButtonLowerLeft.isHidden = true
+
+        pictureLowerRight.image = nil
+        addButtonLowerRight.isHidden = false
+        removeButtonLowerRight.isHidden = true
+        
         eventID = eventList[eventsTable.clickedRow].id
         selectedEvent = eventList[eventsTable.clickedRow]
         eventDescriptionField.stringValue = selectedEvent.descripshun
         saveEventButton.isEnabled = true
+        
+        if(selectedEvent.picture1 != "") {
+            picture1URL = selectedEvent.picture1
+            var urlStr = URL(string: selectedEvent.picture1)
+            print(urlStr)
+            pictureUpperLeft.image = NSImage(contentsOf: urlStr!)
+            if(pictureUpperLeft != nil){
+                addButtonUpperLeft.isHidden = true;
+                removeButtonUpperLeft.isHidden = false
+            }
+        }
+        else {
+            pictureUpperLeft.image = nil
+            addButtonUpperLeft.isHidden = false
+            removeButtonUpperLeft.isHidden = true
+        }
+        if(selectedEvent.picture2 != "") {
+            picture2URL = selectedEvent.picture2
+            var urlStr = URL(string: selectedEvent.picture2)
+            print(urlStr)
+            pictureUpperRight.image = NSImage(contentsOf: urlStr!)
+            if(pictureUpperRight != nil){
+                addButtonUpperRight.isHidden = true;
+                removeButtonUpperRight.isHidden = false
+            }
+
+        }
+        else {
+            pictureUpperRight.image = nil
+            addButtonUpperRight.isHidden = false
+            removeButtonUpperRight.isHidden = true
+            
+        }
+        if(selectedEvent.picture3 != ""){
+            picture3URL = selectedEvent.picture3
+            var urlStr = URL(string: selectedEvent.picture3)
+            print(urlStr)
+            pictureLowerLeft.image = NSImage(contentsOf: urlStr!)
+            if(pictureLowerLeft != nil){
+                addButtonLowerLeft.isHidden = true;
+                removeButtonLowerLeft.isHidden = false
+            }
+
+        }
+        else {
+            pictureLowerLeft.image = nil
+            addButtonLowerLeft.isHidden = false
+            removeButtonLowerLeft.isHidden = true
+            
+        }
+        if(selectedEvent.picture4 != "") {
+            picture4URL = selectedEvent.picture4
+            var urlStr = URL(string: selectedEvent.picture4)
+            print(urlStr)
+            pictureLowerRight.image = NSImage(contentsOf: urlStr!)
+            if(pictureLowerRight != nil){
+                addButtonLowerRight.isHidden = true;
+                removeButtonLowerRight.isHidden = false
+            }
+            
+        }
+        else {
+            pictureLowerRight.image = nil
+            addButtonLowerRight.isHidden = false
+            removeButtonLowerRight.isHidden = true
+
+            
+        }
+
     }
     
     @IBOutlet weak var eventDescriptionField: NSTextField!
