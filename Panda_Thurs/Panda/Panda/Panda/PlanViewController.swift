@@ -1865,6 +1865,7 @@ class PlanViewController: NSViewController {
                 "picture4": "",
                 "date": "",
                 "api": "",
+                "order": i + 1,
                 "trip_id": id
             ]
             

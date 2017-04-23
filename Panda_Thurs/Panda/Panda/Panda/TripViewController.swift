@@ -70,6 +70,19 @@ class TripViewController: NSViewController {
             }
             
             // order trips here
+            for i in 0...(self.eventList.count-1) {
+                for j in 0...(self.eventList.count-i-1) {
+                    if (j+1 >= self.eventList.count-i-1) {
+                        continue
+                    }
+                    if (self.eventList[j].order > self.eventList[j+1].order) {
+                        var temp = self.eventList[j]
+                        self.eventList[j] = self.eventList[j+1]
+                        self.eventList[j+1] = temp
+                    }
+                }
+            }
+
             
             self.loadEventResults()
             
@@ -82,7 +95,7 @@ class TripViewController: NSViewController {
     func convertToEvent(result: JSON) -> Event {
         let event: Event = Event()
         
-        event.setEvent(id: result["id"].intValue, name: result["name"].stringValue, descripshun: result["description"].stringValue, picture1: result["picture1"].stringValue, picture2: result["picture2"].stringValue, picture3: result["picture3"].stringValue, picture4: result["picture4"].stringValue, latitude: result["latitude"].stringValue, longitude: result["longitude"].stringValue, date: result["date"].stringValue, api: result["api"].stringValue, tripID: result["trip_id"].intValue)
+        event.setEvent(id: result["id"].intValue, name: result["name"].stringValue, descripshun: result["description"].stringValue, picture1: result["picture1"].stringValue, picture2: result["picture2"].stringValue, picture3: result["picture3"].stringValue, picture4: result["picture4"].stringValue, latitude: result["latitude"].stringValue, longitude: result["longitude"].stringValue, date: result["date"].stringValue, api: result["api"].stringValue, tripID: result["trip_id"].intValue, order: result["order"].intValue)
         
         return event
     }

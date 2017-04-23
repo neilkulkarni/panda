@@ -27,6 +27,8 @@ class Event: NSObject {
     
     var tripID: Int
     
+    var order: Int
+    
     override init() {
         self.id = -1;
         self.name = "";
@@ -45,10 +47,12 @@ class Event: NSObject {
         self.api = "";
         
         self.tripID = -1;
+        
+        self.order = -1;
     }
     
     func setEvent(id: Int, name: String, descripshun: String, picture1: String, picture2: String, picture3: String, picture4: String,
-                  latitude: String, longitude: String, date: String, api: String, tripID: Int) {
+                  latitude: String, longitude: String, date: String, api: String, tripID: Int, order: Int) {
         self.id = id;
         self.name = name;
         self.descripshun = descripshun;
@@ -66,6 +70,8 @@ class Event: NSObject {
         self.api = api;
         
         self.tripID = tripID;
+        
+        self.order = order;
     }
     
     func getName() -> String {
