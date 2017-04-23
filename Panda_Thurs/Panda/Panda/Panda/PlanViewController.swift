@@ -1703,8 +1703,8 @@ class PlanViewController: NSViewController {
         tempBusiness.location = "\(businessObject["location"]["city"]), \(businessObject["location"]["state"])"
         tempBusiness.price = businessObject["price"].stringValue
         tempBusiness.url = businessObject["url"].stringValue
-        tempBusiness.latitude = businessObject["coordinates.latitude"].double
-        tempBusiness.longitude = businessObject["coordinates.longitude"].double
+        tempBusiness.latitude = "\(businessObject["coordinates"]["latitude"])"
+        tempBusiness.longitude = "\(businessObject["coordinates"]["longitude"])"
         tempBusiness.address = ""
         return tempBusiness
     }

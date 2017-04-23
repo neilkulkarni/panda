@@ -17,8 +17,8 @@ class Business: NSObject {
     //time is not supported by the Yelp API
     var price:String?
     var url:String?
-    var latitude:Double?
-    var longitude:Double?
+    var latitude:String?
+    var longitude:String?
     //var apiRequestPath:String?
     var eventId = -1
     //name rating category time address price picture

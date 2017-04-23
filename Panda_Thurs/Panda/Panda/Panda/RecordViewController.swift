@@ -1771,8 +1771,8 @@ class RecordViewController: NSViewController {
         tempBusiness.category = businessObject["types"][0].stringValue
         tempBusiness.price = businessObject["price_level"].stringValue
         tempBusiness.url = businessObject["id"].stringValue             //set to be the id for now
-        tempBusiness.latitude = businessObject["geometry.location.lat"].double
-        tempBusiness.longitude = businessObject["geometry.location.lng"].double
+        tempBusiness.latitude = businessObject["geometry"]["location"]["lat"].stringValue
+        tempBusiness.longitude = businessObject["geometry"]["location"]["lng"].stringValue
         tempBusiness.address = businessObject["formatted_address"].stringValue
         return tempBusiness
         
@@ -1928,8 +1928,8 @@ class RecordViewController: NSViewController {
                 "name": eventName!,
                 "order": i + 1,
                 "description": "",
-                "latitude": "\(selectedList[i].latitude)",
-                "longitude": "\(selectedList[i].longitude)",
+                "latitude": selectedList[i].latitude,
+                "longitude": selectedList[i].longitude,
                 "picture1": "",
                 "picture2": "",
                 "picture3": "",
