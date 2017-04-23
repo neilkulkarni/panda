@@ -16,6 +16,7 @@ class TripViewController: NSViewController {
     var user: User = User()
     var trip_id: TripID = TripID()
     var eventList: [Event] = []
+    var selectedEvent: Event = Event()
 
     @IBOutlet weak var tripNameField: NSTextField!
     @IBOutlet weak var tripDescLabel: NSTextField!
@@ -23,8 +24,10 @@ class TripViewController: NSViewController {
     
     @IBOutlet weak var resultsTableView: NSTableView!
     
+    @IBOutlet weak var saveEventButton: NSButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        saveEventButton.isEnabled = false
         
         resultsTableView.delegate = self
         resultsTableView.dataSource = self
@@ -269,6 +272,48 @@ class TripViewController: NSViewController {
         addButtonLowerRight.isHidden = false
         removeButtonLowerRight.isHidden = true
     }
+    
+    @IBOutlet weak var eventsTable: NSTableView!
+    @IBAction func eventsTableRowClick(_ sender: Any) {
+        selectedEvent = eventList[eventsTable.clickedRow]
+        saveEventButton.isEnabled = true
+        eventDescriptionField.stringValue = selectedEvent.descripshun
+    }
+    
+    @IBOutlet weak var eventDescriptionField: NSTextField!
+    
+    @IBAction func saveEventButtonClick(_ sender: Any) {
+        let eventParam: Parameters = [
+            "id": selectedEvent.id,
+            "order": selectedEvent.order,
+            "description": eventDescriptionField.stringValue,
+            "picture1": "",
+            "picture2": "",
+            "picture3": "",
+            "picture4": "",
+            "latitude": selectedEvent.latitude,
+            "longitude": selectedEvent.longitude,
+            "date": selectedEvent.date,
+            "api": selectedEvent.api
+        ]
+        
+        Alamofire.request("http://localhost:8081/event", method: .put, parameters: eventParam, encoding: JSONEncoding.default).responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // HTTP URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            
+            if response.result.isSuccess {
+                guard let info = response.result.value else {
+                    print("Error")
+                    return
+                }
+                
+                let json = JSON(info)
+            }
+        }
+    }
+    
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if (segue.identifier == "idSegueToHome") {
             if let destination = segue.destinationController as? HomepageViewController {

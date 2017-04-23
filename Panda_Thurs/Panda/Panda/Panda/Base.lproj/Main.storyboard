@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
-
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
@@ -1988,11 +1986,14 @@
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                             </tableColumns>
+                                            <connections>
+                                                <action selector="eventsTableRowClick:" target="T7y-PX-Wml" id="dgX-ZQ-Ep9"/>
+                                            </connections>
                                         </tableView>
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="x9l-VO-oDj">
-                                    <rect key="frame" x="1" y="8" width="0.0" height="15"/>
+                                    <rect key="frame" x="1" y="7" width="0.0" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="UIm-aV-Pzp">
@@ -2052,6 +2053,17 @@
                                     <action selector="removeButtonLowerRight:" target="T7y-PX-Wml" id="odN-aD-5rT"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FVv-25-GSw">
+                                <rect key="frame" x="679" y="123" width="107" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Save Event" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Aab-2b-hLG">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="saveEventButtonClick:" target="T7y-PX-Wml" id="XBR-Lm-fqx"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -2059,6 +2071,8 @@
                         <outlet property="addButtonLowerRight" destination="R5Z-EV-xnY" id="kzR-gc-Gdg"/>
                         <outlet property="addButtonUpperLeft" destination="Vqx-3l-UBl" id="bdl-kY-AhJ"/>
                         <outlet property="addButtonUpperRight" destination="4xb-cC-UC2" id="Y8Y-zr-Laz"/>
+                        <outlet property="eventDescriptionField" destination="yzI-ez-Sz4" id="q88-fd-eEy"/>
+                        <outlet property="eventsTable" destination="s82-m9-8kc" id="Sfu-bm-TI2"/>
                         <outlet property="mapWebView" destination="eNa-or-f0L" id="YDn-2D-kpr"/>
                         <outlet property="pictureLowerLeft" destination="JtV-dI-zZQ" id="USn-pL-ZCh"/>
                         <outlet property="pictureLowerRight" destination="P2C-nE-oMC" id="wfu-M0-Ivl"/>
@@ -2069,6 +2083,8 @@
                         <outlet property="removeButtonUpperLeft" destination="pLp-FG-wWq" id="MIG-Ve-zfU"/>
                         <outlet property="removeButtonUpperRight" destination="Ghy-Vs-41c" id="GKm-1e-2nh"/>
                         <outlet property="resultsTableView" destination="s82-m9-8kc" id="Vhk-5m-4vz"/>
+                        <outlet property="saveEventButton" destination="FVv-25-GSw" id="ml9-8a-7CQ"/>
+                        <outlet property="saveEventButtonClick" destination="FVv-25-GSw" id="fU5-XA-wH8"/>
                         <outlet property="tripDescLabel" destination="oKc-LS-0bm" id="lgF-VX-bMH"/>
                         <outlet property="tripNameField" destination="cfN-Cz-Tof" id="yoj-Qn-j7F"/>
                         <outlet property="tripNameLabel" destination="cfN-Cz-Tof" id="pdm-PH-r8w"/>
