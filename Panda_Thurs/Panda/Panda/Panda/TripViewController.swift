@@ -25,6 +25,13 @@ class TripViewController: NSViewController {
     @IBOutlet weak var resultsTableView: NSTableView!
     
     @IBOutlet weak var saveEventButton: NSButton!
+    var picture1URL = ""
+    var picture2URL = ""
+    var picture3URL = ""
+    var picture4URL = ""
+    
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         saveEventButton.isEnabled = false
@@ -156,20 +163,14 @@ class TripViewController: NSViewController {
         imagePicker.canChooseDirectories = false
         imagePicker.runModal()
         var imageChosen = imagePicker.url
-        // print(imagePicker.url)
+    
         if(imageChosen != nil ){
+            picture1URL = imageChosen!.absoluteString
+            
             var image = NSImage(contentsOf: imageChosen!)
-            // user.setPicture(picture: imageChosen!.absoluteString)
-            //profilePictureView.image = image
             pictureUpperLeft.image = image;
           //  user.setPicture(picture: imageChosen!.absoluteString)
           
-            /*  if let bits = image?.representations.first as? NSBitmapImageRep {
-                let data = bits.representationUsingType(using: NSJPEGFileType, properties: [:])
-               // data?.writeToFile("/path/myImage.jpg", atomically: false)*/
-            //let imageData = image?.tiffRepresentation
-            //let bits = image?.representations.first as? NSBitmapImageRep
-            
             
   
         }
@@ -187,11 +188,9 @@ class TripViewController: NSViewController {
         
         imagePicker.runModal()
         var imageChosen = imagePicker.url
-        // print(imagePicker.url)
         if(imageChosen != nil ){
+            picture2URL = imageChosen!.absoluteString
             var image = NSImage(contentsOf: imageChosen!)
-            // user.setPicture(picture: imageChosen!.absoluteString)
-            //profilePictureView.image = image
             pictureUpperRight.image = image;
             //  user.setPicture(picture: imageChosen!.absoluteString)
             
@@ -210,11 +209,9 @@ class TripViewController: NSViewController {
         
         imagePicker.runModal()
         var imageChosen = imagePicker.url
-        // print(imagePicker.url)
         if(imageChosen != nil ){
+            picture3URL = imageChosen!.absoluteString
             var image = NSImage(contentsOf: imageChosen!)
-            // user.setPicture(picture: imageChosen!.absoluteString)
-            //profilePictureView.image = image
             pictureLowerLeft.image = image;
             //  user.setPicture(picture: imageChosen!.absoluteString)
             
@@ -235,11 +232,9 @@ class TripViewController: NSViewController {
         
         imagePicker.runModal()
         var imageChosen = imagePicker.url
-        // print(imagePicker.url)
         if(imageChosen != nil ){
+            picture4URL = imageChosen!.absoluteString
             var image = NSImage(contentsOf: imageChosen!)
-            // user.setPicture(picture: imageChosen!.absoluteString)
-            //profilePictureView.image = image
             pictureLowerRight.image = image;
             //  user.setPicture(picture: imageChosen!.absoluteString)
             
@@ -287,10 +282,10 @@ class TripViewController: NSViewController {
             "id": selectedEvent.id,
             "order": selectedEvent.order,
             "description": eventDescriptionField.stringValue,
-            "picture1": "",
-            "picture2": "",
-            "picture3": "",
-            "picture4": "",
+            "picture1": picture1URL,
+            "picture2": picture2URL,
+            "picture3": picture3URL,
+            "picture4": picture4URL,
             "latitude": selectedEvent.latitude,
             "longitude": selectedEvent.longitude,
             "date": selectedEvent.date,
