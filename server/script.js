@@ -169,6 +169,34 @@ router.get('/login', function(request, response) {
     });
 });
 
+
+router.get('/most-recent-trip/:id', function(request, response) {
+    var user_id = request.params.id;
+
+    var maxID = -1;
+    var trip;
+    conn.query('SELECT * FROM trip WHERE user_id=? && private=0', [user_id], function(err, result) {
+        
+        for (var i = 0; i < result.length; i++) {
+            if (result[i].id > maxID) {
+                maxID = result[i].id;
+            
+                trip = {
+                    id: result[i].id, 
+                    name: result[i].name, 
+                    description: result[i].description,
+                    location: result[i].location,
+                    private: result[i].private,
+                    api: result[i].api,
+                    user_id: result[i].user_id
+                };
+            }        
+        }
+
+        response.json({ trip });
+    });
+});
+
 // route create a user (accessed at POST http://localhost:8081/users)
 router.post('/trip', function(request, response) {
     var q = request.body; 
