@@ -457,6 +457,24 @@ router.get('/pictures/:id', function(request, response) {
     });
 });
 
+router.put('/findFriends', function(request, response) {
+  var temp = request.body.id;
+  var arrOfFriends = [];
+  var counter =0;
+  conn.query('SELECT * FROM friend', function(err, result) {
+        for (var i = 0; i < result.length; i++) {
+            if (result[i].user_id == temp) {
+                arrOfFriends[counter++] = result[i].friend_id; 
+            }
+        }
+
+ console.log(arrOfFriends);
+ response.json({arrOfFriends});
+
+  });
+ 
+});
+
 router.put('/pictures', function (request, response) {
     var q = request.body;
     var id = q.id;
