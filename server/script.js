@@ -456,9 +456,8 @@ router.get('/pictures/:id', function(request, response) {
         response.send(pictures);
     });
 });
-
-router.post('/getFriends', function(request, response) {
-  var temp = request.body.id;
+router.get('/getFriends/:id', function(request, response) {
+  var temp = request.params.id;
   var arrOfFriends = [];
   var counter =0;
   conn.query('SELECT * FROM friend', function(err, result) {
