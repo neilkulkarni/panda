@@ -9,8 +9,10 @@
 import Cocoa
 import Alamofire
 import SwiftyJSON
+import WebKit
 
 class ProfileViewController: NSViewController {
+    var trip_id: TripID = TripID()
     
     @IBOutlet weak var nameField: NSTextField!
     @IBOutlet weak var emailField: NSTextField!
@@ -18,7 +20,9 @@ class ProfileViewController: NSViewController {
     @IBOutlet weak var pictureField: NSTextField!
     @IBOutlet weak var newBio: NSTextField!
     @IBOutlet weak var bioErrorLabel: NSTextField!
+    @IBOutlet weak var mapWebView: WebView!
     
+    @IBOutlet weak var mostRecentTripName: NSTextField!
     @IBOutlet weak var profilePictureView: NSImageView!
     
     var user: User = User()
@@ -51,6 +55,26 @@ class ProfileViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         profilePictureView.image = NSImage(byReferencingFile: user.getPicture())
+        let request = "http://localhost:8081/most-recent-trip/" + "\(user.getID())"
+        Alamofire.request(request).responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // HTTP URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            
+            guard let info = response.result.value else {
+                print("Error")
+                return
+            }
+            
+            let json = JSON(info)
+            print(json)
+            self.trip_id.setID(id: json["trip"]["id"].int!)
+            self.mostRecentTripName.stringValue = json["trip"]["name"].stringValue
+            let requesturl = URL(string: json["trip"]["api"].stringValue)
+            let request = URLRequest(url: requesturl!)
+            self.mapWebView.mainFrame.load(request)
+        }
     }
     @IBAction func editBio(_ sender: Any) {
         if (newBio.stringValue.characters.count > 160) {
@@ -182,6 +206,7 @@ class ProfileViewController: NSViewController {
         }
         else if (segue.identifier == "idSegueToTrip") {
             if let destination = segue.destinationController as? TripViewController {
+                destination.trip_id.setID(id: trip_id.getID())
                 destination.user.setUser(id: user.getID(), name: user.getName(), email: user.getEmail(), bio: user.getBio(), picture: user.getPicture())
             }
         }
