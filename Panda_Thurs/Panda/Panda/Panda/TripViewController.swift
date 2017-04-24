@@ -311,6 +311,7 @@ class TripViewController: NSViewController {
             }
         }
         else {
+            picture1URL = ""
             pictureUpperLeft.image = nil
             addButtonUpperLeft.isHidden = false
             removeButtonUpperLeft.isHidden = true
@@ -327,6 +328,7 @@ class TripViewController: NSViewController {
 
         }
         else {
+            picture2URL = ""
             pictureUpperRight.image = nil
             addButtonUpperRight.isHidden = false
             removeButtonUpperRight.isHidden = true
@@ -344,6 +346,7 @@ class TripViewController: NSViewController {
 
         }
         else {
+            picture3URL = ""
             pictureLowerLeft.image = nil
             addButtonLowerLeft.isHidden = false
             removeButtonLowerLeft.isHidden = true
@@ -361,11 +364,10 @@ class TripViewController: NSViewController {
             
         }
         else {
+            picture4URL = ""
             pictureLowerRight.image = nil
             addButtonLowerRight.isHidden = false
             removeButtonLowerRight.isHidden = true
-
-            
         }
 
     }
