@@ -457,7 +457,7 @@ router.get('/pictures/:id', function(request, response) {
     });
 });
 
-router.put('/findFriends', function(request, response) {
+router.post('/getFriends', function(request, response) {
   var temp = request.body.id;
   var arrOfFriends = [];
   var counter =0;
@@ -467,11 +467,28 @@ router.put('/findFriends', function(request, response) {
                 arrOfFriends[counter++] = result[i].friend_id; 
             }
         }
+      counter = 0;
+      var info = [];
+      conn.query('SELECT * FROM user', function(err, result) {
+        for (var i = 0; i < result.length; i++) {
+            if (result[i].id == arrOfFriends[counter]) {
+                var tempUser = { 
+                id: result[i].id, 
+                name: result[i].name, 
+                email: result[i].email, 
+                bio: result[i].bio,
+                picture: result[i].picture
+            };
+                info[counter++] = tempUser; 
+            }
+        }
 
- console.log(arrOfFriends);
- response.json({arrOfFriends});
 
-  });
+    console.log(info);
+    response.json({info});
+});
+
+});
  
 });
 
