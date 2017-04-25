@@ -161,13 +161,13 @@ class HomepageViewController: NSViewController {
                 destination.user.setUser(id: user.getID(), name: user.getName(), email: user.getEmail(), bio: user.getBio(), picture: user.getPicture())
             }
         }
-        /*else if (segue.identifier == "idSegueToFriendProfile") {
+        else if (segue.identifier == "idSegueToFriendProfile") {
             if let destination = segue.destinationController as? FriendProfileViewController {
                 destination.user.setUser(id: user.getID(), name: user.getName(), email: user.getEmail(), bio: user.getBio(), picture: user.getPicture())
                 let i = friendTable.selectedRow
                 destination.friend.setUser(id: friends[i].getID(), name: friends[i].getName(), email: friends[i].getEmail(), bio: friends[i].getBio(), picture: friends[i].getPicture())
             }
-        }*/
+        }
     }
 }
 
