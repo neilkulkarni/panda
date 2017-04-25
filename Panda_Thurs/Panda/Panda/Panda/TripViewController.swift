@@ -83,7 +83,7 @@ class TripViewController: NSViewController {
             // order trips here
             for i in 0...(self.eventList.count-1) {
                 for j in 0...(self.eventList.count-i-1) {
-                    if (j+1 >= self.eventList.count-i-1) {
+                    if (j+1 > self.eventList.count-i-1) {
                         continue
                     }
                     if (self.eventList[j].order > self.eventList[j+1].order) {

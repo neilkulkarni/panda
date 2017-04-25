@@ -457,6 +457,7 @@ router.get('/pictures/:id', function(request, response) {
     });
 });
 
+
 router.put('/pictures', function (request, response) {
     var q = request.body;
     var id = q.id;
