@@ -32,6 +32,10 @@ class ProfileViewController: NSViewController {
     
     @IBOutlet weak var pictureLowerRight: NSButton!
     
+    @IBOutlet weak var tripTable: NSTableView!
+    
+    
+    
     var user: User = User()
     var id:Int?
     var bio:String?
@@ -39,6 +43,7 @@ class ProfileViewController: NSViewController {
     
     
     var eventList: [Event] = []
+    var tripList: [Trip] = []
     
     override func viewWillAppear() {
         self.view.wantsLayer = true;
@@ -56,8 +61,6 @@ class ProfileViewController: NSViewController {
             print("hi")
             profilePictureView.image = #imageLiteral(resourceName: "pandaicon2.png")
         }
-      
-
     }
     
     
@@ -65,6 +68,33 @@ class ProfileViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
+        tripTable.delegate = self
+        tripTable.dataSource = self
+        
+        let tripRequest = "http://localhost:8081/all-trips/" + "\(user.getID())"
+        Alamofire.request(tripRequest).responseJSON { response in
+            
+            guard let info = response.result.value else {
+                print("Error")
+                return
+            }
+            
+            let tripJSON = JSON(info)
+            print(tripJSON)
+            
+            let tripResults = tripJSON["tripList"].arrayValue
+            
+            self.tripList.removeAll()
+            
+            for i in 0...(tripResults.count-1) {
+                self.tripList.append(self.convertToTrip(result: tripResults[i]))
+            }
+            
+            self.loadTripResults()
+        }
+
+        
         profilePictureView.image = NSImage(byReferencingFile: user.getPicture())
         let request = "http://localhost:8081/most-recent-trip/" + "\(user.getID())"
         Alamofire.request(request).responseJSON { response in
@@ -176,8 +206,31 @@ class ProfileViewController: NSViewController {
             }
            
         }
+    }
+    
+    func convertToTrip(result: JSON) -> Trip {
+        let trip: Trip = Trip()
         
-           }
+        trip.setTrip(id: result["id"].intValue, name: result["name"].stringValue, descripshun: result["description"].stringValue, location: result["location"].stringValue, api: result["api"].stringValue, userID: result["user_id"].intValue)
+        
+        return trip
+    }
+    
+    func loadTripResults() {
+        let numRows = tripTable.numberOfRows
+        var rangeToRemove: IndexSet = []
+        rangeToRemove.insert(integersIn: 0..<numRows)
+        tripTable.removeRows(at: rangeToRemove, withAnimation: NSTableViewAnimationOptions.effectFade)
+        
+        var rangeToAdd: IndexSet = []
+        rangeToAdd.insert(integersIn: 0..<tripList.count)
+        tripTable.insertRows(at: rangeToAdd, withAnimation: NSTableViewAnimationOptions.slideUp)
+    }
+    
+    @IBAction func viewSelectedTrip(_ sender: Any) {
+        performSegue(withIdentifier: "idSegueToTrip", sender: self)
+    }
+    
 
     @IBAction func editBio(_ sender: Any) {
         if (newBio.stringValue.characters.count > 160) {
@@ -228,8 +281,9 @@ class ProfileViewController: NSViewController {
     }
     
     @IBAction func logoutButton(_ sender: Any) {
-     performSegue(withIdentifier: "idSegue", sender: self)
+        performSegue(withIdentifier: "idSegue", sender: self)
     }
+    
     @IBAction func editProfileButton(_ sender: Any) {
         let imagePicker: NSOpenPanel = NSOpenPanel()
         imagePicker.allowsMultipleSelection = false
@@ -273,18 +327,7 @@ class ProfileViewController: NSViewController {
             }
 
            user.setPicture(picture: imageChosen!.absoluteString)
-            
-            
-            
-            
-          
-
         }
-        
-            
-            
-          
-            
     }
   
     @IBAction func mapOverview(_ sender: Any) {
@@ -318,9 +361,74 @@ class ProfileViewController: NSViewController {
         }
         else if (segue.identifier == "idSegueToTrip") {
             if let destination = segue.destinationController as? TripViewController {
-                destination.trip_id.setID(id: trip_id.getID())
+                let i = tripTable.selectedRow
+                if (i >= 0) {
+                    destination.trip_id.setID(id: tripList[i].id)
+                }
+                else {
+                    destination.trip_id.setID(id: trip_id.getID())
+                }
                 destination.user.setUser(id: user.getID(), name: user.getName(), email: user.getEmail(), bio: user.getBio(), picture: user.getPicture())
             }
         }
     }
+}
+
+extension ProfileViewController: NSTableViewDataSource {
+    
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return tripList.count ?? 0
+    }
+    
+}
+
+extension ProfileViewController: NSTableViewDelegate {
+    
+    fileprivate enum CellIdentifiers {
+        static let Name = "NameCellID"
+        static let Description = "DescriptionCellID"
+    }
+    
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        
+        var image: NSImage?
+        var text: String = ""
+        var cellIdentifier: String = ""
+        
+        
+        // 1
+        var item: Trip = Trip()
+        if (self.tripList[row] != nil) {
+            item = self.tripList[row]
+        }
+        else {
+            return nil
+        }
+        
+        
+        // 2
+        if tableColumn == tableView.tableColumns[0] {
+            text = item.name
+            if (text.characters.count == 0) {
+                text = "N/A"
+            }
+            cellIdentifier = CellIdentifiers.Name
+        } else if tableColumn == tableView.tableColumns[1] {
+            text = item.descripshun
+            if (text.characters.count == 0) {
+                text = "N/A"
+            }
+            cellIdentifier = CellIdentifiers.Description
+        }
+        
+        // 3
+        if let cell = tableView.make(withIdentifier: cellIdentifier, owner: nil) as? NSTableCellView {
+            cell.textField?.stringValue = text
+            cell.imageView?.image = image ?? nil
+            return cell
+        }
+        
+        return nil
+    }
+    
 }
