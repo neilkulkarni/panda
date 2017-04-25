@@ -39,6 +39,7 @@ class ProfileViewController: NSViewController {
     
     
     var eventList: [Event] = []
+    var picList: [String] = []
     
     override func viewWillAppear() {
         self.view.wantsLayer = true;
@@ -115,62 +116,84 @@ class ProfileViewController: NSViewController {
                 }
 
                 
-                
+                var count = 0
+                self.picList.removeAll()
                 
                  for i in 0...(eventResults.count-1) {
-                     // print("hiiiiii")
-                   
-                   
-                    if(self.pictureUpperLeft.stringValue == "0" || self.pictureUpperLeft == nil){
+                    
+                    if(count == 4) {
+                        break
+                    }
+                    if((eventResults[i]["picture1"] != "") && (!self.picList.contains(eventResults[i]["picture1"].stringValue))){
                         
-                        if(eventResults[i]["picture1"] != ""){
-                            
-                            var urlStr = URL(string:  eventResults[i]["picture1"].stringValue)
                         
-                            self.pictureUpperLeft.image = NSImage(contentsOf: urlStr!)
+                        self.picList.append(eventResults[i]["picture1"].stringValue)
+                        count += 1
+                        
                         }
+                    if((eventResults[i]["picture2"] != "") && (!self.picList.contains(eventResults[i]["picture2"].stringValue)) ){
+                        
+                        
+                        self.picList.append(eventResults[i]["picture2"].stringValue)
+                        count += 1
+                    }
+                        
+                    if((eventResults[i]["picture3"] != "") && (!self.picList.contains(eventResults[i]["picture3"].stringValue))){
+                        self.picList.append(eventResults[i]["picture3"].stringValue)
+                        count += 1
+                        
+                        
+                    }
+                    if((eventResults[i]["picture4"] != "") && (!self.picList.contains(eventResults[i]["picture4"].stringValue))){
+                        self.picList.append(eventResults[i]["picture4"].stringValue)
+                        count += 1
+                        
+                }
+                    
+                    
+                    
+                    
+                   
+            }
+                if(count == 1) {
+                    var urlStr = URL(string: self.picList[0])
+                    self.pictureUpperLeft.image = NSImage(contentsOf: urlStr!)
+                }
+                else if(count == 2){
+                    var urlStr = URL(string: self.picList[0])
+                    self.pictureUpperLeft.image = NSImage(contentsOf: urlStr!)
+                        urlStr = URL(string: self.picList[1])
+                    self.pictureUpperRight.image = NSImage(contentsOf: urlStr!)
 
-                        
-                        
-                        
-                    }
-                    if(self.pictureUpperRight.stringValue == "0" || self.pictureUpperRight == nil){
-                        
-                        if(eventResults[i]["picture2"] != ""){
-                            
-                            var urlStr = URL(string:  eventResults[i]["picture2"].stringValue)
-                            
-                            self.pictureUpperRight.image = NSImage(contentsOf: urlStr!)
-                        }
-                        
-                        
-                    }
-                    if(self.pictureLowerLeft.stringValue == "0" || self.pictureLowerLeft == nil){
-                        
-                        if(eventResults[i]["picture3"] != ""){
-                            
-                            var urlStr = URL(string:  eventResults[i]["picture3"].stringValue)
-                            
-                            self.pictureLowerLeft.image = NSImage(contentsOf: urlStr!)
-                        }
-                        
-                        
-                        
-                        
-                    }
-                    if(self.pictureLowerRight.stringValue == "0" || self.pictureLowerRight == nil){
-                        
-                        if(eventResults[i]["picture4"] != ""){
-                            
-                            var urlStr = URL(string:  eventResults[i]["picture4"].stringValue)
-                            
-                            self.pictureLowerRight.image = NSImage(contentsOf: urlStr!)
-                        }
-                        
-                        
-                        
-                        
-                    }
+                }
+                else if(count == 3) {
+                    var urlStr = URL(string: self.picList[0])
+                    self.pictureUpperLeft.image = NSImage(contentsOf: urlStr!)
+                    
+                    urlStr = URL(string: self.picList[1])
+                    self.pictureUpperRight.image = NSImage(contentsOf: urlStr!)
+                    
+                    urlStr = URL(string:  self.picList[2])
+                    
+                    self.pictureLowerLeft.image = NSImage(contentsOf: urlStr!)
+                    
+                }
+                else if(count == 4){
+                    var urlStr = URL(string: self.picList[0])
+                    self.pictureUpperLeft.image = NSImage(contentsOf: urlStr!)
+                    
+                    urlStr = URL(string: self.picList[1])
+                    self.pictureUpperRight.image = NSImage(contentsOf: urlStr!)
+                    
+                    urlStr = URL(string:  self.picList[2])
+                    self.pictureLowerLeft.image = NSImage(contentsOf: urlStr!)
+                    
+                    urlStr = URL(string: self.picList[3])
+                    self.pictureLowerRight.image = NSImage(contentsOf: urlStr!)
+                }
+                print("list")
+                for i in 0 ... (self.picList.count - 1) {
+                print (self.picList[i])
                 }
                 
             }
