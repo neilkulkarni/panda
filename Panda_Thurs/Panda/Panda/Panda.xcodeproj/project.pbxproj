@@ -14,6 +14,10 @@
 		2861AFBF1E6A4EA3002871CD /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861AFBE1E6A4EA3002871CD /* HomepageViewController.swift */; };
 		2861AFC11E6A527D002871CD /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861AFC01E6A527D002871CD /* RecordViewController.swift */; };
 		2861AFC31E6A53FC002871CD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861AFC21E6A53FC002871CD /* ProfileViewController.swift */; };
+		3829EE611EAF0B98004A313F /* FriendProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3829EE5F1EAF0B98004A313F /* FriendProfileViewController.swift */; };
+		3829EE621EAF0B98004A313F /* FriendProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3829EE601EAF0B98004A313F /* FriendProfileViewController.xib */; };
+		3829EE651EAF0BBE004A313F /* FriendTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3829EE631EAF0BBE004A313F /* FriendTripViewController.swift */; };
+		3829EE661EAF0BBE004A313F /* FriendTripViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3829EE641EAF0BBE004A313F /* FriendTripViewController.xib */; };
 		3875BAA51E6921AC003ED320 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3875BAA41E6921AC003ED320 /* Business.swift */; };
 		3875BAA91E6922E6003ED320 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3875BAA81E6922E6003ED320 /* PlanViewController.swift */; };
 		5799F746CD5EE7A7636E8CB9 /* Pods_PandaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6904C858F20F62B4F10213 /* Pods_PandaTests.framework */; };
@@ -86,6 +90,10 @@
 		2861AFBE1E6A4EA3002871CD /* HomepageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		2861AFC01E6A527D002871CD /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		2861AFC21E6A53FC002871CD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3829EE5F1EAF0B98004A313F /* FriendProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendProfileViewController.swift; sourceTree = "<group>"; };
+		3829EE601EAF0B98004A313F /* FriendProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendProfileViewController.xib; sourceTree = "<group>"; };
+		3829EE631EAF0BBE004A313F /* FriendTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTripViewController.swift; sourceTree = "<group>"; };
+		3829EE641EAF0BBE004A313F /* FriendTripViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendTripViewController.xib; sourceTree = "<group>"; };
 		3875BAA41E6921AC003ED320 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		3875BAA81E6922E6003ED320 /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		3E6904C858F20F62B4F10213 /* Pods_PandaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PandaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				9BB8861E1EAF24D60002801A /* Trip.swift */,
+
 				D13828BF1EAC008D00A0B8AA /* Event.swift */,
 				A220D6FE1E68FB1500345B92 /* pandaicon2.png */,
 				A220D6B11E68F7E300345B92 /* AppDelegate.swift */,
@@ -217,6 +226,10 @@
 				A27C5FBC1E954BA800CD0E80 /* TripViewController.swift */,
 				A261BB5E1E97163500EF3D22 /* Panda-Bridging-Header.h */,
 				9B19708C1EA9271200F065E1 /* TripID.swift */,
+				3829EE5F1EAF0B98004A313F /* FriendProfileViewController.swift */,
+				3829EE631EAF0BBE004A313F /* FriendTripViewController.swift */,
+				3829EE601EAF0B98004A313F /* FriendProfileViewController.xib */,
+				3829EE641EAF0BBE004A313F /* FriendTripViewController.xib */,
 			);
 			path = Panda;
 			sourceTree = "<group>";
@@ -406,11 +419,13 @@
 				A220D6B91E68F7E300345B92 /* Main.storyboard in Resources */,
 				A28C74461EA7F21D00C5867D /* roadwebanner.png in Resources */,
 				A28C744B1EA7F4FF00C5867D /* pawbutton.png in Resources */,
+				3829EE621EAF0B98004A313F /* FriendProfileViewController.xib in Resources */,
 				A2CFD4B61E94A04500F959BE /* street.png in Resources */,
 				A2029A8A1EABD07200B52EF7 /* pandaonCloud.png in Resources */,
 				A2CFD4B41E94A02D00F959BE /* lateaMug.png in Resources */,
 				A2CFD4B81E94A05A00F959BE /* lightbulb.png in Resources */,
 				A2CFD4BC1E94AE9200F959BE /* purduetrip.png in Resources */,
+				3829EE661EAF0BBE004A313F /* FriendTripViewController.xib in Resources */,
 				A2CFD4BA1E94A07500F959BE /* bookshelf.png in Resources */,
 				A220D6FF1E68FB1500345B92 /* pandaicon2.png in Resources */,
 			);
@@ -577,10 +592,12 @@
 			files = (
 				2842240D1E6940D900BF2A33 /* CreateAccountViewController.swift in Sources */,
 				A220D6B41E68F7E300345B92 /* LoginViewController.swift in Sources */,
+				3829EE611EAF0B98004A313F /* FriendProfileViewController.swift in Sources */,
 				2861AFC31E6A53FC002871CD /* ProfileViewController.swift in Sources */,
 				3875BAA91E6922E6003ED320 /* PlanViewController.swift in Sources */,
 				2861AFC11E6A527D002871CD /* RecordViewController.swift in Sources */,
 				3875BAA51E6921AC003ED320 /* Business.swift in Sources */,
+				3829EE651EAF0BBE004A313F /* FriendTripViewController.swift in Sources */,
 				A27C5FBD1E954BA800CD0E80 /* TripViewController.swift in Sources */,
 				9B19708D1EA9271200F065E1 /* TripID.swift in Sources */,
 				2861AFBF1E6A4EA3002871CD /* HomepageViewController.swift in Sources */,
