@@ -52,6 +52,9 @@ class FriendTripViewController: NSViewController {
         }
         selectedEvent = eventList[resultsTableView.clickedRow]
         eventDescription.stringValue = selectedEvent.descripshun
+        if(eventDescription.stringValue != nil){
+            eventDescription.isHidden = false
+        }
         
         
         pictureUpperLeft.image = nil
@@ -122,7 +125,7 @@ class FriendTripViewController: NSViewController {
         
         resultsTableView.delegate = self
         resultsTableView.dataSource = self
-        
+        print("VIEW DID LOAD")
         let request = "http://localhost:8081/trip/" + "\(trip_id.getID())"
         Alamofire.request(request).responseJSON { response in
             print(response.request)  // original URL request
@@ -138,7 +141,8 @@ class FriendTripViewController: NSViewController {
             let tripJSON = JSON(info)
             print(tripJSON)
             self.tripNameField.stringValue = tripJSON["trip"]["name"].stringValue
-            //self.tripDescLabel.stringValue = tripJSON["trip"]["description"].stringValue
+            print(self.tripNameField)
+            self.tripDescriptionField.stringValue = tripJSON["trip"]["description"].stringValue
             let requesturl = URL(string: tripJSON["trip"]["api"].stringValue)
             let request = URLRequest(url: requesturl!)
             self.mapWebView2.mainFrame.load(request)
