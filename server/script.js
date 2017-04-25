@@ -456,6 +456,7 @@ router.get('/pictures/:id', function(request, response) {
         response.send(pictures);
     });
 });
+
 router.get('/getFriends/:id', function(request, response) {
   var temp = request.params.id;
   var arrOfFriends = [];
@@ -469,8 +470,10 @@ router.get('/getFriends/:id', function(request, response) {
       counter = 0;
       var info = [];
       conn.query('SELECT * FROM user', function(err, result) {
+        console.log(result);
         for (var i = 0; i < result.length; i++) {
-            if (result[i].id == arrOfFriends[counter]) {
+            for(var j = 0; j < arrOfFriends.length; j++ ) {
+            if (result[i].id == arrOfFriends[j]) {
                 var tempUser = { 
                 id: result[i].id, 
                 name: result[i].name, 
@@ -481,15 +484,17 @@ router.get('/getFriends/:id', function(request, response) {
                 info[counter++] = tempUser; 
             }
         }
+      }
 
 
-    console.log(info);
+  //  console.log(info);
     response.json({info});
 });
 
 });
  
 });
+
 
 router.put('/pictures', function (request, response) {
     var q = request.body;
