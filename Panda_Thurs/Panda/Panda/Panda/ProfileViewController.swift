@@ -25,10 +25,20 @@ class ProfileViewController: NSViewController {
     @IBOutlet weak var mostRecentTripName: NSTextField!
     @IBOutlet weak var profilePictureView: NSImageView!
     
+    @IBOutlet weak var pictureUpperLeft: NSButton!
+    @IBOutlet weak var pictureUpperRight: NSButton!
+    
+    @IBOutlet weak var pictureLowerLeft: NSButton!
+    
+    @IBOutlet weak var pictureLowerRight: NSButton!
+    
     var user: User = User()
     var id:Int?
     var bio:String?
     var picture:String?
+    
+    
+    var eventList: [Event] = []
     
     override func viewWillAppear() {
         self.view.wantsLayer = true;
@@ -46,6 +56,7 @@ class ProfileViewController: NSViewController {
             print("hi")
             profilePictureView.image = #imageLiteral(resourceName: "pandaicon2.png")
         }
+      
 
     }
     
@@ -74,8 +85,94 @@ class ProfileViewController: NSViewController {
             let requesturl = URL(string: json["trip"]["api"].stringValue)
             let request = URLRequest(url: requesturl!)
             self.mapWebView.mainFrame.load(request)
+           // let eventResults = json["trip"]["eventList"].arrayValue
+            
+            let eventRequest = "http://localhost:8081/events/" + "\(self.trip_id.getID())"
+            Alamofire.request(eventRequest).responseJSON { response in
+                
+                guard let info = response.result.value
+                    else {
+                    print("Error")
+                    return
+                }
+                
+                let eventJSON = JSON(info)
+                print(eventJSON)
+                
+                let eventResults = eventJSON["eventList"].arrayValue
+                
+                
+                self.eventList.removeAll()
+                
+                for i in 0...(eventResults.count-1) {
+                    self.eventList.append(self.convertToEvent(result: eventResults[i]))
+                }
+
+                
+                
+                
+                 for i in 0...(eventResults.count-1) {
+                     // print("hiiiiii")
+                   
+                   
+                    if(self.pictureUpperLeft.stringValue == "0" || self.pictureUpperLeft == nil){
+                        
+                        if(eventResults[i]["picture1"] != ""){
+                            
+                            var urlStr = URL(string:  eventResults[i]["picture1"].stringValue)
+                        
+                            self.pictureUpperLeft.image = NSImage(contentsOf: urlStr!)
+                        }
+
+                        
+                        
+                        
+                    }
+                    if(self.pictureUpperRight.stringValue == "0" || self.pictureUpperRight == nil){
+                        
+                        if(eventResults[i]["picture2"] != ""){
+                            
+                            var urlStr = URL(string:  eventResults[i]["picture2"].stringValue)
+                            
+                            self.pictureUpperRight.image = NSImage(contentsOf: urlStr!)
+                        }
+                        
+                        
+                    }
+                    if(self.pictureLowerLeft.stringValue == "0" || self.pictureLowerLeft == nil){
+                        
+                        if(eventResults[i]["picture3"] != ""){
+                            
+                            var urlStr = URL(string:  eventResults[i]["picture3"].stringValue)
+                            
+                            self.pictureLowerLeft.image = NSImage(contentsOf: urlStr!)
+                        }
+                        
+                        
+                        
+                        
+                    }
+                    if(self.pictureLowerRight.stringValue == "0" || self.pictureLowerRight == nil){
+                        
+                        if(eventResults[i]["picture4"] != ""){
+                            
+                            var urlStr = URL(string:  eventResults[i]["picture4"].stringValue)
+                            
+                            self.pictureLowerRight.image = NSImage(contentsOf: urlStr!)
+                        }
+                        
+                        
+                        
+                        
+                    }
+                }
+                
+            }
+           
         }
-    }
+        
+           }
+
     @IBAction func editBio(_ sender: Any) {
         if (newBio.stringValue.characters.count > 160) {
             bioErrorLabel.isHidden = false
@@ -111,6 +208,15 @@ class ProfileViewController: NSViewController {
         }
         user.setBio(bio: newBio.stringValue)
     }
+    
+    func convertToEvent(result: JSON) -> Event {
+        let event: Event = Event()
+        
+        event.setEvent(id: result["id"].intValue, name: result["name"].stringValue, descripshun: result["description"].stringValue, picture1: result["picture1"].stringValue, picture2: result["picture2"].stringValue, picture3: result["picture3"].stringValue, picture4: result["picture4"].stringValue, latitude: result["latitude"].stringValue, longitude: result["longitude"].stringValue, date: result["date"].stringValue, api: result["api"].stringValue, tripID: result["trip_id"].intValue, order: result["order"].intValue)
+        
+        return event
+    }
+
     @IBAction func homeButton(_ sender: Any) {
          performSegue(withIdentifier: "idSegue", sender: self)
     }
