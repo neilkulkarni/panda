@@ -118,6 +118,35 @@ class RecordViewController: NSViewController {
         if (row >= 0 && selectedList.count < 10) {
             selectedList.append(businessList[row])
             
+            var locationSearchQuery: String = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + selectedList[selectedList.count-1].latitude! + "," + selectedList[selectedList.count-1].longitude!
+            locationSearchQuery += "&key=AIzaSyAgh9MvQLlmI8wgO4UDGrGzqKFTdNM-iNA" //adds my api key
+            Alamofire.request(locationSearchQuery, method: .post, encoding: URLEncoding.default, headers: nil).responseJSON { response in
+                
+                if response.result.isSuccess {
+                    guard let info = response.result.value else {
+                        print("Error")
+                        return
+                    }
+                    //print(info)
+                    let json = JSON(info)
+                    //print(json)
+                    print(json["results"][0]["address_components"][2]["types"][0].stringValue)
+                    for i in 0...(json["results"][0]["address_components"].count-1) {
+                        for j in 0...(json["results"][0]["address_components"][i]["types"].count-1) {
+                            if (json["results"][0]["address_components"][i]["types"][j].stringValue == "locality") {
+                                self.selectedList[self.selectedList.count-1].location = json["results"][0]["address_components"][i]["short_name"].stringValue
+                            }
+                        }
+                    }
+                    
+                    //self.storeResults()
+                    //self.token = json["access_token"].stringValue
+                    
+                }
+                //print(self.selectedList[self.selectedList.count-1].location)
+            }
+
+            
             popUpButton1.addItem(withTitle: "\(selectedList.count)")
             popUpButton2.addItem(withTitle: "\(selectedList.count)")
             popUpButton3.addItem(withTitle: "\(selectedList.count)")
@@ -1713,6 +1742,7 @@ class RecordViewController: NSViewController {
         
         let tempArr = startingAddress.stringValue
         var myStringArr = tempArr.components(separatedBy: " ")
+        print(myStringArr)
         var locationSearchQuery: String = "https://maps.googleapis.com/maps/api/place/textsearch/json?query="
         for i in 0...myStringArr.count-1 {
             if(i == myStringArr.count - 1){
@@ -1779,7 +1809,7 @@ class RecordViewController: NSViewController {
     }
     
 //    func storeResults(){
-//        
+//
 //    }
     
     @IBOutlet weak var mapView: MKMapView!
@@ -1867,9 +1897,10 @@ class RecordViewController: NSViewController {
         var maxLocation = -1;
         for i in 0...selectedList.count - 1{
             //cityList[i] = selectedList[i].location!
+            //should have the address in the processed format
             var count = 0
             for j in 0...selectedList.count - 1{
-                if(selectedList[i].location!.isEqual(selectedList[j].location)){
+                if(selectedList[i].location! == selectedList[j].location){
                     count += 1
                 }
             }
@@ -1883,6 +1914,7 @@ class RecordViewController: NSViewController {
     }
     
     func uploadTrip() {
+        determineLocationName()
         
         let tripParams: Parameters = [
             "name": tripTitle.stringValue,
