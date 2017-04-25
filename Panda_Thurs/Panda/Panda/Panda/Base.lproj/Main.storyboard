@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="12120"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="12118"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -1286,11 +1286,11 @@
                                 <rect key="frame" x="20" y="704" width="469" height="135"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <clipView key="contentView" ambiguous="YES" id="Pcy-Rs-iaJ">
-                                    <rect key="frame" x="1" y="0.0" width="467" height="119"/>
+                                    <rect key="frame" x="1" y="0.0" width="467" height="134"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="pfw-mQ-zHB" viewBased="YES" id="0Bp-Ae-3e3">
-                                            <rect key="frame" x="0.0" y="0.0" width="473" height="96"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="473" height="111"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1400,7 +1400,7 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="rth-Gp-75c">
-                                    <rect key="frame" x="1" y="119" width="467" height="15"/>
+                                    <rect key="frame" x="1" y="118" width="467" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="69E-r7-78v">
@@ -2125,7 +2125,7 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="x9l-VO-oDj">
-                                    <rect key="frame" x="1" y="8" width="0.0" height="15"/>
+                                    <rect key="frame" x="1" y="7" width="0.0" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="UIm-aV-Pzp">
@@ -2291,11 +2291,11 @@
                                 <rect key="frame" x="23" y="609" width="516" height="214"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <clipView key="contentView" ambiguous="YES" id="whh-TK-ZUe">
-                                    <rect key="frame" x="1" y="0.0" width="514" height="198"/>
+                                    <rect key="frame" x="1" y="0.0" width="514" height="213"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="YUe-Iw-5pr" viewBased="YES" id="T3X-zi-TVc">
-                                            <rect key="frame" x="0.0" y="0.0" width="518" height="175"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="518" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -2438,7 +2438,7 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="mne-w0-CIk">
-                                    <rect key="frame" x="1" y="198" width="514" height="15"/>
+                                    <rect key="frame" x="1" y="197" width="514" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="YJ4-Pl-Pzc">
@@ -3271,8 +3271,8 @@
         <image name="street" width="77" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zZz-ep-SOj"/>
-        <segue reference="TQ2-EL-7de"/>
+        <segue reference="7nr-vg-CEo"/>
         <segue reference="i3I-29-aiR"/>
+        <segue reference="fgN-qe-Z4K"/>
     </inferredMetricsTieBreakers>
 </document>
