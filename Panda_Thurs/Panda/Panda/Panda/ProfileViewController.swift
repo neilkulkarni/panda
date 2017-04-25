@@ -79,9 +79,15 @@ class ProfileViewController: NSViewController {
             }
             
             let json = JSON(info)
+            if ((json.null) == nil) {
+                return
+            }
             print(json)
             self.trip_id.setID(id: json["trip"]["id"].int!)
             self.mostRecentTripName.stringValue = json["trip"]["name"].stringValue
+            if (json["trip"]["api"].stringValue == "") {
+                return
+            }
             let requesturl = URL(string: json["trip"]["api"].stringValue)
             let request = URLRequest(url: requesturl!)
             self.mapWebView.mainFrame.load(request)
