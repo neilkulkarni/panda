@@ -39,7 +39,7 @@ class ProfileViewController: NSViewController {
             profilePictureView.image = NSImage(contentsOf: urlStr!)
         }
         else {
-            print("hi")
+            print("picture!!!")
             profilePictureView.image = #imageLiteral(resourceName: "pandaicon2.png")
         }
 
