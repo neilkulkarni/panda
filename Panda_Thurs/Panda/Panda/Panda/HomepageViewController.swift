@@ -116,6 +116,10 @@ class HomepageViewController: NSViewController {
             
             self.friends.removeAll()
             
+            if (friendResults.count == 0) {
+                return
+            }
+            
             for i in 0...(friendResults.count-1) {
                 self.friends.append(self.convertToFriend(result: friendResults[i]))
             }
