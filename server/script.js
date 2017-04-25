@@ -457,44 +457,6 @@ router.get('/pictures/:id', function(request, response) {
     });
 });
 
-router.get('/getFriends/:id', function(request, response) {
-  var temp = request.params.id;
-  var arrOfFriends = [];
-  var counter =0;
-  conn.query('SELECT * FROM friend', function(err, result) {
-        for (var i = 0; i < result.length; i++) {
-            if (result[i].user_id == temp) {
-                arrOfFriends[counter++] = result[i].friend_id; 
-            }
-        }
-      counter = 0;
-      var info = [];
-      conn.query('SELECT * FROM user', function(err, result) {
-        console.log(result);
-        for (var i = 0; i < result.length; i++) {
-            for(var j = 0; j < arrOfFriends.length; j++ ) {
-            if (result[i].id == arrOfFriends[j]) {
-                var tempUser = { 
-                id: result[i].id, 
-                name: result[i].name, 
-                email: result[i].email, 
-                bio: result[i].bio,
-                picture: result[i].picture
-            };
-                info[counter++] = tempUser; 
-            }
-        }
-      }
-
-
-  //  console.log(info);
-    response.json({info});
-});
-
-});
- 
-});
-
 
 router.put('/pictures', function (request, response) {
     var q = request.body;
@@ -584,6 +546,42 @@ router.post('/friend', function(request, response) {
             response.send(code); 
         }
     });
+});
+
+router.get('/friends/:id', function(request, response) {
+    var temp = request.params.id;
+    var arrOfFriends = [];
+    var counter =0;
+    
+    conn.query('SELECT * FROM friend', function(err, result) {
+        for (var i = 0; i < result.length; i++) {
+        	if (result[i].user_id == temp) {
+            	arrOfFriends[counter++] = result[i].friend_id; 
+            }
+        }
+        
+        counter = 0;
+        var info = [];
+        conn.query('SELECT * FROM user', function(err, result) {
+        	console.log(result);
+        	for (var i = 0; i < result.length; i++) {
+                for(var j = 0; j < arrOfFriends.length; j++ ) {
+		            if (result[i].id == arrOfFriends[j]) {
+		                var tempUser = { 
+		                id: result[i].id, 
+		                name: result[i].name, 
+		                email: result[i].email, 
+		                bio: result[i].bio,
+		                picture: result[i].picture
+		            };
+                    info[counter++] = tempUser; 
+                }
+            }
+        }
+
+        response.json({info});
+    });
+});
 });
 
 router.get('/friend/:id', function(request, response) {
