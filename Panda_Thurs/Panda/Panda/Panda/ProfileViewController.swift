@@ -79,9 +79,9 @@ class ProfileViewController: NSViewController {
             }
             
             let json = JSON(info)
-            if ((json.null) == nil) {
+            /*if ((json.null) == nil) {
                 return
-            }
+            }*/
             print(json)
             self.trip_id.setID(id: json["trip"]["id"].int!)
             self.mostRecentTripName.stringValue = json["trip"]["name"].stringValue
