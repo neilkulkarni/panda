@@ -9,8 +9,10 @@
 import Cocoa
 import Alamofire
 import SwiftyJSON
+import WebKit
 
 class ProfileViewController: NSViewController {
+    var trip_id: TripID = TripID()
     
     @IBOutlet weak var nameField: NSTextField!
     @IBOutlet weak var emailField: NSTextField!
@@ -18,13 +20,25 @@ class ProfileViewController: NSViewController {
     @IBOutlet weak var pictureField: NSTextField!
     @IBOutlet weak var newBio: NSTextField!
     @IBOutlet weak var bioErrorLabel: NSTextField!
+    @IBOutlet weak var mapWebView: WebView!
     
+    @IBOutlet weak var mostRecentTripName: NSTextField!
     @IBOutlet weak var profilePictureView: NSImageView!
+    
+    @IBOutlet weak var pictureUpperLeft: NSButton!
+    @IBOutlet weak var pictureUpperRight: NSButton!
+    
+    @IBOutlet weak var pictureLowerLeft: NSButton!
+    
+    @IBOutlet weak var pictureLowerRight: NSButton!
     
     var user: User = User()
     var id:Int?
     var bio:String?
     var picture:String?
+    
+    
+    var eventList: [Event] = []
     
     override func viewWillAppear() {
         self.view.wantsLayer = true;
@@ -42,6 +56,7 @@ class ProfileViewController: NSViewController {
             print("picture!!!")
             profilePictureView.image = #imageLiteral(resourceName: "pandaicon2.png")
         }
+      
 
     }
     
@@ -51,7 +66,119 @@ class ProfileViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         profilePictureView.image = NSImage(byReferencingFile: user.getPicture())
-    }
+        let request = "http://localhost:8081/most-recent-trip/" + "\(user.getID())"
+        Alamofire.request(request).responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // HTTP URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            
+            guard let info = response.result.value else {
+                print("Error")
+                return
+            }
+            
+            let json = JSON(info)
+            print(json)
+            if ((json["trip"]["id"].null) != nil) {
+                return
+            }
+            self.trip_id.setID(id: json["trip"]["id"].int!)
+            self.mostRecentTripName.stringValue = json["trip"]["name"].stringValue
+            if (json["trip"]["api"].stringValue == "") {
+                return
+            }
+            let requesturl = URL(string: json["trip"]["api"].stringValue)
+            let request = URLRequest(url: requesturl!)
+            self.mapWebView.mainFrame.load(request)
+           // let eventResults = json["trip"]["eventList"].arrayValue
+            
+            let eventRequest = "http://localhost:8081/events/" + "\(self.trip_id.getID())"
+            Alamofire.request(eventRequest).responseJSON { response in
+                
+                guard let info = response.result.value
+                    else {
+                    print("Error")
+                    return
+                }
+                
+                let eventJSON = JSON(info)
+                print(eventJSON)
+                
+                let eventResults = eventJSON["eventList"].arrayValue
+                
+                
+                self.eventList.removeAll()
+                
+                for i in 0...(eventResults.count-1) {
+                    self.eventList.append(self.convertToEvent(result: eventResults[i]))
+                }
+
+                
+                
+                
+                 for i in 0...(eventResults.count-1) {
+                     // print("hiiiiii")
+                   
+                   
+                    if(self.pictureUpperLeft.stringValue == "0" || self.pictureUpperLeft == nil){
+                        
+                        if(eventResults[i]["picture1"] != ""){
+                            
+                            var urlStr = URL(string:  eventResults[i]["picture1"].stringValue)
+                        
+                            self.pictureUpperLeft.image = NSImage(contentsOf: urlStr!)
+                        }
+
+                        
+                        
+                        
+                    }
+                    if(self.pictureUpperRight.stringValue == "0" || self.pictureUpperRight == nil){
+                        
+                        if(eventResults[i]["picture2"] != ""){
+                            
+                            var urlStr = URL(string:  eventResults[i]["picture2"].stringValue)
+                            
+                            self.pictureUpperRight.image = NSImage(contentsOf: urlStr!)
+                        }
+                        
+                        
+                    }
+                    if(self.pictureLowerLeft.stringValue == "0" || self.pictureLowerLeft == nil){
+                        
+                        if(eventResults[i]["picture3"] != ""){
+                            
+                            var urlStr = URL(string:  eventResults[i]["picture3"].stringValue)
+                            
+                            self.pictureLowerLeft.image = NSImage(contentsOf: urlStr!)
+                        }
+                        
+                        
+                        
+                        
+                    }
+                    if(self.pictureLowerRight.stringValue == "0" || self.pictureLowerRight == nil){
+                        
+                        if(eventResults[i]["picture4"] != ""){
+                            
+                            var urlStr = URL(string:  eventResults[i]["picture4"].stringValue)
+                            
+                            self.pictureLowerRight.image = NSImage(contentsOf: urlStr!)
+                        }
+                        
+                        
+                        
+                        
+                    }
+                }
+                
+            }
+           
+        }
+        
+           }
+
     @IBAction func editBio(_ sender: Any) {
         if (newBio.stringValue.characters.count > 160) {
             bioErrorLabel.isHidden = false
@@ -87,6 +214,15 @@ class ProfileViewController: NSViewController {
         }
         user.setBio(bio: newBio.stringValue)
     }
+    
+    func convertToEvent(result: JSON) -> Event {
+        let event: Event = Event()
+        
+        event.setEvent(id: result["id"].intValue, name: result["name"].stringValue, descripshun: result["description"].stringValue, picture1: result["picture1"].stringValue, picture2: result["picture2"].stringValue, picture3: result["picture3"].stringValue, picture4: result["picture4"].stringValue, latitude: result["latitude"].stringValue, longitude: result["longitude"].stringValue, date: result["date"].stringValue, api: result["api"].stringValue, tripID: result["trip_id"].intValue, order: result["order"].intValue)
+        
+        return event
+    }
+
     @IBAction func homeButton(_ sender: Any) {
          performSegue(withIdentifier: "idSegue", sender: self)
     }
@@ -182,6 +318,7 @@ class ProfileViewController: NSViewController {
         }
         else if (segue.identifier == "idSegueToTrip") {
             if let destination = segue.destinationController as? TripViewController {
+                destination.trip_id.setID(id: trip_id.getID())
                 destination.user.setUser(id: user.getID(), name: user.getName(), email: user.getEmail(), bio: user.getBio(), picture: user.getPicture())
             }
         }
