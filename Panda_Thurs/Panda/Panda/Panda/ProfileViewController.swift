@@ -88,9 +88,12 @@ class ProfileViewController: NSViewController {
             
             self.tripList.removeAll()
             
-            for i in 0...(tripResults.count-1) {
-                self.tripList.append(self.convertToTrip(result: tripResults[i]))
+            if(tripResults.count > 0){
+                for i in 0...(tripResults.count-1) {
+                    self.tripList.append(self.convertToTrip(result: tripResults[i]))
+                }
             }
+        
             
             self.loadTripResults()
         }
@@ -222,9 +225,6 @@ class ProfileViewController: NSViewController {
                     self.pictureLowerRight.image = NSImage(contentsOf: urlStr!)
                 }
                 print("list")
-                for i in 0 ... (self.picList.count - 1) {
-                print (self.picList[i])
-                }
                 
             }
            
