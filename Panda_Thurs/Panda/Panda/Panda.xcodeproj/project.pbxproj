@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D1F8A8156AB769A6C93D9B0 /* Pods_Panda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6688EC38FEF58572A493CDEE /* Pods_Panda.framework */; };
 		192BBFD2FCDD502D7E159B87 /* Pods_PandaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94730C007A08755F26167F33 /* Pods_PandaUITests.framework */; };
+		2835AF001EB11E2300469A31 /* FriendProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835AEFE1EB11E2300469A31 /* FriendProfileViewController.swift */; };
+		2835AF011EB11E2300469A31 /* FriendTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835AEFF1EB11E2300469A31 /* FriendTripViewController.swift */; };
 		2842240D1E6940D900BF2A33 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2842240C1E6940D900BF2A33 /* CreateAccountViewController.swift */; };
 		2861AFBD1E6A06A6002871CD /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861AFBC1E6A06A6002871CD /* CustomSegue.swift */; };
 		2861AFBF1E6A4EA3002871CD /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861AFBE1E6A4EA3002871CD /* HomepageViewController.swift */; };
@@ -81,6 +83,8 @@
 /* Begin PBXFileReference section */
 		02D331AE99A1165C903AE491 /* Pods-PandaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PandaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PandaTests/Pods-PandaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		216C1759F19AB2818B30210F /* Pods-PandaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PandaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PandaTests/Pods-PandaTests.release.xcconfig"; sourceTree = "<group>"; };
+		2835AEFE1EB11E2300469A31 /* FriendProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendProfileViewController.swift; sourceTree = "<group>"; };
+		2835AEFF1EB11E2300469A31 /* FriendTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTripViewController.swift; sourceTree = "<group>"; };
 		2842240C1E6940D900BF2A33 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		2861AFBC1E6A06A6002871CD /* CustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegue.swift; sourceTree = "<group>"; };
 		2861AFBE1E6A4EA3002871CD /* HomepageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 		A220D6B01E68F7E300345B92 /* Panda */ = {
 			isa = PBXGroup;
 			children = (
+				2835AEFE1EB11E2300469A31 /* FriendProfileViewController.swift */,
+				2835AEFF1EB11E2300469A31 /* FriendTripViewController.swift */,
 				9BB8861E1EAF24D60002801A /* Trip.swift */,
 				D13828BF1EAC008D00A0B8AA /* Event.swift */,
 				A220D6FE1E68FB1500345B92 /* pandaicon2.png */,
@@ -575,6 +581,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2835AF001EB11E2300469A31 /* FriendProfileViewController.swift in Sources */,
 				2842240D1E6940D900BF2A33 /* CreateAccountViewController.swift in Sources */,
 				A220D6B41E68F7E300345B92 /* LoginViewController.swift in Sources */,
 				2861AFC31E6A53FC002871CD /* ProfileViewController.swift in Sources */,
@@ -589,6 +596,7 @@
 				A220D7011E68FCFF00345B92 /* User.swift in Sources */,
 				9BB8861F1EAF24D60002801A /* Trip.swift in Sources */,
 				D13828C01EAC008D00A0B8AA /* Event.swift in Sources */,
+				2835AF011EB11E2300469A31 /* FriendTripViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
